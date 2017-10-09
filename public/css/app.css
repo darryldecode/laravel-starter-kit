@@ -1,0 +1,32 @@
+/* general */
+
+.bg_half_transparent {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.wask_loader {
+  padding: 150px 0;
+  position: absolute;
+  z-index: 501;
+  border: 0;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.wask_loader > div.v-spinner > div {
+  margin: 0 auto;
+}
+
+.permissions_container {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* override */
+
+#admin .snack {
+  z-index: 500 !important;
+}
+
