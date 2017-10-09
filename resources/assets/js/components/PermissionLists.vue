@@ -86,7 +86,7 @@
                     </v-toolbar-items>
                 </v-toolbar>
                 <v-card-text>
-
+                    <permission-form-edit :propPermissionId="dialogs.edit.group.id"></permission-form-edit>
                 </v-card-text>
             </v-card>
         </v-dialog>
@@ -96,9 +96,11 @@
 
 <script>
     import PermissionFormAdd from './PermissionFormAdd.vue';
+    import PermissionFormEdit from './PermissionFormEdit.vue';
     export default {
         components: {
-            PermissionFormAdd
+            PermissionFormAdd,
+            PermissionFormEdit
         },
         data () {
             return {
@@ -151,7 +153,7 @@
             },700),
         },
         methods: {
-            trash(group) {
+            trash(permission) {
                 const self = this;
 
                 self.$store.commit('showDialog',{
@@ -160,7 +162,7 @@
                     message: "Are you sure you want to delete this permission?",
                     okCb: ()=>{
 
-                        axios.delete('/ajax/permissions/' + group.id).then(function(response) {
+                        axios.delete('/ajax/permissions/' + permission.id).then(function(response) {
 
                             self.$store.commit('showSnackbar',{
                                 message: response.data.message,
@@ -168,7 +170,7 @@
                                 duration: 3000
                             });
 
-                            self.$eventBus.$emit('GROUP_DELETED');
+                            self.$eventBus.$emit('PERMISSION_DELETED');
 
                         }).catch(function (error) {
                             if (error.response) {

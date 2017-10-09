@@ -63,18 +63,19 @@ class MySQLPermissionRepositoryRepository implements PermissionRepository
     /**
      * update item
      *
-     * @param $payload
+     * @param int $id
+     * @param array $payload
      * @return Result
      */
-    public function update($payload)
+    public function update($id, $payload)
     {
-        $Permission = PermissionModel::find($payload['id']);
+        $Permission = PermissionModel::find($id);
 
         if(!$Permission) return new Result(false,Result::MESSAGE_NOT_FOUND,null,404);
 
-        (!$payload['title']) ?: $Permission->title = $payload['title'];
-        (!$payload['description']) ?: $Permission->description = $payload['description'];
-        (!$payload['permission']) ?: $Permission->permission = $payload['permission'];
+        $Permission->title = $payload['title'];
+        $Permission->description = $payload['description'];
+        $Permission->permission = $payload['permission'];
 
         if(!$Permission->save()) return new Result(false,Result::MESSAGE_FAILED_UPDATE,null,400);
 

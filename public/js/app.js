@@ -34637,6 +34637,8 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue__);
 //
 //
 //
@@ -34733,11 +34735,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
-        PermissionFormAdd: __WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue___default.a
+        PermissionFormAdd: __WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue___default.a,
+        PermissionFormEdit: __WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue___default.a
     },
     data: function data() {
         return {
@@ -34786,7 +34790,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }, 700)
     },
     methods: {
-        trash: function trash(group) {
+        trash: function trash(permission) {
             var self = this;
 
             self.$store.commit('showDialog', {
@@ -34795,7 +34799,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 message: "Are you sure you want to delete this permission?",
                 okCb: function okCb() {
 
-                    axios.delete('/ajax/permissions/' + group.id).then(function (response) {
+                    axios.delete('/ajax/permissions/' + permission.id).then(function (response) {
 
                         self.$store.commit('showSnackbar', {
                             message: response.data.message,
@@ -34803,7 +34807,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             duration: 3000
                         });
 
-                        self.$eventBus.$emit('GROUP_DELETED');
+                        self.$eventBus.$emit('PERMISSION_DELETED');
                     }).catch(function (error) {
                         if (error.response) {
                             self.$store.commit('showSnackbar', {
@@ -35200,7 +35204,15 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("v-card-text")
+              _c(
+                "v-card-text",
+                [
+                  _c("permission-form-edit", {
+                    attrs: { propPermissionId: _vm.dialogs.edit.group.id }
+                  })
+                ],
+                1
+              )
             ],
             1
           )
@@ -36933,6 +36945,356 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-1de556a6", module.exports)
+  }
+}
+
+/***/ }),
+/* 214 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(215)
+/* template */
+var __vue_template__ = __webpack_require__(216)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\PermissionFormEdit.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] PermissionFormEdit.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4a8c2555", Component.options)
+  } else {
+    hotAPI.reload("data-v-4a8c2555", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 215 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        propPermissionId: {
+            required: true
+        }
+    },
+    data: function data() {
+        return {
+            valid: false,
+            isLoading: false,
+            title: '',
+            titleRules: [function (v) {
+                return !!v || 'Title is required';
+            }],
+            description: '',
+            descriptionRules: [function (v) {
+                return !!v || 'Description is required';
+            }],
+            permissionKey: '',
+            permissionKeyRules: [function (v) {
+                return !!v || 'Permission Key is required';
+            }, function (v) {
+                return !v.match(/[^\w\.]+/g) || 'Description cannot contain special characters';
+            }]
+        };
+    },
+    mounted: function mounted() {
+        console.log('components.PermissionFormEdit.vue');
+    },
+
+    watch: {
+        permissionKey: function permissionKey(v) {
+            this.permissionKey = v.replace(' ', '.').toLowerCase();
+        },
+        title: function title(v) {
+            this.permissionKey = v.replace(' ', '.').toLowerCase();
+        },
+        propPermissionId: function propPermissionId(v) {
+            if (v) this.loadPermission(function () {});
+        }
+    },
+    methods: {
+        save: function save() {
+
+            var self = this;
+
+            var payload = {
+                title: self.title,
+                description: self.description,
+                permission: self.permissionKey
+            };
+
+            self.isLoading = true;
+
+            axios.put('/ajax/permissions/' + self.propPermissionId, payload).then(function (response) {
+
+                self.$store.commit('showSnackbar', {
+                    message: response.data.message,
+                    color: 'success',
+                    duration: 3000
+                });
+                self.$eventBus.$emit('PERMISSION_UPDATED');
+
+                // reset
+                self.permissions = [];
+                self.isLoading = false;
+            }).catch(function (error) {
+
+                self.isLoading = false;
+
+                if (error.response) {
+                    self.$store.commit('showSnackbar', {
+                        message: error.response.data.message,
+                        color: 'error',
+                        duration: 3000
+                    });
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+            });
+        },
+        loadPermission: function loadPermission(cb) {
+
+            var self = this;
+
+            axios.get('/ajax/permissions/' + self.propPermissionId).then(function (response) {
+
+                var Permission = response.data.data;
+
+                self.title = Permission.title;
+                self.description = Permission.description;
+                self.permissionKey = Permission.permissionKey;
+
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-form",
+            {
+              ref: "permissionFormEdit",
+              attrs: { "lazy-validation": "" },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-container",
+                { attrs: { "grid-list-md": "" } },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "" } },
+                    [
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c("div", { staticClass: "body-2 white--text" }, [
+                          _vm._v("Permission Details")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Permission Title",
+                              rules: _vm.titleRules
+                            },
+                            model: {
+                              value: _vm.title,
+                              callback: function($$v) {
+                                _vm.title = $$v
+                              },
+                              expression: "title"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Permission Key",
+                              rules: _vm.permissionKeyRules
+                            },
+                            model: {
+                              value: _vm.permissionKey,
+                              callback: function($$v) {
+                                _vm.permissionKey = $$v
+                              },
+                              expression: "permissionKey"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Description",
+                              rules: _vm.descriptionRules,
+                              "multi-line": ""
+                            },
+                            model: {
+                              value: _vm.description,
+                              callback: function($$v) {
+                                _vm.description = $$v
+                              },
+                              expression: "description"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                loading: _vm.isLoading,
+                                disabled: !_vm.valid || _vm.isLoading,
+                                color: "primary",
+                                dark: ""
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.save()
+                                }
+                              }
+                            },
+                            [_vm._v("Save")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-4a8c2555", module.exports)
   }
 }
 

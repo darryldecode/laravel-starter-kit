@@ -92,7 +92,27 @@ class PermissionController extends AjaxController
      */
     public function update(Request $request, $id)
     {
-        //
+        $validate = validator($request->all(),[
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'permission' => 'required|string',
+        ]);
+
+        if($validate->fails())
+        {
+            return $this->sendResponse(
+                $validate->errors()->first(),
+                null,
+                400
+            );
+        }
+
+        $results = $this->permissionRepository->update($id,$request->all());
+
+        return $this->sendResponse(
+            $results->getMessage(),
+            $results->getData()
+        );
     }
 
     /**
@@ -103,6 +123,11 @@ class PermissionController extends AjaxController
      */
     public function destroy($id)
     {
-        //
+        $results = $this->permissionRepository->delete($id);
+
+        return $this->sendResponse(
+            $results->getMessage(),
+            $results->getData()
+        );
     }
 }

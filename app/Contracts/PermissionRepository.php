@@ -40,10 +40,11 @@ interface PermissionRepository
     /**
      * update item
      *
-     * @param $payload
+     * @param int $id
+     * @param array $payload
      * @return Result
      */
-    public function update($payload);
+    public function update($id, $payload);
 
     /**
      * delete by id
