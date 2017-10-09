@@ -25,10 +25,6 @@ abstract class AdminController extends Controller
      */
     protected function getMainNav()
     {
-        return [
-            ['label'=>'Dashboard', 'icon'=>'dashboard', 'route_type'=>'vue', 'route_name'=>'dashboard'],
-            ['label'=>'User', 'icon'=>'person', 'route_type'=>'vue', 'route_name'=>'users'],
-            ['label'=>'Settings', 'icon'=>'settings', 'route_type'=>'vue', 'route_name'=>'settings'],
-        ];
+        return config('wask.menu',[]);
     }
 }

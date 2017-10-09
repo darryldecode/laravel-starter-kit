@@ -1,5 +1,5 @@
 <template>
-    <div class="users_view">
+    <div class="page_wrap_vue users_view">
         <v-tabs dark v-model="active">
             <v-tabs-bar class="cyan">
                 <v-tabs-item href="#users" ripple>

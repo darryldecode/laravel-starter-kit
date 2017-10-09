@@ -87,6 +87,10 @@ const admin = new Vue({
 
                 this.$router.push({name: routeName});
             }
+            if(rn==='full_load') {
+
+                window.location.href = routeName;
+            }
         },
         dialogOk() {
             store.commit('dialogOk');

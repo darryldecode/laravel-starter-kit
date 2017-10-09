@@ -20,6 +20,11 @@ export default new Router({
             component: require('../pages/Users.vue'),
         },
         {
+            name: 'files',
+            path: '/files',
+            component: require('../pages/Files.vue'),
+        },
+        {
             name: 'settings',
             path: '/settings',
             component: require('../pages/Settings.vue'),
