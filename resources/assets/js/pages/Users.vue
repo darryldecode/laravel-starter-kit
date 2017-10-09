@@ -30,7 +30,9 @@
                 </v-tabs-content>
                 <v-tabs-content id="permissions">
                     <v-card flat>
-                        <v-card-text>Permissions</v-card-text>
+                        <v-card-text>
+                            <permission-lists></permission-lists>
+                        </v-card-text>
                     </v-card>
                 </v-tabs-content>
             </v-tabs-items>
@@ -41,10 +43,12 @@
 <script>
     import UserLists from '../components/UserLists.vue';
     import GroupLists from '../components/GroupLists.vue';
+    import PermissionLists from '../components/PermissionLists.vue';
     export default {
         components: {
             UserLists,
-            GroupLists
+            GroupLists,
+            PermissionLists
         },
         data() {
             return {

@@ -44,7 +44,27 @@ class PermissionController extends AjaxController
      */
     public function store(Request $request)
     {
-        //
+        $validate = validator($request->all(),[
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'permission' => 'required|string|unique:permissions',
+        ]);
+
+        if($validate->fails())
+        {
+            return $this->sendResponse(
+                $validate->errors()->first(),
+                null,
+                400
+            );
+        }
+
+        $results = $this->permissionRepository->create($request->all());
+
+        return $this->sendResponse(
+            $results->getMessage(),
+            $results->getData()
+        );
     }
 
     /**
