@@ -1,0 +1,37 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class FileGroup extends Model
+{
+    protected $table = 'file_groups';
+
+    protected $fillable = [
+        'name',
+        'description'
+    ];
+
+    protected $appends = ['file_count'];
+
+    /**
+     * get the file count attribute
+     *
+     * @return mixed
+     */
+    public function getFileCountAttribute()
+    {
+        return $this->files->count();
+    }
+
+    /**
+     * the files on this group
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function files()
+    {
+        return $this->hasMany(File::class,'file_group_id');
+    }
+}
