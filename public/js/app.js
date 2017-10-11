@@ -99,8 +99,7 @@ module.exports = function normalizeComponent (
 /***/ }),
 /* 2 */,
 /* 3 */,
-/* 4 */,
-/* 5 */
+/* 4 */
 /***/ (function(module, exports) {
 
 /*
@@ -182,131 +181,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -325,7 +200,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(165)
+var listToStyles = __webpack_require__(167)
 
 /*
 type StyleObject = {
@@ -527,28 +402,268 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
 /* 131 */,
-/* 132 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(133);
-module.exports = __webpack_require__(217);
-
-
-/***/ }),
+/* 132 */,
 /* 133 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(171);
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
+    state: {
+
+        // loader
+        showLoader: false,
+
+        // snackbar
+        showSnackbar: false,
+        snackbarMessage: '',
+        snackbarColor: '',
+        snackbarDuration: 3000,
+
+        // dialog
+        dialogShow: false,
+        dialogType: '',
+        dialogTitle: '',
+        dialogMessage: '',
+        dialogOkCb: function dialogOkCb() {},
+        dialogCancelCb: function dialogCancelCb() {}
+    },
+    mutations: {
+
+        // loader
+        showLoader: function showLoader(state) {
+            state.showLoader = true;
+        },
+        hideLoader: function hideLoader(state) {
+            state.showLoader = false;
+        },
+
+
+        // snackbar
+        showSnackbar: function showSnackbar(state, data) {
+            state.snackbarDuration = data.duration || 3000;
+            state.snackbarMessage = data.message || 'No message.';
+            state.snackbarColor = data.color || 'info';
+            state.showSnackbar = true;
+        },
+        hideSnackbar: function hideSnackbar(state) {
+            state.showSnackbar = false;
+        },
+
+
+        // dialog
+        showDialog: function showDialog(state, data) {
+            state.dialogType = data.type || 'confirm';
+            state.dialogTitle = data.title;
+            state.dialogMessage = data.message;
+            state.dialogOkCb = data.okCb || function () {};
+            state.dialogCancelCb = data.cancelCb || function () {};
+            state.dialogShow = true;
+        },
+        hideDialog: function hideDialog(state) {
+            state.dialogShow = false;
+        },
+        dialogOk: function dialogOk(state) {
+            state.dialogOkCb();
+            state.dialogShow = false;
+        },
+        dialogCancel: function dialogCancel(state) {
+            state.dialogCancelCb();
+            state.dialogShow = false;
+        }
+    },
+    getters: {
+
+        // loader
+        showLoader: function showLoader(state) {
+            return state.showLoader;
+        },
+
+        // snackbar
+        showSnackbar: function showSnackbar(state) {
+            return state.showSnackbar;
+        },
+        snackbarMessage: function snackbarMessage(state) {
+            return state.snackbarMessage;
+        },
+        snackbarColor: function snackbarColor(state) {
+            return state.snackbarColor;
+        },
+        snackbarDuration: function snackbarDuration(state) {
+            return state.snackbarDuration;
+        },
+
+        // dialog
+        showDialog: function showDialog(state) {
+            return state.dialogShow;
+        },
+        dialogType: function dialogType(state) {
+            return state.dialogType;
+        },
+        dialogTitle: function dialogTitle(state) {
+            return state.dialogTitle;
+        },
+        dialogMessage: function dialogMessage(state) {
+            return state.dialogMessage;
+        }
+    }
+}));
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(135);
+module.exports = __webpack_require__(225);
+
+
+/***/ }),
+/* 135 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuetify__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuetify__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuetify__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetify_dist_vuetify_min_css__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetify_dist_vuetify_min_css__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetify_dist_vuetify_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuetify_dist_vuetify_min_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router___ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store___ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event___ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_Formatters__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router___ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store___ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event___ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_Formatters__ = __webpack_require__(221);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -557,7 +672,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 // vendor
-__webpack_require__(134);
+__webpack_require__(136);
 window.Vue = __webpack_require__(3);
 
 // 3rd party
@@ -566,7 +681,7 @@ window.Vue = __webpack_require__(3);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vuetify___default.a);
 
-Vue.component('moon-loader', __webpack_require__(162));
+Vue.component('moon-loader', __webpack_require__(164));
 
 // app
 
@@ -576,7 +691,7 @@ Vue.component('moon-loader', __webpack_require__(162));
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_5__common_Formatters__["a" /* default */]);
 Vue.use(__WEBPACK_IMPORTED_MODULE_4__event___["a" /* default */]);
-Vue.component('example', __webpack_require__(214));
+Vue.component('example', __webpack_require__(222));
 
 var admin = new Vue({
     el: '#admin',
@@ -638,8 +753,6 @@ var admin = new Vue({
 
             if (rn === 'vue') {
 
-                __WEBPACK_IMPORTED_MODULE_3__store___["a" /* default */].commit('showLoader');
-
                 this.$router.push({ name: routeName });
             }
             if (rn === 'full_load') {
@@ -657,12 +770,13 @@ var admin = new Vue({
 });
 
 /***/ }),
-/* 134 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(6);
+window._ = __webpack_require__(8);
 window.moment = __webpack_require__(0);
+window.Dropzone = __webpack_require__(125);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -671,9 +785,9 @@ window.moment = __webpack_require__(0);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(136);
+  window.$ = window.jQuery = __webpack_require__(138);
 
-  __webpack_require__(137);
+  __webpack_require__(139);
 } catch (e) {}
 
 /**
@@ -682,7 +796,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(124);
+window.axios = __webpack_require__(126);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -717,8 +831,8 @@ if (token) {
 // });
 
 /***/ }),
-/* 135 */,
-/* 136 */
+/* 137 */,
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10978,7 +11092,7 @@ return jQuery;
 
 
 /***/ }),
-/* 137 */
+/* 139 */
 /***/ (function(module, exports) {
 
 /*!
@@ -13361,8 +13475,6 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 138 */,
-/* 139 */,
 /* 140 */,
 /* 141 */,
 /* 142 */,
@@ -13380,7 +13492,9 @@ if (typeof jQuery === 'undefined') {
 /* 154 */,
 /* 155 */,
 /* 156 */,
-/* 157 */
+/* 157 */,
+/* 158 */,
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -29387,13 +29501,13 @@ function unbind(el, binding) {
 //# sourceMappingURL=vuetify.js.map
 
 /***/ }),
-/* 158 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(159);
+var content = __webpack_require__(161);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -29401,7 +29515,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(160)(content, options);
+var update = __webpack_require__(162)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -29418,10 +29532,10 @@ if(false) {
 }
 
 /***/ }),
-/* 159 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -29432,7 +29546,7 @@ exports.push([module.i, "/*!\n* Vuetify v0.16.4\n* Forged by John Leider\n* Rele
 
 
 /***/ }),
-/* 160 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -29478,7 +29592,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(161);
+var	fixUrls = __webpack_require__(163);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -29791,7 +29905,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 161 */
+/* 163 */
 /***/ (function(module, exports) {
 
 
@@ -29886,19 +30000,19 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 162 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(163)
+  __webpack_require__(165)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(166)
+var __vue_script__ = __webpack_require__(168)
 /* template */
-var __vue_template__ = __webpack_require__(167)
+var __vue_template__ = __webpack_require__(169)
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
@@ -29936,17 +30050,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 163 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(164);
+var content = __webpack_require__(166);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(130)("c59b15f6", content, false);
+var update = __webpack_require__(5)("c59b15f6", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29962,10 +30076,10 @@ if(false) {
 }
 
 /***/ }),
-/* 164 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -29976,7 +30090,7 @@ exports.push([module.i, "\n.v-spinner .v-moon1\n{\n\n    -webkit-animation: v-mo
 
 
 /***/ }),
-/* 165 */
+/* 167 */
 /***/ (function(module, exports) {
 
 /**
@@ -30009,7 +30123,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 166 */
+/* 168 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30087,7 +30201,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 167 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -30132,6282 +30246,58 @@ if (false) {
 }
 
 /***/ }),
-/* 168 */
+/* 170 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(133);
+
 
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["default"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vue_router__["default"]({
+var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["default"]({
     routes: [{
         path: '/',
         redirect: '/dashboard'
     }, {
         name: 'dashboard',
         path: '/dashboard',
-        component: __webpack_require__(169)
+        component: __webpack_require__(172)
     }, {
         name: 'users',
         path: '/users',
-        component: __webpack_require__(172)
+        component: __webpack_require__(175)
     }, {
         name: 'files',
         path: '/files',
-        component: __webpack_require__(204)
+        component: __webpack_require__(207)
     }, {
         name: 'settings',
         path: '/settings',
-        component: __webpack_require__(207)
+        component: __webpack_require__(217)
     }]
-}));
-
-/***/ }),
-/* 169 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(170)
-/* template */
-var __vue_template__ = __webpack_require__(171)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\pages\\Home.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Home.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-52196f3b", Component.options)
-  } else {
-    hotAPI.reload("data-v-52196f3b", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 170 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('pages.Home.vue');
-
-        var self = this;
-
-        setTimeout(function () {
-            self.$store.commit('hideLoader');
-        }, 1500);
-    }
 });
+
+router.beforeEach(function (to, from, next) {
+    __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].commit('showLoader');
+    next();
+});
+
+router.afterEach(function (to, from) {
+    setTimeout(function () {
+        __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].commit('hideLoader');
+    }, 1000);
+});
+
+/* harmony default export */ __webpack_exports__["a"] = (router);
 
 /***/ }),
 /* 171 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    DASHBOARD VUE\n")])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-52196f3b", module.exports)
-  }
-}
-
-/***/ }),
-/* 172 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(173)
-/* template */
-var __vue_template__ = __webpack_require__(203)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\pages\\Users.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Users.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ea88d448", Component.options)
-  } else {
-    hotAPI.reload("data-v-ea88d448", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 173 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_UserLists_vue__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_UserLists_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_UserLists_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_GroupLists_vue__ = __webpack_require__(185);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_GroupLists_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_GroupLists_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_PermissionLists_vue__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_PermissionLists_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_PermissionLists_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        UserLists: __WEBPACK_IMPORTED_MODULE_0__components_UserLists_vue___default.a,
-        GroupLists: __WEBPACK_IMPORTED_MODULE_1__components_GroupLists_vue___default.a,
-        PermissionLists: __WEBPACK_IMPORTED_MODULE_2__components_PermissionLists_vue___default.a
-    },
-    data: function data() {
-        return {
-            active: ''
-        };
-    },
-    mounted: function mounted() {
-        console.log('pages.Users.vue');
-
-        var self = this;
-
-        setTimeout(function () {
-            self.$store.commit('hideLoader');
-        }, 1500);
-    }
-});
-
-/***/ }),
-/* 174 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(175)
-/* template */
-var __vue_template__ = __webpack_require__(184)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\UserLists.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] UserLists.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6f2ea27c", Component.options)
-  } else {
-    hotAPI.reload("data-v-6f2ea27c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 175 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__UserFormAdd_vue__ = __webpack_require__(176);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__UserFormAdd_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__UserFormAdd_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__UserFormEdit_vue__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__UserFormEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__UserFormEdit_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        UserFormAdd: __WEBPACK_IMPORTED_MODULE_0__UserFormAdd_vue___default.a,
-        UserFormEdit: __WEBPACK_IMPORTED_MODULE_1__UserFormEdit_vue___default.a
-    },
-    data: function data() {
-        return {
-            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Name', value: 'name', align: 'left', sortable: false }, { text: 'Email', value: 'email', align: 'left', sortable: false }, { text: 'Permissions', value: 'permissions', align: 'left', sortable: false }, { text: 'Last Login', value: 'last_login', align: 'left', sortable: false }, { text: 'Active', value: 'active', align: 'left', sortable: false }],
-            items: [],
-            totalPages: 0,
-            page: 1,
-
-            filters: {
-                name: '',
-                email: ''
-            },
-
-            dialogs: {
-                showPermissions: {
-                    items: [],
-                    show: false
-                },
-                edit: {
-                    user: {},
-                    show: false
-                },
-                add: {
-                    show: false
-                }
-            }
-        };
-    },
-    mounted: function mounted() {
-        var self = this;
-
-        self.loadUsers(function () {});
-
-        self.$eventBus.$on(['USER_ADDED', 'USER_UPDATED', 'USER_DELETED', 'GROUP_ADDED'], function () {
-            self.loadUsers(function () {});
-        });
-    },
-
-    watch: {
-        page: function page(val) {
-            var self = this;
-
-            self.page = val;
-
-            self.loadUsers(function () {});
-        },
-
-        'filters.name': _.debounce(function () {
-            var self = this;
-            self.loadUsers(function () {});
-        }, 700),
-        'filters.email': _.debounce(function () {
-            var self = this;
-            self.loadUsers(function () {});
-        }, 700)
-    },
-    methods: {
-        trash: function trash(user) {
-            var self = this;
-
-            self.$store.commit('showDialog', {
-                type: "confirm",
-                title: "Confirm Deletion",
-                message: "Are you sure you want to delete this user?",
-                okCb: function okCb() {
-
-                    axios.delete('/ajax/users/' + user.id).then(function (response) {
-
-                        self.$store.commit('showSnackbar', {
-                            message: response.data.message,
-                            color: 'success',
-                            duration: 3000
-                        });
-
-                        self.$eventBus.$emit('USER_DELETED');
-                    }).catch(function (error) {
-                        if (error.response) {
-                            self.$store.commit('showSnackbar', {
-                                message: error.response.data.message,
-                                color: 'error',
-                                duration: 3000
-                            });
-                        } else if (error.request) {
-                            console.log(error.request);
-                        } else {
-                            console.log('Error', error.message);
-                        }
-                    });
-                },
-                cancelCb: function cancelCb() {
-                    console.log("CANCEL");
-                }
-            });
-        },
-        showDialog: function showDialog(dialog, data) {
-
-            var self = this;
-
-            switch (dialog) {
-                case 'user_permissions':
-                    self.dialogs.showPermissions.items = data;
-                    setTimeout(function () {
-                        self.dialogs.showPermissions.show = true;
-                    }, 500);
-                    break;
-                case 'user_edit':
-                    self.dialogs.edit.user = data;
-                    setTimeout(function () {
-                        self.dialogs.edit.show = true;
-                    }, 500);
-                    break;
-                case 'user_add':
-                    setTimeout(function () {
-                        self.dialogs.add.show = true;
-                    }, 500);
-                    break;
-            }
-        },
-        loadUsers: function loadUsers(cb) {
-
-            var self = this;
-
-            var params = {
-                name: self.filters.name,
-                email: self.filters.email,
-                page: self.page
-            };
-
-            axios.get('/ajax/users', { params: params }).then(function (response) {
-                self.items = response.data.data.data;
-                self.totalPages = response.data.data.last_page;
-                cb();
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 176 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(177)
-/* template */
-var __vue_template__ = __webpack_require__(178)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\UserFormAdd.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] UserFormAdd.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-27f8532a", Component.options)
-  } else {
-    hotAPI.reload("data-v-27f8532a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 177 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-
-        var self = this;
-
-        return {
-            valid: false,
-            name: '',
-            nameRules: [function (v) {
-                return !!v || 'Name is required';
-            }],
-            email: '',
-            emailRules: [function (v) {
-                return !!v || 'E-mail is required';
-            }, function (v) {
-                return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-                );
-            }],
-            password: '',
-            passwordRules: [function (v) {
-                return !!v || 'Password is required';
-            }, function (v) {
-                return v && v.length >= 8 || 'Password must be atleast 8 characters.';
-            }],
-            passwordConfirm: '',
-            passwordConfirmRules: [function (v) {
-                return !(v !== self.password) || 'Password do not match.';
-            }],
-            permissions: [],
-            groups: [],
-            active: '',
-            options: {
-                permissions: [],
-                permissionValues: [{ label: 'Allow', value: 1 }, { label: 'Deny', value: -1 }, { label: 'Inherit', value: 0 }],
-                groups: []
-            },
-            selectedPermission: {},
-            selectedPermissionValue: 0,
-
-            alert: {
-                show: false,
-                icon: '',
-                color: '',
-                message: ''
-            }
-        };
-    },
-    mounted: function mounted() {
-        console.log('components.UserFormAdd.vue');
-
-        var self = this;
-
-        self.loadPermissions(function (cb) {});
-        self.loadGroups(function (cb) {});
-
-        self.$eventBus.$on(['GROUP_ADDED'], function () {
-            self.loadGroups(function () {});
-        });
-    },
-
-    methods: {
-        save: function save() {
-
-            var self = this;
-
-            var payload = {
-                name: self.name,
-                email: self.email,
-                password: self.password,
-                active: self.active ? moment().format('YYYY-MM-DD') : null,
-                permissions: self.permissions,
-                groups: self.groups
-            };
-
-            self.$store.commit('showLoader');
-
-            axios.post('/ajax/users', payload).then(function (response) {
-
-                self.$store.commit('showSnackbar', {
-                    message: response.data.message,
-                    color: 'success',
-                    duration: 3000
-                });
-
-                self.$eventBus.$emit('USER_ADDED');
-                self.$store.commit('hideLoader');
-
-                // reset
-                self.$refs.userFormAdd.reset();
-                self.permissions = [];
-            }).catch(function (error) {
-                if (error.response) {
-                    self.$store.commit('showSnackbar', {
-                        message: error.response.data.message,
-                        color: 'error',
-                        duration: 3000
-                    });
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
-                    console.log('Error', error.message);
-                }
-            });
-        },
-        addSpecialPermission: function addSpecialPermission() {
-            var self = this;
-
-            _.each(self.options.permissions, function (p) {
-
-                if (self.selectedPermission === p.permission) {
-
-                    if (!self.existsInPermissions(self.selectedPermission)) {
-                        p.value = self.selectedPermissionValue;
-                        self.permissions.push(p);
-                    }
-                }
-            });
-
-            console.log(self.permissions);
-        },
-        existsInPermissions: function existsInPermissions(permissionKey) {
-            var self = this;
-            var found = false;
-            _.each(self.permissions, function (p) {
-                if (p.permission === permissionKey) found = true;
-            });
-            return found;
-        },
-        loadPermissions: function loadPermissions(cb) {
-
-            var self = this;
-
-            var params = {
-                paginate: 'no'
-            };
-
-            axios.get('/ajax/permissions', { params: params }).then(function (response) {
-                self.options.permissions = response.data.data;
-                console.log(self.options.permissions);
-                cb();
-            });
-        },
-        loadGroups: function loadGroups(cb) {
-
-            var self = this;
-
-            var params = {
-                paginate: 'no'
-            };
-
-            axios.get('/ajax/groups', { params: params }).then(function (response) {
-                self.options.groups = response.data.data;
-
-                _.each(self.options.groups, function (g) {
-                    g.selected = false;
-                });
-
-                console.log(self.options.groups);
-                cb();
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 178 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "v-card",
-        { attrs: { dark: "" } },
-        [
-          _c(
-            "v-form",
-            {
-              ref: "userFormAdd",
-              attrs: { "lazy-validation": "" },
-              model: {
-                value: _vm.valid,
-                callback: function($$v) {
-                  _vm.valid = $$v
-                },
-                expression: "valid"
-              }
-            },
-            [
-              _c(
-                "v-container",
-                { attrs: { "grid-list-md": "" } },
-                [
-                  _c(
-                    "v-layout",
-                    { attrs: { row: "", wrap: "" } },
-                    [
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm6: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "First Name",
-                              rules: _vm.nameRules
-                            },
-                            model: {
-                              value: _vm.name,
-                              callback: function($$v) {
-                                _vm.name = $$v
-                              },
-                              expression: "name"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm6: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Email",
-                              rules: _vm.emailRules
-                            },
-                            model: {
-                              value: _vm.email,
-                              callback: function($$v) {
-                                _vm.email = $$v
-                              },
-                              expression: "email"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm6: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Password",
-                              type: "password",
-                              rules: _vm.passwordRules
-                            },
-                            model: {
-                              value: _vm.password,
-                              callback: function($$v) {
-                                _vm.password = $$v
-                              },
-                              expression: "password"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm6: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Confirm Password",
-                              type: "password",
-                              rules: _vm.passwordConfirmRules
-                            },
-                            model: {
-                              value: _vm.passwordConfirm,
-                              callback: function($$v) {
-                                _vm.passwordConfirm = $$v
-                              },
-                              expression: "passwordConfirm"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm6: "" } },
-                        [
-                          _c("v-switch", {
-                            attrs: { label: "Pre-Activate Account", dark: "" },
-                            model: {
-                              value: _vm.active,
-                              callback: function($$v) {
-                                _vm.active = $$v
-                              },
-                              expression: "active"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [_c("v-spacer")],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "h1",
-                            { staticClass: "title" },
-                            [
-                              _c("v-icon", [_vm._v("vpn_key")]),
-                              _vm._v(" Special Permissions")
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-alert",
-                            {
-                              attrs: {
-                                color: "info",
-                                icon: "info",
-                                value: "true"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                '\n                        Special Permissions are permission exclusive to this user. Permissions defined here\n                        are more superior than any permission that is in his group. So if the User belongs to a group that has permission to "create something"\n                        but then is denied to "create something" here, the user will be denied on that permission. In short, special permissions\n                        has high priority that group permissions.\n                    '
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("v-divider")
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c("v-select", {
-                            attrs: {
-                              label: "Select Permission",
-                              items: _vm.options.permissions,
-                              dark: "",
-                              "item-text": "title",
-                              "item-value": "permission"
-                            },
-                            model: {
-                              value: _vm.selectedPermission,
-                              callback: function($$v) {
-                                _vm.selectedPermission = $$v
-                              },
-                              expression: "selectedPermission"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c("v-select", {
-                            attrs: {
-                              label: "Permission Value",
-                              items: _vm.options.permissionValues,
-                              dark: "",
-                              "item-text": "label",
-                              "item-value": "value"
-                            },
-                            model: {
-                              value: _vm.selectedPermissionValue,
-                              callback: function($$v) {
-                                _vm.selectedPermissionValue = $$v
-                              },
-                              expression: "selectedPermissionValue"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              staticClass: "blue lighten-1",
-                              attrs: { dark: "" },
-                              on: {
-                                click: function($event) {
-                                  _vm.addSpecialPermission()
-                                }
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "\n                        Add Permission\n                        "
-                              ),
-                              _c("v-icon", { attrs: { right: "", dark: "" } }, [
-                                _vm._v("add")
-                              ])
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("v-flex", { attrs: { xs12: "" } }, [
-                        _c(
-                          "div",
-                          { staticClass: "permissions_container" },
-                          [
-                            _vm._l(_vm.permissions, function(p, k) {
-                              return _c(
-                                "v-chip",
-                                {
-                                  key: k,
-                                  staticClass: "white--text",
-                                  class: {
-                                    green: p.value == 1,
-                                    red: p.value == -1,
-                                    blue: p.value == 0
-                                  }
-                                },
-                                [
-                                  p.value == -1
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "red darken-4",
-                                          attrs: { title: "Deny" }
-                                        },
-                                        [_c("v-icon", [_vm._v("block")])],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  p.value == 1
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "green darken-4",
-                                          attrs: { title: "Allow" }
-                                        },
-                                        [
-                                          _c("v-icon", [_vm._v("check_circle")])
-                                        ],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  p.value == 0
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "blue darken-4",
-                                          attrs: { title: "Inherit" }
-                                        },
-                                        [_c("v-icon", [_vm._v("swap_horiz")])],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(
-                                    "\n                            " +
-                                      _vm._s(p.title) +
-                                      "\n                        "
-                                  )
-                                ],
-                                1
-                              )
-                            }),
-                            _vm._v(" "),
-                            _vm.permissions.length === 0
-                              ? _c("div", [
-                                  _vm._v("No special permissions assigned.")
-                                ])
-                              : _vm._e()
-                          ],
-                          2
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [_c("v-spacer")],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "h1",
-                            { staticClass: "title" },
-                            [
-                              _c("v-icon", [_vm._v("people")]),
-                              _vm._v(" Groups")
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("v-divider")
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        _vm._l(_vm.options.groups, function(g, k) {
-                          return _c("v-switch", {
-                            key: k,
-                            attrs: { label: g.name, dark: "" },
-                            model: {
-                              value: _vm.groups[g.id],
-                              callback: function($$v) {
-                                _vm.$set(_vm.groups, g.id, $$v)
-                              },
-                              expression: "groups[g.id]"
-                            }
-                          })
-                        })
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                disabled: !_vm.valid,
-                                color: "primary",
-                                dark: ""
-                              },
-                              on: {
-                                click: function($event) {
-                                  _vm.save()
-                                }
-                              }
-                            },
-                            [_vm._v("Save")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-27f8532a", module.exports)
-  }
-}
-
-/***/ }),
-/* 179 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(180)
-}
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(182)
-/* template */
-var __vue_template__ = __webpack_require__(183)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-fa4e8d5e"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\UserFormEdit.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] UserFormEdit.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-fa4e8d5e", Component.options)
-  } else {
-    hotAPI.reload("data-v-fa4e8d5e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 180 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(181);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(130)("3c7ea0d0", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fa4e8d5e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./UserFormEdit.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fa4e8d5e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./UserFormEdit.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 181 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(5)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.permissions_container[data-v-fa4e8d5e] {\n    padding: 10px;\n    background: hsla(0,0%,100%,.1);\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 182 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        propUserId: {
-            required: true
-        }
-    },
-    data: function data() {
-
-        var self = this;
-
-        return {
-            valid: false,
-            name: '',
-            nameRules: [function (v) {
-                return !!v || 'Name is required';
-            }],
-            email: '',
-            emailRules: [function (v) {
-                return !!v || 'E-mail is required';
-            }, function (v) {
-                return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-                );
-            }],
-            password: '',
-            passwordRules: [function (v) {
-                return !!v || 'Password is required';
-            }, function (v) {
-                return v && v.length >= 8 || 'Password must be atleast 8 characters.';
-            }],
-            passwordConfirm: '',
-            passwordConfirmRules: [function (v) {
-                return !(v !== self.password) || 'Password do not match.';
-            }],
-            permissions: [],
-            groups: [],
-            active: '',
-            options: {
-                permissions: [],
-                permissionValues: [{ label: 'Allow', value: 1 }, { label: 'Deny', value: -1 }, { label: 'Inherit', value: 0 }],
-                groups: []
-            },
-            selectedPermission: {},
-            selectedPermissionValue: 0,
-
-            alert: {
-                show: false,
-                icon: '',
-                color: '',
-                message: ''
-            }
-        };
-    },
-    mounted: function mounted() {
-        console.log('components.UserFormAdd.vue');
-
-        var self = this;
-
-        self.loadPermissions(function () {
-            self.loadGroups(function () {});
-        });
-
-        self.$eventBus.$on(['GROUP_ADDED'], function () {
-            self.loadGroups(function () {});
-        });
-    },
-
-    watch: {
-        propUserId: function propUserId(val) {
-            if (val) this.loadUser(function () {});
-        }
-    },
-    methods: {
-        removePermission: function removePermission(i) {
-
-            var self = this;
-
-            self.permissions.splice(i, 1);
-        },
-        save: function save() {
-
-            var self = this;
-
-            var payload = {
-                name: self.name,
-                email: self.email,
-                active: self.active ? moment().format('YYYY-MM-DD') : null,
-                permissions: self.permissions,
-                groups: self.groups
-            };
-
-            self.$store.commit('showLoader');
-
-            axios.put('/ajax/users/' + self.propUserId, payload).then(function (response) {
-
-                self.$store.commit('showSnackbar', {
-                    message: response.data.message,
-                    color: 'success',
-                    duration: 3000
-                });
-
-                self.$eventBus.$emit('USER_UPDATED');
-                self.$store.commit('hideLoader');
-            }).catch(function (error) {
-                if (error.response) {
-                    self.$store.commit('showSnackbar', {
-                        message: error.response.data.message,
-                        color: 'error',
-                        duration: 3000
-                    });
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
-                    console.log('Error', error.message);
-                }
-            });
-        },
-        addSpecialPermission: function addSpecialPermission() {
-            var self = this;
-
-            _.each(self.options.permissions, function (p) {
-
-                if (self.selectedPermission === p.permission) {
-
-                    if (!self.existsInPermissions(self.selectedPermission)) {
-                        p.value = self.selectedPermissionValue;
-                        self.permissions.push(p);
-                    }
-                }
-            });
-
-            console.log(self.permissions);
-        },
-        existsInPermissions: function existsInPermissions(permissionKey) {
-            var self = this;
-            var found = false;
-            _.each(self.permissions, function (p) {
-                if (p.permission === permissionKey) found = true;
-            });
-            return found;
-        },
-        loadUser: function loadUser(cb) {
-
-            var self = this;
-
-            // reset first
-            self.groups = [];
-
-            axios.get('/ajax/users/' + self.propUserId).then(function (response) {
-                var User = response.data.data;
-
-                self.name = User.name;
-                self.email = User.email;
-                self.active = User.active !== null;
-                self.permissions = User.permissions;
-
-                // groups
-                _.each(User.groups, function (g) {
-                    self.groups[g.id] = true;
-                });
-
-                console.log(User);
-                cb();
-            });
-        },
-        loadPermissions: function loadPermissions(cb) {
-
-            var self = this;
-
-            var params = {
-                paginate: 'no'
-            };
-
-            axios.get('/ajax/permissions', { params: params }).then(function (response) {
-                self.options.permissions = response.data.data;
-                console.log(self.options.permissions);
-                cb();
-            });
-        },
-        loadGroups: function loadGroups(cb) {
-
-            var self = this;
-
-            var params = {
-                paginate: 'no'
-            };
-
-            axios.get('/ajax/groups', { params: params }).then(function (response) {
-                self.options.groups = response.data.data;
-
-                _.each(self.options.groups, function (g) {
-                    g.selected = false;
-                });
-
-                console.log(self.options.groups);
-                cb();
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 183 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "v-card",
-        { attrs: { dark: "" } },
-        [
-          _c(
-            "v-form",
-            {
-              ref: "userFormEdit",
-              attrs: { "lazy-validation": "" },
-              model: {
-                value: _vm.valid,
-                callback: function($$v) {
-                  _vm.valid = $$v
-                },
-                expression: "valid"
-              }
-            },
-            [
-              _c(
-                "v-container",
-                { attrs: { "grid-list-md": "" } },
-                [
-                  _c(
-                    "v-layout",
-                    { attrs: { row: "", wrap: "" } },
-                    [
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm6: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "First Name",
-                              rules: _vm.nameRules
-                            },
-                            model: {
-                              value: _vm.name,
-                              callback: function($$v) {
-                                _vm.name = $$v
-                              },
-                              expression: "name"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm6: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Email",
-                              rules: _vm.emailRules
-                            },
-                            model: {
-                              value: _vm.email,
-                              callback: function($$v) {
-                                _vm.email = $$v
-                              },
-                              expression: "email"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm6: "" } },
-                        [
-                          _c("v-switch", {
-                            attrs: { label: "Pre-Activate Account", dark: "" },
-                            model: {
-                              value: _vm.active,
-                              callback: function($$v) {
-                                _vm.active = $$v
-                              },
-                              expression: "active"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [_c("v-spacer")],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "h1",
-                            { staticClass: "title" },
-                            [
-                              _c("v-icon", [_vm._v("vpn_key")]),
-                              _vm._v(" Special Permissions")
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-alert",
-                            {
-                              attrs: {
-                                color: "info",
-                                icon: "info",
-                                value: "true"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                '\n                        Special Permissions are permission exclusive to this user. Permissions defined here\n                        are more superior than any permission that is in his group. So if the User belongs to a group that has permission to "create something"\n                        but then is denied to "create something" here, the user will be denied on that permission. In short, special permissions\n                        has high priority that group permissions.\n                    '
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("v-divider")
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c("v-select", {
-                            attrs: {
-                              label: "Select Permission",
-                              items: _vm.options.permissions,
-                              dark: "",
-                              "item-text": "title",
-                              "item-value": "permission"
-                            },
-                            model: {
-                              value: _vm.selectedPermission,
-                              callback: function($$v) {
-                                _vm.selectedPermission = $$v
-                              },
-                              expression: "selectedPermission"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c("v-select", {
-                            attrs: {
-                              label: "Permission Value",
-                              items: _vm.options.permissionValues,
-                              dark: "",
-                              "item-text": "label",
-                              "item-value": "value"
-                            },
-                            model: {
-                              value: _vm.selectedPermissionValue,
-                              callback: function($$v) {
-                                _vm.selectedPermissionValue = $$v
-                              },
-                              expression: "selectedPermissionValue"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              staticClass: "blue lighten-1",
-                              attrs: { dark: "" },
-                              on: {
-                                click: function($event) {
-                                  _vm.addSpecialPermission()
-                                }
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "\n                        Add Permission\n                        "
-                              ),
-                              _c("v-icon", { attrs: { right: "", dark: "" } }, [
-                                _vm._v("add")
-                              ])
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("v-flex", { attrs: { xs12: "" } }, [
-                        _c(
-                          "div",
-                          { staticClass: "permissions_container" },
-                          [
-                            _vm._l(_vm.permissions, function(p, k) {
-                              return _c(
-                                "v-chip",
-                                {
-                                  key: k,
-                                  staticClass: "white--text",
-                                  class: {
-                                    green: p.value == 1,
-                                    red: p.value == -1,
-                                    blue: p.value == 0
-                                  },
-                                  attrs: { close: "" },
-                                  on: {
-                                    input: function($event) {
-                                      _vm.removePermission(k)
-                                    }
-                                  }
-                                },
-                                [
-                                  p.value == -1
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "red darken-4",
-                                          attrs: { title: "Deny" }
-                                        },
-                                        [_c("v-icon", [_vm._v("block")])],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  p.value == 1
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "green darken-4",
-                                          attrs: { title: "Allow" }
-                                        },
-                                        [
-                                          _c("v-icon", [_vm._v("check_circle")])
-                                        ],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  p.value == 0
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "blue darken-4",
-                                          attrs: { title: "Inherit" }
-                                        },
-                                        [_c("v-icon", [_vm._v("swap_horiz")])],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(
-                                    "\n                            " +
-                                      _vm._s(p.title) +
-                                      "\n                        "
-                                  )
-                                ],
-                                1
-                              )
-                            }),
-                            _vm._v(" "),
-                            _vm.permissions.length === 0
-                              ? _c("div", [
-                                  _vm._v("No special permissions assigned.")
-                                ])
-                              : _vm._e()
-                          ],
-                          2
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [_c("v-spacer")],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "h1",
-                            { staticClass: "title" },
-                            [
-                              _c("v-icon", [_vm._v("people")]),
-                              _vm._v(" Groups")
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("v-divider")
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        _vm._l(_vm.options.groups, function(g, k) {
-                          return _c("v-switch", {
-                            key: k,
-                            attrs: { label: g.name, dark: "" },
-                            model: {
-                              value: _vm.groups[g.id],
-                              callback: function($$v) {
-                                _vm.$set(_vm.groups, g.id, $$v)
-                              },
-                              expression: "groups[g.id]"
-                            }
-                          })
-                        })
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                disabled: !_vm.valid,
-                                color: "primary",
-                                dark: ""
-                              },
-                              on: {
-                                click: function($event) {
-                                  _vm.save()
-                                }
-                              }
-                            },
-                            [_vm._v("Update")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-fa4e8d5e", module.exports)
-  }
-}
-
-/***/ }),
-/* 184 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "component-wrap" },
-    [
-      _c(
-        "v-card",
-        { attrs: { dark: "" } },
-        [
-          _c(
-            "v-container",
-            { attrs: { "grid-list-md": "" } },
-            [
-              _c(
-                "v-layout",
-                { attrs: { row: "", wrap: "" } },
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm12: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "blue lighten-1",
-                          attrs: { dark: "" },
-                          on: {
-                            click: function($event) {
-                              _vm.showDialog("user_add")
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        New User\n                        "
-                          ),
-                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
-                            _vm._v("add")
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm6: "" } },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          "prepend-icon": "search",
-                          box: "",
-                          dark: "",
-                          label: "Filter By Name"
-                        },
-                        model: {
-                          value: _vm.filters.name,
-                          callback: function($$v) {
-                            _vm.filters.name = $$v
-                          },
-                          expression: "filters.name"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm6: "" } },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          "prepend-icon": "search",
-                          box: "",
-                          dark: "",
-                          label: "Filter By Email"
-                        },
-                        model: {
-                          value: _vm.filters.email,
-                          callback: function($$v) {
-                            _vm.filters.email = $$v
-                          },
-                          expression: "filters.email"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("v-data-table", {
-        staticClass: "elevation-1",
-        attrs: { headers: _vm.headers, items: _vm.items, "hide-actions": "" },
-        scopedSlots: _vm._u([
-          {
-            key: "headerCell",
-            fn: function(props) {
-              return [
-                props.header.value == "name"
-                  ? _c(
-                      "span",
-                      [
-                        _c("v-icon", [_vm._v("person")]),
-                        _vm._v(
-                          " " + _vm._s(props.header.text) + "\n            "
-                        )
-                      ],
-                      1
-                    )
-                  : props.header.value == "email"
-                    ? _c(
-                        "span",
-                        [
-                          _c("v-icon", [_vm._v("email")]),
-                          _vm._v(
-                            " " + _vm._s(props.header.text) + "\n            "
-                          )
-                        ],
-                        1
-                      )
-                    : props.header.value == "permissions"
-                      ? _c(
-                          "span",
-                          [
-                            _c("v-icon", [_vm._v("vpn_key")]),
-                            _vm._v(
-                              " " + _vm._s(props.header.text) + "\n            "
-                            )
-                          ],
-                          1
-                        )
-                      : props.header.value == "last_login"
-                        ? _c(
-                            "span",
-                            [
-                              _c("v-icon", [_vm._v("av_timer")]),
-                              _vm._v(
-                                " " +
-                                  _vm._s(props.header.text) +
-                                  "\n            "
-                              )
-                            ],
-                            1
-                          )
-                        : _c("span", [_vm._v(_vm._s(props.header.text))])
-              ]
-            }
-          },
-          {
-            key: "items",
-            fn: function(props) {
-              return [
-                _c(
-                  "td",
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.showDialog("user_edit", props.item)
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "v-icon",
-                          { staticClass: "blue--text", attrs: { dark: "" } },
-                          [_vm._v("edit")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.trash(props.item)
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "v-icon",
-                          { staticClass: "red--text", attrs: { dark: "" } },
-                          [_vm._v("delete")]
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(props.item.name))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(props.item.email))]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: {
-                          small: "",
-                          outline: "",
-                          round: "",
-                          color: "grey",
-                          dark: ""
-                        },
-                        on: {
-                          click: function($event) {
-                            _vm.showDialog(
-                              "user_permissions",
-                              props.item.permissions
-                            )
-                          }
-                        }
-                      },
-                      [_vm._v("Show")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("td", [
-                  _vm._v(
-                    _vm._s(_vm.$appFormatters.formatDate(props.item.last_login))
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  [
-                    _c(
-                      "v-avatar",
-                      { attrs: { outline: "" } },
-                      [
-                        props.item.active != null
-                          ? _c("v-icon", { staticClass: "green--text" }, [
-                              _vm._v("check_circle")
-                            ])
-                          : _c("v-icon", { staticClass: "grey--text" }, [
-                              _vm._v("error_outline")
-                            ])
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ]
-            }
-          }
-        ])
-      }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "text-xs-center" },
-        [
-          _c("v-pagination", {
-            attrs: { length: _vm.totalPages, "total-visible": 8, circle: "" },
-            model: {
-              value: _vm.page,
-              callback: function($$v) {
-                _vm.page = $$v
-              },
-              expression: "page"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: { lazy: "", absolute: "" },
-          model: {
-            value: _vm.dialogs.showPermissions.show,
-            callback: function($$v) {
-              _vm.dialogs.showPermissions.show = $$v
-            },
-            expression: "dialogs.showPermissions.show"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            [
-              _c("v-card-title", [
-                _c(
-                  "div",
-                  { staticClass: "headline" },
-                  [
-                    _c("v-icon", [_vm._v("vpn_key")]),
-                    _vm._v(" User Permissions")
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "v-card-text",
-                [
-                  _vm._l(_vm.dialogs.showPermissions.items, function(
-                    permission,
-                    key
-                  ) {
-                    return _c(
-                      "v-chip",
-                      {
-                        key: key,
-                        staticClass: "white--text",
-                        class: {
-                          green: permission.value == 1,
-                          red: permission.value == -1,
-                          blue: permission.value == 0
-                        }
-                      },
-                      [
-                        permission.value == -1
-                          ? _c(
-                              "v-avatar",
-                              {
-                                staticClass: "red darken-4",
-                                attrs: { title: "Deny" }
-                              },
-                              [_c("v-icon", [_vm._v("block")])],
-                              1
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        permission.value == 1
-                          ? _c(
-                              "v-avatar",
-                              {
-                                staticClass: "green darken-4",
-                                attrs: { title: "Allow" }
-                              },
-                              [_c("v-icon", [_vm._v("check_circle")])],
-                              1
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        permission.value == 0
-                          ? _c(
-                              "v-avatar",
-                              {
-                                staticClass: "blue darken-4",
-                                attrs: { title: "Inherit" }
-                              },
-                              [_c("v-icon", [_vm._v("swap_horiz")])],
-                              1
-                            )
-                          : _vm._e(),
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(permission.title) +
-                            "\n                "
-                        )
-                      ],
-                      1
-                    )
-                  }),
-                  _vm._v(" "),
-                  _vm.dialogs.showPermissions.items.length == 0
-                    ? _c("p", [_vm._v("No permissions")])
-                    : _vm._e()
-                ],
-                2
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: {
-            fullscreen: "",
-            transition: "dialog-bottom-transition",
-            overlay: false
-          },
-          model: {
-            value: _vm.dialogs.add.show,
-            callback: function($$v) {
-              _vm.dialogs.add.show = $$v
-            },
-            expression: "dialogs.add.show"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            [
-              _c(
-                "v-toolbar",
-                { staticClass: "primary", attrs: { dark: "" } },
-                [
-                  _c(
-                    "v-btn",
-                    {
-                      attrs: { icon: "", dark: "" },
-                      nativeOn: {
-                        click: function($event) {
-                          _vm.dialogs.add.show = false
-                        }
-                      }
-                    },
-                    [_c("v-icon", [_vm._v("close")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-toolbar-title", [_vm._v("Add User")]),
-                  _vm._v(" "),
-                  _c("v-spacer"),
-                  _vm._v(" "),
-                  _c(
-                    "v-toolbar-items",
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { dark: "", flat: "" },
-                          nativeOn: {
-                            click: function($event) {
-                              _vm.dialogs.add.show = false
-                            }
-                          }
-                        },
-                        [_vm._v("Done")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("v-card-text", [_c("user-form-add")], 1)
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: {
-            fullscreen: "",
-            laze: false,
-            transition: "dialog-bottom-transition",
-            overlay: false
-          },
-          model: {
-            value: _vm.dialogs.edit.show,
-            callback: function($$v) {
-              _vm.dialogs.edit.show = $$v
-            },
-            expression: "dialogs.edit.show"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            [
-              _c(
-                "v-toolbar",
-                { staticClass: "primary", attrs: { dark: "" } },
-                [
-                  _c(
-                    "v-btn",
-                    {
-                      attrs: { icon: "", dark: "" },
-                      nativeOn: {
-                        click: function($event) {
-                          _vm.dialogs.edit.show = false
-                        }
-                      }
-                    },
-                    [_c("v-icon", [_vm._v("close")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-toolbar-title", [_vm._v("Edit User")]),
-                  _vm._v(" "),
-                  _c("v-spacer"),
-                  _vm._v(" "),
-                  _c(
-                    "v-toolbar-items",
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { dark: "", flat: "" },
-                          nativeOn: {
-                            click: function($event) {
-                              _vm.dialogs.edit.show = false
-                            }
-                          }
-                        },
-                        [_vm._v("Done")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-card-text",
-                [
-                  _c("user-form-edit", {
-                    attrs: { propUserId: _vm.dialogs.edit.user.id }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6f2ea27c", module.exports)
-  }
-}
-
-/***/ }),
-/* 185 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(186)
-/* template */
-var __vue_template__ = __webpack_require__(193)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\GroupLists.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] GroupLists.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-57e97d4e", Component.options)
-  } else {
-    hotAPI.reload("data-v-57e97d4e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 186 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__GroupFromAdd_vue__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__GroupFromAdd_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__GroupFromAdd_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__GroupFromEdit_vue__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__GroupFromEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__GroupFromEdit_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        GroupFormAdd: __WEBPACK_IMPORTED_MODULE_0__GroupFromAdd_vue___default.a,
-        GroupFormEdit: __WEBPACK_IMPORTED_MODULE_1__GroupFromEdit_vue___default.a
-    },
-    data: function data() {
-        return {
-            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Name', value: 'name', align: 'left', sortable: false }, { text: 'Permissions', value: 'permissions', align: 'left', sortable: false }, { text: 'Total Members', value: 'members_count', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
-            items: [],
-            totalPages: 0,
-            page: 1,
-
-            filters: {
-                name: ''
-            },
-
-            dialogs: {
-                showPermissions: {
-                    items: [],
-                    show: false
-                },
-                edit: {
-                    group: {},
-                    show: false
-                },
-                add: {
-                    show: false
-                }
-            }
-        };
-    },
-    mounted: function mounted() {
-        var self = this;
-
-        self.loadGroups(function () {});
-
-        self.$eventBus.$on(['GROUP_ADDED', 'GROUP_UPDATED', 'GROUP_DELETED'], function () {
-            self.loadGroups(function () {});
-        });
-    },
-
-    watch: {
-        page: function page(val) {
-            var self = this;
-
-            self.page = val;
-
-            self.loadGroups(function () {});
-        },
-
-        'filters.name': _.debounce(function () {
-            var self = this;
-            self.loadGroups(function () {});
-        }, 700)
-    },
-    methods: {
-        trash: function trash(group) {
-            var self = this;
-
-            self.$store.commit('showDialog', {
-                type: "confirm",
-                title: "Confirm Deletion",
-                message: "Are you sure you want to delete this group?",
-                okCb: function okCb() {
-
-                    axios.delete('/ajax/groups/' + group.id).then(function (response) {
-
-                        self.$store.commit('showSnackbar', {
-                            message: response.data.message,
-                            color: 'success',
-                            duration: 3000
-                        });
-
-                        self.$eventBus.$emit('GROUP_DELETED');
-                    }).catch(function (error) {
-                        if (error.response) {
-                            self.$store.commit('showSnackbar', {
-                                message: error.response.data.message,
-                                color: 'error',
-                                duration: 3000
-                            });
-                        } else if (error.request) {
-                            console.log(error.request);
-                        } else {
-                            console.log('Error', error.message);
-                        }
-                    });
-                },
-                cancelCb: function cancelCb() {
-                    console.log("CANCEL");
-                }
-            });
-        },
-        showDialog: function showDialog(dialog, data) {
-
-            var self = this;
-
-            switch (dialog) {
-                case 'group_permissions':
-                    self.dialogs.showPermissions.items = data;
-                    setTimeout(function () {
-                        self.dialogs.showPermissions.show = true;
-                    }, 500);
-                    break;
-                case 'group_edit':
-                    self.dialogs.edit.group = data;
-                    setTimeout(function () {
-                        self.dialogs.edit.show = true;
-                    }, 500);
-                    break;
-                case 'group_add':
-                    setTimeout(function () {
-                        self.dialogs.add.show = true;
-                    }, 500);
-                    break;
-            }
-        },
-        loadGroups: function loadGroups(cb) {
-
-            var self = this;
-
-            var params = {
-                name: self.filters.name,
-                page: self.page
-            };
-
-            axios.get('/ajax/groups', { params: params }).then(function (response) {
-                self.items = response.data.data.data;
-                self.totalPages = response.data.data.last_page;
-                cb();
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 187 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(188)
-/* template */
-var __vue_template__ = __webpack_require__(189)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\GroupFromAdd.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] GroupFromAdd.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ae295e0", Component.options)
-  } else {
-    hotAPI.reload("data-v-0ae295e0", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 188 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            valid: false,
-            name: '',
-            nameRules: [function (v) {
-                return !!v || 'Name is required';
-            }],
-            permissions: [],
-            selectedPermission: {},
-            selectedPermissionValue: 0,
-
-            options: {
-                permissions: [],
-                permissionValues: [{ label: 'Allow', value: 1 }, { label: 'Deny', value: -1 }]
-            }
-        };
-    },
-    mounted: function mounted() {
-        console.log('pages.Home.vue');
-
-        var self = this;
-
-        self.loadPermissions(function () {});
-    },
-
-    methods: {
-        save: function save() {
-
-            var self = this;
-
-            var payload = {
-                name: self.name,
-                permissions: self.permissions
-            };
-
-            self.$store.commit('showLoader');
-
-            axios.post('/ajax/groups', payload).then(function (response) {
-
-                self.$store.commit('showSnackbar', {
-                    message: response.data.message,
-                    color: 'success',
-                    duration: 3000
-                });
-                self.$store.commit('hideLoader');
-                self.$eventBus.$emit('GROUP_ADDED');
-
-                // reset
-                self.$refs.groupFormAdd.reset();
-                self.permissions = [];
-            }).catch(function (error) {
-                self.$store.commit('hideLoader');
-                if (error.response) {
-                    self.$store.commit('showSnackbar', {
-                        message: error.response.data.message,
-                        color: 'error',
-                        duration: 3000
-                    });
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
-                    console.log('Error', error.message);
-                }
-            });
-        },
-        addSpecialPermission: function addSpecialPermission() {
-            var self = this;
-
-            _.each(self.options.permissions, function (p) {
-
-                if (self.selectedPermission === p.permission) {
-
-                    if (!self.existsInPermissions(self.selectedPermission)) {
-                        p.value = self.selectedPermissionValue;
-                        self.permissions.push(p);
-                    }
-                }
-            });
-
-            console.log(self.permissions);
-        },
-        loadPermissions: function loadPermissions(cb) {
-
-            var self = this;
-
-            var params = {
-                paginate: 'no',
-                page: self.page
-            };
-
-            axios.get('/ajax/permissions', { params: params }).then(function (response) {
-                self.options.permissions = response.data.data;
-                cb();
-            });
-        },
-        existsInPermissions: function existsInPermissions(permissionKey) {
-            var self = this;
-            var found = false;
-            _.each(self.permissions, function (p) {
-                if (p.permission === permissionKey) found = true;
-            });
-            return found;
-        }
-    }
-});
-
-/***/ }),
-/* 189 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "component-wrap" },
-    [
-      _c(
-        "v-card",
-        { attrs: { dark: "" } },
-        [
-          _c(
-            "v-form",
-            {
-              ref: "groupFormAdd",
-              attrs: { "lazy-validation": "" },
-              model: {
-                value: _vm.valid,
-                callback: function($$v) {
-                  _vm.valid = $$v
-                },
-                expression: "valid"
-              }
-            },
-            [
-              _c(
-                "v-container",
-                { attrs: { "grid-list-md": "" } },
-                [
-                  _c(
-                    "v-layout",
-                    { attrs: { row: "", wrap: "" } },
-                    [
-                      _c("v-flex", { attrs: { xs12: "" } }, [
-                        _c("div", { staticClass: "body-2 white--text" }, [
-                          _vm._v("Group Details")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Group Name",
-                              rules: _vm.nameRules
-                            },
-                            model: {
-                              value: _vm.name,
-                              callback: function($$v) {
-                                _vm.name = $$v
-                              },
-                              expression: "name"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c("v-select", {
-                            attrs: {
-                              label: "Select Permission",
-                              items: _vm.options.permissions,
-                              dark: "",
-                              "item-text": "title",
-                              "item-value": "permission"
-                            },
-                            model: {
-                              value: _vm.selectedPermission,
-                              callback: function($$v) {
-                                _vm.selectedPermission = $$v
-                              },
-                              expression: "selectedPermission"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c("v-select", {
-                            attrs: {
-                              label: "Permission Value",
-                              items: _vm.options.permissionValues,
-                              dark: "",
-                              "item-text": "label",
-                              "item-value": "value"
-                            },
-                            model: {
-                              value: _vm.selectedPermissionValue,
-                              callback: function($$v) {
-                                _vm.selectedPermissionValue = $$v
-                              },
-                              expression: "selectedPermissionValue"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              staticClass: "blue lighten-1",
-                              attrs: { dark: "" },
-                              on: {
-                                click: function($event) {
-                                  _vm.addSpecialPermission()
-                                }
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "\n                        Add Permission\n                        "
-                              ),
-                              _c("v-icon", { attrs: { right: "", dark: "" } }, [
-                                _vm._v("add")
-                              ])
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("v-flex", { attrs: { xs12: "" } }, [
-                        _c(
-                          "div",
-                          { staticClass: "permissions_container" },
-                          [
-                            _vm._l(_vm.permissions, function(p, k) {
-                              return _c(
-                                "v-chip",
-                                {
-                                  key: k,
-                                  staticClass: "white--text",
-                                  class: {
-                                    green: p.value == 1,
-                                    red: p.value == -1,
-                                    blue: p.value == 0
-                                  }
-                                },
-                                [
-                                  p.value == -1
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "red darken-4",
-                                          attrs: { title: "Deny" }
-                                        },
-                                        [_c("v-icon", [_vm._v("block")])],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  p.value == 1
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "green darken-4",
-                                          attrs: { title: "Allow" }
-                                        },
-                                        [
-                                          _c("v-icon", [_vm._v("check_circle")])
-                                        ],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  p.value == 0
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "blue darken-4",
-                                          attrs: { title: "Inherit" }
-                                        },
-                                        [_c("v-icon", [_vm._v("swap_horiz")])],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(
-                                    "\n                            " +
-                                      _vm._s(p.title) +
-                                      "\n                        "
-                                  )
-                                ],
-                                1
-                              )
-                            }),
-                            _vm._v(" "),
-                            _vm.permissions.length === 0
-                              ? _c("div", [
-                                  _vm._v("No special permissions assigned.")
-                                ])
-                              : _vm._e()
-                          ],
-                          2
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                disabled: !_vm.valid,
-                                color: "primary",
-                                dark: ""
-                              },
-                              on: {
-                                click: function($event) {
-                                  _vm.save()
-                                }
-                              }
-                            },
-                            [_vm._v("Save")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0ae295e0", module.exports)
-  }
-}
-
-/***/ }),
-/* 190 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(191)
-/* template */
-var __vue_template__ = __webpack_require__(192)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\GroupFromEdit.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] GroupFromEdit.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-030e942b", Component.options)
-  } else {
-    hotAPI.reload("data-v-030e942b", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 191 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        propGroupId: {
-            required: true
-        }
-    },
-    data: function data() {
-        return {
-            valid: false,
-            name: '',
-            nameRules: [function (v) {
-                return !!v || 'Name is required';
-            }],
-            permissions: [],
-            selectedPermission: {},
-            selectedPermissionValue: 0,
-
-            options: {
-                permissions: [],
-                permissionValues: [{ label: 'Allow', value: 1 }, { label: 'Deny', value: -1 }]
-            }
-        };
-    },
-    mounted: function mounted() {
-        console.log('pages.Home.vue');
-
-        var self = this;
-
-        self.loadPermissions(function () {});
-    },
-
-    watch: {
-        propGroupId: function propGroupId(val) {
-            if (val) this.loadGroup(function () {});
-        }
-    },
-    methods: {
-        removePermission: function removePermission(i) {
-            this.permissions.splice(i, 1);
-        },
-        save: function save() {
-
-            var self = this;
-
-            var payload = {
-                name: self.name,
-                permissions: self.permissions
-            };
-
-            self.$store.commit('showLoader');
-
-            axios.put('/ajax/groups/' + self.propGroupId, payload).then(function (response) {
-
-                self.$store.commit('showSnackbar', {
-                    message: response.data.message,
-                    color: 'success',
-                    duration: 3000
-                });
-                self.$store.commit('hideLoader');
-                self.$eventBus.$emit('GROUP_UPDATED');
-            }).catch(function (error) {
-                self.$store.commit('hideLoader');
-                if (error.response) {
-                    self.$store.commit('showSnackbar', {
-                        message: error.response.data.message,
-                        color: 'error',
-                        duration: 3000
-                    });
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
-                    console.log('Error', error.message);
-                }
-            });
-        },
-        addSpecialPermission: function addSpecialPermission() {
-            var self = this;
-
-            _.each(self.options.permissions, function (p) {
-
-                if (self.selectedPermission === p.permission) {
-
-                    if (!self.existsInPermissions(self.selectedPermission)) {
-                        p.value = self.selectedPermissionValue;
-                        self.permissions.push(p);
-                    }
-                }
-            });
-
-            console.log(self.permissions);
-        },
-        loadPermissions: function loadPermissions(cb) {
-
-            var self = this;
-
-            var params = {
-                paginate: 'no',
-                page: self.page
-            };
-
-            axios.get('/ajax/permissions', { params: params }).then(function (response) {
-                self.options.permissions = response.data.data;
-                cb();
-            });
-        },
-        loadGroup: function loadGroup(cb) {
-
-            var self = this;
-
-            axios.get('/ajax/groups/' + self.propGroupId).then(function (response) {
-                var Group = response.data.data;
-                self.name = Group.name;
-                self.permissions = Group.permissions;
-                cb();
-            });
-        },
-        existsInPermissions: function existsInPermissions(permissionKey) {
-            var self = this;
-            var found = false;
-            _.each(self.permissions, function (p) {
-                if (p.permission === permissionKey) found = true;
-            });
-            return found;
-        }
-    }
-});
-
-/***/ }),
-/* 192 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "component-wrap" },
-    [
-      _c(
-        "v-card",
-        { attrs: { dark: "" } },
-        [
-          _c(
-            "v-form",
-            {
-              ref: "groupFormAdd",
-              attrs: { "lazy-validation": "" },
-              model: {
-                value: _vm.valid,
-                callback: function($$v) {
-                  _vm.valid = $$v
-                },
-                expression: "valid"
-              }
-            },
-            [
-              _c(
-                "v-container",
-                { attrs: { "grid-list-md": "" } },
-                [
-                  _c(
-                    "v-layout",
-                    { attrs: { row: "", wrap: "" } },
-                    [
-                      _c("v-flex", { attrs: { xs12: "" } }, [
-                        _c("div", { staticClass: "body-2 white--text" }, [
-                          _vm._v("Group Details")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Group Name",
-                              rules: _vm.nameRules
-                            },
-                            model: {
-                              value: _vm.name,
-                              callback: function($$v) {
-                                _vm.name = $$v
-                              },
-                              expression: "name"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c("v-select", {
-                            attrs: {
-                              label: "Select Permission",
-                              items: _vm.options.permissions,
-                              dark: "",
-                              "item-text": "title",
-                              "item-value": "permission"
-                            },
-                            model: {
-                              value: _vm.selectedPermission,
-                              callback: function($$v) {
-                                _vm.selectedPermission = $$v
-                              },
-                              expression: "selectedPermission"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c("v-select", {
-                            attrs: {
-                              label: "Permission Value",
-                              items: _vm.options.permissionValues,
-                              dark: "",
-                              "item-text": "label",
-                              "item-value": "value"
-                            },
-                            model: {
-                              value: _vm.selectedPermissionValue,
-                              callback: function($$v) {
-                                _vm.selectedPermissionValue = $$v
-                              },
-                              expression: "selectedPermissionValue"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              staticClass: "blue lighten-1",
-                              attrs: { dark: "" },
-                              on: {
-                                click: function($event) {
-                                  _vm.addSpecialPermission()
-                                }
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "\n                        Add Permission\n                        "
-                              ),
-                              _c("v-icon", { attrs: { right: "", dark: "" } }, [
-                                _vm._v("add")
-                              ])
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("v-flex", { attrs: { xs12: "" } }, [
-                        _c(
-                          "div",
-                          { staticClass: "permissions_container" },
-                          [
-                            _vm._l(_vm.permissions, function(p, k) {
-                              return _c(
-                                "v-chip",
-                                {
-                                  key: k,
-                                  staticClass: "white--text",
-                                  class: {
-                                    green: p.value == 1,
-                                    red: p.value == -1,
-                                    blue: p.value == 0
-                                  },
-                                  attrs: { close: "" },
-                                  on: {
-                                    input: function($event) {
-                                      _vm.removePermission(k)
-                                    }
-                                  }
-                                },
-                                [
-                                  p.value == -1
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "red darken-4",
-                                          attrs: { title: "Deny" }
-                                        },
-                                        [_c("v-icon", [_vm._v("block")])],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  p.value == 1
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "green darken-4",
-                                          attrs: { title: "Allow" }
-                                        },
-                                        [
-                                          _c("v-icon", [_vm._v("check_circle")])
-                                        ],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  p.value == 0
-                                    ? _c(
-                                        "v-avatar",
-                                        {
-                                          staticClass: "blue darken-4",
-                                          attrs: { title: "Inherit" }
-                                        },
-                                        [_c("v-icon", [_vm._v("swap_horiz")])],
-                                        1
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(
-                                    "\n                            " +
-                                      _vm._s(p.title) +
-                                      "\n                        "
-                                  )
-                                ],
-                                1
-                              )
-                            }),
-                            _vm._v(" "),
-                            _vm.permissions.length === 0
-                              ? _c("div", [
-                                  _vm._v("No special permissions assigned.")
-                                ])
-                              : _vm._e()
-                          ],
-                          2
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                disabled: !_vm.valid,
-                                color: "primary",
-                                dark: ""
-                              },
-                              on: {
-                                click: function($event) {
-                                  _vm.save()
-                                }
-                              }
-                            },
-                            [_vm._v("Update")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-030e942b", module.exports)
-  }
-}
-
-/***/ }),
-/* 193 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "component-wrap" },
-    [
-      _c(
-        "v-card",
-        { attrs: { dark: "" } },
-        [
-          _c(
-            "v-container",
-            { attrs: { "grid-list-md": "" } },
-            [
-              _c(
-                "v-layout",
-                { attrs: { row: "", wrap: "" } },
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm12: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "blue lighten-1",
-                          attrs: { dark: "" },
-                          on: {
-                            click: function($event) {
-                              _vm.showDialog("group_add")
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        New Group\n                        "
-                          ),
-                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
-                            _vm._v("add")
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "" } },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          "prepend-icon": "search",
-                          box: "",
-                          dark: "",
-                          label: "Filter By Name"
-                        },
-                        model: {
-                          value: _vm.filters.name,
-                          callback: function($$v) {
-                            _vm.filters.name = $$v
-                          },
-                          expression: "filters.name"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("v-data-table", {
-        staticClass: "elevation-1",
-        attrs: { headers: _vm.headers, items: _vm.items, "hide-actions": "" },
-        scopedSlots: _vm._u([
-          {
-            key: "headerCell",
-            fn: function(props) {
-              return [
-                props.header.value == "name"
-                  ? _c(
-                      "span",
-                      [
-                        _c("v-icon", [_vm._v("person")]),
-                        _vm._v(
-                          " " + _vm._s(props.header.text) + "\n            "
-                        )
-                      ],
-                      1
-                    )
-                  : props.header.value == "permissions"
-                    ? _c(
-                        "span",
-                        [
-                          _c("v-icon", [_vm._v("vpn_key")]),
-                          _vm._v(
-                            " " + _vm._s(props.header.text) + "\n            "
-                          )
-                        ],
-                        1
-                      )
-                    : props.header.value == "members_count"
-                      ? _c(
-                          "span",
-                          [
-                            _c("v-icon", [_vm._v("people")]),
-                            _vm._v(
-                              " " + _vm._s(props.header.text) + "\n            "
-                            )
-                          ],
-                          1
-                        )
-                      : props.header.value == "created_at"
-                        ? _c(
-                            "span",
-                            [
-                              _c("v-icon", [_vm._v("date_range")]),
-                              _vm._v(
-                                " " +
-                                  _vm._s(props.header.text) +
-                                  "\n            "
-                              )
-                            ],
-                            1
-                          )
-                        : _c("span", [_vm._v(_vm._s(props.header.text))])
-              ]
-            }
-          },
-          {
-            key: "items",
-            fn: function(props) {
-              return [
-                _c(
-                  "td",
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.showDialog("group_edit", props.item)
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "v-icon",
-                          { staticClass: "blue--text", attrs: { dark: "" } },
-                          [_vm._v("edit")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.trash(props.item)
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "v-icon",
-                          { staticClass: "red--text", attrs: { dark: "" } },
-                          [_vm._v("delete")]
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(props.item.name))]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: {
-                          small: "",
-                          outline: "",
-                          round: "",
-                          color: "grey",
-                          dark: ""
-                        },
-                        on: {
-                          click: function($event) {
-                            _vm.showDialog(
-                              "group_permissions",
-                              props.item.permissions
-                            )
-                          }
-                        }
-                      },
-                      [_vm._v("Show")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(props.item.members_count))]),
-                _vm._v(" "),
-                _c("td", [
-                  _vm._v(
-                    _vm._s(_vm.$appFormatters.formatDate(props.item.created_at))
-                  )
-                ])
-              ]
-            }
-          }
-        ])
-      }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "text-xs-center" },
-        [
-          _c("v-pagination", {
-            attrs: { length: _vm.totalPages, "total-visible": 8, circle: "" },
-            model: {
-              value: _vm.page,
-              callback: function($$v) {
-                _vm.page = $$v
-              },
-              expression: "page"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: { lazy: "", absolute: "" },
-          model: {
-            value: _vm.dialogs.showPermissions.show,
-            callback: function($$v) {
-              _vm.dialogs.showPermissions.show = $$v
-            },
-            expression: "dialogs.showPermissions.show"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            [
-              _c("v-card-title", [
-                _c(
-                  "div",
-                  { staticClass: "headline" },
-                  [
-                    _c("v-icon", [_vm._v("vpn_key")]),
-                    _vm._v(" Group Permissions")
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "v-card-text",
-                [
-                  _vm._l(_vm.dialogs.showPermissions.items, function(
-                    permission,
-                    key
-                  ) {
-                    return _c(
-                      "v-chip",
-                      {
-                        key: key,
-                        staticClass: "white--text",
-                        class: {
-                          green: permission.value == 1,
-                          red: permission.value == -1,
-                          blue: permission.value == 0
-                        }
-                      },
-                      [
-                        permission.value == -1
-                          ? _c(
-                              "v-avatar",
-                              {
-                                staticClass: "red darken-4",
-                                attrs: { title: "Deny" }
-                              },
-                              [_c("v-icon", [_vm._v("block")])],
-                              1
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        permission.value == 1
-                          ? _c(
-                              "v-avatar",
-                              {
-                                staticClass: "green darken-4",
-                                attrs: { title: "Allow" }
-                              },
-                              [_c("v-icon", [_vm._v("check_circle")])],
-                              1
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        permission.value == 0
-                          ? _c(
-                              "v-avatar",
-                              {
-                                staticClass: "blue darken-4",
-                                attrs: { title: "Inherit" }
-                              },
-                              [_c("v-icon", [_vm._v("swap_horiz")])],
-                              1
-                            )
-                          : _vm._e(),
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(permission.title) +
-                            "\n                "
-                        )
-                      ],
-                      1
-                    )
-                  }),
-                  _vm._v(" "),
-                  _vm.dialogs.showPermissions.items.length == 0
-                    ? _c("p", [_vm._v("No permissions")])
-                    : _vm._e()
-                ],
-                2
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: {
-            fullscreen: "",
-            transition: "dialog-bottom-transition",
-            overlay: false
-          },
-          model: {
-            value: _vm.dialogs.add.show,
-            callback: function($$v) {
-              _vm.dialogs.add.show = $$v
-            },
-            expression: "dialogs.add.show"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            [
-              _c(
-                "v-toolbar",
-                { staticClass: "primary", attrs: { dark: "" } },
-                [
-                  _c(
-                    "v-btn",
-                    {
-                      attrs: { icon: "", dark: "" },
-                      nativeOn: {
-                        click: function($event) {
-                          _vm.dialogs.add.show = false
-                        }
-                      }
-                    },
-                    [_c("v-icon", [_vm._v("close")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-toolbar-title", [_vm._v("Create New Group")]),
-                  _vm._v(" "),
-                  _c("v-spacer"),
-                  _vm._v(" "),
-                  _c(
-                    "v-toolbar-items",
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { dark: "", flat: "" },
-                          nativeOn: {
-                            click: function($event) {
-                              _vm.dialogs.add.show = false
-                            }
-                          }
-                        },
-                        [_vm._v("Done")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("v-card-text", [_c("group-form-add")], 1)
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: {
-            fullscreen: "",
-            laze: false,
-            transition: "dialog-bottom-transition",
-            overlay: false
-          },
-          model: {
-            value: _vm.dialogs.edit.show,
-            callback: function($$v) {
-              _vm.dialogs.edit.show = $$v
-            },
-            expression: "dialogs.edit.show"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            [
-              _c(
-                "v-toolbar",
-                { staticClass: "primary", attrs: { dark: "" } },
-                [
-                  _c(
-                    "v-btn",
-                    {
-                      attrs: { icon: "", dark: "" },
-                      nativeOn: {
-                        click: function($event) {
-                          _vm.dialogs.edit.show = false
-                        }
-                      }
-                    },
-                    [_c("v-icon", [_vm._v("close")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-toolbar-title", [_vm._v("Edit Group")]),
-                  _vm._v(" "),
-                  _c("v-spacer"),
-                  _vm._v(" "),
-                  _c(
-                    "v-toolbar-items",
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { dark: "", flat: "" },
-                          nativeOn: {
-                            click: function($event) {
-                              _vm.dialogs.edit.show = false
-                            }
-                          }
-                        },
-                        [_vm._v("Done")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-card-text",
-                [
-                  _c("group-form-edit", {
-                    attrs: { propGroupId: _vm.dialogs.edit.group.id }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-57e97d4e", module.exports)
-  }
-}
-
-/***/ }),
-/* 194 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(195)
-/* template */
-var __vue_template__ = __webpack_require__(202)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\PermissionLists.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] PermissionLists.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4378613e", Component.options)
-  } else {
-    hotAPI.reload("data-v-4378613e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 195 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        PermissionFormAdd: __WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue___default.a,
-        PermissionFormEdit: __WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue___default.a
-    },
-    data: function data() {
-        return {
-            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Title', value: 'name', align: 'left', sortable: false }, { text: 'Permission', value: 'permission', align: 'left', sortable: false }, { text: 'Description', value: 'description', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
-            items: [],
-            totalPages: 0,
-            page: 1,
-
-            filters: {
-                title: ''
-            },
-
-            dialogs: {
-                edit: {
-                    group: {},
-                    show: false
-                },
-                add: {
-                    show: false
-                }
-            }
-        };
-    },
-    mounted: function mounted() {
-        var self = this;
-
-        self.loadPermissions(function () {});
-
-        self.$eventBus.$on(['PERMISSION_ADDED', 'PERMISSION_UPDATED', 'PERMISSION_DELETED'], function () {
-            self.loadPermissions(function () {});
-        });
-    },
-
-    watch: {
-        page: function page(val) {
-            var self = this;
-
-            self.page = val;
-
-            self.loadPermissions(function () {});
-        },
-
-        'filters.title': _.debounce(function () {
-            var self = this;
-            self.loadPermissions(function () {});
-        }, 700)
-    },
-    methods: {
-        trash: function trash(permission) {
-            var self = this;
-
-            self.$store.commit('showDialog', {
-                type: "confirm",
-                title: "Confirm Deletion",
-                message: "Are you sure you want to delete this permission?",
-                okCb: function okCb() {
-
-                    axios.delete('/ajax/permissions/' + permission.id).then(function (response) {
-
-                        self.$store.commit('showSnackbar', {
-                            message: response.data.message,
-                            color: 'success',
-                            duration: 3000
-                        });
-
-                        self.$eventBus.$emit('PERMISSION_DELETED');
-                    }).catch(function (error) {
-                        if (error.response) {
-                            self.$store.commit('showSnackbar', {
-                                message: error.response.data.message,
-                                color: 'error',
-                                duration: 3000
-                            });
-                        } else if (error.request) {
-                            console.log(error.request);
-                        } else {
-                            console.log('Error', error.message);
-                        }
-                    });
-                },
-                cancelCb: function cancelCb() {
-                    console.log("CANCEL");
-                }
-            });
-        },
-        showDialog: function showDialog(dialog, data) {
-
-            var self = this;
-
-            switch (dialog) {
-                case 'permission_edit':
-                    self.dialogs.edit.group = data;
-                    setTimeout(function () {
-                        self.dialogs.edit.show = true;
-                    }, 500);
-                    break;
-                case 'permission_add':
-                    setTimeout(function () {
-                        self.dialogs.add.show = true;
-                    }, 500);
-                    break;
-            }
-        },
-        loadPermissions: function loadPermissions(cb) {
-
-            var self = this;
-
-            var params = {
-                name: self.filters.name,
-                page: self.page
-            };
-
-            axios.get('/ajax/permissions', { params: params }).then(function (response) {
-                self.items = response.data.data.data;
-                self.totalPages = response.data.data.last_page;
-                cb();
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 196 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(197)
-/* template */
-var __vue_template__ = __webpack_require__(198)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\PermissionFormAdd.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] PermissionFormAdd.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1de556a6", Component.options)
-  } else {
-    hotAPI.reload("data-v-1de556a6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 197 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            valid: false,
-            isLoading: false,
-            title: '',
-            titleRules: [function (v) {
-                return !!v || 'Title is required';
-            }],
-            description: '',
-            descriptionRules: [function (v) {
-                return !!v || 'Description is required';
-            }],
-            permissionKey: '',
-            permissionKeyRules: [function (v) {
-                return !!v || 'Permission Key is required';
-            }, function (v) {
-                return !v.match(/[^\w\.]+/g) || 'Description cannot contain special characters';
-            }]
-        };
-    },
-    mounted: function mounted() {
-        console.log('components.PermissionFormAdd.vue');
-    },
-
-    watch: {
-        permissionKey: function permissionKey(v) {
-            this.permissionKey = v.replace(' ', '.').toLowerCase();
-        },
-        title: function title(v) {
-            this.permissionKey = v.replace(' ', '.').toLowerCase();
-        }
-    },
-    methods: {
-        save: function save() {
-
-            var self = this;
-
-            var payload = {
-                title: self.title,
-                description: self.description,
-                permission: self.permissionKey
-            };
-
-            self.isLoading = true;
-
-            axios.post('/ajax/permissions', payload).then(function (response) {
-
-                self.$store.commit('showSnackbar', {
-                    message: response.data.message,
-                    color: 'success',
-                    duration: 3000
-                });
-                self.$eventBus.$emit('PERMISSION_ADDED');
-
-                // reset
-                self.$refs.permissionFormAdd.reset();
-                self.permissions = [];
-                self.isLoading = false;
-            }).catch(function (error) {
-
-                self.isLoading = false;
-
-                if (error.response) {
-                    self.$store.commit('showSnackbar', {
-                        message: error.response.data.message,
-                        color: 'error',
-                        duration: 3000
-                    });
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
-                    console.log('Error', error.message);
-                }
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 198 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "component-wrap" },
-    [
-      _c(
-        "v-card",
-        { attrs: { dark: "" } },
-        [
-          _c(
-            "v-form",
-            {
-              ref: "permissionFormAdd",
-              attrs: { "lazy-validation": "" },
-              model: {
-                value: _vm.valid,
-                callback: function($$v) {
-                  _vm.valid = $$v
-                },
-                expression: "valid"
-              }
-            },
-            [
-              _c(
-                "v-container",
-                { attrs: { "grid-list-md": "" } },
-                [
-                  _c(
-                    "v-layout",
-                    { attrs: { row: "", wrap: "" } },
-                    [
-                      _c("v-flex", { attrs: { xs12: "" } }, [
-                        _c("div", { staticClass: "body-2 white--text" }, [
-                          _vm._v("Permission Details")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Permission Title",
-                              rules: _vm.titleRules
-                            },
-                            model: {
-                              value: _vm.title,
-                              callback: function($$v) {
-                                _vm.title = $$v
-                              },
-                              expression: "title"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Permission Key",
-                              rules: _vm.permissionKeyRules
-                            },
-                            model: {
-                              value: _vm.permissionKey,
-                              callback: function($$v) {
-                                _vm.permissionKey = $$v
-                              },
-                              expression: "permissionKey"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Description",
-                              rules: _vm.descriptionRules,
-                              "multi-line": ""
-                            },
-                            model: {
-                              value: _vm.description,
-                              callback: function($$v) {
-                                _vm.description = $$v
-                              },
-                              expression: "description"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                loading: _vm.isLoading,
-                                disabled: !_vm.valid || _vm.isLoading,
-                                color: "primary",
-                                dark: ""
-                              },
-                              on: {
-                                click: function($event) {
-                                  _vm.save()
-                                }
-                              }
-                            },
-                            [_vm._v("Save")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1de556a6", module.exports)
-  }
-}
-
-/***/ }),
-/* 199 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(200)
-/* template */
-var __vue_template__ = __webpack_require__(201)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\PermissionFormEdit.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] PermissionFormEdit.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4a8c2555", Component.options)
-  } else {
-    hotAPI.reload("data-v-4a8c2555", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 200 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        propPermissionId: {
-            required: true
-        }
-    },
-    data: function data() {
-        return {
-            valid: false,
-            isLoading: false,
-            title: '',
-            titleRules: [function (v) {
-                return !!v || 'Title is required';
-            }],
-            description: '',
-            descriptionRules: [function (v) {
-                return !!v || 'Description is required';
-            }],
-            permissionKey: '',
-            permissionKeyRules: [function (v) {
-                return !!v || 'Permission Key is required';
-            }, function (v) {
-                return !v.match(/[^\w\.]+/g) || 'Description cannot contain special characters';
-            }]
-        };
-    },
-    mounted: function mounted() {
-        console.log('components.PermissionFormEdit.vue');
-    },
-
-    watch: {
-        permissionKey: function permissionKey(v) {
-            this.permissionKey = v.replace(' ', '.').toLowerCase();
-        },
-        title: function title(v) {
-            this.permissionKey = v.replace(' ', '.').toLowerCase();
-        },
-        propPermissionId: function propPermissionId(v) {
-            if (v) this.loadPermission(function () {});
-        }
-    },
-    methods: {
-        save: function save() {
-
-            var self = this;
-
-            var payload = {
-                title: self.title,
-                description: self.description,
-                permission: self.permissionKey
-            };
-
-            self.isLoading = true;
-
-            axios.put('/ajax/permissions/' + self.propPermissionId, payload).then(function (response) {
-
-                self.$store.commit('showSnackbar', {
-                    message: response.data.message,
-                    color: 'success',
-                    duration: 3000
-                });
-                self.$eventBus.$emit('PERMISSION_UPDATED');
-
-                // reset
-                self.permissions = [];
-                self.isLoading = false;
-            }).catch(function (error) {
-
-                self.isLoading = false;
-
-                if (error.response) {
-                    self.$store.commit('showSnackbar', {
-                        message: error.response.data.message,
-                        color: 'error',
-                        duration: 3000
-                    });
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
-                    console.log('Error', error.message);
-                }
-            });
-        },
-        loadPermission: function loadPermission(cb) {
-
-            var self = this;
-
-            axios.get('/ajax/permissions/' + self.propPermissionId).then(function (response) {
-
-                var Permission = response.data.data;
-
-                self.title = Permission.title;
-                self.description = Permission.description;
-                self.permissionKey = Permission.permissionKey;
-
-                cb();
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 201 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "component-wrap" },
-    [
-      _c(
-        "v-card",
-        { attrs: { dark: "" } },
-        [
-          _c(
-            "v-form",
-            {
-              ref: "permissionFormEdit",
-              attrs: { "lazy-validation": "" },
-              model: {
-                value: _vm.valid,
-                callback: function($$v) {
-                  _vm.valid = $$v
-                },
-                expression: "valid"
-              }
-            },
-            [
-              _c(
-                "v-container",
-                { attrs: { "grid-list-md": "" } },
-                [
-                  _c(
-                    "v-layout",
-                    { attrs: { row: "", wrap: "" } },
-                    [
-                      _c("v-flex", { attrs: { xs12: "" } }, [
-                        _c("div", { staticClass: "body-2 white--text" }, [
-                          _vm._v("Permission Details")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Permission Title",
-                              rules: _vm.titleRules
-                            },
-                            model: {
-                              value: _vm.title,
-                              callback: function($$v) {
-                                _vm.title = $$v
-                              },
-                              expression: "title"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Permission Key",
-                              rules: _vm.permissionKeyRules
-                            },
-                            model: {
-                              value: _vm.permissionKey,
-                              callback: function($$v) {
-                                _vm.permissionKey = $$v
-                              },
-                              expression: "permissionKey"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Description",
-                              rules: _vm.descriptionRules,
-                              "multi-line": ""
-                            },
-                            model: {
-                              value: _vm.description,
-                              callback: function($$v) {
-                                _vm.description = $$v
-                              },
-                              expression: "description"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                loading: _vm.isLoading,
-                                disabled: !_vm.valid || _vm.isLoading,
-                                color: "primary",
-                                dark: ""
-                              },
-                              on: {
-                                click: function($event) {
-                                  _vm.save()
-                                }
-                              }
-                            },
-                            [_vm._v("Save")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-4a8c2555", module.exports)
-  }
-}
-
-/***/ }),
-/* 202 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "component-wrap" },
-    [
-      _c(
-        "v-card",
-        { attrs: { dark: "" } },
-        [
-          _c(
-            "v-container",
-            { attrs: { "grid-list-md": "" } },
-            [
-              _c(
-                "v-layout",
-                { attrs: { row: "", wrap: "" } },
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm12: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "blue lighten-1",
-                          attrs: { dark: "" },
-                          on: {
-                            click: function($event) {
-                              _vm.showDialog("permission_add")
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        New Permission\n                        "
-                          ),
-                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
-                            _vm._v("add")
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "" } },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          "prepend-icon": "search",
-                          box: "",
-                          dark: "",
-                          label: "Filter By Permission Title"
-                        },
-                        model: {
-                          value: _vm.filters.title,
-                          callback: function($$v) {
-                            _vm.filters.title = $$v
-                          },
-                          expression: "filters.title"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("v-data-table", {
-        staticClass: "elevation-1",
-        attrs: { headers: _vm.headers, items: _vm.items, "hide-actions": "" },
-        scopedSlots: _vm._u([
-          {
-            key: "headerCell",
-            fn: function(props) {
-              return [
-                props.header.value == "permission"
-                  ? _c(
-                      "span",
-                      [
-                        _c("v-icon", [_vm._v("vpn_key")]),
-                        _vm._v(
-                          " " + _vm._s(props.header.text) + "\n            "
-                        )
-                      ],
-                      1
-                    )
-                  : props.header.value == "created_at"
-                    ? _c(
-                        "span",
-                        [
-                          _c("v-icon", [_vm._v("date_range")]),
-                          _vm._v(
-                            " " + _vm._s(props.header.text) + "\n            "
-                          )
-                        ],
-                        1
-                      )
-                    : _c("span", [_vm._v(_vm._s(props.header.text))])
-              ]
-            }
-          },
-          {
-            key: "items",
-            fn: function(props) {
-              return [
-                _c(
-                  "td",
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.showDialog("permission_edit", props.item)
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "v-icon",
-                          { staticClass: "blue--text", attrs: { dark: "" } },
-                          [_vm._v("edit")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.trash(props.item)
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "v-icon",
-                          { staticClass: "red--text", attrs: { dark: "" } },
-                          [_vm._v("delete")]
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(props.item.title))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(props.item.permission))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(props.item.description))]),
-                _vm._v(" "),
-                _c("td", [
-                  _vm._v(
-                    _vm._s(_vm.$appFormatters.formatDate(props.item.created_at))
-                  )
-                ])
-              ]
-            }
-          }
-        ])
-      }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "text-xs-center" },
-        [
-          _c("v-pagination", {
-            attrs: { length: _vm.totalPages, "total-visible": 8, circle: "" },
-            model: {
-              value: _vm.page,
-              callback: function($$v) {
-                _vm.page = $$v
-              },
-              expression: "page"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: {
-            fullscreen: "",
-            transition: "dialog-bottom-transition",
-            overlay: false
-          },
-          model: {
-            value: _vm.dialogs.add.show,
-            callback: function($$v) {
-              _vm.dialogs.add.show = $$v
-            },
-            expression: "dialogs.add.show"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            [
-              _c(
-                "v-toolbar",
-                { staticClass: "primary", attrs: { dark: "" } },
-                [
-                  _c(
-                    "v-btn",
-                    {
-                      attrs: { icon: "", dark: "" },
-                      nativeOn: {
-                        click: function($event) {
-                          _vm.dialogs.add.show = false
-                        }
-                      }
-                    },
-                    [_c("v-icon", [_vm._v("close")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-toolbar-title", [_vm._v("Create New Permission")]),
-                  _vm._v(" "),
-                  _c("v-spacer"),
-                  _vm._v(" "),
-                  _c(
-                    "v-toolbar-items",
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { dark: "", flat: "" },
-                          nativeOn: {
-                            click: function($event) {
-                              _vm.dialogs.add.show = false
-                            }
-                          }
-                        },
-                        [_vm._v("Done")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("v-card-text", [_c("permission-form-add")], 1)
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: {
-            fullscreen: "",
-            laze: false,
-            transition: "dialog-bottom-transition",
-            overlay: false
-          },
-          model: {
-            value: _vm.dialogs.edit.show,
-            callback: function($$v) {
-              _vm.dialogs.edit.show = $$v
-            },
-            expression: "dialogs.edit.show"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            [
-              _c(
-                "v-toolbar",
-                { staticClass: "primary", attrs: { dark: "" } },
-                [
-                  _c(
-                    "v-btn",
-                    {
-                      attrs: { icon: "", dark: "" },
-                      nativeOn: {
-                        click: function($event) {
-                          _vm.dialogs.edit.show = false
-                        }
-                      }
-                    },
-                    [_c("v-icon", [_vm._v("close")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-toolbar-title", [_vm._v("Edit Permission")]),
-                  _vm._v(" "),
-                  _c("v-spacer"),
-                  _vm._v(" "),
-                  _c(
-                    "v-toolbar-items",
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { dark: "", flat: "" },
-                          nativeOn: {
-                            click: function($event) {
-                              _vm.dialogs.edit.show = false
-                            }
-                          }
-                        },
-                        [_vm._v("Done")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-card-text",
-                [
-                  _c("permission-form-edit", {
-                    attrs: { propPermissionId: _vm.dialogs.edit.group.id }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-4378613e", module.exports)
-  }
-}
-
-/***/ }),
-/* 203 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "page_wrap_vue users_view" },
-    [
-      _c(
-        "v-tabs",
-        {
-          attrs: { dark: "" },
-          model: {
-            value: _vm.active,
-            callback: function($$v) {
-              _vm.active = $$v
-            },
-            expression: "active"
-          }
-        },
-        [
-          _c(
-            "v-tabs-bar",
-            { staticClass: "cyan" },
-            [
-              _c("v-tabs-item", { attrs: { href: "#users", ripple: "" } }, [
-                _vm._v("\n                Users\n            ")
-              ]),
-              _vm._v(" "),
-              _c("v-tabs-item", { attrs: { href: "#groups", ripple: "" } }, [
-                _vm._v("\n                Groups\n            ")
-              ]),
-              _vm._v(" "),
-              _c(
-                "v-tabs-item",
-                { attrs: { href: "#permissions", ripple: "" } },
-                [_vm._v("\n                Permissions\n            ")]
-              ),
-              _vm._v(" "),
-              _c("v-tabs-slider", { staticClass: "yellow" })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-tabs-items",
-            [
-              _c(
-                "v-tabs-content",
-                { attrs: { id: "users" } },
-                [
-                  _c(
-                    "v-card",
-                    { attrs: { flat: "" } },
-                    [_c("v-card-text", [_c("user-lists")], 1)],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-tabs-content",
-                { attrs: { id: "groups" } },
-                [
-                  _c(
-                    "v-card",
-                    { attrs: { flat: "" } },
-                    [_c("v-card-text", [_c("group-lists")], 1)],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-tabs-content",
-                { attrs: { id: "permissions" } },
-                [
-                  _c(
-                    "v-card",
-                    { attrs: { flat: "" } },
-                    [_c("v-card-text", [_c("permission-lists")], 1)],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-ea88d448", module.exports)
-  }
-}
-
-/***/ }),
-/* 204 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(220)
-}
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(205)
-/* template */
-var __vue_template__ = __webpack_require__(222)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-2809f2cb"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\pages\\Files.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Files.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2809f2cb", Component.options)
-  } else {
-    hotAPI.reload("data-v-2809f2cb", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 205 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('pages.FileManager.vue');
-
-        var self = this;
-
-        setTimeout(function () {
-            self.$store.commit('hideLoader');
-        }, 1500);
-    },
-
-    methods: {}
-});
-
-/***/ }),
-/* 206 */,
-/* 207 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(208)
-/* template */
-var __vue_template__ = __webpack_require__(209)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\pages\\Settings.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Settings.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5d269b02", Component.options)
-  } else {
-    hotAPI.reload("data-v-5d269b02", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 208 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('pages.Settings.vue');
-
-        var self = this;
-
-        setTimeout(function () {
-            self.$store.commit('hideLoader');
-        }, 1500);
-    }
-});
-
-/***/ }),
-/* 209 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    SETTINGS VUE\n")])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5d269b02", module.exports)
-  }
-}
-
-/***/ }),
-/* 210 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(211);
-
-
-
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
-
-/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
-    state: {
-
-        // loader
-        showLoader: false,
-
-        // snackbar
-        showSnackbar: false,
-        snackbarMessage: '',
-        snackbarColor: '',
-        snackbarDuration: 3000,
-
-        // dialog
-        dialogShow: false,
-        dialogType: '',
-        dialogTitle: '',
-        dialogMessage: '',
-        dialogOkCb: function dialogOkCb() {},
-        dialogCancelCb: function dialogCancelCb() {}
-    },
-    mutations: {
-
-        // loader
-        showLoader: function showLoader(state) {
-            state.showLoader = true;
-        },
-        hideLoader: function hideLoader(state) {
-            state.showLoader = false;
-        },
-
-
-        // snackbar
-        showSnackbar: function showSnackbar(state, data) {
-            state.snackbarDuration = data.duration || 3000;
-            state.snackbarMessage = data.message || 'No message.';
-            state.snackbarColor = data.color || 'info';
-            state.showSnackbar = true;
-        },
-        hideSnackbar: function hideSnackbar(state) {
-            state.showSnackbar = false;
-        },
-
-
-        // dialog
-        showDialog: function showDialog(state, data) {
-            state.dialogType = data.type || 'confirm';
-            state.dialogTitle = data.title;
-            state.dialogMessage = data.message;
-            state.dialogOkCb = data.okCb || function () {};
-            state.dialogCancelCb = data.cancelCb || function () {};
-            state.dialogShow = true;
-        },
-        hideDialog: function hideDialog(state) {
-            state.dialogShow = false;
-        },
-        dialogOk: function dialogOk(state) {
-            state.dialogOkCb();
-            state.dialogShow = false;
-        },
-        dialogCancel: function dialogCancel(state) {
-            state.dialogCancelCb();
-            state.dialogShow = false;
-        }
-    },
-    getters: {
-
-        // loader
-        showLoader: function showLoader(state) {
-            return state.showLoader;
-        },
-
-        // snackbar
-        showSnackbar: function showSnackbar(state) {
-            return state.showSnackbar;
-        },
-        snackbarMessage: function snackbarMessage(state) {
-            return state.snackbarMessage;
-        },
-        snackbarColor: function snackbarColor(state) {
-            return state.snackbarColor;
-        },
-        snackbarDuration: function snackbarDuration(state) {
-            return state.snackbarDuration;
-        },
-
-        // dialog
-        showDialog: function showDialog(state) {
-            return state.dialogShow;
-        },
-        dialogType: function dialogType(state) {
-            return state.dialogType;
-        },
-        dialogTitle: function dialogTitle(state) {
-            return state.dialogTitle;
-        },
-        dialogMessage: function dialogMessage(state) {
-            return state.dialogMessage;
-        }
-    }
-}));
-
-/***/ }),
-/* 211 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37317,7 +31207,6501 @@ var index_esm = {
 
 
 /***/ }),
+/* 172 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(173)
+/* template */
+var __vue_template__ = __webpack_require__(174)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\pages\\Home.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Home.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-52196f3b", Component.options)
+  } else {
+    hotAPI.reload("data-v-52196f3b", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 173 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('pages.Home.vue');
+
+        var self = this;
+    }
+});
+
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._v("\n    DASHBOARD VUE\n")])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-52196f3b", module.exports)
+  }
+}
+
+/***/ }),
+/* 175 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(176)
+/* template */
+var __vue_template__ = __webpack_require__(206)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\pages\\Users.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Users.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ea88d448", Component.options)
+  } else {
+    hotAPI.reload("data-v-ea88d448", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 176 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_UserLists_vue__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_UserLists_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_UserLists_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_GroupLists_vue__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_GroupLists_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_GroupLists_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_PermissionLists_vue__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_PermissionLists_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_PermissionLists_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        UserLists: __WEBPACK_IMPORTED_MODULE_0__components_UserLists_vue___default.a,
+        GroupLists: __WEBPACK_IMPORTED_MODULE_1__components_GroupLists_vue___default.a,
+        PermissionLists: __WEBPACK_IMPORTED_MODULE_2__components_PermissionLists_vue___default.a
+    },
+    data: function data() {
+        return {
+            active: ''
+        };
+    },
+
+    watch: {
+        active: function active(v) {
+            console.log('active tab: ' + v);
+        }
+    },
+    mounted: function mounted() {
+        console.log('pages.Users.vue');
+
+        var self = this;
+    }
+});
+
+/***/ }),
+/* 177 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(178)
+/* template */
+var __vue_template__ = __webpack_require__(187)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\UserLists.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] UserLists.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6f2ea27c", Component.options)
+  } else {
+    hotAPI.reload("data-v-6f2ea27c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 178 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__UserFormAdd_vue__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__UserFormAdd_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__UserFormAdd_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__UserFormEdit_vue__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__UserFormEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__UserFormEdit_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        UserFormAdd: __WEBPACK_IMPORTED_MODULE_0__UserFormAdd_vue___default.a,
+        UserFormEdit: __WEBPACK_IMPORTED_MODULE_1__UserFormEdit_vue___default.a
+    },
+    data: function data() {
+        return {
+            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Name', value: 'name', align: 'left', sortable: false }, { text: 'Email', value: 'email', align: 'left', sortable: false }, { text: 'Permissions', value: 'permissions', align: 'left', sortable: false }, { text: 'Last Login', value: 'last_login', align: 'left', sortable: false }, { text: 'Active', value: 'active', align: 'left', sortable: false }],
+            items: [],
+            totalPages: 0,
+            page: 1,
+
+            filters: {
+                name: '',
+                email: ''
+            },
+
+            dialogs: {
+                showPermissions: {
+                    items: [],
+                    show: false
+                },
+                edit: {
+                    user: {},
+                    show: false
+                },
+                add: {
+                    show: false
+                }
+            }
+        };
+    },
+    mounted: function mounted() {
+        var self = this;
+
+        self.loadUsers(function () {});
+
+        self.$eventBus.$on(['USER_ADDED', 'USER_UPDATED', 'USER_DELETED', 'GROUP_ADDED'], function () {
+            self.loadUsers(function () {});
+        });
+    },
+
+    watch: {
+        page: function page(val) {
+            var self = this;
+
+            self.page = val;
+
+            self.loadUsers(function () {});
+        },
+
+        'filters.name': _.debounce(function () {
+            var self = this;
+            self.loadUsers(function () {});
+        }, 700),
+        'filters.email': _.debounce(function () {
+            var self = this;
+            self.loadUsers(function () {});
+        }, 700)
+    },
+    methods: {
+        trash: function trash(user) {
+            var self = this;
+
+            self.$store.commit('showDialog', {
+                type: "confirm",
+                title: "Confirm Deletion",
+                message: "Are you sure you want to delete this user?",
+                okCb: function okCb() {
+
+                    axios.delete('/ajax/users/' + user.id).then(function (response) {
+
+                        self.$store.commit('showSnackbar', {
+                            message: response.data.message,
+                            color: 'success',
+                            duration: 3000
+                        });
+
+                        self.$eventBus.$emit('USER_DELETED');
+                    }).catch(function (error) {
+                        if (error.response) {
+                            self.$store.commit('showSnackbar', {
+                                message: error.response.data.message,
+                                color: 'error',
+                                duration: 3000
+                            });
+                        } else if (error.request) {
+                            console.log(error.request);
+                        } else {
+                            console.log('Error', error.message);
+                        }
+                    });
+                },
+                cancelCb: function cancelCb() {
+                    console.log("CANCEL");
+                }
+            });
+        },
+        showDialog: function showDialog(dialog, data) {
+
+            var self = this;
+
+            switch (dialog) {
+                case 'user_permissions':
+                    self.dialogs.showPermissions.items = data;
+                    setTimeout(function () {
+                        self.dialogs.showPermissions.show = true;
+                    }, 500);
+                    break;
+                case 'user_edit':
+                    self.dialogs.edit.user = data;
+                    setTimeout(function () {
+                        self.dialogs.edit.show = true;
+                    }, 500);
+                    break;
+                case 'user_add':
+                    setTimeout(function () {
+                        self.dialogs.add.show = true;
+                    }, 500);
+                    break;
+            }
+        },
+        loadUsers: function loadUsers(cb) {
+
+            var self = this;
+
+            var params = {
+                name: self.filters.name,
+                email: self.filters.email,
+                page: self.page
+            };
+
+            axios.get('/ajax/users', { params: params }).then(function (response) {
+                self.items = response.data.data.data;
+                self.totalPages = response.data.data.last_page;
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 179 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(180)
+/* template */
+var __vue_template__ = __webpack_require__(181)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\UserFormAdd.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] UserFormAdd.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-27f8532a", Component.options)
+  } else {
+    hotAPI.reload("data-v-27f8532a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 180 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+
+        var self = this;
+
+        return {
+            valid: false,
+            name: '',
+            nameRules: [function (v) {
+                return !!v || 'Name is required';
+            }],
+            email: '',
+            emailRules: [function (v) {
+                return !!v || 'E-mail is required';
+            }, function (v) {
+                return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+                );
+            }],
+            password: '',
+            passwordRules: [function (v) {
+                return !!v || 'Password is required';
+            }, function (v) {
+                return v && v.length >= 8 || 'Password must be atleast 8 characters.';
+            }],
+            passwordConfirm: '',
+            passwordConfirmRules: [function (v) {
+                return !(v !== self.password) || 'Password do not match.';
+            }],
+            permissions: [],
+            groups: [],
+            active: '',
+            options: {
+                permissions: [],
+                permissionValues: [{ label: 'Allow', value: 1 }, { label: 'Deny', value: -1 }, { label: 'Inherit', value: 0 }],
+                groups: []
+            },
+            selectedPermission: {},
+            selectedPermissionValue: 0,
+
+            alert: {
+                show: false,
+                icon: '',
+                color: '',
+                message: ''
+            }
+        };
+    },
+    mounted: function mounted() {
+        console.log('components.UserFormAdd.vue');
+
+        var self = this;
+
+        self.loadPermissions(function (cb) {});
+        self.loadGroups(function (cb) {});
+
+        self.$eventBus.$on(['GROUP_ADDED'], function () {
+            self.loadGroups(function () {});
+        });
+    },
+
+    methods: {
+        save: function save() {
+
+            var self = this;
+
+            var payload = {
+                name: self.name,
+                email: self.email,
+                password: self.password,
+                active: self.active ? moment().format('YYYY-MM-DD') : null,
+                permissions: self.permissions,
+                groups: self.groups
+            };
+
+            self.$store.commit('showLoader');
+
+            axios.post('/ajax/users', payload).then(function (response) {
+
+                self.$store.commit('showSnackbar', {
+                    message: response.data.message,
+                    color: 'success',
+                    duration: 3000
+                });
+
+                self.$eventBus.$emit('USER_ADDED');
+                self.$store.commit('hideLoader');
+
+                // reset
+                self.$refs.userFormAdd.reset();
+                self.permissions = [];
+            }).catch(function (error) {
+                if (error.response) {
+                    self.$store.commit('showSnackbar', {
+                        message: error.response.data.message,
+                        color: 'error',
+                        duration: 3000
+                    });
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+            });
+        },
+        addSpecialPermission: function addSpecialPermission() {
+            var self = this;
+
+            _.each(self.options.permissions, function (p) {
+
+                if (self.selectedPermission === p.permission) {
+
+                    if (!self.existsInPermissions(self.selectedPermission)) {
+                        p.value = self.selectedPermissionValue;
+                        self.permissions.push(p);
+                    }
+                }
+            });
+
+            console.log(self.permissions);
+        },
+        existsInPermissions: function existsInPermissions(permissionKey) {
+            var self = this;
+            var found = false;
+            _.each(self.permissions, function (p) {
+                if (p.permission === permissionKey) found = true;
+            });
+            return found;
+        },
+        loadPermissions: function loadPermissions(cb) {
+
+            var self = this;
+
+            var params = {
+                paginate: 'no'
+            };
+
+            axios.get('/ajax/permissions', { params: params }).then(function (response) {
+                self.options.permissions = response.data.data;
+                console.log(self.options.permissions);
+                cb();
+            });
+        },
+        loadGroups: function loadGroups(cb) {
+
+            var self = this;
+
+            var params = {
+                paginate: 'no'
+            };
+
+            axios.get('/ajax/groups', { params: params }).then(function (response) {
+                self.options.groups = response.data.data;
+
+                _.each(self.options.groups, function (g) {
+                    g.selected = false;
+                });
+
+                console.log(self.options.groups);
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-form",
+            {
+              ref: "userFormAdd",
+              attrs: { "lazy-validation": "" },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-container",
+                { attrs: { "grid-list-md": "" } },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "" } },
+                    [
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm6: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "First Name",
+                              rules: _vm.nameRules
+                            },
+                            model: {
+                              value: _vm.name,
+                              callback: function($$v) {
+                                _vm.name = $$v
+                              },
+                              expression: "name"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm6: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Email",
+                              rules: _vm.emailRules
+                            },
+                            model: {
+                              value: _vm.email,
+                              callback: function($$v) {
+                                _vm.email = $$v
+                              },
+                              expression: "email"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm6: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Password",
+                              type: "password",
+                              rules: _vm.passwordRules
+                            },
+                            model: {
+                              value: _vm.password,
+                              callback: function($$v) {
+                                _vm.password = $$v
+                              },
+                              expression: "password"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm6: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Confirm Password",
+                              type: "password",
+                              rules: _vm.passwordConfirmRules
+                            },
+                            model: {
+                              value: _vm.passwordConfirm,
+                              callback: function($$v) {
+                                _vm.passwordConfirm = $$v
+                              },
+                              expression: "passwordConfirm"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm6: "" } },
+                        [
+                          _c("v-switch", {
+                            attrs: { label: "Pre-Activate Account", dark: "" },
+                            model: {
+                              value: _vm.active,
+                              callback: function($$v) {
+                                _vm.active = $$v
+                              },
+                              expression: "active"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [_c("v-spacer")],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "h1",
+                            { staticClass: "title" },
+                            [
+                              _c("v-icon", [_vm._v("vpn_key")]),
+                              _vm._v(" Special Permissions")
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-alert",
+                            {
+                              attrs: {
+                                color: "info",
+                                icon: "info",
+                                value: "true"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                '\n                        Special Permissions are permission exclusive to this user. Permissions defined here\n                        are more superior than any permission that is in his group. So if the User belongs to a group that has permission to "create something"\n                        but then is denied to "create something" here, the user will be denied on that permission. In short, special permissions\n                        has high priority that group permissions.\n                    '
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider")
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              label: "Select Permission",
+                              items: _vm.options.permissions,
+                              dark: "",
+                              "item-text": "title",
+                              "item-value": "permission"
+                            },
+                            model: {
+                              value: _vm.selectedPermission,
+                              callback: function($$v) {
+                                _vm.selectedPermission = $$v
+                              },
+                              expression: "selectedPermission"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              label: "Permission Value",
+                              items: _vm.options.permissionValues,
+                              dark: "",
+                              "item-text": "label",
+                              "item-value": "value"
+                            },
+                            model: {
+                              value: _vm.selectedPermissionValue,
+                              callback: function($$v) {
+                                _vm.selectedPermissionValue = $$v
+                              },
+                              expression: "selectedPermissionValue"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "blue lighten-1",
+                              attrs: { dark: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.addSpecialPermission()
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                        Add Permission\n                        "
+                              ),
+                              _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                                _vm._v("add")
+                              ])
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c(
+                          "div",
+                          { staticClass: "permissions_container" },
+                          [
+                            _vm._l(_vm.permissions, function(p, k) {
+                              return _c(
+                                "v-chip",
+                                {
+                                  key: k,
+                                  staticClass: "white--text",
+                                  class: {
+                                    green: p.value == 1,
+                                    red: p.value == -1,
+                                    blue: p.value == 0
+                                  }
+                                },
+                                [
+                                  p.value == -1
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "red darken-4",
+                                          attrs: { title: "Deny" }
+                                        },
+                                        [_c("v-icon", [_vm._v("block")])],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  p.value == 1
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "green darken-4",
+                                          attrs: { title: "Allow" }
+                                        },
+                                        [
+                                          _c("v-icon", [_vm._v("check_circle")])
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  p.value == 0
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "blue darken-4",
+                                          attrs: { title: "Inherit" }
+                                        },
+                                        [_c("v-icon", [_vm._v("swap_horiz")])],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(
+                                    "\n                            " +
+                                      _vm._s(p.title) +
+                                      "\n                        "
+                                  )
+                                ],
+                                1
+                              )
+                            }),
+                            _vm._v(" "),
+                            _vm.permissions.length === 0
+                              ? _c("div", [
+                                  _vm._v("No special permissions assigned.")
+                                ])
+                              : _vm._e()
+                          ],
+                          2
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [_c("v-spacer")],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "h1",
+                            { staticClass: "title" },
+                            [
+                              _c("v-icon", [_vm._v("people")]),
+                              _vm._v(" Groups")
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider")
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        _vm._l(_vm.options.groups, function(g, k) {
+                          return _c("v-switch", {
+                            key: k,
+                            attrs: { label: g.name, dark: "" },
+                            model: {
+                              value: _vm.groups[g.id],
+                              callback: function($$v) {
+                                _vm.$set(_vm.groups, g.id, $$v)
+                              },
+                              expression: "groups[g.id]"
+                            }
+                          })
+                        })
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                disabled: !_vm.valid,
+                                color: "primary",
+                                dark: ""
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.save()
+                                }
+                              }
+                            },
+                            [_vm._v("Save")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-27f8532a", module.exports)
+  }
+}
+
+/***/ }),
+/* 182 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(183)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(185)
+/* template */
+var __vue_template__ = __webpack_require__(186)
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-fa4e8d5e"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\UserFormEdit.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] UserFormEdit.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-fa4e8d5e", Component.options)
+  } else {
+    hotAPI.reload("data-v-fa4e8d5e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(184);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("3c7ea0d0", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fa4e8d5e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./UserFormEdit.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fa4e8d5e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./UserFormEdit.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 184 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.permissions_container[data-v-fa4e8d5e] {\n    padding: 10px;\n    background: hsla(0,0%,100%,.1);\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 185 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        propUserId: {
+            required: true
+        }
+    },
+    data: function data() {
+
+        var self = this;
+
+        return {
+            valid: false,
+            name: '',
+            nameRules: [function (v) {
+                return !!v || 'Name is required';
+            }],
+            email: '',
+            emailRules: [function (v) {
+                return !!v || 'E-mail is required';
+            }, function (v) {
+                return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+                );
+            }],
+            password: '',
+            passwordRules: [function (v) {
+                return !!v || 'Password is required';
+            }, function (v) {
+                return v && v.length >= 8 || 'Password must be atleast 8 characters.';
+            }],
+            passwordConfirm: '',
+            passwordConfirmRules: [function (v) {
+                return !(v !== self.password) || 'Password do not match.';
+            }],
+            permissions: [],
+            groups: [],
+            active: '',
+            options: {
+                permissions: [],
+                permissionValues: [{ label: 'Allow', value: 1 }, { label: 'Deny', value: -1 }, { label: 'Inherit', value: 0 }],
+                groups: []
+            },
+            selectedPermission: {},
+            selectedPermissionValue: 0,
+
+            alert: {
+                show: false,
+                icon: '',
+                color: '',
+                message: ''
+            }
+        };
+    },
+    mounted: function mounted() {
+        console.log('components.UserFormAdd.vue');
+
+        var self = this;
+
+        self.loadPermissions(function () {
+            self.loadGroups(function () {});
+        });
+
+        self.$eventBus.$on(['GROUP_ADDED'], function () {
+            self.loadGroups(function () {});
+        });
+    },
+
+    watch: {
+        propUserId: function propUserId(val) {
+            if (val) this.loadUser(function () {});
+        }
+    },
+    methods: {
+        removePermission: function removePermission(i) {
+
+            var self = this;
+
+            self.permissions.splice(i, 1);
+        },
+        save: function save() {
+
+            var self = this;
+
+            var payload = {
+                name: self.name,
+                email: self.email,
+                active: self.active ? moment().format('YYYY-MM-DD') : null,
+                permissions: self.permissions,
+                groups: self.groups
+            };
+
+            self.$store.commit('showLoader');
+
+            axios.put('/ajax/users/' + self.propUserId, payload).then(function (response) {
+
+                self.$store.commit('showSnackbar', {
+                    message: response.data.message,
+                    color: 'success',
+                    duration: 3000
+                });
+
+                self.$eventBus.$emit('USER_UPDATED');
+                self.$store.commit('hideLoader');
+            }).catch(function (error) {
+                if (error.response) {
+                    self.$store.commit('showSnackbar', {
+                        message: error.response.data.message,
+                        color: 'error',
+                        duration: 3000
+                    });
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+            });
+        },
+        addSpecialPermission: function addSpecialPermission() {
+            var self = this;
+
+            _.each(self.options.permissions, function (p) {
+
+                if (self.selectedPermission === p.permission) {
+
+                    if (!self.existsInPermissions(self.selectedPermission)) {
+                        p.value = self.selectedPermissionValue;
+                        self.permissions.push(p);
+                    }
+                }
+            });
+
+            console.log(self.permissions);
+        },
+        existsInPermissions: function existsInPermissions(permissionKey) {
+            var self = this;
+            var found = false;
+            _.each(self.permissions, function (p) {
+                if (p.permission === permissionKey) found = true;
+            });
+            return found;
+        },
+        loadUser: function loadUser(cb) {
+
+            var self = this;
+
+            // reset first
+            self.groups = [];
+
+            axios.get('/ajax/users/' + self.propUserId).then(function (response) {
+                var User = response.data.data;
+
+                self.name = User.name;
+                self.email = User.email;
+                self.active = User.active !== null;
+                self.permissions = User.permissions;
+
+                // groups
+                _.each(User.groups, function (g) {
+                    self.groups[g.id] = true;
+                });
+
+                console.log(User);
+                cb();
+            });
+        },
+        loadPermissions: function loadPermissions(cb) {
+
+            var self = this;
+
+            var params = {
+                paginate: 'no'
+            };
+
+            axios.get('/ajax/permissions', { params: params }).then(function (response) {
+                self.options.permissions = response.data.data;
+                console.log(self.options.permissions);
+                cb();
+            });
+        },
+        loadGroups: function loadGroups(cb) {
+
+            var self = this;
+
+            var params = {
+                paginate: 'no'
+            };
+
+            axios.get('/ajax/groups', { params: params }).then(function (response) {
+                self.options.groups = response.data.data;
+
+                _.each(self.options.groups, function (g) {
+                    g.selected = false;
+                });
+
+                console.log(self.options.groups);
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-form",
+            {
+              ref: "userFormEdit",
+              attrs: { "lazy-validation": "" },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-container",
+                { attrs: { "grid-list-md": "" } },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "" } },
+                    [
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm6: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "First Name",
+                              rules: _vm.nameRules
+                            },
+                            model: {
+                              value: _vm.name,
+                              callback: function($$v) {
+                                _vm.name = $$v
+                              },
+                              expression: "name"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm6: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Email",
+                              rules: _vm.emailRules
+                            },
+                            model: {
+                              value: _vm.email,
+                              callback: function($$v) {
+                                _vm.email = $$v
+                              },
+                              expression: "email"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm6: "" } },
+                        [
+                          _c("v-switch", {
+                            attrs: { label: "Pre-Activate Account", dark: "" },
+                            model: {
+                              value: _vm.active,
+                              callback: function($$v) {
+                                _vm.active = $$v
+                              },
+                              expression: "active"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [_c("v-spacer")],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "h1",
+                            { staticClass: "title" },
+                            [
+                              _c("v-icon", [_vm._v("vpn_key")]),
+                              _vm._v(" Special Permissions")
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-alert",
+                            {
+                              attrs: {
+                                color: "info",
+                                icon: "info",
+                                value: "true"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                '\n                        Special Permissions are permission exclusive to this user. Permissions defined here\n                        are more superior than any permission that is in his group. So if the User belongs to a group that has permission to "create something"\n                        but then is denied to "create something" here, the user will be denied on that permission. In short, special permissions\n                        has high priority that group permissions.\n                    '
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider")
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              label: "Select Permission",
+                              items: _vm.options.permissions,
+                              dark: "",
+                              "item-text": "title",
+                              "item-value": "permission"
+                            },
+                            model: {
+                              value: _vm.selectedPermission,
+                              callback: function($$v) {
+                                _vm.selectedPermission = $$v
+                              },
+                              expression: "selectedPermission"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              label: "Permission Value",
+                              items: _vm.options.permissionValues,
+                              dark: "",
+                              "item-text": "label",
+                              "item-value": "value"
+                            },
+                            model: {
+                              value: _vm.selectedPermissionValue,
+                              callback: function($$v) {
+                                _vm.selectedPermissionValue = $$v
+                              },
+                              expression: "selectedPermissionValue"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "blue lighten-1",
+                              attrs: { dark: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.addSpecialPermission()
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                        Add Permission\n                        "
+                              ),
+                              _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                                _vm._v("add")
+                              ])
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c(
+                          "div",
+                          { staticClass: "permissions_container" },
+                          [
+                            _vm._l(_vm.permissions, function(p, k) {
+                              return _c(
+                                "v-chip",
+                                {
+                                  key: k,
+                                  staticClass: "white--text",
+                                  class: {
+                                    green: p.value == 1,
+                                    red: p.value == -1,
+                                    blue: p.value == 0
+                                  },
+                                  attrs: { close: "" },
+                                  on: {
+                                    input: function($event) {
+                                      _vm.removePermission(k)
+                                    }
+                                  }
+                                },
+                                [
+                                  p.value == -1
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "red darken-4",
+                                          attrs: { title: "Deny" }
+                                        },
+                                        [_c("v-icon", [_vm._v("block")])],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  p.value == 1
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "green darken-4",
+                                          attrs: { title: "Allow" }
+                                        },
+                                        [
+                                          _c("v-icon", [_vm._v("check_circle")])
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  p.value == 0
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "blue darken-4",
+                                          attrs: { title: "Inherit" }
+                                        },
+                                        [_c("v-icon", [_vm._v("swap_horiz")])],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(
+                                    "\n                            " +
+                                      _vm._s(p.title) +
+                                      "\n                        "
+                                  )
+                                ],
+                                1
+                              )
+                            }),
+                            _vm._v(" "),
+                            _vm.permissions.length === 0
+                              ? _c("div", [
+                                  _vm._v("No special permissions assigned.")
+                                ])
+                              : _vm._e()
+                          ],
+                          2
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [_c("v-spacer")],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "h1",
+                            { staticClass: "title" },
+                            [
+                              _c("v-icon", [_vm._v("people")]),
+                              _vm._v(" Groups")
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider")
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        _vm._l(_vm.options.groups, function(g, k) {
+                          return _c("v-switch", {
+                            key: k,
+                            attrs: { label: g.name, dark: "" },
+                            model: {
+                              value: _vm.groups[g.id],
+                              callback: function($$v) {
+                                _vm.$set(_vm.groups, g.id, $$v)
+                              },
+                              expression: "groups[g.id]"
+                            }
+                          })
+                        })
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                disabled: !_vm.valid,
+                                color: "primary",
+                                dark: ""
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.save()
+                                }
+                              }
+                            },
+                            [_vm._v("Update")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-fa4e8d5e", module.exports)
+  }
+}
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-container",
+            { attrs: { "grid-list-md": "" } },
+            [
+              _c(
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", sm12: "" } },
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          staticClass: "blue lighten-1",
+                          attrs: { dark: "" },
+                          on: {
+                            click: function($event) {
+                              _vm.showDialog("user_add")
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        New User\n                        "
+                          ),
+                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                            _vm._v("add")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", sm6: "" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          "prepend-icon": "search",
+                          box: "",
+                          dark: "",
+                          label: "Filter By Name"
+                        },
+                        model: {
+                          value: _vm.filters.name,
+                          callback: function($$v) {
+                            _vm.filters.name = $$v
+                          },
+                          expression: "filters.name"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", sm6: "" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          "prepend-icon": "search",
+                          box: "",
+                          dark: "",
+                          label: "Filter By Email"
+                        },
+                        model: {
+                          value: _vm.filters.email,
+                          callback: function($$v) {
+                            _vm.filters.email = $$v
+                          },
+                          expression: "filters.email"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-data-table", {
+        staticClass: "elevation-1",
+        attrs: { headers: _vm.headers, items: _vm.items, "hide-actions": "" },
+        scopedSlots: _vm._u([
+          {
+            key: "headerCell",
+            fn: function(props) {
+              return [
+                props.header.value == "name"
+                  ? _c(
+                      "span",
+                      [
+                        _c("v-icon", [_vm._v("person")]),
+                        _vm._v(
+                          " " + _vm._s(props.header.text) + "\n            "
+                        )
+                      ],
+                      1
+                    )
+                  : props.header.value == "email"
+                    ? _c(
+                        "span",
+                        [
+                          _c("v-icon", [_vm._v("email")]),
+                          _vm._v(
+                            " " + _vm._s(props.header.text) + "\n            "
+                          )
+                        ],
+                        1
+                      )
+                    : props.header.value == "permissions"
+                      ? _c(
+                          "span",
+                          [
+                            _c("v-icon", [_vm._v("vpn_key")]),
+                            _vm._v(
+                              " " + _vm._s(props.header.text) + "\n            "
+                            )
+                          ],
+                          1
+                        )
+                      : props.header.value == "last_login"
+                        ? _c(
+                            "span",
+                            [
+                              _c("v-icon", [_vm._v("av_timer")]),
+                              _vm._v(
+                                " " +
+                                  _vm._s(props.header.text) +
+                                  "\n            "
+                              )
+                            ],
+                            1
+                          )
+                        : _c("span", [_vm._v(_vm._s(props.header.text))])
+              ]
+            }
+          },
+          {
+            key: "items",
+            fn: function(props) {
+              return [
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { icon: "", small: "" },
+                        on: {
+                          click: function($event) {
+                            _vm.showDialog("user_edit", props.item)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-icon",
+                          { staticClass: "blue--text", attrs: { dark: "" } },
+                          [_vm._v("edit")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { icon: "", small: "" },
+                        on: {
+                          click: function($event) {
+                            _vm.trash(props.item)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-icon",
+                          { staticClass: "red--text", attrs: { dark: "" } },
+                          [_vm._v("delete")]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.email))]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: {
+                          small: "",
+                          outline: "",
+                          round: "",
+                          color: "grey",
+                          dark: ""
+                        },
+                        on: {
+                          click: function($event) {
+                            _vm.showDialog(
+                              "user_permissions",
+                              props.item.permissions
+                            )
+                          }
+                        }
+                      },
+                      [_vm._v("Show")]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(
+                    _vm._s(_vm.$appFormatters.formatDate(props.item.last_login))
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "v-avatar",
+                      { attrs: { outline: "" } },
+                      [
+                        props.item.active != null
+                          ? _c("v-icon", { staticClass: "green--text" }, [
+                              _vm._v("check_circle")
+                            ])
+                          : _c("v-icon", { staticClass: "grey--text" }, [
+                              _vm._v("error_outline")
+                            ])
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ]
+            }
+          }
+        ])
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "text-xs-center" },
+        [
+          _c("v-pagination", {
+            attrs: { length: _vm.totalPages, "total-visible": 8, circle: "" },
+            model: {
+              value: _vm.page,
+              callback: function($$v) {
+                _vm.page = $$v
+              },
+              expression: "page"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { lazy: "", absolute: "" },
+          model: {
+            value: _vm.dialogs.showPermissions.show,
+            callback: function($$v) {
+              _vm.dialogs.showPermissions.show = $$v
+            },
+            expression: "dialogs.showPermissions.show"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", [
+                _c(
+                  "div",
+                  { staticClass: "headline" },
+                  [
+                    _c("v-icon", [_vm._v("vpn_key")]),
+                    _vm._v(" User Permissions")
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                [
+                  _vm._l(_vm.dialogs.showPermissions.items, function(
+                    permission,
+                    key
+                  ) {
+                    return _c(
+                      "v-chip",
+                      {
+                        key: key,
+                        staticClass: "white--text",
+                        class: {
+                          green: permission.value == 1,
+                          red: permission.value == -1,
+                          blue: permission.value == 0
+                        }
+                      },
+                      [
+                        permission.value == -1
+                          ? _c(
+                              "v-avatar",
+                              {
+                                staticClass: "red darken-4",
+                                attrs: { title: "Deny" }
+                              },
+                              [_c("v-icon", [_vm._v("block")])],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        permission.value == 1
+                          ? _c(
+                              "v-avatar",
+                              {
+                                staticClass: "green darken-4",
+                                attrs: { title: "Allow" }
+                              },
+                              [_c("v-icon", [_vm._v("check_circle")])],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        permission.value == 0
+                          ? _c(
+                              "v-avatar",
+                              {
+                                staticClass: "blue darken-4",
+                                attrs: { title: "Inherit" }
+                              },
+                              [_c("v-icon", [_vm._v("swap_horiz")])],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(permission.title) +
+                            "\n                "
+                        )
+                      ],
+                      1
+                    )
+                  }),
+                  _vm._v(" "),
+                  _vm.dialogs.showPermissions.items.length == 0
+                    ? _c("p", [_vm._v("No permissions")])
+                    : _vm._e()
+                ],
+                2
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            fullscreen: "",
+            transition: "dialog-bottom-transition",
+            overlay: false
+          },
+          model: {
+            value: _vm.dialogs.add.show,
+            callback: function($$v) {
+              _vm.dialogs.add.show = $$v
+            },
+            expression: "dialogs.add.show"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-toolbar",
+                { staticClass: "primary", attrs: { dark: "" } },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "", dark: "" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.dialogs.add.show = false
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("close")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-toolbar-title", [_vm._v("Add User")]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-items",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { dark: "", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.dialogs.add.show = false
+                            }
+                          }
+                        },
+                        [_vm._v("Done")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-card-text", [_c("user-form-add")], 1)
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            fullscreen: "",
+            laze: false,
+            transition: "dialog-bottom-transition",
+            overlay: false
+          },
+          model: {
+            value: _vm.dialogs.edit.show,
+            callback: function($$v) {
+              _vm.dialogs.edit.show = $$v
+            },
+            expression: "dialogs.edit.show"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-toolbar",
+                { staticClass: "primary", attrs: { dark: "" } },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "", dark: "" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.dialogs.edit.show = false
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("close")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-toolbar-title", [_vm._v("Edit User")]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-items",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { dark: "", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.dialogs.edit.show = false
+                            }
+                          }
+                        },
+                        [_vm._v("Done")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                [
+                  _c("user-form-edit", {
+                    attrs: { propUserId: _vm.dialogs.edit.user.id }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-6f2ea27c", module.exports)
+  }
+}
+
+/***/ }),
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(189)
+/* template */
+var __vue_template__ = __webpack_require__(196)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\GroupLists.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] GroupLists.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-57e97d4e", Component.options)
+  } else {
+    hotAPI.reload("data-v-57e97d4e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 189 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__GroupFromAdd_vue__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__GroupFromAdd_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__GroupFromAdd_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__GroupFromEdit_vue__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__GroupFromEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__GroupFromEdit_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        GroupFormAdd: __WEBPACK_IMPORTED_MODULE_0__GroupFromAdd_vue___default.a,
+        GroupFormEdit: __WEBPACK_IMPORTED_MODULE_1__GroupFromEdit_vue___default.a
+    },
+    data: function data() {
+        return {
+            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Name', value: 'name', align: 'left', sortable: false }, { text: 'Permissions', value: 'permissions', align: 'left', sortable: false }, { text: 'Total Members', value: 'members_count', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
+            items: [],
+            totalPages: 0,
+            page: 1,
+
+            filters: {
+                name: ''
+            },
+
+            dialogs: {
+                showPermissions: {
+                    items: [],
+                    show: false
+                },
+                edit: {
+                    group: {},
+                    show: false
+                },
+                add: {
+                    show: false
+                }
+            }
+        };
+    },
+    mounted: function mounted() {
+        var self = this;
+
+        self.loadGroups(function () {});
+
+        self.$eventBus.$on(['GROUP_ADDED', 'GROUP_UPDATED', 'GROUP_DELETED'], function () {
+            self.loadGroups(function () {});
+        });
+    },
+
+    watch: {
+        page: function page(val) {
+            var self = this;
+
+            self.page = val;
+
+            self.loadGroups(function () {});
+        },
+
+        'filters.name': _.debounce(function () {
+            var self = this;
+            self.loadGroups(function () {});
+        }, 700)
+    },
+    methods: {
+        trash: function trash(group) {
+            var self = this;
+
+            self.$store.commit('showDialog', {
+                type: "confirm",
+                title: "Confirm Deletion",
+                message: "Are you sure you want to delete this group?",
+                okCb: function okCb() {
+
+                    axios.delete('/ajax/groups/' + group.id).then(function (response) {
+
+                        self.$store.commit('showSnackbar', {
+                            message: response.data.message,
+                            color: 'success',
+                            duration: 3000
+                        });
+
+                        self.$eventBus.$emit('GROUP_DELETED');
+                    }).catch(function (error) {
+                        if (error.response) {
+                            self.$store.commit('showSnackbar', {
+                                message: error.response.data.message,
+                                color: 'error',
+                                duration: 3000
+                            });
+                        } else if (error.request) {
+                            console.log(error.request);
+                        } else {
+                            console.log('Error', error.message);
+                        }
+                    });
+                },
+                cancelCb: function cancelCb() {
+                    console.log("CANCEL");
+                }
+            });
+        },
+        showDialog: function showDialog(dialog, data) {
+
+            var self = this;
+
+            switch (dialog) {
+                case 'group_permissions':
+                    self.dialogs.showPermissions.items = data;
+                    setTimeout(function () {
+                        self.dialogs.showPermissions.show = true;
+                    }, 500);
+                    break;
+                case 'group_edit':
+                    self.dialogs.edit.group = data;
+                    setTimeout(function () {
+                        self.dialogs.edit.show = true;
+                    }, 500);
+                    break;
+                case 'group_add':
+                    setTimeout(function () {
+                        self.dialogs.add.show = true;
+                    }, 500);
+                    break;
+            }
+        },
+        loadGroups: function loadGroups(cb) {
+
+            var self = this;
+
+            var params = {
+                name: self.filters.name,
+                page: self.page
+            };
+
+            axios.get('/ajax/groups', { params: params }).then(function (response) {
+                self.items = response.data.data.data;
+                self.totalPages = response.data.data.last_page;
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 190 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(191)
+/* template */
+var __vue_template__ = __webpack_require__(192)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\GroupFromAdd.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] GroupFromAdd.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0ae295e0", Component.options)
+  } else {
+    hotAPI.reload("data-v-0ae295e0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 191 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            valid: false,
+            name: '',
+            nameRules: [function (v) {
+                return !!v || 'Name is required';
+            }],
+            permissions: [],
+            selectedPermission: {},
+            selectedPermissionValue: 0,
+
+            options: {
+                permissions: [],
+                permissionValues: [{ label: 'Allow', value: 1 }, { label: 'Deny', value: -1 }]
+            }
+        };
+    },
+    mounted: function mounted() {
+        console.log('pages.Home.vue');
+
+        var self = this;
+
+        self.loadPermissions(function () {});
+    },
+
+    methods: {
+        save: function save() {
+
+            var self = this;
+
+            var payload = {
+                name: self.name,
+                permissions: self.permissions
+            };
+
+            self.$store.commit('showLoader');
+
+            axios.post('/ajax/groups', payload).then(function (response) {
+
+                self.$store.commit('showSnackbar', {
+                    message: response.data.message,
+                    color: 'success',
+                    duration: 3000
+                });
+                self.$store.commit('hideLoader');
+                self.$eventBus.$emit('GROUP_ADDED');
+
+                // reset
+                self.$refs.groupFormAdd.reset();
+                self.permissions = [];
+            }).catch(function (error) {
+                self.$store.commit('hideLoader');
+                if (error.response) {
+                    self.$store.commit('showSnackbar', {
+                        message: error.response.data.message,
+                        color: 'error',
+                        duration: 3000
+                    });
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+            });
+        },
+        addSpecialPermission: function addSpecialPermission() {
+            var self = this;
+
+            _.each(self.options.permissions, function (p) {
+
+                if (self.selectedPermission === p.permission) {
+
+                    if (!self.existsInPermissions(self.selectedPermission)) {
+                        p.value = self.selectedPermissionValue;
+                        self.permissions.push(p);
+                    }
+                }
+            });
+
+            console.log(self.permissions);
+        },
+        loadPermissions: function loadPermissions(cb) {
+
+            var self = this;
+
+            var params = {
+                paginate: 'no',
+                page: self.page
+            };
+
+            axios.get('/ajax/permissions', { params: params }).then(function (response) {
+                self.options.permissions = response.data.data;
+                cb();
+            });
+        },
+        existsInPermissions: function existsInPermissions(permissionKey) {
+            var self = this;
+            var found = false;
+            _.each(self.permissions, function (p) {
+                if (p.permission === permissionKey) found = true;
+            });
+            return found;
+        }
+    }
+});
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-form",
+            {
+              ref: "groupFormAdd",
+              attrs: { "lazy-validation": "" },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-container",
+                { attrs: { "grid-list-md": "" } },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "" } },
+                    [
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c("div", { staticClass: "body-2 white--text" }, [
+                          _vm._v("Group Details")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Group Name",
+                              rules: _vm.nameRules
+                            },
+                            model: {
+                              value: _vm.name,
+                              callback: function($$v) {
+                                _vm.name = $$v
+                              },
+                              expression: "name"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              label: "Select Permission",
+                              items: _vm.options.permissions,
+                              dark: "",
+                              "item-text": "title",
+                              "item-value": "permission"
+                            },
+                            model: {
+                              value: _vm.selectedPermission,
+                              callback: function($$v) {
+                                _vm.selectedPermission = $$v
+                              },
+                              expression: "selectedPermission"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              label: "Permission Value",
+                              items: _vm.options.permissionValues,
+                              dark: "",
+                              "item-text": "label",
+                              "item-value": "value"
+                            },
+                            model: {
+                              value: _vm.selectedPermissionValue,
+                              callback: function($$v) {
+                                _vm.selectedPermissionValue = $$v
+                              },
+                              expression: "selectedPermissionValue"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "blue lighten-1",
+                              attrs: { dark: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.addSpecialPermission()
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                        Add Permission\n                        "
+                              ),
+                              _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                                _vm._v("add")
+                              ])
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c(
+                          "div",
+                          { staticClass: "permissions_container" },
+                          [
+                            _vm._l(_vm.permissions, function(p, k) {
+                              return _c(
+                                "v-chip",
+                                {
+                                  key: k,
+                                  staticClass: "white--text",
+                                  class: {
+                                    green: p.value == 1,
+                                    red: p.value == -1,
+                                    blue: p.value == 0
+                                  }
+                                },
+                                [
+                                  p.value == -1
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "red darken-4",
+                                          attrs: { title: "Deny" }
+                                        },
+                                        [_c("v-icon", [_vm._v("block")])],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  p.value == 1
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "green darken-4",
+                                          attrs: { title: "Allow" }
+                                        },
+                                        [
+                                          _c("v-icon", [_vm._v("check_circle")])
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  p.value == 0
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "blue darken-4",
+                                          attrs: { title: "Inherit" }
+                                        },
+                                        [_c("v-icon", [_vm._v("swap_horiz")])],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(
+                                    "\n                            " +
+                                      _vm._s(p.title) +
+                                      "\n                        "
+                                  )
+                                ],
+                                1
+                              )
+                            }),
+                            _vm._v(" "),
+                            _vm.permissions.length === 0
+                              ? _c("div", [
+                                  _vm._v("No special permissions assigned.")
+                                ])
+                              : _vm._e()
+                          ],
+                          2
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                disabled: !_vm.valid,
+                                color: "primary",
+                                dark: ""
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.save()
+                                }
+                              }
+                            },
+                            [_vm._v("Save")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-0ae295e0", module.exports)
+  }
+}
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(194)
+/* template */
+var __vue_template__ = __webpack_require__(195)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\GroupFromEdit.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] GroupFromEdit.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-030e942b", Component.options)
+  } else {
+    hotAPI.reload("data-v-030e942b", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 194 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        propGroupId: {
+            required: true
+        }
+    },
+    data: function data() {
+        return {
+            valid: false,
+            name: '',
+            nameRules: [function (v) {
+                return !!v || 'Name is required';
+            }],
+            permissions: [],
+            selectedPermission: {},
+            selectedPermissionValue: 0,
+
+            options: {
+                permissions: [],
+                permissionValues: [{ label: 'Allow', value: 1 }, { label: 'Deny', value: -1 }]
+            }
+        };
+    },
+    mounted: function mounted() {
+        console.log('pages.Home.vue');
+
+        var self = this;
+
+        self.loadPermissions(function () {});
+    },
+
+    watch: {
+        propGroupId: function propGroupId(val) {
+            if (val) this.loadGroup(function () {});
+        }
+    },
+    methods: {
+        removePermission: function removePermission(i) {
+            this.permissions.splice(i, 1);
+        },
+        save: function save() {
+
+            var self = this;
+
+            var payload = {
+                name: self.name,
+                permissions: self.permissions
+            };
+
+            self.$store.commit('showLoader');
+
+            axios.put('/ajax/groups/' + self.propGroupId, payload).then(function (response) {
+
+                self.$store.commit('showSnackbar', {
+                    message: response.data.message,
+                    color: 'success',
+                    duration: 3000
+                });
+                self.$store.commit('hideLoader');
+                self.$eventBus.$emit('GROUP_UPDATED');
+            }).catch(function (error) {
+                self.$store.commit('hideLoader');
+                if (error.response) {
+                    self.$store.commit('showSnackbar', {
+                        message: error.response.data.message,
+                        color: 'error',
+                        duration: 3000
+                    });
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+            });
+        },
+        addSpecialPermission: function addSpecialPermission() {
+            var self = this;
+
+            _.each(self.options.permissions, function (p) {
+
+                if (self.selectedPermission === p.permission) {
+
+                    if (!self.existsInPermissions(self.selectedPermission)) {
+                        p.value = self.selectedPermissionValue;
+                        self.permissions.push(p);
+                    }
+                }
+            });
+
+            console.log(self.permissions);
+        },
+        loadPermissions: function loadPermissions(cb) {
+
+            var self = this;
+
+            var params = {
+                paginate: 'no',
+                page: self.page
+            };
+
+            axios.get('/ajax/permissions', { params: params }).then(function (response) {
+                self.options.permissions = response.data.data;
+                cb();
+            });
+        },
+        loadGroup: function loadGroup(cb) {
+
+            var self = this;
+
+            axios.get('/ajax/groups/' + self.propGroupId).then(function (response) {
+                var Group = response.data.data;
+                self.name = Group.name;
+                self.permissions = Group.permissions;
+                cb();
+            });
+        },
+        existsInPermissions: function existsInPermissions(permissionKey) {
+            var self = this;
+            var found = false;
+            _.each(self.permissions, function (p) {
+                if (p.permission === permissionKey) found = true;
+            });
+            return found;
+        }
+    }
+});
+
+/***/ }),
+/* 195 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-form",
+            {
+              ref: "groupFormAdd",
+              attrs: { "lazy-validation": "" },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-container",
+                { attrs: { "grid-list-md": "" } },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "" } },
+                    [
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c("div", { staticClass: "body-2 white--text" }, [
+                          _vm._v("Group Details")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Group Name",
+                              rules: _vm.nameRules
+                            },
+                            model: {
+                              value: _vm.name,
+                              callback: function($$v) {
+                                _vm.name = $$v
+                              },
+                              expression: "name"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              label: "Select Permission",
+                              items: _vm.options.permissions,
+                              dark: "",
+                              "item-text": "title",
+                              "item-value": "permission"
+                            },
+                            model: {
+                              value: _vm.selectedPermission,
+                              callback: function($$v) {
+                                _vm.selectedPermission = $$v
+                              },
+                              expression: "selectedPermission"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              label: "Permission Value",
+                              items: _vm.options.permissionValues,
+                              dark: "",
+                              "item-text": "label",
+                              "item-value": "value"
+                            },
+                            model: {
+                              value: _vm.selectedPermissionValue,
+                              callback: function($$v) {
+                                _vm.selectedPermissionValue = $$v
+                              },
+                              expression: "selectedPermissionValue"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "blue lighten-1",
+                              attrs: { dark: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.addSpecialPermission()
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                        Add Permission\n                        "
+                              ),
+                              _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                                _vm._v("add")
+                              ])
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c(
+                          "div",
+                          { staticClass: "permissions_container" },
+                          [
+                            _vm._l(_vm.permissions, function(p, k) {
+                              return _c(
+                                "v-chip",
+                                {
+                                  key: k,
+                                  staticClass: "white--text",
+                                  class: {
+                                    green: p.value == 1,
+                                    red: p.value == -1,
+                                    blue: p.value == 0
+                                  },
+                                  attrs: { close: "" },
+                                  on: {
+                                    input: function($event) {
+                                      _vm.removePermission(k)
+                                    }
+                                  }
+                                },
+                                [
+                                  p.value == -1
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "red darken-4",
+                                          attrs: { title: "Deny" }
+                                        },
+                                        [_c("v-icon", [_vm._v("block")])],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  p.value == 1
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "green darken-4",
+                                          attrs: { title: "Allow" }
+                                        },
+                                        [
+                                          _c("v-icon", [_vm._v("check_circle")])
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  p.value == 0
+                                    ? _c(
+                                        "v-avatar",
+                                        {
+                                          staticClass: "blue darken-4",
+                                          attrs: { title: "Inherit" }
+                                        },
+                                        [_c("v-icon", [_vm._v("swap_horiz")])],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(
+                                    "\n                            " +
+                                      _vm._s(p.title) +
+                                      "\n                        "
+                                  )
+                                ],
+                                1
+                              )
+                            }),
+                            _vm._v(" "),
+                            _vm.permissions.length === 0
+                              ? _c("div", [
+                                  _vm._v("No special permissions assigned.")
+                                ])
+                              : _vm._e()
+                          ],
+                          2
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                disabled: !_vm.valid,
+                                color: "primary",
+                                dark: ""
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.save()
+                                }
+                              }
+                            },
+                            [_vm._v("Update")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-030e942b", module.exports)
+  }
+}
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-container",
+            { attrs: { "grid-list-md": "" } },
+            [
+              _c(
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", sm12: "" } },
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          staticClass: "blue lighten-1",
+                          attrs: { dark: "" },
+                          on: {
+                            click: function($event) {
+                              _vm.showDialog("group_add")
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        New Group\n                        "
+                          ),
+                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                            _vm._v("add")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          "prepend-icon": "search",
+                          box: "",
+                          dark: "",
+                          label: "Filter By Name"
+                        },
+                        model: {
+                          value: _vm.filters.name,
+                          callback: function($$v) {
+                            _vm.filters.name = $$v
+                          },
+                          expression: "filters.name"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-data-table", {
+        staticClass: "elevation-1",
+        attrs: { headers: _vm.headers, items: _vm.items, "hide-actions": "" },
+        scopedSlots: _vm._u([
+          {
+            key: "headerCell",
+            fn: function(props) {
+              return [
+                props.header.value == "name"
+                  ? _c(
+                      "span",
+                      [
+                        _c("v-icon", [_vm._v("person")]),
+                        _vm._v(
+                          " " + _vm._s(props.header.text) + "\n            "
+                        )
+                      ],
+                      1
+                    )
+                  : props.header.value == "permissions"
+                    ? _c(
+                        "span",
+                        [
+                          _c("v-icon", [_vm._v("vpn_key")]),
+                          _vm._v(
+                            " " + _vm._s(props.header.text) + "\n            "
+                          )
+                        ],
+                        1
+                      )
+                    : props.header.value == "members_count"
+                      ? _c(
+                          "span",
+                          [
+                            _c("v-icon", [_vm._v("people")]),
+                            _vm._v(
+                              " " + _vm._s(props.header.text) + "\n            "
+                            )
+                          ],
+                          1
+                        )
+                      : props.header.value == "created_at"
+                        ? _c(
+                            "span",
+                            [
+                              _c("v-icon", [_vm._v("date_range")]),
+                              _vm._v(
+                                " " +
+                                  _vm._s(props.header.text) +
+                                  "\n            "
+                              )
+                            ],
+                            1
+                          )
+                        : _c("span", [_vm._v(_vm._s(props.header.text))])
+              ]
+            }
+          },
+          {
+            key: "items",
+            fn: function(props) {
+              return [
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { icon: "", small: "" },
+                        on: {
+                          click: function($event) {
+                            _vm.showDialog("group_edit", props.item)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-icon",
+                          { staticClass: "blue--text", attrs: { dark: "" } },
+                          [_vm._v("edit")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { icon: "", small: "" },
+                        on: {
+                          click: function($event) {
+                            _vm.trash(props.item)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-icon",
+                          { staticClass: "red--text", attrs: { dark: "" } },
+                          [_vm._v("delete")]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.name))]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: {
+                          small: "",
+                          outline: "",
+                          round: "",
+                          color: "grey",
+                          dark: ""
+                        },
+                        on: {
+                          click: function($event) {
+                            _vm.showDialog(
+                              "group_permissions",
+                              props.item.permissions
+                            )
+                          }
+                        }
+                      },
+                      [_vm._v("Show")]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.members_count))]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(
+                    _vm._s(_vm.$appFormatters.formatDate(props.item.created_at))
+                  )
+                ])
+              ]
+            }
+          }
+        ])
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "text-xs-center" },
+        [
+          _c("v-pagination", {
+            attrs: { length: _vm.totalPages, "total-visible": 8, circle: "" },
+            model: {
+              value: _vm.page,
+              callback: function($$v) {
+                _vm.page = $$v
+              },
+              expression: "page"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { lazy: "", absolute: "" },
+          model: {
+            value: _vm.dialogs.showPermissions.show,
+            callback: function($$v) {
+              _vm.dialogs.showPermissions.show = $$v
+            },
+            expression: "dialogs.showPermissions.show"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", [
+                _c(
+                  "div",
+                  { staticClass: "headline" },
+                  [
+                    _c("v-icon", [_vm._v("vpn_key")]),
+                    _vm._v(" Group Permissions")
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                [
+                  _vm._l(_vm.dialogs.showPermissions.items, function(
+                    permission,
+                    key
+                  ) {
+                    return _c(
+                      "v-chip",
+                      {
+                        key: key,
+                        staticClass: "white--text",
+                        class: {
+                          green: permission.value == 1,
+                          red: permission.value == -1,
+                          blue: permission.value == 0
+                        }
+                      },
+                      [
+                        permission.value == -1
+                          ? _c(
+                              "v-avatar",
+                              {
+                                staticClass: "red darken-4",
+                                attrs: { title: "Deny" }
+                              },
+                              [_c("v-icon", [_vm._v("block")])],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        permission.value == 1
+                          ? _c(
+                              "v-avatar",
+                              {
+                                staticClass: "green darken-4",
+                                attrs: { title: "Allow" }
+                              },
+                              [_c("v-icon", [_vm._v("check_circle")])],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        permission.value == 0
+                          ? _c(
+                              "v-avatar",
+                              {
+                                staticClass: "blue darken-4",
+                                attrs: { title: "Inherit" }
+                              },
+                              [_c("v-icon", [_vm._v("swap_horiz")])],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(permission.title) +
+                            "\n                "
+                        )
+                      ],
+                      1
+                    )
+                  }),
+                  _vm._v(" "),
+                  _vm.dialogs.showPermissions.items.length == 0
+                    ? _c("p", [_vm._v("No permissions")])
+                    : _vm._e()
+                ],
+                2
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            fullscreen: "",
+            transition: "dialog-bottom-transition",
+            overlay: false
+          },
+          model: {
+            value: _vm.dialogs.add.show,
+            callback: function($$v) {
+              _vm.dialogs.add.show = $$v
+            },
+            expression: "dialogs.add.show"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-toolbar",
+                { staticClass: "primary", attrs: { dark: "" } },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "", dark: "" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.dialogs.add.show = false
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("close")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-toolbar-title", [_vm._v("Create New Group")]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-items",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { dark: "", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.dialogs.add.show = false
+                            }
+                          }
+                        },
+                        [_vm._v("Done")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-card-text", [_c("group-form-add")], 1)
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            fullscreen: "",
+            laze: false,
+            transition: "dialog-bottom-transition",
+            overlay: false
+          },
+          model: {
+            value: _vm.dialogs.edit.show,
+            callback: function($$v) {
+              _vm.dialogs.edit.show = $$v
+            },
+            expression: "dialogs.edit.show"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-toolbar",
+                { staticClass: "primary", attrs: { dark: "" } },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "", dark: "" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.dialogs.edit.show = false
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("close")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-toolbar-title", [_vm._v("Edit Group")]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-items",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { dark: "", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.dialogs.edit.show = false
+                            }
+                          }
+                        },
+                        [_vm._v("Done")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                [
+                  _c("group-form-edit", {
+                    attrs: { propGroupId: _vm.dialogs.edit.group.id }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-57e97d4e", module.exports)
+  }
+}
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(198)
+/* template */
+var __vue_template__ = __webpack_require__(205)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\PermissionLists.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] PermissionLists.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4378613e", Component.options)
+  } else {
+    hotAPI.reload("data-v-4378613e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 198 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        PermissionFormAdd: __WEBPACK_IMPORTED_MODULE_0__PermissionFormAdd_vue___default.a,
+        PermissionFormEdit: __WEBPACK_IMPORTED_MODULE_1__PermissionFormEdit_vue___default.a
+    },
+    data: function data() {
+        return {
+            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Title', value: 'name', align: 'left', sortable: false }, { text: 'Permission', value: 'permission', align: 'left', sortable: false }, { text: 'Description', value: 'description', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
+            items: [],
+            totalPages: 0,
+            page: 1,
+
+            filters: {
+                title: ''
+            },
+
+            dialogs: {
+                edit: {
+                    group: {},
+                    show: false
+                },
+                add: {
+                    show: false
+                }
+            }
+        };
+    },
+    mounted: function mounted() {
+        var self = this;
+
+        self.loadPermissions(function () {});
+
+        self.$eventBus.$on(['PERMISSION_ADDED', 'PERMISSION_UPDATED', 'PERMISSION_DELETED'], function () {
+            self.loadPermissions(function () {});
+        });
+    },
+
+    watch: {
+        page: function page(val) {
+            var self = this;
+
+            self.page = val;
+
+            self.loadPermissions(function () {});
+        },
+
+        'filters.title': _.debounce(function () {
+            var self = this;
+            self.loadPermissions(function () {});
+        }, 700)
+    },
+    methods: {
+        trash: function trash(permission) {
+            var self = this;
+
+            self.$store.commit('showDialog', {
+                type: "confirm",
+                title: "Confirm Deletion",
+                message: "Are you sure you want to delete this permission?",
+                okCb: function okCb() {
+
+                    axios.delete('/ajax/permissions/' + permission.id).then(function (response) {
+
+                        self.$store.commit('showSnackbar', {
+                            message: response.data.message,
+                            color: 'success',
+                            duration: 3000
+                        });
+
+                        self.$eventBus.$emit('PERMISSION_DELETED');
+                    }).catch(function (error) {
+                        if (error.response) {
+                            self.$store.commit('showSnackbar', {
+                                message: error.response.data.message,
+                                color: 'error',
+                                duration: 3000
+                            });
+                        } else if (error.request) {
+                            console.log(error.request);
+                        } else {
+                            console.log('Error', error.message);
+                        }
+                    });
+                },
+                cancelCb: function cancelCb() {
+                    console.log("CANCEL");
+                }
+            });
+        },
+        showDialog: function showDialog(dialog, data) {
+
+            var self = this;
+
+            switch (dialog) {
+                case 'permission_edit':
+                    self.dialogs.edit.group = data;
+                    setTimeout(function () {
+                        self.dialogs.edit.show = true;
+                    }, 500);
+                    break;
+                case 'permission_add':
+                    setTimeout(function () {
+                        self.dialogs.add.show = true;
+                    }, 500);
+                    break;
+            }
+        },
+        loadPermissions: function loadPermissions(cb) {
+
+            var self = this;
+
+            var params = {
+                name: self.filters.name,
+                page: self.page
+            };
+
+            axios.get('/ajax/permissions', { params: params }).then(function (response) {
+                self.items = response.data.data.data;
+                self.totalPages = response.data.data.last_page;
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 199 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(200)
+/* template */
+var __vue_template__ = __webpack_require__(201)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\PermissionFormAdd.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] PermissionFormAdd.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1de556a6", Component.options)
+  } else {
+    hotAPI.reload("data-v-1de556a6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 200 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            valid: false,
+            isLoading: false,
+            title: '',
+            titleRules: [function (v) {
+                return !!v || 'Title is required';
+            }],
+            description: '',
+            descriptionRules: [function (v) {
+                return !!v || 'Description is required';
+            }],
+            permissionKey: '',
+            permissionKeyRules: [function (v) {
+                return !!v || 'Permission Key is required';
+            }, function (v) {
+                return !v.match(/[^\w\.]+/g) || 'Description cannot contain special characters';
+            }]
+        };
+    },
+    mounted: function mounted() {
+        console.log('components.PermissionFormAdd.vue');
+    },
+
+    watch: {
+        permissionKey: function permissionKey(v) {
+            this.permissionKey = v.replace(' ', '.').toLowerCase();
+        },
+        title: function title(v) {
+            this.permissionKey = v.replace(' ', '.').toLowerCase();
+        }
+    },
+    methods: {
+        save: function save() {
+
+            var self = this;
+
+            var payload = {
+                title: self.title,
+                description: self.description,
+                permission: self.permissionKey
+            };
+
+            self.isLoading = true;
+
+            axios.post('/ajax/permissions', payload).then(function (response) {
+
+                self.$store.commit('showSnackbar', {
+                    message: response.data.message,
+                    color: 'success',
+                    duration: 3000
+                });
+                self.$eventBus.$emit('PERMISSION_ADDED');
+
+                // reset
+                self.$refs.permissionFormAdd.reset();
+                self.permissions = [];
+                self.isLoading = false;
+            }).catch(function (error) {
+
+                self.isLoading = false;
+
+                if (error.response) {
+                    self.$store.commit('showSnackbar', {
+                        message: error.response.data.message,
+                        color: 'error',
+                        duration: 3000
+                    });
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-form",
+            {
+              ref: "permissionFormAdd",
+              attrs: { "lazy-validation": "" },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-container",
+                { attrs: { "grid-list-md": "" } },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "" } },
+                    [
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c("div", { staticClass: "body-2 white--text" }, [
+                          _vm._v("Permission Details")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Permission Title",
+                              rules: _vm.titleRules
+                            },
+                            model: {
+                              value: _vm.title,
+                              callback: function($$v) {
+                                _vm.title = $$v
+                              },
+                              expression: "title"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Permission Key",
+                              rules: _vm.permissionKeyRules
+                            },
+                            model: {
+                              value: _vm.permissionKey,
+                              callback: function($$v) {
+                                _vm.permissionKey = $$v
+                              },
+                              expression: "permissionKey"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Description",
+                              rules: _vm.descriptionRules,
+                              "multi-line": ""
+                            },
+                            model: {
+                              value: _vm.description,
+                              callback: function($$v) {
+                                _vm.description = $$v
+                              },
+                              expression: "description"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                loading: _vm.isLoading,
+                                disabled: !_vm.valid || _vm.isLoading,
+                                color: "primary",
+                                dark: ""
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.save()
+                                }
+                              }
+                            },
+                            [_vm._v("Save")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-1de556a6", module.exports)
+  }
+}
+
+/***/ }),
+/* 202 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(203)
+/* template */
+var __vue_template__ = __webpack_require__(204)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\PermissionFormEdit.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] PermissionFormEdit.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4a8c2555", Component.options)
+  } else {
+    hotAPI.reload("data-v-4a8c2555", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 203 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        propPermissionId: {
+            required: true
+        }
+    },
+    data: function data() {
+        return {
+            valid: false,
+            isLoading: false,
+            title: '',
+            titleRules: [function (v) {
+                return !!v || 'Title is required';
+            }],
+            description: '',
+            descriptionRules: [function (v) {
+                return !!v || 'Description is required';
+            }],
+            permissionKey: '',
+            permissionKeyRules: [function (v) {
+                return !!v || 'Permission Key is required';
+            }, function (v) {
+                return !v.match(/[^\w\.]+/g) || 'Description cannot contain special characters';
+            }]
+        };
+    },
+    mounted: function mounted() {
+        console.log('components.PermissionFormEdit.vue');
+    },
+
+    watch: {
+        permissionKey: function permissionKey(v) {
+            this.permissionKey = v.replace(' ', '.').toLowerCase();
+        },
+        title: function title(v) {
+            this.permissionKey = v.replace(' ', '.').toLowerCase();
+        },
+        propPermissionId: function propPermissionId(v) {
+            if (v) this.loadPermission(function () {});
+        }
+    },
+    methods: {
+        save: function save() {
+
+            var self = this;
+
+            var payload = {
+                title: self.title,
+                description: self.description,
+                permission: self.permissionKey
+            };
+
+            self.isLoading = true;
+
+            axios.put('/ajax/permissions/' + self.propPermissionId, payload).then(function (response) {
+
+                self.$store.commit('showSnackbar', {
+                    message: response.data.message,
+                    color: 'success',
+                    duration: 3000
+                });
+                self.$eventBus.$emit('PERMISSION_UPDATED');
+
+                // reset
+                self.permissions = [];
+                self.isLoading = false;
+            }).catch(function (error) {
+
+                self.isLoading = false;
+
+                if (error.response) {
+                    self.$store.commit('showSnackbar', {
+                        message: error.response.data.message,
+                        color: 'error',
+                        duration: 3000
+                    });
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+            });
+        },
+        loadPermission: function loadPermission(cb) {
+
+            var self = this;
+
+            axios.get('/ajax/permissions/' + self.propPermissionId).then(function (response) {
+
+                var Permission = response.data.data;
+
+                self.title = Permission.title;
+                self.description = Permission.description;
+                self.permissionKey = Permission.permissionKey;
+
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-form",
+            {
+              ref: "permissionFormEdit",
+              attrs: { "lazy-validation": "" },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-container",
+                { attrs: { "grid-list-md": "" } },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "" } },
+                    [
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c("div", { staticClass: "body-2 white--text" }, [
+                          _vm._v("Permission Details")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Permission Title",
+                              rules: _vm.titleRules
+                            },
+                            model: {
+                              value: _vm.title,
+                              callback: function($$v) {
+                                _vm.title = $$v
+                              },
+                              expression: "title"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Permission Key",
+                              rules: _vm.permissionKeyRules
+                            },
+                            model: {
+                              value: _vm.permissionKey,
+                              callback: function($$v) {
+                                _vm.permissionKey = $$v
+                              },
+                              expression: "permissionKey"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Description",
+                              rules: _vm.descriptionRules,
+                              "multi-line": ""
+                            },
+                            model: {
+                              value: _vm.description,
+                              callback: function($$v) {
+                                _vm.description = $$v
+                              },
+                              expression: "description"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                loading: _vm.isLoading,
+                                disabled: !_vm.valid || _vm.isLoading,
+                                color: "primary",
+                                dark: ""
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.save()
+                                }
+                              }
+                            },
+                            [_vm._v("Save")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-4a8c2555", module.exports)
+  }
+}
+
+/***/ }),
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-container",
+            { attrs: { "grid-list-md": "" } },
+            [
+              _c(
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", sm12: "" } },
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          staticClass: "blue lighten-1",
+                          attrs: { dark: "" },
+                          on: {
+                            click: function($event) {
+                              _vm.showDialog("permission_add")
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        New Permission\n                        "
+                          ),
+                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                            _vm._v("add")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          "prepend-icon": "search",
+                          box: "",
+                          dark: "",
+                          label: "Filter By Permission Title"
+                        },
+                        model: {
+                          value: _vm.filters.title,
+                          callback: function($$v) {
+                            _vm.filters.title = $$v
+                          },
+                          expression: "filters.title"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-data-table", {
+        staticClass: "elevation-1",
+        attrs: { headers: _vm.headers, items: _vm.items, "hide-actions": "" },
+        scopedSlots: _vm._u([
+          {
+            key: "headerCell",
+            fn: function(props) {
+              return [
+                props.header.value == "permission"
+                  ? _c(
+                      "span",
+                      [
+                        _c("v-icon", [_vm._v("vpn_key")]),
+                        _vm._v(
+                          " " + _vm._s(props.header.text) + "\n            "
+                        )
+                      ],
+                      1
+                    )
+                  : props.header.value == "created_at"
+                    ? _c(
+                        "span",
+                        [
+                          _c("v-icon", [_vm._v("date_range")]),
+                          _vm._v(
+                            " " + _vm._s(props.header.text) + "\n            "
+                          )
+                        ],
+                        1
+                      )
+                    : _c("span", [_vm._v(_vm._s(props.header.text))])
+              ]
+            }
+          },
+          {
+            key: "items",
+            fn: function(props) {
+              return [
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { icon: "", small: "" },
+                        on: {
+                          click: function($event) {
+                            _vm.showDialog("permission_edit", props.item)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-icon",
+                          { staticClass: "blue--text", attrs: { dark: "" } },
+                          [_vm._v("edit")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { icon: "", small: "" },
+                        on: {
+                          click: function($event) {
+                            _vm.trash(props.item)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-icon",
+                          { staticClass: "red--text", attrs: { dark: "" } },
+                          [_vm._v("delete")]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.title))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.permission))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.description))]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(
+                    _vm._s(_vm.$appFormatters.formatDate(props.item.created_at))
+                  )
+                ])
+              ]
+            }
+          }
+        ])
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "text-xs-center" },
+        [
+          _c("v-pagination", {
+            attrs: { length: _vm.totalPages, "total-visible": 8, circle: "" },
+            model: {
+              value: _vm.page,
+              callback: function($$v) {
+                _vm.page = $$v
+              },
+              expression: "page"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            fullscreen: "",
+            transition: "dialog-bottom-transition",
+            overlay: false
+          },
+          model: {
+            value: _vm.dialogs.add.show,
+            callback: function($$v) {
+              _vm.dialogs.add.show = $$v
+            },
+            expression: "dialogs.add.show"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-toolbar",
+                { staticClass: "primary", attrs: { dark: "" } },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "", dark: "" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.dialogs.add.show = false
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("close")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-toolbar-title", [_vm._v("Create New Permission")]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-items",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { dark: "", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.dialogs.add.show = false
+                            }
+                          }
+                        },
+                        [_vm._v("Done")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-card-text", [_c("permission-form-add")], 1)
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            fullscreen: "",
+            laze: false,
+            transition: "dialog-bottom-transition",
+            overlay: false
+          },
+          model: {
+            value: _vm.dialogs.edit.show,
+            callback: function($$v) {
+              _vm.dialogs.edit.show = $$v
+            },
+            expression: "dialogs.edit.show"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-toolbar",
+                { staticClass: "primary", attrs: { dark: "" } },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "", dark: "" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.dialogs.edit.show = false
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("close")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-toolbar-title", [_vm._v("Edit Permission")]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-items",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { dark: "", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.dialogs.edit.show = false
+                            }
+                          }
+                        },
+                        [_vm._v("Done")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                [
+                  _c("permission-form-edit", {
+                    attrs: { propPermissionId: _vm.dialogs.edit.group.id }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-4378613e", module.exports)
+  }
+}
+
+/***/ }),
+/* 206 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "page_wrap_vue users_view" },
+    [
+      _c(
+        "v-tabs",
+        {
+          attrs: { dark: "" },
+          model: {
+            value: _vm.active,
+            callback: function($$v) {
+              _vm.active = $$v
+            },
+            expression: "active"
+          }
+        },
+        [
+          _c(
+            "v-tabs-bar",
+            { staticClass: "cyan" },
+            [
+              _c("v-tabs-item", { attrs: { href: "#users", ripple: "" } }, [
+                _vm._v("\n                Users\n            ")
+              ]),
+              _vm._v(" "),
+              _c("v-tabs-item", { attrs: { href: "#groups", ripple: "" } }, [
+                _vm._v("\n                Groups\n            ")
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-tabs-item",
+                { attrs: { href: "#permissions", ripple: "" } },
+                [_vm._v("\n                Permissions\n            ")]
+              ),
+              _vm._v(" "),
+              _c("v-tabs-slider", { staticClass: "yellow" })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-tabs-items",
+            [
+              _c(
+                "v-tabs-content",
+                { attrs: { id: "users" } },
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { flat: "" } },
+                    [_c("v-card-text", [_c("user-lists")], 1)],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-tabs-content",
+                { attrs: { id: "groups" } },
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { flat: "" } },
+                    [_c("v-card-text", [_c("group-lists")], 1)],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-tabs-content",
+                { attrs: { id: "permissions" } },
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { flat: "" } },
+                    [_c("v-card-text", [_c("permission-lists")], 1)],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-ea88d448", module.exports)
+  }
+}
+
+/***/ }),
+/* 207 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(208)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(210)
+/* template */
+var __vue_template__ = __webpack_require__(216)
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-2809f2cb"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\pages\\Files.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Files.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2809f2cb", Component.options)
+  } else {
+    hotAPI.reload("data-v-2809f2cb", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 208 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(209);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("db6f04fc", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2809f2cb\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Files.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2809f2cb\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Files.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 209 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.finder_wrap[data-v-2809f2cb] {\n    padding: 0 20px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 210 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        FileUpload: __WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue___default.a,
+        FileGroupLists: __WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue___default.a
+    },
+    mounted: function mounted() {
+        console.log('pages.FileManager.vue');
+
+        var self = this;
+    },
+    data: function data() {
+        return {
+            active: ''
+        };
+    },
+
+    watch: {
+        active: function active(v) {
+            console.log('active tab: ' + v);
+        }
+    },
+    methods: {}
+});
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(212)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(214)
+/* template */
+var __vue_template__ = __webpack_require__(215)
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-06bc3015"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\FileUpload.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] FileUpload.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-06bc3015", Component.options)
+  } else {
+    hotAPI.reload("data-v-06bc3015", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
 /* 212 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(213);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("6b268f2c", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-06bc3015\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FileUpload.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-06bc3015\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FileUpload.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n#fileupload[data-v-06bc3015] {\n    min-height: 400px;\n    background: grey;\n    border: 1px dashed #eaeaea;\n}\n.dropzone .dz-preview.dz-image-preview[data-v-06bc3015] {\n    background: none;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 214 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            dropzone: null
+        };
+    },
+    mounted: function mounted() {
+        console.log('pages.Home.vue');
+
+        var self = this;
+
+        self.initDropzone();
+    },
+
+    methods: {
+        upload: function upload() {
+
+            var self = this;
+
+            self.dropzone.processQueue();
+        },
+        initDropzone: function initDropzone() {
+
+            var self = this;
+
+            Dropzone.autoDiscover = false;
+
+            self.dropzone = new Dropzone("#fileupload", {
+                url: '/ajax/files',
+                paramName: "file", // The name that will be used to transfer the file
+                maxFilesize: 50, // 50MB
+                uploadMultiple: true,
+                acceptedFiles: 'image/*',
+                headers: { 'X-CSRF-TOKEN': _token },
+                autoProcessQueue: false,
+                init: function init() {
+                    // initial hook
+                },
+                success: function success(file, response) {
+                    // success hook
+                }
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 215 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c("v-btn", { attrs: { color: "primary" }, on: { click: _vm.upload } }, [
+        _vm._v("Upload")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dropzone", attrs: { id: "fileupload" } })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-06bc3015", module.exports)
+  }
+}
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "page_wrap_vue" },
+    [
+      _c(
+        "v-tabs",
+        {
+          attrs: { dark: "" },
+          model: {
+            value: _vm.active,
+            callback: function($$v) {
+              _vm.active = $$v
+            },
+            expression: "active"
+          }
+        },
+        [
+          _c(
+            "v-tabs-bar",
+            { staticClass: "cyan" },
+            [
+              _c("v-tabs-item", { attrs: { href: "#files", ripple: "" } }, [
+                _vm._v("\n                Files\n            ")
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-tabs-item",
+                { attrs: { href: "#manage-groups", ripple: "" } },
+                [_vm._v("\n                Manage File Groups\n            ")]
+              ),
+              _vm._v(" "),
+              _c("v-tabs-item", { attrs: { href: "#upload", ripple: "" } }, [
+                _vm._v("\n                Upload\n            ")
+              ]),
+              _vm._v(" "),
+              _c("v-tabs-slider", { staticClass: "yellow" })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-tabs-items",
+            [
+              _c(
+                "v-tabs-content",
+                { attrs: { id: "files" } },
+                [_c("v-card", { attrs: { flat: "" } }, [_c("v-card-text")], 1)],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-tabs-content",
+                { attrs: { id: "manage-groups" } },
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { flat: "" } },
+                    [_c("v-card-text", [_c("file-group-lists")], 1)],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-tabs-content",
+                { attrs: { id: "upload" } },
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { flat: "" } },
+                    [_c("v-card-text", [_c("file-upload")], 1)],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-2809f2cb", module.exports)
+  }
+}
+
+/***/ }),
+/* 217 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(218)
+/* template */
+var __vue_template__ = __webpack_require__(219)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\pages\\Settings.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Settings.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5d269b02", Component.options)
+  } else {
+    hotAPI.reload("data-v-5d269b02", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 218 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('pages.Settings.vue');
+
+        var self = this;
+    }
+});
+
+/***/ }),
+/* 219 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._v("\n    SETTINGS VUE\n")])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-5d269b02", module.exports)
+  }
+}
+
+/***/ }),
+/* 220 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37335,7 +37719,7 @@ var EventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 });
 
 /***/ }),
-/* 213 */
+/* 221 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37351,15 +37735,15 @@ var EventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 });
 
 /***/ }),
-/* 214 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(215)
+var __vue_script__ = __webpack_require__(223)
 /* template */
-var __vue_template__ = __webpack_require__(216)
+var __vue_template__ = __webpack_require__(224)
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -37397,7 +37781,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 215 */
+/* 223 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37426,7 +37810,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 216 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -37469,83 +37853,1235 @@ if (false) {
 }
 
 /***/ }),
-/* 217 */
+/* 225 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 218 */,
-/* 219 */,
-/* 220 */
+/* 226 */,
+/* 227 */,
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(229)
+/* template */
+var __vue_template__ = __webpack_require__(233)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\FileGroupLists.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] FileGroupLists.vue: functional components are not supported with templates, they should use render functions.")}
 
-// load the styles
-var content = __webpack_require__(221);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(130)("db6f04fc", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2809f2cb\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Files.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2809f2cb\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Files.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7e41742c", Component.options)
+  } else {
+    hotAPI.reload("data-v-7e41742c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
-/* 221 */
+/* 229 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FileGroupAdd_vue__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FileGroupAdd_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__FileGroupAdd_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FileGroupEdit_vue__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FileGroupEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__FileGroupEdit_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        FileGroupAdd: __WEBPACK_IMPORTED_MODULE_0__FileGroupAdd_vue___default.a,
+        FileGroupEdit: __WEBPACK_IMPORTED_MODULE_1__FileGroupEdit_vue___default.a
+    },
+    data: function data() {
+        return {
+            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Group Name', value: 'name', align: 'left', sortable: false }, { text: 'Description', value: 'description', align: 'left', sortable: false }, { text: 'Total Files', value: 'file_count', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
+            items: [],
+            totalPages: 0,
+            page: 1,
+
+            filters: {
+                name: ''
+            },
+
+            dialogs: {
+                edit: {
+                    fileGroup: {},
+                    show: false
+                },
+                add: {
+                    show: false
+                }
+            }
+        };
+    },
+    mounted: function mounted() {
+        console.log('pages.FileGroupAdd.vue');
+
+        var self = this;
+
+        self.loadFileGroups(function () {});
+
+        self.$eventBus.$on(['FILE_GROUP_ADDED', 'FILE_GROUP_UPDATED', 'FILE_GROUP_DELETED'], function () {
+            self.loadFileGroups(function () {});
+        });
+    },
+
+    watch: {
+        'filters.name': _.debounce(function (v) {
+            this.loadFileGroups(function () {});
+        }, 500)
+    },
+    methods: {
+        trash: function trash(group) {
+            var self = this;
+
+            self.$store.commit('showDialog', {
+                type: "confirm",
+                title: "Confirm Deletion",
+                message: "Are you sure you want to delete this file group?",
+                okCb: function okCb() {
+
+                    axios.delete('/ajax/file-groups/' + group.id).then(function (response) {
+
+                        self.$store.commit('showSnackbar', {
+                            message: response.data.message,
+                            color: 'success',
+                            duration: 3000
+                        });
+
+                        self.$eventBus.$emit('FILE_GROUP_DELETED');
+                    }).catch(function (error) {
+                        if (error.response) {
+                            self.$store.commit('showSnackbar', {
+                                message: error.response.data.message,
+                                color: 'error',
+                                duration: 3000
+                            });
+                        } else if (error.request) {
+                            console.log(error.request);
+                        } else {
+                            console.log('Error', error.message);
+                        }
+                    });
+                },
+                cancelCb: function cancelCb() {
+                    console.log("CANCEL");
+                }
+            });
+        },
+        showDialog: function showDialog(dialog, data) {
+
+            var self = this;
+
+            switch (dialog) {
+                case 'file_group_edit':
+                    self.dialogs.edit.fileGroup = data;
+                    setTimeout(function () {
+                        self.dialogs.edit.show = true;
+                    }, 500);
+                    break;
+                case 'file_group_add':
+                    setTimeout(function () {
+                        self.dialogs.add.show = true;
+                    }, 500);
+                    break;
+            }
+        },
+        loadFileGroups: function loadFileGroups(cb) {
+
+            var self = this;
+
+            var params = {
+                name: self.filters.name,
+                page: self.page
+            };
+
+            axios.get('/ajax/file-groups', { params: params }).then(function (response) {
+                self.items = response.data.data.data;
+                self.totalPages = response.data.data.last_page;
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(undefined);
-// imports
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(231)
+/* template */
+var __vue_template__ = __webpack_require__(232)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\FileGroupAdd.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] FileGroupAdd.vue: functional components are not supported with templates, they should use render functions.")}
 
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-da8d3f94", Component.options)
+  } else {
+    hotAPI.reload("data-v-da8d3f94", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
 
-// module
-exports.push([module.i, "\n.finder_wrap[data-v-2809f2cb] {\n    padding: 0 20px;\n}\n", ""]);
-
-// exports
+module.exports = Component.exports
 
 
 /***/ }),
-/* 222 */
+/* 231 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            valid: false,
+            isLoading: false,
+            name: '',
+            nameRules: [function (v) {
+                return !!v || 'Name is required';
+            }],
+            description: '',
+            descriptionRules: [function (v) {
+                return !!v || 'Description is required';
+            }]
+        };
+    },
+    mounted: function mounted() {
+        console.log('pages.FileGroupAdd.vue');
+
+        var self = this;
+    },
+
+    methods: {
+        save: function save() {
+            var self = this;
+
+            var payload = {
+                name: self.name,
+                description: self.description
+            };
+
+            self.isLoading = true;
+
+            axios.post('/ajax/file-groups', payload).then(function (response) {
+
+                self.$store.commit('showSnackbar', {
+                    message: response.data.message,
+                    color: 'success',
+                    duration: 3000
+                });
+
+                self.isLoading = false;
+                self.$eventBus.$emit('FILE_GROUP_ADDED');
+
+                // reset
+                self.$refs.fileGroupFormAdd.reset();
+            }).catch(function (error) {
+                self.isLoading = false;
+                if (error.response) {
+                    self.$store.commit('showSnackbar', {
+                        message: error.response.data.message,
+                        color: 'error',
+                        duration: 3000
+                    });
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-form",
+            {
+              ref: "fileGroupFormAdd",
+              attrs: { "lazy-validation": "" },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-container",
+                { attrs: { "grid-list-md": "" } },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "" } },
+                    [
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c("div", { staticClass: "body-2 white--text" }, [
+                          _vm._v("File Group Details")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Group Name",
+                              rules: _vm.nameRules
+                            },
+                            model: {
+                              value: _vm.name,
+                              callback: function($$v) {
+                                _vm.name = $$v
+                              },
+                              expression: "name"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              "multi-line": "",
+                              dark: "",
+                              label: "Group Description",
+                              rules: _vm.descriptionRules
+                            },
+                            model: {
+                              value: _vm.description,
+                              callback: function($$v) {
+                                _vm.description = $$v
+                              },
+                              expression: "description"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                disabled: !_vm.valid,
+                                color: "primary",
+                                dark: ""
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.save()
+                                }
+                              }
+                            },
+                            [_vm._v("Save")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page_wrap_vue" }, [
-      _c("div", { staticClass: "finder_wrap" }, [
-        _c("div", { attrs: { id: "elfinder" } })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-2809f2cb", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-da8d3f94", module.exports)
+  }
+}
+
+/***/ }),
+/* 233 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-container",
+            { attrs: { "grid-list-md": "" } },
+            [
+              _c(
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", sm12: "" } },
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          staticClass: "blue lighten-1",
+                          attrs: { dark: "" },
+                          on: {
+                            click: function($event) {
+                              _vm.showDialog("file_group_add")
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        New File Group\n                        "
+                          ),
+                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                            _vm._v("add")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          "prepend-icon": "search",
+                          box: "",
+                          dark: "",
+                          label: "Filter By Name"
+                        },
+                        model: {
+                          value: _vm.filters.name,
+                          callback: function($$v) {
+                            _vm.filters.name = $$v
+                          },
+                          expression: "filters.name"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-data-table", {
+        staticClass: "elevation-1",
+        attrs: { headers: _vm.headers, items: _vm.items, "hide-actions": "" },
+        scopedSlots: _vm._u([
+          {
+            key: "headerCell",
+            fn: function(props) {
+              return [
+                props.header.value == "file_count"
+                  ? _c(
+                      "span",
+                      [
+                        _c("v-icon", [_vm._v("dns")]),
+                        _vm._v(
+                          " " + _vm._s(props.header.text) + "\n            "
+                        )
+                      ],
+                      1
+                    )
+                  : props.header.value == "created_at"
+                    ? _c(
+                        "span",
+                        [
+                          _c("v-icon", [_vm._v("date_range")]),
+                          _vm._v(
+                            " " + _vm._s(props.header.text) + "\n            "
+                          )
+                        ],
+                        1
+                      )
+                    : _c("span", [_vm._v(_vm._s(props.header.text))])
+              ]
+            }
+          },
+          {
+            key: "items",
+            fn: function(props) {
+              return [
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { icon: "", small: "" },
+                        on: {
+                          click: function($event) {
+                            _vm.showDialog("file_group_edit", props.item)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-icon",
+                          { staticClass: "blue--text", attrs: { dark: "" } },
+                          [_vm._v("edit")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { icon: "", small: "" },
+                        on: {
+                          click: function($event) {
+                            _vm.trash(props.item)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-icon",
+                          { staticClass: "red--text", attrs: { dark: "" } },
+                          [_vm._v("delete")]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.description))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.file_count))]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(
+                    _vm._s(_vm.$appFormatters.formatDate(props.item.created_at))
+                  )
+                ])
+              ]
+            }
+          }
+        ])
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "text-xs-center" },
+        [
+          _c("v-pagination", {
+            attrs: { length: _vm.totalPages, "total-visible": 8, circle: "" },
+            model: {
+              value: _vm.page,
+              callback: function($$v) {
+                _vm.page = $$v
+              },
+              expression: "page"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            fullscreen: "",
+            transition: "dialog-bottom-transition",
+            overlay: false
+          },
+          model: {
+            value: _vm.dialogs.add.show,
+            callback: function($$v) {
+              _vm.dialogs.add.show = $$v
+            },
+            expression: "dialogs.add.show"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-toolbar",
+                { staticClass: "primary", attrs: { dark: "" } },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "", dark: "" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.dialogs.add.show = false
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("close")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-toolbar-title", [_vm._v("Create New File Group")]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-items",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { dark: "", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.dialogs.add.show = false
+                            }
+                          }
+                        },
+                        [_vm._v("Done")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-card-text", [_c("file-group-add")], 1)
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            fullscreen: "",
+            laze: false,
+            transition: "dialog-bottom-transition",
+            overlay: false
+          },
+          model: {
+            value: _vm.dialogs.edit.show,
+            callback: function($$v) {
+              _vm.dialogs.edit.show = $$v
+            },
+            expression: "dialogs.edit.show"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-toolbar",
+                { staticClass: "primary", attrs: { dark: "" } },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "", dark: "" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.dialogs.edit.show = false
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("close")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-toolbar-title", [_vm._v("Edit File Group")]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-items",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { dark: "", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.dialogs.edit.show = false
+                            }
+                          }
+                        },
+                        [_vm._v("Done")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                [
+                  _c("file-group-edit", {
+                    attrs: { propFileGroupId: _vm.dialogs.edit.fileGroup.id }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-7e41742c", module.exports)
+  }
+}
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(235)
+/* template */
+var __vue_template__ = __webpack_require__(236)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\FileGroupEdit.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] FileGroupEdit.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-70394dc5", Component.options)
+  } else {
+    hotAPI.reload("data-v-70394dc5", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 235 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        propFileGroupId: {
+            required: true
+        }
+    },
+    data: function data() {
+        return {
+            valid: false,
+            isLoading: false,
+            name: '',
+            nameRules: [function (v) {
+                return !!v || 'Name is required';
+            }],
+            description: '',
+            descriptionRules: [function (v) {
+                return !!v || 'Description is required';
+            }]
+        };
+    },
+    mounted: function mounted() {
+        console.log('pages.FileGroupEdit.vue');
+
+        var self = this;
+    },
+
+    watch: {
+        propFileGroupId: function propFileGroupId(v) {
+            if (v) this.loadFileGroup(function () {});
+        }
+    },
+    methods: {
+        save: function save() {
+            var self = this;
+
+            var payload = {
+                name: self.name,
+                description: self.description
+            };
+
+            self.isLoading = true;
+
+            axios.put('/ajax/file-groups/' + self.propFileGroupId, payload).then(function (response) {
+
+                self.$store.commit('showSnackbar', {
+                    message: response.data.message,
+                    color: 'success',
+                    duration: 3000
+                });
+
+                self.isLoading = false;
+                self.$eventBus.$emit('FILE_GROUP_UPDATED');
+            }).catch(function (error) {
+                self.isLoading = false;
+                if (error.response) {
+                    self.$store.commit('showSnackbar', {
+                        message: error.response.data.message,
+                        color: 'error',
+                        duration: 3000
+                    });
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+            });
+        },
+        loadFileGroup: function loadFileGroup(cb) {
+
+            var self = this;
+
+            axios.get('/ajax/file-groups/' + self.propFileGroupId).then(function (response) {
+                var Group = response.data.data;
+                self.name = Group.name;
+                self.description = Group.description;
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 236 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-form",
+            {
+              ref: "fileGroupFormEdit",
+              attrs: { "lazy-validation": "" },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-container",
+                { attrs: { "grid-list-md": "" } },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "" } },
+                    [
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c("div", { staticClass: "body-2 white--text" }, [
+                          _vm._v("File Group Details")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Group Name",
+                              rules: _vm.nameRules
+                            },
+                            model: {
+                              value: _vm.name,
+                              callback: function($$v) {
+                                _vm.name = $$v
+                              },
+                              expression: "name"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              "multi-line": "",
+                              dark: "",
+                              label: "Group Description",
+                              rules: _vm.descriptionRules
+                            },
+                            model: {
+                              value: _vm.description,
+                              callback: function($$v) {
+                                _vm.description = $$v
+                              },
+                              expression: "description"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                disabled: !_vm.valid,
+                                color: "primary",
+                                dark: ""
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.save()
+                                }
+                              }
+                            },
+                            [_vm._v("Update")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-70394dc5", module.exports)
   }
 }
 
 /***/ })
-],[132]);
+],[134]);

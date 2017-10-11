@@ -10,10 +10,6 @@
             console.log('pages.Home.vue');
 
             const self = this;
-
-            setTimeout(()=>{
-                self.$store.commit('hideLoader');
-            },1500);
         }
     }
 </script>

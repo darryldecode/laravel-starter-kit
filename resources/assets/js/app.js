@@ -83,8 +83,6 @@ const admin = new Vue({
 
             if(rn==='vue') {
 
-                store.commit('showLoader');
-
                 this.$router.push({name: routeName});
             }
             if(rn==='full_load') {

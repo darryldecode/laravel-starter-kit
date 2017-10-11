@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import store from '../store';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
     routes: [
         {
             path: '/',
@@ -30,4 +31,17 @@ export default new Router({
             component: require('../pages/Settings.vue'),
         }
     ],
-})
+});
+
+router.beforeEach((to, from, next) => {
+    store.commit('showLoader');
+    next();
+});
+
+router.afterEach((to, from) => {
+    setTimeout(()=>{
+        store.commit('hideLoader');
+    },1000);
+});
+
+export default router;

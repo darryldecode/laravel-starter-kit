@@ -24,7 +24,13 @@ Route::prefix('admin')->namespace('Admin')->middleware('auth')->group(function()
 // ajax
 Route::prefix('ajax')->namespace('Ajax')->middleware('auth')->group(function()
 {
+    // files
+    Route::post('files','FileController@store')->name('ajax.files.store');
+
+    // resource routes
     Route::resource('users','UserController');
     Route::resource('groups','GroupController');
     Route::resource('permissions','PermissionController');
+    Route::resource('files','FileController');
+    Route::resource('file-groups','FileGroupController');
 });

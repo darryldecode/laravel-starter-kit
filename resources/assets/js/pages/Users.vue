@@ -55,14 +55,15 @@
                 active: ''
             }
         },
+        watch: {
+            active(v) {
+                console.log('active tab: ' + v);
+            }
+        },
         mounted() {
             console.log('pages.Users.vue');
 
             const self = this;
-
-            setTimeout(()=>{
-                self.$store.commit('hideLoader');
-            },1500);
         }
     }
 </script>

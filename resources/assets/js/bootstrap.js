@@ -1,6 +1,7 @@
 
 window._ = require('lodash');
 window.moment = require('moment');
+window.Dropzone = require('dropzone');
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
