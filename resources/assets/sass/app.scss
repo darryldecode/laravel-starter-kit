@@ -23,6 +23,11 @@
   background: hsla(0,0%,100%,.1);
 }
 
+/* pre-defined */
+.wask_td_action {
+  min-width: 150px;
+}
+
 /* override */
 #admin .snack {
   z-index: 500 !important;

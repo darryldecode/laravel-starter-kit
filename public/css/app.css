@@ -469,6 +469,12 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* pre-defined */
+
+.wask_td_action {
+  min-width: 150px;
+}
+
 /* override */
 
 #admin .snack {

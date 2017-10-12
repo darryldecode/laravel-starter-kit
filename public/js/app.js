@@ -647,7 +647,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(135);
-module.exports = __webpack_require__(234);
+module.exports = __webpack_require__(237);
 
 
 /***/ }),
@@ -662,8 +662,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetify_dist_vuetify_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuetify_dist_vuetify_min_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router___ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store___ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event___ = __webpack_require__(229);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_Formatters__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event___ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_Formatters__ = __webpack_require__(233);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -691,7 +691,7 @@ Vue.component('moon-loader', __webpack_require__(164));
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_5__common_Formatters__["a" /* default */]);
 Vue.use(__WEBPACK_IMPORTED_MODULE_4__event___["a" /* default */]);
-Vue.component('example', __webpack_require__(231));
+Vue.component('example', __webpack_require__(234));
 
 var admin = new Vue({
     el: '#admin',
@@ -30279,7 +30279,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["default"]({
     }, {
         name: 'settings',
         path: '/settings',
-        component: __webpack_require__(226)
+        component: __webpack_require__(229)
     }]
 });
 
@@ -37171,7 +37171,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(210)
 /* template */
-var __vue_template__ = __webpack_require__(225)
+var __vue_template__ = __webpack_require__(228)
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
@@ -37258,7 +37258,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_FileLists_vue__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_FileLists_vue__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_FileLists_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_FileLists_vue__);
 //
 //
@@ -38858,6 +38858,312 @@ if (false) {
 /* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(240)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(226)
+/* template */
+var __vue_template__ = __webpack_require__(242)
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-2c50fc31"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\FileLists.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] FileLists.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2c50fc31", Component.options)
+  } else {
+    hotAPI.reload("data-v-2c50fc31", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 226 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {},
+    data: function data() {
+        return {
+            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Thumb', value: 'thumb', align: 'left', sortable: false }, { text: 'Name', value: 'name', align: 'left', sortable: false }, { text: 'Size', value: 'size', align: 'left', sortable: false }, { text: 'Found In', value: 'group', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
+            items: [],
+            totalPages: 0,
+            page: 1,
+
+            filters: {
+                name: '',
+                selectedGroupIds: '',
+                fileGroupId: [],
+                fileGroupsHolder: []
+            },
+
+            dialogs: {
+                view: {
+                    file: {},
+                    show: false
+                }
+            }
+        };
+    },
+    mounted: function mounted() {
+        console.log('pages.FileGroupLists.vue');
+
+        var self = this;
+
+        self.loadFileGroups(function () {
+            self.loadFiles(function () {});
+        });
+
+        self.$eventBus.$on(['FILE_UPLOADED', 'FILE_DELETED'], function () {
+            self.loadFiles(function () {});
+        });
+        self.$eventBus.$on(['FILE_GROUP_ADDED'], function () {
+            self.loadFileGroups(function () {});
+        });
+    },
+
+    watch: {
+        'filters.fileGroupId': _.debounce(function (v) {
+
+            var selected = [];
+
+            _.each(v, function (v, k) {
+                if (v) selected.push(k);
+            });
+
+            this.filters.selectedGroupIds = selected.join(',');
+        }, 500),
+        'filters.selectedGroupIds': function filtersSelectedGroupIds(v) {
+            this.loadFiles(function () {});
+        },
+
+        'filters.name': _.debounce(function (v) {
+            this.loadFiles(function () {});
+        }, 500),
+        'page': function page(v) {
+            this.loadFiles(function () {});
+        }
+    },
+    methods: {
+        downloadFile: function downloadFile(file) {},
+        showDialog: function showDialog(dialog, data) {
+
+            var self = this;
+
+            switch (dialog) {
+                case 'file_show':
+                    self.dialogs.view.file = data;
+                    setTimeout(function () {
+                        self.dialogs.view.show = true;
+                    }, 500);
+                    break;
+            }
+        },
+        trash: function trash(file) {
+            var self = this;
+
+            self.$store.commit('showDialog', {
+                type: "confirm",
+                title: "Confirm Deletion",
+                message: "Are you sure you want to delete this file?",
+                okCb: function okCb() {
+
+                    axios.delete('/ajax/files/' + file.id).then(function (response) {
+
+                        self.$store.commit('showSnackbar', {
+                            message: response.data.message,
+                            color: 'success',
+                            duration: 3000
+                        });
+
+                        self.$eventBus.$emit('FILE_DELETED');
+
+                        // maybe the action took place from view file
+                        // lets close it.
+                        self.dialogs.view.show = false;
+                    }).catch(function (error) {
+                        if (error.response) {
+                            self.$store.commit('showSnackbar', {
+                                message: error.response.data.message,
+                                color: 'error',
+                                duration: 3000
+                            });
+                        } else if (error.request) {
+                            console.log(error.request);
+                        } else {
+                            console.log('Error', error.message);
+                        }
+                    });
+                },
+                cancelCb: function cancelCb() {
+                    console.log("CANCEL");
+                }
+            });
+        },
+        loadFileGroups: function loadFileGroups(cb) {
+
+            var self = this;
+
+            var params = {
+                paginate: 'no'
+            };
+
+            axios.get('/ajax/file-groups', { params: params }).then(function (response) {
+                self.filters.fileGroupsHolder = response.data.data;
+                cb();
+            });
+        },
+        loadFiles: function loadFiles(cb) {
+
+            var self = this;
+
+            var params = {
+                name: self.filters.name,
+                file_group_id: self.filters.selectedGroupIds,
+                page: self.page
+            };
+
+            axios.get('/ajax/files', { params: params }).then(function (response) {
+                self.items = response.data.data.data;
+                self.totalPages = response.data.data.last_page;
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 227 */,
+/* 228 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -38967,15 +39273,15 @@ if (false) {
 }
 
 /***/ }),
-/* 226 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(227)
+var __vue_script__ = __webpack_require__(230)
 /* template */
-var __vue_template__ = __webpack_require__(228)
+var __vue_template__ = __webpack_require__(231)
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -39013,7 +39319,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 227 */
+/* 230 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39034,7 +39340,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 228 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -39054,7 +39360,7 @@ if (false) {
 }
 
 /***/ }),
-/* 229 */
+/* 232 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39072,7 +39378,7 @@ var EventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 });
 
 /***/ }),
-/* 230 */
+/* 233 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39094,15 +39400,15 @@ var EventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 });
 
 /***/ }),
-/* 231 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(232)
+var __vue_script__ = __webpack_require__(235)
 /* template */
-var __vue_template__ = __webpack_require__(233)
+var __vue_template__ = __webpack_require__(236)
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -39140,7 +39446,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 232 */
+/* 235 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39169,7 +39475,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 233 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -39212,254 +39518,55 @@ if (false) {
 }
 
 /***/ }),
-/* 234 */
+/* 237 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 235 */,
-/* 236 */,
-/* 237 */
+/* 238 */,
+/* 239 */,
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(238)
-/* template */
-var __vue_template__ = __webpack_require__(239)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\FileLists.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] FileLists.vue: functional components are not supported with templates, they should use render functions.")}
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2c50fc31", Component.options)
-  } else {
-    hotAPI.reload("data-v-2c50fc31", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
+// load the styles
+var content = __webpack_require__(241);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("7934061a", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2c50fc31\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FileLists.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2c50fc31\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FileLists.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
-module.exports = Component.exports
+/***/ }),
+/* 241 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.file_view_popup[data-v-2c50fc31] {\n    min-width: 500px;\n    text-align: center;\n}\n", ""]);
+
+// exports
 
 
 /***/ }),
-/* 238 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {},
-    data: function data() {
-        return {
-            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Thumb', value: 'thumb', align: 'left', sortable: false }, { text: 'Name', value: 'name', align: 'left', sortable: false }, { text: 'Size', value: 'size', align: 'left', sortable: false }, { text: 'Found In', value: 'group', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
-            items: [],
-            totalPages: 0,
-            page: 1,
-
-            filters: {
-                name: '',
-                selectedGroupIds: '',
-                fileGroupId: [],
-                fileGroupsHolder: []
-            }
-        };
-    },
-    mounted: function mounted() {
-        console.log('pages.FileGroupLists.vue');
-
-        var self = this;
-
-        self.loadFileGroups(function () {
-            self.loadFiles(function () {});
-        });
-
-        self.$eventBus.$on(['FILE_UPLOADED', 'FILE_DELETED'], function () {
-            self.loadFiles(function () {});
-        });
-        self.$eventBus.$on(['FILE_GROUP_ADDED'], function () {
-            self.loadFileGroups(function () {});
-        });
-    },
-
-    watch: {
-        'filters.fileGroupId': _.debounce(function (v) {
-
-            var selected = [];
-
-            _.each(v, function (v, k) {
-                if (v) selected.push(k);
-            });
-
-            this.filters.selectedGroupIds = selected.join(',');
-        }, 500),
-        'filters.selectedGroupIds': function filtersSelectedGroupIds(v) {
-            this.loadFiles(function () {});
-        },
-
-        'filters.name': _.debounce(function (v) {
-            this.loadFiles(function () {});
-        }, 500),
-        'page': function page(v) {
-            this.loadFiles(function () {});
-        }
-    },
-    methods: {
-        trash: function trash(file) {
-            var self = this;
-
-            self.$store.commit('showDialog', {
-                type: "confirm",
-                title: "Confirm Deletion",
-                message: "Are you sure you want to delete this file?",
-                okCb: function okCb() {
-
-                    axios.delete('/ajax/files/' + file.id).then(function (response) {
-
-                        self.$store.commit('showSnackbar', {
-                            message: response.data.message,
-                            color: 'success',
-                            duration: 3000
-                        });
-
-                        self.$eventBus.$emit('FILE_DELETED');
-                    }).catch(function (error) {
-                        if (error.response) {
-                            self.$store.commit('showSnackbar', {
-                                message: error.response.data.message,
-                                color: 'error',
-                                duration: 3000
-                            });
-                        } else if (error.request) {
-                            console.log(error.request);
-                        } else {
-                            console.log('Error', error.message);
-                        }
-                    });
-                },
-                cancelCb: function cancelCb() {
-                    console.log("CANCEL");
-                }
-            });
-        },
-        loadFileGroups: function loadFileGroups(cb) {
-
-            var self = this;
-
-            var params = {
-                paginate: 'no'
-            };
-
-            axios.get('/ajax/file-groups', { params: params }).then(function (response) {
-                self.filters.fileGroupsHolder = response.data.data;
-                cb();
-            });
-        },
-        loadFiles: function loadFiles(cb) {
-
-            var self = this;
-
-            var params = {
-                name: self.filters.name,
-                file_group_id: self.filters.selectedGroupIds,
-                page: self.page
-            };
-
-            axios.get('/ajax/files', { params: params }).then(function (response) {
-                self.items = response.data.data.data;
-                self.totalPages = response.data.data.last_page;
-                cb();
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 239 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -39588,7 +39695,28 @@ var render = function() {
               return [
                 _c(
                   "td",
+                  { staticClass: "wask_td_action" },
                   [
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { icon: "", small: "" },
+                        on: {
+                          click: function($event) {
+                            _vm.showDialog("file_show", props.item)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-icon",
+                          { staticClass: "red--text", attrs: { dark: "" } },
+                          [_vm._v("search")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
                     _c(
                       "v-btn",
                       {
@@ -39612,22 +39740,38 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _c("td", [
-                  _c("img", {
-                    attrs: {
-                      src:
-                        "/files/" + props.item.id + "/preview?w=50&action=fit",
-                      width: "50"
-                    }
-                  })
-                ]),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "v-avatar",
+                      {
+                        staticClass: "grey lighten-4",
+                        attrs: { tile: "", size: 50 }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "/files/" +
+                              props.item.id +
+                              "/preview?w=50&action=fit"
+                          }
+                        })
+                      ]
+                    )
+                  ],
+                  1
+                ),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(props.item.name))]),
                 _vm._v(" "),
                 _c("td", [
                   _vm._v(
                     _vm._s(
-                      _vm.$appFormatters.formatByteToMB(props.item.size) + " MB"
+                      _vm.$appFormatters
+                        .formatByteToMB(props.item.size)
+                        .toString() + " MB"
                     )
                   )
                 ]),
@@ -39659,6 +39803,127 @@ var render = function() {
               expression: "page"
             }
           })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            fullscreen: "",
+            laze: false,
+            transition: "dialog-bottom-transition",
+            overlay: false
+          },
+          model: {
+            value: _vm.dialogs.view.show,
+            callback: function($$v) {
+              _vm.dialogs.view.show = $$v
+            },
+            expression: "dialogs.view.show"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-toolbar",
+                { staticClass: "primary", attrs: { dark: "" } },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "", dark: "" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.dialogs.view.show = false
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("close")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-toolbar-title", [
+                    _vm._v(_vm._s(_vm.dialogs.view.file.name))
+                  ]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-items",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { dark: "", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.downloadFile(_vm.dialogs.view.file)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        Download\n                        "
+                          ),
+                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                            _vm._v("file_download")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-items",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { dark: "", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.trash(_vm.dialogs.view.file)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        Delete\n                        "
+                          ),
+                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                            _vm._v("delete")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-card-text", [
+                _c("div", { staticClass: "file_view_popup" }, [
+                  _c("img", {
+                    attrs: {
+                      src:
+                        "/files/" +
+                        _vm.dialogs.view.file.id +
+                        "/preview?w=4000&action=resize"
+                    }
+                  })
+                ])
+              ])
+            ],
+            1
+          )
         ],
         1
       )

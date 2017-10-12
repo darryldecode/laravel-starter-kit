@@ -37,16 +37,24 @@
                 <span v-else>{{ props.header.text }}</span>
             </template>
             <template slot="items" scope="props">
-                <td>
+                <td class="wask_td_action">
+                    <v-btn @click="showDialog('file_show',props.item)" icon small>
+                        <v-icon dark class="red--text">search</v-icon>
+                    </v-btn>
                     <v-btn @click="trash(props.item)" icon small>
                         <v-icon dark class="red--text">delete</v-icon>
                     </v-btn>
                 </td>
                 <td>
-                    <img :src="`/files/`+props.item.id+`/preview?w=50&action=fit`" width="50"/>
+                    <v-avatar
+                            tile
+                            :size="50"
+                            class="grey lighten-4">
+                        <img :src="`/files/`+props.item.id+`/preview?w=50&action=fit`"/>
+                    </v-avatar>
                 </td>
                 <td>{{ props.item.name }}</td>
-                <td>{{ $appFormatters.formatByteToMB(props.item.size) + ' MB' }}</td>
+                <td>{{ $appFormatters.formatByteToMB(props.item.size).toString() + ' MB' }}</td>
                 <td>{{ props.item.group.name }}</td>
                 <td>{{ $appFormatters.formatDate(props.item.created_at) }}</td>
             </template>
@@ -54,6 +62,35 @@
         <div class="text-xs-center">
             <v-pagination :length="totalPages" :total-visible="8" v-model="page" circle></v-pagination>
         </div>
+        <!-- /groups table -->
+
+        <!-- view file dialog -->
+        <v-dialog v-model="dialogs.view.show" fullscreen :laze="false" transition="dialog-bottom-transition" :overlay=false>
+            <v-card>
+                <v-toolbar dark class="primary">
+                    <v-btn icon @click.native="dialogs.view.show = false" dark>
+                        <v-icon>close</v-icon>
+                    </v-btn>
+                    <v-toolbar-title>{{dialogs.view.file.name}}</v-toolbar-title>
+                    <v-spacer></v-spacer>
+                    <v-toolbar-items>
+                        <v-btn dark flat @click.native="downloadFile(dialogs.view.file)">
+                            Download
+                            <v-icon right dark>file_download</v-icon></v-btn>
+                    </v-toolbar-items>
+                    <v-toolbar-items>
+                        <v-btn dark flat @click.native="trash(dialogs.view.file)">
+                            Delete
+                            <v-icon right dark>delete</v-icon></v-btn>
+                    </v-toolbar-items>
+                </v-toolbar>
+                <v-card-text>
+                    <div class="file_view_popup">
+                        <img :src="`/files/`+dialogs.view.file.id+`/preview?w=4000&action=resize`"/>
+                    </div>
+                </v-card-text>
+            </v-card>
+        </v-dialog>
 
     </div>
 </template>
@@ -80,6 +117,13 @@
                     selectedGroupIds: '',
                     fileGroupId: [],
                     fileGroupsHolder: []
+                },
+
+                dialogs: {
+                    view: {
+                        file: {},
+                        show: false
+                    },
                 }
             }
         },
@@ -121,6 +165,22 @@
             },
         },
         methods: {
+            downloadFile(file) {
+
+            },
+            showDialog(dialog, data) {
+
+                const self = this;
+
+                switch (dialog){
+                    case 'file_show':
+                        self.dialogs.view.file = data;
+                        setTimeout(()=>{
+                            self.dialogs.view.show = true;
+                        },500);
+                        break;
+                }
+            },
             trash(file) {
                 const self = this;
 
@@ -139,6 +199,10 @@
                             });
 
                             self.$eventBus.$emit('FILE_DELETED');
+
+                            // maybe the action took place from view file
+                            // lets close it.
+                            self.dialogs.view.show = false;
 
                         }).catch(function (error) {
                             if (error.response) {
@@ -191,3 +255,10 @@
         }
     }
 </script>
+
+<style scoped>
+    .file_view_popup {
+        min-width: 500px;
+        text-align: center;
+    }
+</style>
