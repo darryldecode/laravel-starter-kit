@@ -1,7 +1,28 @@
 <template>
     <div class="component-wrap">
-        <v-btn color="primary" @click="upload">Upload</v-btn>
-        <div class="dropzone" id="fileupload"></div>
+        <!-- form -->
+        <v-card dark>
+            <v-form ref="fileFormUpload" lazy-validation>
+                <v-container grid-list-md>
+                    <v-layout row wrap>
+                        <v-flex xs12>
+                            <v-select
+                                    label="Upload To File Group"
+                                    v-bind:items="fileGroups"
+                                    v-model="uploadTo"
+                                    dark
+                                    item-text="name"
+                                    item-value="id"
+                            ></v-select>
+                        </v-flex>
+                        <v-flex xs12>
+                            <div class="dropzone" id="fileupload"></div>
+                        </v-flex>
+                    </v-layout>
+                </v-container>
+            </v-form>
+        </v-card>
+        <!-- /form -->
     </div>
 </template>
 
@@ -9,7 +30,9 @@
     export default {
         data() {
             return {
-                dropzone: null
+                dropzone: null,
+                fileGroups: [],
+                uploadTo: ''
             }
         },
         mounted() {
@@ -17,7 +40,12 @@
 
             const self = this;
 
+            self.loadFileGroups(()=>{});
             self.initDropzone();
+
+            self.$eventBus.$on(['FILE_GROUP_ADDED'],()=>{
+                self.loadFileGroups(()=>{});
+            });
         },
         methods: {
             upload() {
@@ -37,15 +65,53 @@
                     paramName: "file", // The name that will be used to transfer the file
                     maxFilesize: 50, // 50MB
                     uploadMultiple: true,
-                    acceptedFiles: 'image/*',
+                    //acceptedFiles: 'image/*',
                     headers: {'X-CSRF-TOKEN' : _token},
-                    autoProcessQueue: false,
+                    autoProcessQueue: true,
                     init: function() {
                         // initial hook
                     },
                     success: function(file, response){
                         // success hook
                     }
+                });
+
+                self.dropzone.on("addedfile", function(file) {
+                    if(!self.uploadTo) {
+                        self.$store.commit('showSnackbar',{
+                            message: "Please choose file group to upload the file(s)",
+                            color: 'error',
+                            duration: 3000
+                        });
+                        self.dropzone.removeFile(file);
+                    }
+                });
+
+                self.dropzone.on('sending',(file,xhr,formData)=> {
+                    formData.append('file_group_id',self.uploadTo);
+                });
+
+                self.dropzone.on("complete", function(file) {
+                    self.$store.commit('showSnackbar',{
+                        message: "File(s) uploaded successfully.",
+                        color: 'success',
+                        duration: 3000
+                    });
+
+                    self.$eventBus.$emit('FILE_UPLOADED');
+                });
+            },
+            loadFileGroups(cb) {
+
+                const self = this;
+
+                let params = {
+                    paginate: 'no'
+                };
+
+                axios.get('/ajax/file-groups',{params: params}).then(function(response) {
+                    self.fileGroups = response.data.data;
+                    cb();
                 });
             }
         }

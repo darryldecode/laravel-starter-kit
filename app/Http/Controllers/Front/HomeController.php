@@ -6,12 +6,12 @@
  * Time: 5:11 PM
  */
 
-namespace App\Http\Controllers\Pages;
+namespace App\Http\Controllers\Front;
 
 
 use App\User;
 
-class HomeController extends PagesController
+class HomeController extends FrontController
 {
     public function index()
     {

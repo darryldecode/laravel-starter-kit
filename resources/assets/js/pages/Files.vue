@@ -17,7 +17,7 @@
                 <v-tabs-content id="files">
                     <v-card flat>
                         <v-card-text>
-
+                            <file-lists></file-lists>
                         </v-card-text>
                     </v-card>
                 </v-tabs-content>
@@ -43,10 +43,12 @@
 <script>
     import FileGroupLists from '../components/FileGroupLists.vue';
     import FileUpload from '../components/FileUpload.vue';
+    import FileLists from '../components/FileLists.vue';
     export default {
         components: {
             FileUpload,
-            FileGroupLists
+            FileGroupLists,
+            FileLists
         },
         mounted() {
             console.log('pages.FileManager.vue');

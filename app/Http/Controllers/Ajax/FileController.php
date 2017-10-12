@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Ajax;
 
 use App\Contracts\FileRepository;
 use Illuminate\Http\Request;
+use Auth;
 
 class FileController extends AjaxController
 {
@@ -45,7 +46,55 @@ class FileController extends AjaxController
      */
     public function store(Request $request)
     {
-        //
+        $data  = $request->all();
+        $files = $request->file('file');
+        $error = false;
+        $errorMessage = '';
+
+        foreach ($files as $file)
+        {
+            $res = $this->fileRepository->upload($file);
+
+            if(!$res->isSuccessful())
+            {
+                $error = true;
+                $errorMessage = $res->getMessage();
+                break;
+            }
+
+            $fileData = $res->getData();
+            $fileRecord = $this->fileRepository->create([
+                'name' => $fileData['original_name'],
+                'uploaded_by' => Auth::user()->id,
+                'file_group_id' => $data['file_group_id'],
+                'file_type' => $fileData['type'],
+                'extension' => $fileData['ext'],
+                'size' => $fileData['size'],
+                'path' => $fileData['path'],
+            ]);
+
+            if(!$fileRecord->isSuccessful())
+            {
+                $this->fileRepository->deleteFile($res['path']);
+                $error = true;
+                $errorMessage = $fileRecord->getMessage();
+                break;
+            }
+        }
+
+        if($error)
+        {
+            return $this->sendResponse(
+                $errorMessage,
+                null,
+                400
+            );
+        }
+
+        return $this->sendResponse(
+            $res->getMessage(),
+            $res->getData()
+        );
     }
 
     /**
@@ -79,6 +128,11 @@ class FileController extends AjaxController
      */
     public function destroy($id)
     {
-        //
+        $results = $this->fileRepository->delete($id);
+
+        return $this->sendResponse(
+            $results->getMessage(),
+            $results->getData()
+        );
     }
 }

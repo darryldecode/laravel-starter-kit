@@ -6,12 +6,12 @@
  * Time: 5:11 PM
  */
 
-namespace App\Http\Controllers\Pages;
+namespace App\Http\Controllers\Front;
 
 
 use App\Http\Controllers\Controller;
 
-abstract class PagesController extends Controller
+abstract class FrontController extends Controller
 {
 
 }

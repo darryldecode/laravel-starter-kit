@@ -10,7 +10,6 @@ class File extends Model
 
     protected $fillable = [
         'name',
-        'description',
         'uploaded_by',
         'file_group_id',
         'file_type',
@@ -36,7 +35,7 @@ class File extends Model
      */
     public function group()
     {
-        return $this->belongsTo(Group::class,'file_group_id');
+        return $this->belongsTo(FileGroup::class,'file_group_id');
     }
 
     /**

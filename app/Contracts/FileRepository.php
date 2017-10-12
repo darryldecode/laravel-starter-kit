@@ -56,8 +56,20 @@ interface FileRepository
     public function delete($id);
 
     /**
-     * @param Request $request
+     * @param \Illuminate\Http\UploadedFile $file
      * @return Result
      */
-    public function upload($request);
+    public function upload($file);
+
+    /**
+     * @param string $path
+     * @return Result
+     */
+    public function deleteFile($path);
+
+    /**
+     * @param array $data
+     * @return Result
+     */
+    public function previewFile($data);
 }

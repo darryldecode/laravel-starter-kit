@@ -647,7 +647,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(135);
-module.exports = __webpack_require__(225);
+module.exports = __webpack_require__(234);
 
 
 /***/ }),
@@ -662,8 +662,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetify_dist_vuetify_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuetify_dist_vuetify_min_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router___ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store___ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event___ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_Formatters__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event___ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_Formatters__ = __webpack_require__(230);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -691,7 +691,7 @@ Vue.component('moon-loader', __webpack_require__(164));
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_5__common_Formatters__["a" /* default */]);
 Vue.use(__WEBPACK_IMPORTED_MODULE_4__event___["a" /* default */]);
-Vue.component('example', __webpack_require__(222));
+Vue.component('example', __webpack_require__(231));
 
 var admin = new Vue({
     el: '#admin',
@@ -30279,7 +30279,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["default"]({
     }, {
         name: 'settings',
         path: '/settings',
-        component: __webpack_require__(217)
+        component: __webpack_require__(226)
     }]
 });
 
@@ -37171,7 +37171,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(210)
 /* template */
-var __vue_template__ = __webpack_require__(216)
+var __vue_template__ = __webpack_require__(225)
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
@@ -37254,10 +37254,12 @@ exports.push([module.i, "\n.finder_wrap[data-v-2809f2cb] {\n    padding: 0 20px;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_FileLists_vue__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_FileLists_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_FileLists_vue__);
 //
 //
 //
@@ -37300,13 +37302,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
         FileUpload: __WEBPACK_IMPORTED_MODULE_1__components_FileUpload_vue___default.a,
-        FileGroupLists: __WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue___default.a
+        FileGroupLists: __WEBPACK_IMPORTED_MODULE_0__components_FileGroupLists_vue___default.a,
+        FileLists: __WEBPACK_IMPORTED_MODULE_2__components_FileLists_vue___default.a
     },
     mounted: function mounted() {
         console.log('pages.FileManager.vue');
@@ -37332,544 +37336,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(212)
-}
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(214)
-/* template */
-var __vue_template__ = __webpack_require__(215)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-06bc3015"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\FileUpload.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] FileUpload.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-06bc3015", Component.options)
-  } else {
-    hotAPI.reload("data-v-06bc3015", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 212 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(213);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(5)("6b268f2c", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-06bc3015\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FileUpload.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-06bc3015\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FileUpload.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 213 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(4)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n#fileupload[data-v-06bc3015] {\n    min-height: 400px;\n    background: grey;\n    border: 1px dashed #eaeaea;\n}\n.dropzone .dz-preview.dz-image-preview[data-v-06bc3015] {\n    background: none;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 214 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            dropzone: null
-        };
-    },
-    mounted: function mounted() {
-        console.log('pages.Home.vue');
-
-        var self = this;
-
-        self.initDropzone();
-    },
-
-    methods: {
-        upload: function upload() {
-
-            var self = this;
-
-            self.dropzone.processQueue();
-        },
-        initDropzone: function initDropzone() {
-
-            var self = this;
-
-            Dropzone.autoDiscover = false;
-
-            self.dropzone = new Dropzone("#fileupload", {
-                url: '/ajax/files',
-                paramName: "file", // The name that will be used to transfer the file
-                maxFilesize: 50, // 50MB
-                uploadMultiple: true,
-                acceptedFiles: 'image/*',
-                headers: { 'X-CSRF-TOKEN': _token },
-                autoProcessQueue: false,
-                init: function init() {
-                    // initial hook
-                },
-                success: function success(file, response) {
-                    // success hook
-                }
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 215 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "component-wrap" },
-    [
-      _c("v-btn", { attrs: { color: "primary" }, on: { click: _vm.upload } }, [
-        _vm._v("Upload")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dropzone", attrs: { id: "fileupload" } })
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-06bc3015", module.exports)
-  }
-}
-
-/***/ }),
-/* 216 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "page_wrap_vue" },
-    [
-      _c(
-        "v-tabs",
-        {
-          attrs: { dark: "" },
-          model: {
-            value: _vm.active,
-            callback: function($$v) {
-              _vm.active = $$v
-            },
-            expression: "active"
-          }
-        },
-        [
-          _c(
-            "v-tabs-bar",
-            { staticClass: "cyan" },
-            [
-              _c("v-tabs-item", { attrs: { href: "#files", ripple: "" } }, [
-                _vm._v("\n                Files\n            ")
-              ]),
-              _vm._v(" "),
-              _c(
-                "v-tabs-item",
-                { attrs: { href: "#manage-groups", ripple: "" } },
-                [_vm._v("\n                Manage File Groups\n            ")]
-              ),
-              _vm._v(" "),
-              _c("v-tabs-item", { attrs: { href: "#upload", ripple: "" } }, [
-                _vm._v("\n                Upload\n            ")
-              ]),
-              _vm._v(" "),
-              _c("v-tabs-slider", { staticClass: "yellow" })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-tabs-items",
-            [
-              _c(
-                "v-tabs-content",
-                { attrs: { id: "files" } },
-                [_c("v-card", { attrs: { flat: "" } }, [_c("v-card-text")], 1)],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-tabs-content",
-                { attrs: { id: "manage-groups" } },
-                [
-                  _c(
-                    "v-card",
-                    { attrs: { flat: "" } },
-                    [_c("v-card-text", [_c("file-group-lists")], 1)],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-tabs-content",
-                { attrs: { id: "upload" } },
-                [
-                  _c(
-                    "v-card",
-                    { attrs: { flat: "" } },
-                    [_c("v-card-text", [_c("file-upload")], 1)],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-2809f2cb", module.exports)
-  }
-}
-
-/***/ }),
-/* 217 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(218)
+var __vue_script__ = __webpack_require__(212)
 /* template */
 var __vue_template__ = __webpack_require__(219)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\pages\\Settings.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Settings.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5d269b02", Component.options)
-  } else {
-    hotAPI.reload("data-v-5d269b02", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 218 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('pages.Settings.vue');
-
-        var self = this;
-    }
-});
-
-/***/ }),
-/* 219 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    SETTINGS VUE\n")])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5d269b02", module.exports)
-  }
-}
-
-/***/ }),
-/* 220 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-
-
-var EventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    install: function install(Vue, options) {
-
-        Vue.prototype.$eventBus = EventBus;
-    }
-});
-
-/***/ }),
-/* 221 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-    install: function install(Vue, options) {
-
-        Vue.prototype.$appFormatters = {
-            formatDate: function formatDate(dateString, format) {
-                return moment(dateString).format(format ? format : 'MMMM DD, YYYY');
-            }
-        };
-    }
-});
-
-/***/ }),
-/* 222 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(223)
-/* template */
-var __vue_template__ = __webpack_require__(224)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\Example.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f5456cbc", Component.options)
-  } else {
-    hotAPI.reload("data-v-f5456cbc", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 223 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
-/* 224 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
-          _c("div", { staticClass: "panel panel-default" }, [
-            _c("div", { staticClass: "panel-heading" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _vm._v(
-                "\n                    I'm an example component!\n                "
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-f5456cbc", module.exports)
-  }
-}
-
-/***/ }),
-/* 225 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 226 */,
-/* 227 */,
-/* 228 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(229)
-/* template */
-var __vue_template__ = __webpack_require__(233)
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -37907,14 +37378,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 229 */
+/* 212 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FileGroupAdd_vue__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FileGroupAdd_vue__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FileGroupAdd_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__FileGroupAdd_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FileGroupEdit_vue__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FileGroupEdit_vue__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FileGroupEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__FileGroupEdit_vue__);
 //
 //
@@ -38134,15 +37605,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 230 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(231)
+var __vue_script__ = __webpack_require__(214)
 /* template */
-var __vue_template__ = __webpack_require__(232)
+var __vue_template__ = __webpack_require__(215)
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -38180,7 +37651,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 231 */
+/* 214 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38275,7 +37746,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 232 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -38415,7 +37886,306 @@ if (false) {
 }
 
 /***/ }),
-/* 233 */
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(217)
+/* template */
+var __vue_template__ = __webpack_require__(218)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\FileGroupEdit.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] FileGroupEdit.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-70394dc5", Component.options)
+  } else {
+    hotAPI.reload("data-v-70394dc5", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 217 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        propFileGroupId: {
+            required: true
+        }
+    },
+    data: function data() {
+        return {
+            valid: false,
+            isLoading: false,
+            name: '',
+            nameRules: [function (v) {
+                return !!v || 'Name is required';
+            }],
+            description: '',
+            descriptionRules: [function (v) {
+                return !!v || 'Description is required';
+            }]
+        };
+    },
+    mounted: function mounted() {
+        console.log('pages.FileGroupEdit.vue');
+
+        var self = this;
+    },
+
+    watch: {
+        propFileGroupId: function propFileGroupId(v) {
+            if (v) this.loadFileGroup(function () {});
+        }
+    },
+    methods: {
+        save: function save() {
+            var self = this;
+
+            var payload = {
+                name: self.name,
+                description: self.description
+            };
+
+            self.isLoading = true;
+
+            axios.put('/ajax/file-groups/' + self.propFileGroupId, payload).then(function (response) {
+
+                self.$store.commit('showSnackbar', {
+                    message: response.data.message,
+                    color: 'success',
+                    duration: 3000
+                });
+
+                self.isLoading = false;
+                self.$eventBus.$emit('FILE_GROUP_UPDATED');
+            }).catch(function (error) {
+                self.isLoading = false;
+                if (error.response) {
+                    self.$store.commit('showSnackbar', {
+                        message: error.response.data.message,
+                        color: 'error',
+                        duration: 3000
+                    });
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+            });
+        },
+        loadFileGroup: function loadFileGroup(cb) {
+
+            var self = this;
+
+            axios.get('/ajax/file-groups/' + self.propFileGroupId).then(function (response) {
+                var Group = response.data.data;
+                self.name = Group.name;
+                self.description = Group.description;
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 218 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { dark: "" } },
+        [
+          _c(
+            "v-form",
+            {
+              ref: "fileGroupFormEdit",
+              attrs: { "lazy-validation": "" },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-container",
+                { attrs: { "grid-list-md": "" } },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "" } },
+                    [
+                      _c("v-flex", { attrs: { xs12: "" } }, [
+                        _c("div", { staticClass: "body-2 white--text" }, [
+                          _vm._v("File Group Details")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              dark: "",
+                              label: "Group Name",
+                              rules: _vm.nameRules
+                            },
+                            model: {
+                              value: _vm.name,
+                              callback: function($$v) {
+                                _vm.name = $$v
+                              },
+                              expression: "name"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              box: "",
+                              "multi-line": "",
+                              dark: "",
+                              label: "Group Description",
+                              rules: _vm.descriptionRules
+                            },
+                            model: {
+                              value: _vm.description,
+                              callback: function($$v) {
+                                _vm.description = $$v
+                              },
+                              expression: "description"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                disabled: !_vm.valid,
+                                color: "primary",
+                                dark: ""
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.save()
+                                }
+                              }
+                            },
+                            [_vm._v("Update")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-70394dc5", module.exports)
+  }
+}
+
+/***/ }),
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -38785,19 +38555,23 @@ if (false) {
 }
 
 /***/ }),
-/* 234 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(221)
+}
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(235)
+var __vue_script__ = __webpack_require__(223)
 /* template */
-var __vue_template__ = __webpack_require__(236)
+var __vue_template__ = __webpack_require__(224)
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-06bc3015"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -38807,9 +38581,9 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\FileGroupEdit.vue"
+Component.options.__file = "resources\\assets\\js\\components\\FileUpload.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] FileGroupEdit.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] FileUpload.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -38818,9 +38592,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-70394dc5", Component.options)
+    hotAPI.createRecord("data-v-06bc3015", Component.options)
   } else {
-    hotAPI.reload("data-v-70394dc5", Component.options)
+    hotAPI.reload("data-v-06bc3015", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -38831,7 +38605,47 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 235 */
+/* 221 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(222);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("6b268f2c", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-06bc3015\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FileUpload.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-06bc3015\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FileUpload.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 222 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n#fileupload[data-v-06bc3015] {\n    min-height: 400px;\n    background: grey;\n    border: 1px dashed #eaeaea;\n}\n.dropzone .dz-preview.dz-image-preview[data-v-06bc3015] {\n    background: none;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 223 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38861,82 +38675,95 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        propFileGroupId: {
-            required: true
-        }
-    },
     data: function data() {
         return {
-            valid: false,
-            isLoading: false,
-            name: '',
-            nameRules: [function (v) {
-                return !!v || 'Name is required';
-            }],
-            description: '',
-            descriptionRules: [function (v) {
-                return !!v || 'Description is required';
-            }]
+            dropzone: null,
+            fileGroups: [],
+            uploadTo: ''
         };
     },
     mounted: function mounted() {
-        console.log('pages.FileGroupEdit.vue');
+        console.log('pages.Home.vue');
 
         var self = this;
+
+        self.loadFileGroups(function () {});
+        self.initDropzone();
+
+        self.$eventBus.$on(['FILE_GROUP_ADDED'], function () {
+            self.loadFileGroups(function () {});
+        });
     },
 
-    watch: {
-        propFileGroupId: function propFileGroupId(v) {
-            if (v) this.loadFileGroup(function () {});
-        }
-    },
     methods: {
-        save: function save() {
+        upload: function upload() {
+
             var self = this;
 
-            var payload = {
-                name: self.name,
-                description: self.description
-            };
+            self.dropzone.processQueue();
+        },
+        initDropzone: function initDropzone() {
 
-            self.isLoading = true;
+            var self = this;
 
-            axios.put('/ajax/file-groups/' + self.propFileGroupId, payload).then(function (response) {
+            Dropzone.autoDiscover = false;
 
+            self.dropzone = new Dropzone("#fileupload", {
+                url: '/ajax/files',
+                paramName: "file", // The name that will be used to transfer the file
+                maxFilesize: 50, // 50MB
+                uploadMultiple: true,
+                //acceptedFiles: 'image/*',
+                headers: { 'X-CSRF-TOKEN': _token },
+                autoProcessQueue: true,
+                init: function init() {
+                    // initial hook
+                },
+                success: function success(file, response) {
+                    // success hook
+                }
+            });
+
+            self.dropzone.on("addedfile", function (file) {
+                if (!self.uploadTo) {
+                    self.$store.commit('showSnackbar', {
+                        message: "Please choose file group to upload the file(s)",
+                        color: 'error',
+                        duration: 3000
+                    });
+                    self.dropzone.removeFile(file);
+                }
+            });
+
+            self.dropzone.on('sending', function (file, xhr, formData) {
+                formData.append('file_group_id', self.uploadTo);
+            });
+
+            self.dropzone.on("complete", function (file) {
                 self.$store.commit('showSnackbar', {
-                    message: response.data.message,
+                    message: "File(s) uploaded successfully.",
                     color: 'success',
                     duration: 3000
                 });
 
-                self.isLoading = false;
-                self.$eventBus.$emit('FILE_GROUP_UPDATED');
-            }).catch(function (error) {
-                self.isLoading = false;
-                if (error.response) {
-                    self.$store.commit('showSnackbar', {
-                        message: error.response.data.message,
-                        color: 'error',
-                        duration: 3000
-                    });
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
-                    console.log('Error', error.message);
-                }
+                self.$eventBus.$emit('FILE_UPLOADED');
             });
         },
-        loadFileGroup: function loadFileGroup(cb) {
+        loadFileGroups: function loadFileGroups(cb) {
 
             var self = this;
 
-            axios.get('/ajax/file-groups/' + self.propFileGroupId).then(function (response) {
-                var Group = response.data.data;
-                self.name = Group.name;
-                self.description = Group.description;
+            var params = {
+                paginate: 'no'
+            };
+
+            axios.get('/ajax/file-groups', { params: params }).then(function (response) {
+                self.fileGroups = response.data.data;
                 cb();
             });
         }
@@ -38944,7 +38771,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 236 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -38961,17 +38788,7 @@ var render = function() {
         [
           _c(
             "v-form",
-            {
-              ref: "fileGroupFormEdit",
-              attrs: { "lazy-validation": "" },
-              model: {
-                value: _vm.valid,
-                callback: function($$v) {
-                  _vm.valid = $$v
-                },
-                expression: "valid"
-              }
-            },
+            { ref: "fileFormUpload", attrs: { "lazy-validation": "" } },
             [
               _c(
                 "v-container",
@@ -38981,82 +38798,36 @@ var render = function() {
                     "v-layout",
                     { attrs: { row: "", wrap: "" } },
                     [
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              label: "Upload To File Group",
+                              items: _vm.fileGroups,
+                              dark: "",
+                              "item-text": "name",
+                              "item-value": "id"
+                            },
+                            model: {
+                              value: _vm.uploadTo,
+                              callback: function($$v) {
+                                _vm.uploadTo = $$v
+                              },
+                              expression: "uploadTo"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
                       _c("v-flex", { attrs: { xs12: "" } }, [
-                        _c("div", { staticClass: "body-2 white--text" }, [
-                          _vm._v("File Group Details")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              dark: "",
-                              label: "Group Name",
-                              rules: _vm.nameRules
-                            },
-                            model: {
-                              value: _vm.name,
-                              callback: function($$v) {
-                                _vm.name = $$v
-                              },
-                              expression: "name"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              box: "",
-                              "multi-line": "",
-                              dark: "",
-                              label: "Group Description",
-                              rules: _vm.descriptionRules
-                            },
-                            model: {
-                              value: _vm.description,
-                              callback: function($$v) {
-                                _vm.description = $$v
-                              },
-                              expression: "description"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                disabled: !_vm.valid,
-                                color: "primary",
-                                dark: ""
-                              },
-                              on: {
-                                click: function($event) {
-                                  _vm.save()
-                                }
-                              }
-                            },
-                            [_vm._v("Update")]
-                          )
-                        ],
-                        1
-                      )
+                        _c("div", {
+                          staticClass: "dropzone",
+                          attrs: { id: "fileupload" }
+                        })
+                      ])
                     ],
                     1
                   )
@@ -39079,7 +38850,826 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-70394dc5", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-06bc3015", module.exports)
+  }
+}
+
+/***/ }),
+/* 225 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "page_wrap_vue" },
+    [
+      _c(
+        "v-tabs",
+        {
+          attrs: { dark: "" },
+          model: {
+            value: _vm.active,
+            callback: function($$v) {
+              _vm.active = $$v
+            },
+            expression: "active"
+          }
+        },
+        [
+          _c(
+            "v-tabs-bar",
+            { staticClass: "cyan" },
+            [
+              _c("v-tabs-item", { attrs: { href: "#files", ripple: "" } }, [
+                _vm._v("\n                Files\n            ")
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-tabs-item",
+                { attrs: { href: "#manage-groups", ripple: "" } },
+                [_vm._v("\n                Manage File Groups\n            ")]
+              ),
+              _vm._v(" "),
+              _c("v-tabs-item", { attrs: { href: "#upload", ripple: "" } }, [
+                _vm._v("\n                Upload\n            ")
+              ]),
+              _vm._v(" "),
+              _c("v-tabs-slider", { staticClass: "yellow" })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-tabs-items",
+            [
+              _c(
+                "v-tabs-content",
+                { attrs: { id: "files" } },
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { flat: "" } },
+                    [_c("v-card-text", [_c("file-lists")], 1)],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-tabs-content",
+                { attrs: { id: "manage-groups" } },
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { flat: "" } },
+                    [_c("v-card-text", [_c("file-group-lists")], 1)],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-tabs-content",
+                { attrs: { id: "upload" } },
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { flat: "" } },
+                    [_c("v-card-text", [_c("file-upload")], 1)],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-2809f2cb", module.exports)
+  }
+}
+
+/***/ }),
+/* 226 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(227)
+/* template */
+var __vue_template__ = __webpack_require__(228)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\pages\\Settings.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Settings.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5d269b02", Component.options)
+  } else {
+    hotAPI.reload("data-v-5d269b02", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 227 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('pages.Settings.vue');
+
+        var self = this;
+    }
+});
+
+/***/ }),
+/* 228 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._v("\n    SETTINGS VUE\n")])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-5d269b02", module.exports)
+  }
+}
+
+/***/ }),
+/* 229 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+
+
+var EventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    install: function install(Vue, options) {
+
+        Vue.prototype.$eventBus = EventBus;
+    }
+});
+
+/***/ }),
+/* 230 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    install: function install(Vue, options) {
+
+        Vue.prototype.$appFormatters = {
+            formatDate: function formatDate(dateString, format) {
+                return moment(dateString).format(format ? format : 'MMMM DD, YYYY');
+            },
+            formatByteToMB: function formatByteToMB(sizeInBytes) {
+                return (sizeInBytes / (1024 * 1024)).toFixed(2);
+            },
+            formatMbToBytes: function formatMbToBytes(mb) {
+                return (mb * 1048576).toFixed(2);
+            }
+        };
+    }
+});
+
+/***/ }),
+/* 231 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(232)
+/* template */
+var __vue_template__ = __webpack_require__(233)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Example.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-f5456cbc", Component.options)
+  } else {
+    hotAPI.reload("data-v-f5456cbc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 232 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    }
+});
+
+/***/ }),
+/* 233 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+          _c("div", { staticClass: "panel panel-default" }, [
+            _c("div", { staticClass: "panel-heading" }, [
+              _vm._v("Example Component")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "panel-body" }, [
+              _vm._v(
+                "\n                    I'm an example component!\n                "
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-f5456cbc", module.exports)
+  }
+}
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 235 */,
+/* 236 */,
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(238)
+/* template */
+var __vue_template__ = __webpack_require__(239)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\FileLists.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] FileLists.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2c50fc31", Component.options)
+  } else {
+    hotAPI.reload("data-v-2c50fc31", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 238 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {},
+    data: function data() {
+        return {
+            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Thumb', value: 'thumb', align: 'left', sortable: false }, { text: 'Name', value: 'name', align: 'left', sortable: false }, { text: 'Size', value: 'size', align: 'left', sortable: false }, { text: 'Found In', value: 'group', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
+            items: [],
+            totalPages: 0,
+            page: 1,
+
+            filters: {
+                name: '',
+                selectedGroupIds: '',
+                fileGroupId: [],
+                fileGroupsHolder: []
+            }
+        };
+    },
+    mounted: function mounted() {
+        console.log('pages.FileGroupLists.vue');
+
+        var self = this;
+
+        self.loadFileGroups(function () {
+            self.loadFiles(function () {});
+        });
+
+        self.$eventBus.$on(['FILE_UPLOADED', 'FILE_DELETED'], function () {
+            self.loadFiles(function () {});
+        });
+        self.$eventBus.$on(['FILE_GROUP_ADDED'], function () {
+            self.loadFileGroups(function () {});
+        });
+    },
+
+    watch: {
+        'filters.fileGroupId': _.debounce(function (v) {
+
+            var selected = [];
+
+            _.each(v, function (v, k) {
+                if (v) selected.push(k);
+            });
+
+            this.filters.selectedGroupIds = selected.join(',');
+        }, 500),
+        'filters.selectedGroupIds': function filtersSelectedGroupIds(v) {
+            this.loadFiles(function () {});
+        },
+
+        'filters.name': _.debounce(function (v) {
+            this.loadFiles(function () {});
+        }, 500)
+    },
+    methods: {
+        trash: function trash(file) {
+            var self = this;
+
+            self.$store.commit('showDialog', {
+                type: "confirm",
+                title: "Confirm Deletion",
+                message: "Are you sure you want to delete this file file?",
+                okCb: function okCb() {
+
+                    axios.delete('/ajax/files/' + file.id).then(function (response) {
+
+                        self.$store.commit('showSnackbar', {
+                            message: response.data.message,
+                            color: 'success',
+                            duration: 3000
+                        });
+
+                        self.$eventBus.$emit('FILE_DELETED');
+                    }).catch(function (error) {
+                        if (error.response) {
+                            self.$store.commit('showSnackbar', {
+                                message: error.response.data.message,
+                                color: 'error',
+                                duration: 3000
+                            });
+                        } else if (error.request) {
+                            console.log(error.request);
+                        } else {
+                            console.log('Error', error.message);
+                        }
+                    });
+                },
+                cancelCb: function cancelCb() {
+                    console.log("CANCEL");
+                }
+            });
+        },
+        loadFileGroups: function loadFileGroups(cb) {
+
+            var self = this;
+
+            var params = {
+                paginate: 'no'
+            };
+
+            axios.get('/ajax/file-groups', { params: params }).then(function (response) {
+                self.filters.fileGroupsHolder = response.data.data;
+                cb();
+            });
+        },
+        loadFiles: function loadFiles(cb) {
+
+            var self = this;
+
+            var params = {
+                name: self.filters.name,
+                file_group_id: self.filters.selectedGroupIds,
+                page: self.page
+            };
+
+            axios.get('/ajax/files', { params: params }).then(function (response) {
+                self.items = response.data.data.data;
+                self.totalPages = response.data.data.last_page;
+                cb();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c(
+        "v-card",
+        { attrs: { color: "secondary", flat: "" } },
+        [
+          _c(
+            "v-card-text",
+            [
+              _c(
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          "prepend-icon": "search",
+                          box: "",
+                          dark: "",
+                          label: "Filter By Name"
+                        },
+                        model: {
+                          value: _vm.filters.name,
+                          callback: function($$v) {
+                            _vm.filters.name = $$v
+                          },
+                          expression: "filters.name"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-flex", { attrs: { xs12: "" } }, [
+                    _vm._v("\n                    Show Only:\n                ")
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.filters.fileGroupsHolder, function(group, i) {
+                    return _c(
+                      "v-flex",
+                      { key: i, attrs: { xs4: "", md2: "" } },
+                      [
+                        _c("v-checkbox", {
+                          attrs: { label: group.name, dark: "" },
+                          model: {
+                            value: _vm.filters.fileGroupId[group.id],
+                            callback: function($$v) {
+                              _vm.$set(_vm.filters.fileGroupId, group.id, $$v)
+                            },
+                            expression: "filters.fileGroupId[group.id]"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  })
+                ],
+                2
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-data-table", {
+        staticClass: "elevation-1",
+        attrs: { headers: _vm.headers, items: _vm.items, "hide-actions": "" },
+        scopedSlots: _vm._u([
+          {
+            key: "headerCell",
+            fn: function(props) {
+              return [
+                props.header.value == "thumb"
+                  ? _c(
+                      "span",
+                      [
+                        _c("v-icon", [_vm._v("panorama")]),
+                        _vm._v(
+                          " " + _vm._s(props.header.text) + "\n            "
+                        )
+                      ],
+                      1
+                    )
+                  : props.header.value == "group"
+                    ? _c(
+                        "span",
+                        [
+                          _c("v-icon", [_vm._v("folder")]),
+                          _vm._v(
+                            " " + _vm._s(props.header.text) + "\n            "
+                          )
+                        ],
+                        1
+                      )
+                    : props.header.value == "created_at"
+                      ? _c(
+                          "span",
+                          [
+                            _c("v-icon", [_vm._v("date_range")]),
+                            _vm._v(
+                              " " + _vm._s(props.header.text) + "\n            "
+                            )
+                          ],
+                          1
+                        )
+                      : _c("span", [_vm._v(_vm._s(props.header.text))])
+              ]
+            }
+          },
+          {
+            key: "items",
+            fn: function(props) {
+              return [
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { icon: "", small: "" },
+                        on: {
+                          click: function($event) {
+                            _vm.trash(props.item)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-icon",
+                          { staticClass: "red--text", attrs: { dark: "" } },
+                          [_vm._v("delete")]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("td", [
+                  _c("img", {
+                    attrs: {
+                      src:
+                        "/files/" + props.item.id + "/preview?w=50&action=fit",
+                      width: "50"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.name))]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(
+                    _vm._s(
+                      _vm.$appFormatters.formatByteToMB(props.item.size) + " MB"
+                    )
+                  )
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(props.item.group.name))]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(
+                    _vm._s(_vm.$appFormatters.formatDate(props.item.created_at))
+                  )
+                ])
+              ]
+            }
+          }
+        ])
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "text-xs-center" },
+        [
+          _c("v-pagination", {
+            attrs: { length: _vm.totalPages, "total-visible": 8, circle: "" },
+            model: {
+              value: _vm.page,
+              callback: function($$v) {
+                _vm.page = $$v
+              },
+              expression: "page"
+            }
+          })
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-2c50fc31", module.exports)
   }
 }
 

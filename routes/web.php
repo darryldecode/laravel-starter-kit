@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/','Pages\\HomeController@index');
+Route::get('/','Front\\HomeController@index')->name('front.home');
+Route::get('files/{id}/preview','Front\\FileController@filePreview')->name('front.filePreview');
 
 Auth::routes();
 
@@ -24,9 +25,6 @@ Route::prefix('admin')->namespace('Admin')->middleware('auth')->group(function()
 // ajax
 Route::prefix('ajax')->namespace('Ajax')->middleware('auth')->group(function()
 {
-    // files
-    Route::post('files','FileController@store')->name('ajax.files.store');
-
     // resource routes
     Route::resource('users','UserController');
     Route::resource('groups','GroupController');

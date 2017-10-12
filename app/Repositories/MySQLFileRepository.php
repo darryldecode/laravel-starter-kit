@@ -11,9 +11,10 @@ namespace App\Repositories;
 
 use App\Contracts\FileRepository;
 use App\File;
-use App\FileGroup;
+use App\Utilities\FileHelper;
 use App\Utilities\Helpers;
-use Illuminate\Http\Request;
+use Storage;
+use Image;
 
 class MySQLFileRepository implements FileRepository
 {
@@ -37,7 +38,7 @@ class MySQLFileRepository implements FileRepository
         $q = File::with(['user','group'])->orderBy($orderBy,$orderSort);
 
         if($name) $q = $q->where('name','like',"%{$name}%");
-        if(count($groupIds) > 0) $q = $q->whereIn('file_group_id',$groupIds);
+        if(count($groupIds) > 0 && !empty($groupIds[0])) $q = $q->whereIn('file_group_id',$groupIds);
 
         if($paginate==='yes')
         {
@@ -56,8 +57,7 @@ class MySQLFileRepository implements FileRepository
     public function create($data)
     {
         $File = File::create([
-            'name' => $data['name'],
-            'description' => $data['description'],
+            'name' => preg_replace('/[^A-Za-z0-9\-]/', ' ', $data['name']),
             'uploaded_by' => $data['uploaded_by'],
             'file_group_id' => $data['file_group_id'],
             'file_type' => $data['file_type'],
@@ -99,8 +99,6 @@ class MySQLFileRepository implements FileRepository
 
         if(!$File) return new Result(false,Result::MESSAGE_NOT_FOUND,null,404);
 
-        $File->name = $data['name'];
-        $File->description = $data['description'];
         $File->uploaded_by = $data['uploaded_by'];
         $File->file_group_id = $data['file_group_id'];
         $File->file_type = $data['file_type'];
@@ -125,23 +123,119 @@ class MySQLFileRepository implements FileRepository
 
         if(!$File) return new Result(false,Result::MESSAGE_NOT_FOUND,null,404);
 
+        // delete file record
         $File->delete();
+
+        // delete actual file
+        $this->deleteFile($File->path);
 
         return new Result(true,Result::MESSAGE_SUCCESS,$File,200);
     }
 
     /**
-     * @param Request $request
+     * @param \Illuminate\Http\UploadedFile $file
      * @return Result
      */
-    public function upload($request)
+    public function upload($file)
     {
-        $file = $request->file('file');
-
+        $fileOriginalName = $file->getClientOriginalName();
         $filePath = $file->store('local');
 
         if(!$filePath) return new Result(false,"Failed to upload.",null,400);
 
-        return new Result(true,'Upload success.',$filePath,200);
+        // other data
+        $ext   = pathinfo(config('filesystems.disks.local.root').'/'.$filePath, PATHINFO_EXTENSION);
+        $size  = Storage::disk('local')->getSize($filePath);
+        $type  = Storage::disk('local')->getMimetype($filePath);
+
+        $response = [
+            'original_name' => $fileOriginalName,
+            'path' => $filePath,
+            'ext' => $ext,
+            'size' => $size,
+            'type' => $type,
+        ];
+
+        return new Result(true,'Upload success.',$response,200);
+    }
+
+    /**
+     * @param string $path
+     * @return Result
+     */
+    public function deleteFile($path)
+    {
+        if(Storage::disk('local')->exists($path))
+        {
+            Storage::disk('local')->delete($path);
+        }
+
+        return new Result(true,"file deleted",null);
+    }
+
+    /**
+     * @param array $data
+     * @return Result
+     */
+    public function previewFile($data)
+    {
+        $File = File::find($data['id']);
+        $w = $data['w'];
+        $h = $data['h'];
+        $aspectRatio = $data['aspect_ratio'];
+        $upSize = $data['up_size'];
+        $action = $data['action'];
+
+        // if file is not found, we will return a not found image
+        if(!$File)
+        {
+            $img = Image::make(Storage::disk('public')->path(FileHelper::getIconPath('not-found')))->resize($w, $h, function($constraint) use ($aspectRatio,$upSize)
+            {
+                if($aspectRatio) $constraint->aspectRatio();
+                if($upSize) $constraint->upsize();
+            });
+            $img = $img->response();
+
+            return new Result(false,Result::MESSAGE_NOT_FOUND,$img,200);
+        };
+
+        // get the full path of the image record found
+        $fullPath = Storage::disk('local')->path($File->path);
+
+        // if image and not PSD, we will create an image instance and resize accordingly
+        if(FileHelper::isImage($fullPath) && !FileHelper::isPSD($File->file_type))
+        {
+            if($action=='resize')
+            {
+                $img = Image::make($fullPath)->resize($w, $h, function($constraint) use ($aspectRatio,$upSize)
+                {
+                    if($aspectRatio) $constraint->aspectRatio();
+                    if($upSize) $constraint->upsize();
+                });
+            }
+            else
+            {
+                $img = Image::make($fullPath)->fit($w, $h, function($constraint) use ($aspectRatio,$upSize)
+                {
+                    if($upSize) $constraint->upsize();
+                });
+            }
+
+            $res = $img->response();
+        }
+
+        // if its not an image, we will get the proper icon
+        else
+        {
+            $fullPath = Storage::disk('public')->path(FileHelper::getIconPath($File->file_type));
+            $img = Image::make($fullPath)->resize(50, null, function($constraint) use ($aspectRatio,$upSize)
+            {
+                if($aspectRatio) $constraint->aspectRatio();
+                if($upSize) $constraint->upsize();
+            });
+            $res = $img->response();
+        }
+
+        return new Result(false,Result::MESSAGE_NOT_FOUND,$res,200);
     }
 }
