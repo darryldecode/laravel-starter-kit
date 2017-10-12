@@ -39383,7 +39383,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         'filters.name': _.debounce(function (v) {
             this.loadFiles(function () {});
-        }, 500)
+        }, 500),
+        'page': function page(v) {
+            this.loadFiles(function () {});
+        }
     },
     methods: {
         trash: function trash(file) {

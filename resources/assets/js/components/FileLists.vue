@@ -116,6 +116,9 @@
             'filters.name':_.debounce(function(v) {
                 this.loadFiles(()=>{});
             },500),
+            'page'(v) {
+                this.loadFiles(()=>{});
+            },
         },
         methods: {
             trash(file) {
