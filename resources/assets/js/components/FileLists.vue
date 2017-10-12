@@ -127,7 +127,7 @@
                 self.$store.commit('showDialog',{
                     type: "confirm",
                     title: "Confirm Deletion",
-                    message: "Are you sure you want to delete this file file?",
+                    message: "Are you sure you want to delete this file?",
                     okCb: ()=>{
 
                         axios.delete('/ajax/files/' + file.id).then(function(response) {

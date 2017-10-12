@@ -39395,7 +39395,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             self.$store.commit('showDialog', {
                 type: "confirm",
                 title: "Confirm Deletion",
-                message: "Are you sure you want to delete this file file?",
+                message: "Are you sure you want to delete this file?",
                 okCb: function okCb() {
 
                     axios.delete('/ajax/files/' + file.id).then(function (response) {
