@@ -5,7 +5,7 @@
             <v-form ref="fileFormUpload" lazy-validation>
                 <v-container grid-list-md>
                     <v-layout row wrap>
-                        <v-flex xs12>
+                        <v-flex xs12 sm8>
                             <v-select
                                     label="Upload To File Group"
                                     v-bind:items="fileGroups"
@@ -14,6 +14,11 @@
                                     item-text="name"
                                     item-value="id"
                             ></v-select>
+                        </v-flex>
+                        <v-flex xs12 sm4>
+                            <v-btn @click="clear()" block class="blue lighten-1" dark>
+                                Clear
+                            </v-btn>
                         </v-flex>
                         <v-flex xs12>
                             <div class="dropzone" id="fileupload"></div>
@@ -32,7 +37,8 @@
             return {
                 dropzone: null,
                 fileGroups: [],
-                uploadTo: ''
+                uploadTo: '',
+                addedFiles: []
             }
         },
         mounted() {
@@ -48,6 +54,15 @@
             });
         },
         methods: {
+            clear() {
+                const self = this;
+
+                _.each(self.addedFiles,f=>{
+                    self.dropzone.removeFile(f);
+                });
+
+                self.addedFiles = [];
+            },
             upload() {
 
                 const self = this;
@@ -84,6 +99,8 @@
                             duration: 3000
                         });
                         self.dropzone.removeFile(file);
+                    } else {
+                        self.addedFiles.push(file);
                     }
                 });
 

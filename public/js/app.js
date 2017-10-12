@@ -38678,13 +38678,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             dropzone: null,
             fileGroups: [],
-            uploadTo: ''
+            uploadTo: '',
+            addedFiles: []
         };
     },
     mounted: function mounted() {
@@ -38701,6 +38707,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
+        clear: function clear() {
+            var self = this;
+
+            _.each(self.addedFiles, function (f) {
+                self.dropzone.removeFile(f);
+            });
+
+            self.addedFiles = [];
+        },
         upload: function upload() {
 
             var self = this;
@@ -38737,6 +38752,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         duration: 3000
                     });
                     self.dropzone.removeFile(file);
+                } else {
+                    self.addedFiles.push(file);
                 }
             });
 
@@ -38800,7 +38817,7 @@ var render = function() {
                     [
                       _c(
                         "v-flex",
-                        { attrs: { xs12: "" } },
+                        { attrs: { xs12: "", sm8: "" } },
                         [
                           _c("v-select", {
                             attrs: {
@@ -38818,6 +38835,31 @@ var render = function() {
                               expression: "uploadTo"
                             }
                           })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "blue lighten-1",
+                              attrs: { block: "", dark: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.clear()
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Clear\n                        "
+                              )
+                            ]
+                          )
                         ],
                         1
                       ),
