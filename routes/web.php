@@ -12,7 +12,8 @@
 */
 
 Route::get('/','Front\\HomeController@index')->name('front.home');
-Route::get('files/{id}/preview','Front\\FileController@filePreview')->name('front.filePreview');
+Route::get('files/{id}/preview','Front\\FileController@filePreview')->name('front.file.preview');
+Route::get('files/{id}/download','Front\\FileController@fileDownload')->name('front.file.download');
 
 Auth::routes();
 

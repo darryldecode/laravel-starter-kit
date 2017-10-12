@@ -29,6 +29,8 @@ class FileController extends FrontController
     }
 
     /**
+     * preview file web request
+     *
      * @param Request $request
      * @param int $id
      * @return mixed
@@ -45,5 +47,23 @@ class FileController extends FrontController
         ]);
 
         return $res->getData();
+    }
+
+    /**
+     * download file web request
+     *
+     * @param Request $request
+     * @param int $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|null
+     */
+    public function fileDownload(Request $request, $id)
+    {
+        $token = $request->get('file_token');
+
+        $res = $this->fileRepository->downloadFile($id,$token);
+
+        if($res->isSuccessful()) return $res->getData();
+
+        return view('errors.403');
     }
 }

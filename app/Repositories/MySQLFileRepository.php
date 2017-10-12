@@ -238,4 +238,32 @@ class MySQLFileRepository implements FileRepository
 
         return new Result(false,Result::MESSAGE_NOT_FOUND,$res,200);
     }
+
+    /**
+     * @param int $id
+     * @param string $token
+     * @return Result
+     */
+    public function downloadFile($id, $token)
+    {
+        $File = File::find($id);
+
+        if(!$File) return new Result(false,Result::MESSAGE_NOT_FOUND,null,404);
+
+        if(!$File->verifyFileToken($token))
+        {
+            return new Result(false,"Invalid Token",null,403);
+        }
+
+        $fileFullPath = Storage::disk('local')->path($File->path);
+
+        if(!Storage::disk('local')->exists($File->path))
+        {
+            return new Result(false,"File not exist.",null,404);
+        }
+
+        $fileDownload = response()->download($fileFullPath,str_replace(' ','_',$File->name).".{$File->extension}");
+
+        return new Result(true,"Download success",$fileDownload,200);
+    }
 }

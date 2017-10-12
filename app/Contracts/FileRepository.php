@@ -72,4 +72,11 @@ interface FileRepository
      * @return Result
      */
     public function previewFile($data);
+
+    /**
+     * @param int $id
+     * @param string $token
+     * @return Result
+     */
+    public function downloadFile($id,$token);
 }

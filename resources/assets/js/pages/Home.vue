@@ -1,6 +1,8 @@
 <template>
-    <div>
-        DASHBOARD VUE
+    <div class="page_wrap_vue">
+        <h2>HOME PAGE</h2>
+        <p>I am located at <b>resources/assets/js/pages/Home.vue</b></p>
+        <p>single page routes can be found at <b>resources/assets/js/router</b></p>
     </div>
 </template>
 

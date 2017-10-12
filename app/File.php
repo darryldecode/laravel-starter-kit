@@ -2,10 +2,14 @@
 
 namespace App;
 
+use Carbon\Carbon;
+use Firebase\JWT\JWT;
 use Illuminate\Database\Eloquent\Model;
 
 class File extends Model
 {
+    const TAG = 'WASK_FILE_MANAGER';
+
     protected $table = 'files';
 
     protected $fillable = [
@@ -17,6 +21,51 @@ class File extends Model
         'size',
         'path',
     ];
+
+    protected $appends = ['file_token'];
+
+    /**
+     * generate a token on each file on the fly that will give authorization to be downloaded
+     *
+     * @return string
+     */
+    public function getFileTokenAttribute()
+    {
+        $key = env('WASK_FILE_DOWNLOAD_SECRET');
+        $token = array(
+            "iss" => env('APP_URL'),
+            "aud" => env('APP_URL'),
+            "iat" => (Carbon::now())->timestamp,
+            "exp" => (Carbon::now()->addDays(1))->timestamp,
+            "file_id" => $this->id,
+        );
+        return JWT::encode($token, $key);
+    }
+
+    /**
+     * verify the token
+     *
+     * @param $token
+     * @return bool|object
+     */
+    public function verifyFileToken($token)
+    {
+        try {
+            $key = env('WASK_FILE_DOWNLOAD_SECRET');
+            $decoded = JWT::decode($token, $key, array('HS256'));
+        } catch (\Exception $e)
+        {
+            \Log::error(self::TAG . ": Invalid file token.");
+            return false;
+        }
+
+        if(!$decoded->file_id==$this->id)
+        {
+            return false;
+        }
+
+        return $decoded;
+    }
 
     /**
      * the owner of the file

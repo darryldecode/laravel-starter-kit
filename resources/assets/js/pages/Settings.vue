@@ -1,6 +1,8 @@
 <template>
-    <div>
-        SETTINGS VUE
+    <div class="page_wrap_vue">
+        <h2>SETTINGS PAGE</h2>
+        <p>I am located at <b>resources/assets/js/pages/Settings.vue</b></p>
+        <p>single page routes can be found at <b>resources/assets/js/router</b></p>
     </div>
 </template>
 

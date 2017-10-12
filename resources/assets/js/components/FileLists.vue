@@ -166,7 +166,7 @@
         },
         methods: {
             downloadFile(file) {
-
+                window.open('/files/'+file.id+'/download?file_token='+file.file_token);
             },
             showDialog(dialog, data) {
 
