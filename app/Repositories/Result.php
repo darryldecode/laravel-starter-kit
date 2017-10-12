@@ -33,6 +33,7 @@ class Result
      */
     protected $data;
 
+    const MESSAGE_FORBIDDEN = "Forbidden Action.";
     const MESSAGE_NOT_FOUND = "Resource not found.";
     const MESSAGE_UNAUTHORIZED = "Not enough permission.";
     const MESSAGE_ERROR_500 = "An error has occurred on the server.";

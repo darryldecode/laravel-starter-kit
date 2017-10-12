@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Ajax;
 
 use App\Contracts\GroupRepository;
+use App\Group;
+use App\Repositories\Result;
 use Illuminate\Http\Request;
 
 class GroupController extends AjaxController
@@ -32,7 +34,8 @@ class GroupController extends AjaxController
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 
@@ -62,7 +65,8 @@ class GroupController extends AjaxController
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 
@@ -78,7 +82,8 @@ class GroupController extends AjaxController
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 
@@ -109,7 +114,8 @@ class GroupController extends AjaxController
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 
@@ -121,11 +127,22 @@ class GroupController extends AjaxController
      */
     public function destroy($id)
     {
+        // prevent delete of super user
+        if($id == Group::SUPER_USER_GROUP_ID)
+        {
+            return $this->sendResponse(
+                Result::MESSAGE_FORBIDDEN,
+                null,
+                403
+            );
+        }
+
         $results = $this->groupRepository->delete($id);
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 }

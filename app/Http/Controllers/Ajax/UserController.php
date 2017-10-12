@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers\Ajax;
 
+use App\Repositories\Result;
+use Auth;
 use Illuminate\Http\Request;
 use App\Contracts\UserRepository;
 
@@ -132,11 +134,22 @@ class UserController extends AjaxController
      */
     public function destroy($id)
     {
+        // do not delete self
+        if($id==Auth::user()->id)
+        {
+            return $this->sendResponse(
+                Result::MESSAGE_FORBIDDEN,
+                null,
+                403
+            );
+        }
+
         $results = $this->userRepository->delete($id);
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 }

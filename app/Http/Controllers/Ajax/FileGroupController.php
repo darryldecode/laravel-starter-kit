@@ -33,7 +33,8 @@ class FileGroupController extends AjaxController
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 
@@ -63,7 +64,8 @@ class FileGroupController extends AjaxController
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 
@@ -79,7 +81,8 @@ class FileGroupController extends AjaxController
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 
@@ -110,7 +113,8 @@ class FileGroupController extends AjaxController
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 
@@ -126,7 +130,8 @@ class FileGroupController extends AjaxController
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 }
