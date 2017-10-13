@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Ajax;
 
 use App\Contracts\PermissionRepository;
+use App\Permission;
+use App\Repositories\Result;
 use Illuminate\Http\Request;
 
 class PermissionController extends AjaxController
@@ -123,6 +125,16 @@ class PermissionController extends AjaxController
      */
     public function destroy($id)
     {
+        // prevent delete of super user permission
+        if($id == Permission::SUPER_USER_PERMISSION_ID)
+        {
+            return $this->sendResponse(
+                Result::MESSAGE_FORBIDDEN,
+                null,
+                403
+            );
+        }
+
         $results = $this->permissionRepository->delete($id);
 
         return $this->sendResponse(

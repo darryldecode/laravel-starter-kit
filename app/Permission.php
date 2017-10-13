@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Permission extends Model
 {
+    const SUPER_USER_PERMISSION_ID = 1;
     const SUPER_USER_PERMISSION = 'superuser';
 
     /**
