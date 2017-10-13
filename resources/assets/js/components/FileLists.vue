@@ -6,7 +6,7 @@
             <v-card-text>
                 <v-layout row wrap>
                     <v-flex xs12>
-                        <v-text-field prepend-icon="search" box dark label="Filter By Name" v-model="filters.name"></v-text-field>
+                        <v-text-field prepend-icon="search" box dark label="Filter By Name or Extension" v-model="filters.name"></v-text-field>
                     </v-flex>
                     <v-flex xs12>
                         Show Only:

@@ -39296,7 +39296,7 @@ var render = function() {
                           "prepend-icon": "search",
                           box: "",
                           dark: "",
-                          label: "Filter By Name"
+                          label: "Filter By Name or Extension"
                         },
                         model: {
                           value: _vm.filters.name,
