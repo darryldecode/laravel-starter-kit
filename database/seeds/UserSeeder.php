@@ -20,8 +20,8 @@ class UserSeeder extends Seeder
     {
         // create admin account
         $AdminUser = \App\User::create([
-            'name' => 'DarrylDecode',
-            'email' => 'darryl@vizsion.com',
+            'name' => 'John Doe',
+            'email' => 'admin@gmail.com',
             'password' => '12345678',
             'remember_token' => str_random(10),
             'permissions' => [],
