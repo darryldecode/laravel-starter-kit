@@ -15,8 +15,6 @@ class HomeController extends FrontController
 {
     public function index()
     {
-        $User = User::find(2);
-
-        return $User->getCombinedPermissions();
+        return view('welcome');
     }
 }
