@@ -23,4 +23,4 @@ to the codes and start working with the starter kit
 
 ## DOCUMENTATION
 
-- Please see documentation page here: <a href="https://github.com/darryldecode/laravel-starter-kit/wiki">WASK DOCUMENTATION</a>
+- Please see documentation page here: <a href="https://github.com/darryldecode/laravel-starter-kit/wiki">LARAVEL STARTER KIT DOCUMENTATION</a>
