@@ -68,4 +68,4 @@ the following credentials:
     
 <h3 id="dashboard-menu">Adding Dashboard Menu</h3>
 
-- Please open `app/config/wask.php` and see 'menu' array
+- Please open `config/wask.php` and see 'menu' array
