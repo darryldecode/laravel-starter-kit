@@ -12,17 +12,19 @@
                 <v-list dense>
 
                     @foreach($nav as $n)
-                        <v-list-tile @click="menuClick('{{$n['route_name']}}','{{$n['route_type']}}')">
-                            <v-list-tile-action>
-                                <v-icon>{{$n['icon']}}</v-icon>
-                            </v-list-tile-action>
-                            <v-list-tile-content>
-                                <v-list-tile-title>{{$n['label']}}</v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
+                        @if($n['nav_type']=='nav')
+                            <v-list-tile @click="menuClick('{{$n['route_name']}}','{{$n['route_type']}}')">
+                                <v-list-tile-action>
+                                    <v-icon>{{$n['icon']}}</v-icon>
+                                </v-list-tile-action>
+                                <v-list-tile-content>
+                                    <v-list-tile-title>{{$n['label']}}</v-list-tile-title>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                        @else
+                            <v-divider></v-divider>
+                        @endif
                     @endforeach
-
-                    <v-divider></v-divider>
 
                     <v-list-tile @click="menuClick('settings')">
                         <v-list-tile-action>
