@@ -4,11 +4,11 @@
 
 Laravel Starter Kit is based on Laravel 5.5 and VueJS + Material design.
 
-##Features
+## Features
 
 &#10004; User, Group & Permissions Management
 
-&#10004; Uses the default Laravel Auth + some goodies to handle complex permission handling so no worries of learning anything
+&#10004; Uses the default Laravel Auth + some goodies to handle complex permissions. No worries of learning anything!
 
 &#10004; Comes with File Manager Out of the box
 
@@ -26,6 +26,7 @@ to the codes and start working with the starter kit
 - <a href="#requirements">Requirements</a>
 - <a href="#installation">Installation</a>
 - <a href="#user-group-permissions">User, Groups & Permissions Guide</a>
+- <a href="#dashboard-menu">Adding Dashboard Menu</a>
 
 <h3 id="requirements">Requirements</h3>
 
@@ -64,3 +65,7 @@ the following credentials:
     - `$User->isSuperUser()`
 - Get User's combined permissions. This will include permission acquired from its group and its specific given permissions:
     - `$User->getCombinedPermissions()`
+    
+<h3 id="dashboard-menu">Adding Dashboard Menu</h3>
+
+- Please open `app/config/wask.php` and see 'menu' array
