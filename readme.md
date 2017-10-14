@@ -23,4 +23,44 @@ to the codes and start working with the starter kit
 
 ## DOCUMENTATION
 
-- Please see documentation page here: <a href="https://github.com/darryldecode/laravel-starter-kit/wiki">LARAVEL STARTER KIT DOCUMENTATION</a>
+- <a href="#requirements">Requirements</a>
+- <a href="#installation">Installation</a>
+- <a href="#user-group-permissions">User, Groups & Permissions Guide</a>
+
+<h3 id="requirements">Requirements</h3>
+
+- Requirements are same with Laravel 5.5
+
+<h3 id="installation">Installation</h3>
+
+- Clone repository `git clone https://github.com/darryldecode/laravel-starter-kit.git`
+- `cp .env.example .env` Then open .env file and put necessary credentials
+- `composer install`
+- `php artisan key:generate`
+- `php artisan migrate`
+- `php artisan db:seed`
+- `php artisan storage:link`
+- `npm install`
+
+Then for developent you can run `npm run dev or watch or prod`
+
+You are done! You can now login in your application using
+the following credentials:
+
+- username: admin@gmail.com
+- password: 12345678
+
+<h3 id="user-group-permissions">User, Groups & Permissions</h3>
+
+- Get current logged in user or Get User
+    - `$User = \Auth::user()`
+    - `$User = App\User::find($id)`
+- Check if user belongs to a group
+    - `$User->inGroup($groupId|$groupName|$groupObject);`
+- Check if user has given permission
+    - `$User->hasPermission('blog.create')`
+    - `$User->hasAnyPermission(['blog.create','user.edit','etc'])`
+- Check if user is a super user
+    - `$User->isSuperUser()`
+- Get User's combined permissions. This will include permission acquired from its group and its specific given permissions:
+    - `$User->getCombinedPermissions()`
