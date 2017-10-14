@@ -119,15 +119,20 @@ class MySQLFileRepository implements FileRepository
      */
     public function delete($id)
     {
-        $File = File::find($id);
+        $ids = explode(',',$id);
 
-        if(!$File) return new Result(false,Result::MESSAGE_NOT_FOUND,null,404);
+        foreach ($ids as $id)
+        {
+            $File = File::find($id);
 
-        // delete file record
-        $File->delete();
+            if(!$File) return new Result(false,"Failed to delete resource with id: {$id}. Error: ".Result::MESSAGE_NOT_FOUND,null,404);
 
-        // delete actual file
-        $this->deleteFile($File->path);
+            // delete file record
+            $File->delete();
+
+            // delete actual file
+            $this->deleteFile($File->path);
+        }
 
         return new Result(true,Result::MESSAGE_SUCCESS,$File,200);
     }

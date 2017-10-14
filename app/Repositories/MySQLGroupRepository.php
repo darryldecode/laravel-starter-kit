@@ -89,12 +89,17 @@ class MySQLGroupRepository implements GroupRepository
      */
     public function delete($id)
     {
-        $Group = Group::find($id);
+        $ids = explode(',',$id);
 
-        if(!$Group) return new Result(false,Result::MESSAGE_NOT_FOUND,null,404);
+        foreach ($ids as $id)
+        {
+            $Group = Group::find($id);
 
-        $Group->users()->detach();
-        $Group->delete();
+            if(!$Group) return new Result(false,"Failed to delete resource with id: {$id}. Error: ".Result::MESSAGE_NOT_FOUND,null,404);
+
+            $Group->users()->detach();
+            $Group->delete();
+        }
 
         return new Result(true,Result::MESSAGE_SUCCESS_DELETE,null,200);
     }

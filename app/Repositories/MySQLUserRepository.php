@@ -113,14 +113,22 @@ class MySQLUserRepository implements UserRepository
      */
     public function delete($id)
     {
-        $User = User::find($id);
+        $ids = explode(',',$id);
 
-        if(!$User) return new Result(false,Result::MESSAGE_NOT_FOUND,null,404);
+        foreach ($ids as $id)
+        {
+            $User = User::find($id);
 
-        $User->groups()->detach();
-        $User->delete();
+            if(!$User)
+            {
+                return new Result(false,"Failed to delete resource with id: {$id}. Error: ".Result::MESSAGE_NOT_FOUND,null,404);
+            };
 
-        return new Result(true,'user deleted',null);
+            $User->groups()->detach();
+            $User->delete();
+        }
+
+        return new Result(true,Result::MESSAGE_SUCCESS_DELETE,null);
     }
 
     /**

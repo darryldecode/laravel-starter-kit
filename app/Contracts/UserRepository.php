@@ -50,7 +50,7 @@ interface UserRepository
     /**
      * delete a user by id
      *
-     * @param int $id
+     * @param int|string $id
      * @return Result
      */
     public function delete($id);
