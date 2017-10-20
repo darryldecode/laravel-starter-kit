@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use App\Contracts\PermissionRepository;
-use App\Permission;
-use App\Repositories\Result;
+use App\Components\Core\Result;
+use App\Components\User\Contracts\PermissionRepository;
+use App\Components\User\Models\Permission;
 use Illuminate\Http\Request;
 
 class PermissionController extends AjaxController

@@ -3,16 +3,15 @@
  * Created by PhpStorm.
  * User: darryl
  * Date: 10/6/2017
- * Time: 4:52 PM
+ * Time: 4:53 PM
  */
 
-namespace App\Contracts;
+namespace App\Components\User\Contracts;
 
 
-use App\Group;
 use App\Repositories\Result;
 
-interface GroupRepository
+interface PermissionRepository
 {
     /**
      * index items
@@ -50,7 +49,7 @@ interface GroupRepository
     /**
      * delete by id
      *
-     * @param int|string $id
+     * @param int $id
      * @return Result
      */
     public function delete($id);

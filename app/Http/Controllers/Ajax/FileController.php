@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use App\Contracts\FileRepository;
+use App\Components\File\Contracts\FileRepository;
 use Illuminate\Http\Request;
 use Auth;
 

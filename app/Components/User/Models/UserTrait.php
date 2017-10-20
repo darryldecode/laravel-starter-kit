@@ -6,7 +6,7 @@
  * Time: 7:55 AM
  */
 
-namespace App;
+namespace App\Components\User\Models;
 use Hash;
 
 /**

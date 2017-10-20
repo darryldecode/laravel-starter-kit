@@ -6,7 +6,7 @@
  * Time: 4:04 AM
  */
 
-namespace App\Utilities;
+namespace App\Components\Core\Utilities;
 
 
 use Illuminate\Support\Facades\Log;

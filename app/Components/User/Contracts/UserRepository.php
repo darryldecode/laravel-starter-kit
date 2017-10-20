@@ -6,11 +6,10 @@
  * Time: 6:38 AM
  */
 
-namespace App\Contracts;
+namespace App\Components\User\Contracts;
 
 
 use App\Repositories\Result;
-use App\User;
 
 interface UserRepository
 {

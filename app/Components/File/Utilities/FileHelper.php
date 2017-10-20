@@ -6,7 +6,7 @@
  * Time: 12:51 AM
  */
 
-namespace App\Utilities;
+namespace App\Components\File\Utilities;
 
 
 class FileHelper

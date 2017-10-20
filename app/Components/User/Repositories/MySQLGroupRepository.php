@@ -6,12 +6,13 @@
  * Time: 4:58 PM
  */
 
-namespace App\Repositories;
+namespace App\Components\User\Repositories;
 
 
-use App\Contracts\GroupRepository;
-use App\Group;
-use App\Utilities\Helpers;
+use App\Components\Core\Result;
+use App\Components\User\Contracts\GroupRepository;
+use App\Components\User\Models\Group;
+use App\Components\Core\Utilities\Helpers;
 
 class MySQLGroupRepository implements GroupRepository
 {

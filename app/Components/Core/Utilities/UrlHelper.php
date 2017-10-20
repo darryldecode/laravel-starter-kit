@@ -6,7 +6,7 @@
  * Time: 8:00 PM
  */
 
-namespace App\Utilities;
+namespace App\Components\Core\Utilities;
 
 
 class UrlHelper

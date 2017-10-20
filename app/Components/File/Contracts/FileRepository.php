@@ -3,21 +3,22 @@
  * Created by PhpStorm.
  * User: darryl
  * Date: 10/9/2017
- * Time: 10:09 PM
+ * Time: 10:03 PM
  */
 
-namespace App\Contracts;
+namespace App\Components\File\Contracts;
 
 
-use App\Repositories\Result;
 
-interface FileGroupRepository
+use App\Components\Core\Result;
+
+interface FileRepository
 {
     /**
      * list resource
      *
      * @param array $params
-     * @return mixed
+     * @return Result
      */
     public function index($params);
 
@@ -49,8 +50,33 @@ interface FileGroupRepository
     /**
      * delete resource by id
      *
-     * @param int $id
+     * @param int|string $id
      * @return Result
      */
     public function delete($id);
+
+    /**
+     * @param \Illuminate\Http\UploadedFile $file
+     * @return Result
+     */
+    public function upload($file);
+
+    /**
+     * @param string $path
+     * @return Result
+     */
+    public function deleteFile($path);
+
+    /**
+     * @param array $data
+     * @return Result
+     */
+    public function previewFile($data);
+
+    /**
+     * @param int $id
+     * @param string $token
+     * @return Result
+     */
+    public function downloadFile($id,$token);
 }

@@ -3,16 +3,16 @@
  * Created by PhpStorm.
  * User: darryl
  * Date: 10/9/2017
- * Time: 10:03 PM
+ * Time: 10:09 PM
  */
 
-namespace App\Contracts;
+namespace App\Components\File\Contracts;
 
 
-use App\Repositories\Result;
-use Illuminate\Http\Request;
 
-interface FileRepository
+use App\Components\Core\Result;
+
+interface FileGroupRepository
 {
     /**
      * list resource
@@ -50,33 +50,8 @@ interface FileRepository
     /**
      * delete resource by id
      *
-     * @param int|string $id
+     * @param int $id
      * @return Result
      */
     public function delete($id);
-
-    /**
-     * @param \Illuminate\Http\UploadedFile $file
-     * @return Result
-     */
-    public function upload($file);
-
-    /**
-     * @param string $path
-     * @return Result
-     */
-    public function deleteFile($path);
-
-    /**
-     * @param array $data
-     * @return Result
-     */
-    public function previewFile($data);
-
-    /**
-     * @param int $id
-     * @param string $token
-     * @return Result
-     */
-    public function downloadFile($id,$token);
 }

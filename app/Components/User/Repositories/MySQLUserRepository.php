@@ -6,12 +6,13 @@
  * Time: 6:37 AM
  */
 
-namespace App\Repositories;
+namespace App\Components\User\Repositories;
 
 
-use App\Contracts\UserRepository;
-use App\User;
-use App\Utilities\Helpers;
+use App\Components\Core\Result;
+use App\Components\User\Contracts\UserRepository;
+use App\Components\User\Models\User;
+use App\Components\Core\Utilities\Helpers;
 use Ramsey\Uuid\Uuid;
 
 class MySQLUserRepository implements UserRepository

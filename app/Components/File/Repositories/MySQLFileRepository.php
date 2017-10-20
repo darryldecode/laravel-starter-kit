@@ -6,13 +6,14 @@
  * Time: 10:02 PM
  */
 
-namespace App\Repositories;
+namespace App\Components\File\Repositories;
 
 
-use App\Contracts\FileRepository;
-use App\File;
-use App\Utilities\FileHelper;
-use App\Utilities\Helpers;
+use App\Components\Core\Result;
+use App\Components\Core\Utilities\Helpers;
+use App\Components\File\Contracts\FileRepository;
+use App\Components\File\Models\File;
+use App\Components\File\Utilities\FileHelper;
 use Storage;
 use Image;
 

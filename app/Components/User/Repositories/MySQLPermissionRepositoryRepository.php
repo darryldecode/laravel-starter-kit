@@ -6,14 +6,14 @@
  * Time: 5:07 PM
  */
 
-namespace App\Repositories;
+namespace App\Components\User\Repositories;
 
+use App\Components\Core\Result;
+use App\Components\Core\Utilities\Helpers;
+use App\Components\User\Contracts\PermissionRepository;
+use App\Components\User\Models\Permission;
 
-use App\Contracts\PermissionRepository;
-use App\Permission as PermissionModel;
-use App\Utilities\Helpers;
-
-class MySQLPermissionRepositoryRepository implements PermissionRepository
+class MySQLPermissionRepository implements PermissionRepository
 {
     /**
      * index items
@@ -29,7 +29,7 @@ class MySQLPermissionRepositoryRepository implements PermissionRepository
         $paginate = Helpers::hasValue($params['paginate'],'yes');
         $perPage = Helpers::hasValue($params['per_page'],10);
 
-        $q = PermissionModel::with([])->orderBy($orderBy,$orderSort);
+        $q = Permission::with([])->orderBy($orderBy,$orderSort);
 
         (!$title) ?: $q = $q->where('title','like',"%{$title}%");
 
@@ -49,7 +49,7 @@ class MySQLPermissionRepositoryRepository implements PermissionRepository
      */
     public function create($payload)
     {
-        $Permission = PermissionModel::create([
+        $Permission = Permission::create([
            'title' => $payload['title'],
            'description' => $payload['description'],
            'permission' => $payload['permission'],
@@ -69,7 +69,7 @@ class MySQLPermissionRepositoryRepository implements PermissionRepository
      */
     public function update($id, $payload)
     {
-        $Permission = PermissionModel::find($id);
+        $Permission = Permission::find($id);
 
         if(!$Permission) return new Result(false,Result::MESSAGE_NOT_FOUND,null,404);
 
@@ -90,7 +90,7 @@ class MySQLPermissionRepositoryRepository implements PermissionRepository
      */
     public function delete($id)
     {
-        $Permission = PermissionModel::find($id);
+        $Permission = Permission::find($id);
 
         if(!$Permission) return new Result(false,Result::MESSAGE_NOT_FOUND,null,400);
 
@@ -107,7 +107,7 @@ class MySQLPermissionRepositoryRepository implements PermissionRepository
      */
     public function get($id)
     {
-        $permission = PermissionModel::find($id);
+        $permission = Permission::find($id);
 
         if(!$permission) return new Result(false,Result::MESSAGE_NOT_FOUND,null,404);
 

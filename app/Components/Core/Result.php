@@ -6,7 +6,7 @@
  * Time: 5:39 PM
  */
 
-namespace App\Repositories;
+namespace App\Components\Core;
 
 
 use Illuminate\Support\Collection;

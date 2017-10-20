@@ -8,10 +8,10 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use App\Repositories\Result;
+use App\Components\Core\Result;
+use App\Components\User\Contracts\UserRepository;
 use Auth;
 use Illuminate\Http\Request;
-use App\Contracts\UserRepository;
 
 class UserController extends AjaxController
 {

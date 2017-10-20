@@ -6,12 +6,13 @@
  * Time: 8:29 PM
  */
 
-namespace App\Repositories;
+namespace App\Components\File\Repositories;
 
 
-use App\Contracts\FileGroupRepository;
-use App\FileGroup;
-use App\Utilities\Helpers;
+use App\Components\Core\Result;
+use App\Components\Core\Utilities\Helpers;
+use App\Components\File\Contracts\FileGroupRepository;
+use App\Components\File\Models\FileGroup;
 
 class MySQLFileGroupRepository implements FileGroupRepository
 {

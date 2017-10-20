@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use App\Contracts\GroupRepository;
-use App\Group;
-use App\Repositories\Result;
+use App\Components\Core\Result;
+use App\Components\User\Contracts\GroupRepository;
+use App\Components\User\Models\Group;
 use Illuminate\Http\Request;
 
 class GroupController extends AjaxController

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use App\Contracts\FileGroupRepository;
+use App\Components\File\Contracts\FileGroupRepository;
 use Illuminate\Http\Request;
 
 class FileGroupController extends AjaxController
