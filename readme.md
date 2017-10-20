@@ -55,7 +55,7 @@ the following credentials:
 
 - Get current logged in user or Get User
     - `$User = \Auth::user()`
-    - `$User = App\User::find($id)`
+    - `$User = App\Components\User\Models\User::find($id)`
 - Check if user belongs to a group
     - `$User->inGroup($groupId|$groupName|$groupObject);`
 - Check if user has given permission
