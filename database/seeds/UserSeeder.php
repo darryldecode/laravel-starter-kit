@@ -1,5 +1,8 @@
 <?php
 
+use App\Components\User\Models\Group;
+use App\Components\User\Models\Permission;
+use App\Components\User\Models\User;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -19,7 +22,7 @@ class UserSeeder extends Seeder
     protected function seedUsers()
     {
         // create admin account
-        $AdminUser = \App\User::create([
+        $AdminUser = User::create([
             'name' => 'John Doe',
             'email' => 'admin@gmail.com',
             'password' => '12345678',
@@ -31,37 +34,37 @@ class UserSeeder extends Seeder
         ]);
 
         // make super user
-        $AdminUser->groups()->attach(\App\Group::SUPER_USER_GROUP_ID);
+        $AdminUser->groups()->attach(Group::SUPER_USER_GROUP_ID);
 
         // generate random users
-        $users = factory(\App\User::class,30)->create();
+        $users = factory(User::class,30)->create();
         $users->each(function($u)
         {
-            $u->groups()->attach(\App\Group::DEFAULT_USER_GROUP_ID);
+            $u->groups()->attach(Group::DEFAULT_USER_GROUP_ID);
         });
     }
 
     protected function seedPermissions()
     {
         // create the super user permission
-        \App\Permission::create([
+        Permission::create([
             'title' => 'Super User',
             'description' => 'Superuser permission',
-            'permission' => \App\Permission::SUPER_USER_PERMISSION,
+            'permission' => Permission::SUPER_USER_PERMISSION,
         ]);
 
         // create all other permissions
-        \App\Permission::create([
+        Permission::create([
             'title' => 'User Create',
             'description' => 'Permission to create user.',
             'permission' => 'user.create',
         ]);
-        \App\Permission::create([
+        Permission::create([
             'title' => 'User Edit',
             'description' => 'Permission to edit user.',
             'permission' => 'user.edit',
         ]);
-        \App\Permission::create([
+        Permission::create([
             'title' => 'User Delete',
             'description' => 'Permission to delete user.',
             'permission' => 'user.delete',
@@ -71,24 +74,24 @@ class UserSeeder extends Seeder
     protected function seedGroups()
     {
         // create super user group
-        \App\Group::create([
+        Group::create([
             'name' => 'Super User',
             'permissions' => [
                 [
                     'title' => 'Super User',
                     'description' => 'Superuser permission',
-                    'permission' => \App\Permission::SUPER_USER_PERMISSION,
+                    'permission' => Permission::SUPER_USER_PERMISSION,
                     'value' => 1
                 ]
             ]
         ]);
 
         // create normal user
-        \App\Group::create([
+        Group::create([
             'name' => 'User',
             'permissions' => []
         ]);
-        \App\Group::create([
+        Group::create([
             'name' => 'Moderator',
             'permissions' => []
         ]);
