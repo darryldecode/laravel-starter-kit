@@ -31635,6 +31635,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -31647,8 +31652,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Name', value: 'name', align: 'left', sortable: false }, { text: 'Email', value: 'email', align: 'left', sortable: false }, { text: 'Permissions', value: 'permissions', align: 'left', sortable: false }, { text: 'Last Login', value: 'last_login', align: 'left', sortable: false }, { text: 'Active', value: 'active', align: 'left', sortable: false }],
             items: [],
-            totalPages: 0,
-            page: 1,
+            totalItems: 0,
+            pagination: {
+                rowsPerPage: 10
+            },
 
             filters: {
                 name: '',
@@ -31681,14 +31688,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     watch: {
-        page: function page(val) {
-            var self = this;
+        pagination: {
+            handler: function handler() {
+                this.loadUsers(function () {});
+            },
 
-            self.page = val;
-
-            self.loadUsers(function () {});
+            deep: true
         },
-
         'filters.name': _.debounce(function () {
             var self = this;
             self.loadUsers(function () {});
@@ -31767,13 +31773,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var params = {
                 name: self.filters.name,
                 email: self.filters.email,
-                page: self.page
+                page: self.pagination.page,
+                per_page: self.pagination.rowsPerPage
             };
 
             axios.get('/ajax/users', { params: params }).then(function (response) {
                 self.items = response.data.data.data;
-                self.totalPages = response.data.data.last_page;
-                cb();
+                self.totalItems = response.data.data.total;
+                self.pagination.totalItems = response.data.data.total;
+                (cb || Function)();
             });
         }
     }
@@ -33413,7 +33421,17 @@ var render = function() {
       _vm._v(" "),
       _c("v-data-table", {
         staticClass: "elevation-1",
-        attrs: { headers: _vm.headers, items: _vm.items, "hide-actions": "" },
+        attrs: {
+          headers: _vm.headers,
+          pagination: _vm.pagination,
+          items: _vm.items,
+          "total-items": _vm.totalItems
+        },
+        on: {
+          "update:pagination": function($event) {
+            _vm.pagination = $event
+          }
+        },
         scopedSlots: _vm._u([
           {
             key: "headerCell",
@@ -33477,40 +33495,48 @@ var render = function() {
                   "td",
                   [
                     _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.showDialog("user_edit", props.item)
-                          }
-                        }
-                      },
+                      "v-menu",
                       [
                         _c(
-                          "v-icon",
-                          { staticClass: "blue--text", attrs: { dark: "" } },
-                          [_vm._v("edit")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.trash(props.item)
-                          }
-                        }
-                      },
-                      [
+                          "v-btn",
+                          {
+                            attrs: { slot: "activator", icon: "", dark: "" },
+                            slot: "activator"
+                          },
+                          [_c("v-icon", [_vm._v("more_vert")])],
+                          1
+                        ),
+                        _vm._v(" "),
                         _c(
-                          "v-icon",
-                          { staticClass: "red--text", attrs: { dark: "" } },
-                          [_vm._v("delete")]
+                          "v-list",
+                          [
+                            _c(
+                              "v-list-tile",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.showDialog("user_edit", props.item)
+                                  }
+                                }
+                              },
+                              [_c("v-list-tile-title", [_vm._v("Edit")])],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-list-tile",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.trash(props.item)
+                                  }
+                                }
+                              },
+                              [_c("v-list-tile-title", [_vm._v("Delete")])],
+                              1
+                            )
+                          ],
+                          1
                         )
                       ],
                       1
@@ -33582,24 +33608,6 @@ var render = function() {
           }
         ])
       }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "text-xs-center" },
-        [
-          _c("v-pagination", {
-            attrs: { length: _vm.totalPages, "total-visible": 8, circle: "" },
-            model: {
-              value: _vm.page,
-              callback: function($$v) {
-                _vm.page = $$v
-              },
-              expression: "page"
-            }
-          })
-        ],
-        1
-      ),
       _vm._v(" "),
       _c(
         "v-dialog",
@@ -34056,6 +34064,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -34068,8 +34081,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Name', value: 'name', align: 'left', sortable: false }, { text: 'Permissions', value: 'permissions', align: 'left', sortable: false }, { text: 'Total Members', value: 'members_count', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
             items: [],
-            totalPages: 0,
-            page: 1,
+            totalItems: 0,
+            pagination: {
+                rowsPerPage: 10
+            },
 
             filters: {
                 name: ''
@@ -34101,14 +34116,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     watch: {
-        page: function page(val) {
-            var self = this;
+        pagination: {
+            handler: function handler() {
+                this.loadGroups(function () {});
+            },
 
-            self.page = val;
-
-            self.loadGroups(function () {});
+            deep: true
         },
-
         'filters.name': _.debounce(function () {
             var self = this;
             self.loadGroups(function () {});
@@ -34182,13 +34196,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var params = {
                 name: self.filters.name,
-                page: self.page
+                page: self.pagination.page,
+                per_page: self.pagination.rowsPerPage
             };
 
             axios.get('/ajax/groups', { params: params }).then(function (response) {
                 self.items = response.data.data.data;
-                self.totalPages = response.data.data.last_page;
-                cb();
+                self.totalItems = response.data.data.total;
+                self.pagination.totalItems = response.data.data.total;
+                (cb || Function)();
             });
         }
     }
@@ -35301,7 +35317,17 @@ var render = function() {
       _vm._v(" "),
       _c("v-data-table", {
         staticClass: "elevation-1",
-        attrs: { headers: _vm.headers, items: _vm.items, "hide-actions": "" },
+        attrs: {
+          headers: _vm.headers,
+          pagination: _vm.pagination,
+          items: _vm.items,
+          "total-items": _vm.totalItems
+        },
+        on: {
+          "update:pagination": function($event) {
+            _vm.pagination = $event
+          }
+        },
         scopedSlots: _vm._u([
           {
             key: "headerCell",
@@ -35365,40 +35391,48 @@ var render = function() {
                   "td",
                   [
                     _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.showDialog("group_edit", props.item)
-                          }
-                        }
-                      },
+                      "v-menu",
                       [
                         _c(
-                          "v-icon",
-                          { staticClass: "blue--text", attrs: { dark: "" } },
-                          [_vm._v("edit")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.trash(props.item)
-                          }
-                        }
-                      },
-                      [
+                          "v-btn",
+                          {
+                            attrs: { slot: "activator", icon: "", dark: "" },
+                            slot: "activator"
+                          },
+                          [_c("v-icon", [_vm._v("more_vert")])],
+                          1
+                        ),
+                        _vm._v(" "),
                         _c(
-                          "v-icon",
-                          { staticClass: "red--text", attrs: { dark: "" } },
-                          [_vm._v("delete")]
+                          "v-list",
+                          [
+                            _c(
+                              "v-list-tile",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.showDialog("group_edit", props.item)
+                                  }
+                                }
+                              },
+                              [_c("v-list-tile-title", [_vm._v("Edit")])],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-list-tile",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.trash(props.item)
+                                  }
+                                }
+                              },
+                              [_c("v-list-tile-title", [_vm._v("Delete")])],
+                              1
+                            )
+                          ],
+                          1
                         )
                       ],
                       1
@@ -35449,24 +35483,6 @@ var render = function() {
           }
         ])
       }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "text-xs-center" },
-        [
-          _c("v-pagination", {
-            attrs: { length: _vm.totalPages, "total-visible": 8, circle: "" },
-            model: {
-              value: _vm.page,
-              callback: function($$v) {
-                _vm.page = $$v
-              },
-              expression: "page"
-            }
-          })
-        ],
-        1
-      ),
       _vm._v(" "),
       _c(
         "v-dialog",
@@ -35891,6 +35907,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -35903,8 +35924,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Title', value: 'name', align: 'left', sortable: false }, { text: 'Permission', value: 'permission', align: 'left', sortable: false }, { text: 'Description', value: 'description', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
             items: [],
-            totalPages: 0,
-            page: 1,
+            totalItems: 0,
+            pagination: {
+                rowsPerPage: 10
+            },
 
             filters: {
                 title: ''
@@ -35932,14 +35955,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     watch: {
-        page: function page(val) {
-            var self = this;
+        pagination: {
+            handler: function handler() {
+                this.loadPermissions(function () {});
+            },
 
-            self.page = val;
-
-            self.loadPermissions(function () {});
+            deep: true
         },
-
         'filters.title': _.debounce(function () {
             var self = this;
             self.loadPermissions(function () {});
@@ -36007,13 +36029,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var params = {
                 name: self.filters.name,
-                page: self.page
+                page: self.pagination.page,
+                per_page: self.pagination.rowsPerPage
             };
 
             axios.get('/ajax/permissions', { params: params }).then(function (response) {
                 self.items = response.data.data.data;
-                self.totalPages = response.data.data.last_page;
-                cb();
+                self.totalItems = response.data.data.total;
+                self.pagination.totalItems = response.data.data.total;
+                (cb || Function)();
             });
         }
     }
@@ -36784,7 +36808,17 @@ var render = function() {
       _vm._v(" "),
       _c("v-data-table", {
         staticClass: "elevation-1",
-        attrs: { headers: _vm.headers, items: _vm.items, "hide-actions": "" },
+        attrs: {
+          headers: _vm.headers,
+          pagination: _vm.pagination,
+          items: _vm.items,
+          "total-items": _vm.totalItems
+        },
+        on: {
+          "update:pagination": function($event) {
+            _vm.pagination = $event
+          }
+        },
         scopedSlots: _vm._u([
           {
             key: "headerCell",
@@ -36824,40 +36858,51 @@ var render = function() {
                   "td",
                   [
                     _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.showDialog("permission_edit", props.item)
-                          }
-                        }
-                      },
+                      "v-menu",
                       [
                         _c(
-                          "v-icon",
-                          { staticClass: "blue--text", attrs: { dark: "" } },
-                          [_vm._v("edit")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { icon: "", small: "" },
-                        on: {
-                          click: function($event) {
-                            _vm.trash(props.item)
-                          }
-                        }
-                      },
-                      [
+                          "v-btn",
+                          {
+                            attrs: { slot: "activator", icon: "", dark: "" },
+                            slot: "activator"
+                          },
+                          [_c("v-icon", [_vm._v("more_vert")])],
+                          1
+                        ),
+                        _vm._v(" "),
                         _c(
-                          "v-icon",
-                          { staticClass: "red--text", attrs: { dark: "" } },
-                          [_vm._v("delete")]
+                          "v-list",
+                          [
+                            _c(
+                              "v-list-tile",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.showDialog(
+                                      "permission_edit",
+                                      props.item
+                                    )
+                                  }
+                                }
+                              },
+                              [_c("v-list-tile-title", [_vm._v("Edit")])],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-list-tile",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.trash(props.item)
+                                  }
+                                }
+                              },
+                              [_c("v-list-tile-title", [_vm._v("Delete")])],
+                              1
+                            )
+                          ],
+                          1
                         )
                       ],
                       1
@@ -36882,24 +36927,6 @@ var render = function() {
           }
         ])
       }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "text-xs-center" },
-        [
-          _c("v-pagination", {
-            attrs: { length: _vm.totalPages, "total-visible": 8, circle: "" },
-            model: {
-              value: _vm.page,
-              callback: function($$v) {
-                _vm.page = $$v
-              },
-              expression: "page"
-            }
-          })
-        ],
-        1
-      ),
       _vm._v(" "),
       _c(
         "v-dialog",

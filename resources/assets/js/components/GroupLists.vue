@@ -22,8 +22,9 @@
         <!-- groups table -->
         <v-data-table
                 v-bind:headers="headers"
+                v-bind:pagination.sync="pagination"
                 :items="items"
-                hide-actions
+                :total-items="totalItems"
                 class="elevation-1">
             <template slot="headerCell" scope="props">
                 <span v-if="props.header.value=='name'">
@@ -42,12 +43,19 @@
             </template>
             <template slot="items" scope="props">
                 <td>
-                    <v-btn @click="showDialog('group_edit',props.item)" icon small>
-                        <v-icon dark class="blue--text">edit</v-icon>
-                    </v-btn>
-                    <v-btn @click="trash(props.item)" icon small>
-                        <v-icon dark class="red--text">delete</v-icon>
-                    </v-btn>
+                    <v-menu>
+                        <v-btn icon slot="activator" dark>
+                            <v-icon>more_vert</v-icon>
+                        </v-btn>
+                        <v-list>
+                            <v-list-tile @click="showDialog('group_edit',props.item)">
+                                <v-list-tile-title>Edit</v-list-tile-title>
+                            </v-list-tile>
+                            <v-list-tile @click="trash(props.item)">
+                                <v-list-tile-title>Delete</v-list-tile-title>
+                            </v-list-tile>
+                        </v-list>
+                    </v-menu>
                 </td>
                 <td>{{ props.item.name }}</td>
                 <td>
@@ -57,9 +65,6 @@
                 <td>{{ $appFormatters.formatDate(props.item.created_at) }}</td>
             </template>
         </v-data-table>
-        <div class="text-xs-center">
-            <v-pagination :length="totalPages" :total-visible="8" v-model="page" circle></v-pagination>
-        </div>
 
         <!-- dialog for show permissions -->
         <v-dialog v-model="dialogs.showPermissions.show" lazy absolute>
@@ -144,8 +149,10 @@
                     { text: 'Date Created', value: 'created_at', align: 'left', sortable: false },
                 ],
                 items: [],
-                totalPages: 0,
-                page: 1,
+                totalItems: 0,
+                pagination: {
+                    rowsPerPage: 10
+                },
 
                 filters: {
                     name: '',
@@ -176,12 +183,11 @@
             });
         },
         watch: {
-            page(val) {
-                const self = this;
-
-                self.page = val;
-
-                self.loadGroups(()=>{});
+            pagination: {
+                handler() {
+                    this.loadGroups(()=>{});
+                },
+                deep: true
             },
             'filters.name':_.debounce(function(){
                 const self = this;
@@ -257,13 +263,15 @@
 
                 let params = {
                     name: self.filters.name,
-                    page: self.page
+                    page: self.pagination.page,
+                    per_page: self.pagination.rowsPerPage
                 };
 
                 axios.get('/ajax/groups',{params: params}).then(function(response) {
                     self.items = response.data.data.data;
-                    self.totalPages = response.data.data.last_page;
-                    cb();
+                    self.totalItems = response.data.data.total;
+                    self.pagination.totalItems = response.data.data.total;
+                    (cb || Function)();
                 });
             }
         }
