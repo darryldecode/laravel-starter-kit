@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Components\File\Contracts\FileGroupRepository;
+use App\Components\File\Contracts\FileRepository;
 use App\Components\File\Repositories\MySQLFileGroupRepository;
 use App\Components\File\Repositories\MySQLFileRepository;
 use App\Components\User\Contracts\GroupRepository;
@@ -10,8 +12,6 @@ use App\Components\User\Contracts\UserRepository;
 use App\Components\User\Repositories\MySQLGroupRepository;
 use App\Components\User\Repositories\MySQLPermissionRepository;
 use App\Components\User\Repositories\MySQLUserRepository;
-use App\Contracts\FileGroupRepository;
-use App\Contracts\FileRepository;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Support\ServiceProvider;
 

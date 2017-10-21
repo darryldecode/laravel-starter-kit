@@ -9,7 +9,7 @@
 namespace App\Http\Controllers\Front;
 
 
-use App\Contracts\FileRepository;
+use App\Components\File\Contracts\FileRepository;
 use Illuminate\Http\Request;
 
 class FileController extends FrontController
