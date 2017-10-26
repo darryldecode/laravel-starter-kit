@@ -9,6 +9,8 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\Components\Core\Utilities\MenuHelper;
+
 class HomeController extends AdminController
 {
     /**
@@ -18,6 +20,9 @@ class HomeController extends AdminController
      */
     public function showHome()
     {
+        // so we can access $nav on view
+        MenuHelper::initMenu();
+
         return view('admin.single-page');
     }
 }
