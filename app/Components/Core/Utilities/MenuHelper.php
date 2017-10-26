@@ -22,9 +22,11 @@ class MenuHelper
         $currentUser = \Auth::user();
         $menus = new Collection(config('wask.menu',[]));
 
-        $menus->filter(function($menu) use (&$currentUser)
+        $menus = $menus->filter(function($menu) use (&$currentUser)
         {
             if($menu['nav_type']=='divider') return true;
+
+            if(empty($menu['permission_requirements'])) return true;
 
             return $currentUser->hasAnyPermission($menu['permission_requirements']);
         });
