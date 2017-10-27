@@ -26,7 +26,7 @@
                         @endif
                     @endforeach
 
-                    <v-list-tile @click="menuClick('settings')">
+                    <v-list-tile @click="clickLogout('{{route('logout')}}','{{route('login')}}')">
                         <v-list-tile-action>
                             <v-icon>directions_walk</v-icon>
                         </v-list-tile-action>

@@ -760,6 +760,11 @@ var admin = new Vue({
                 window.location.href = routeName;
             }
         },
+        clickLogout: function clickLogout(logoutUrl, afterLogoutRedirectUrl) {
+            axios.post(logoutUrl).then(function (r) {
+                window.location.href = afterLogoutRedirectUrl;
+            });
+        },
         dialogOk: function dialogOk() {
             __WEBPACK_IMPORTED_MODULE_3__store___["a" /* default */].commit('dialogOk');
         },

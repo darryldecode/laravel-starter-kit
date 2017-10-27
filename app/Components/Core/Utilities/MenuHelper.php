@@ -20,7 +20,7 @@ class MenuHelper
          * @var User $currentUser
          */
         $currentUser = \Auth::user();
-        $menus = new Collection(config('wask.menu',[]));
+        $menus = new Collection(config('menu',[]));
 
         $menus = $menus->filter(function($menu) use (&$currentUser)
         {

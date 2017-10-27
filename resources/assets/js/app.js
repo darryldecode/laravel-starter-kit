@@ -90,6 +90,11 @@ const admin = new Vue({
                 window.location.href = routeName;
             }
         },
+        clickLogout(logoutUrl,afterLogoutRedirectUrl) {
+            axios.post(logoutUrl).then((r)=>{
+                window.location.href = afterLogoutRedirectUrl;
+            });
+        },
         dialogOk() {
             store.commit('dialogOk');
         },
