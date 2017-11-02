@@ -96,4 +96,20 @@ class Helpers
             return $default;
         }
     }
+
+    /**
+     * format ms to seconds
+     *
+     * @param $duration
+     * @param int $decimal
+     * @return string
+     */
+    public static function formatMillisecondsToSeconds($duration,$decimal = 5)
+    {
+        $hours = (int)($duration / 60 / 60);
+        $minutes = (int)($duration / 60) - $hours * 60;
+        $seconds = (float)$duration - $hours * 60 * 60 - $minutes * 60;
+
+        return number_format($seconds,$decimal);
+    }
 }
