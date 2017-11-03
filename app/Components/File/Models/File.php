@@ -2,6 +2,7 @@
 
 namespace App\Components\File\Models;
 
+use App\Components\User\Models\User;
 use Carbon\Carbon;
 use Firebase\JWT\JWT;
 use Illuminate\Database\Eloquent\Model;
