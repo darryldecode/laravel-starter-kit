@@ -57,7 +57,7 @@ class MySQLUserRepository implements UserRepository
         $User = User::create([
             'name' => $payload['name'],
             'email' => $payload['email'],
-            'password' => $payload['password'],
+            'password' => $payload['password'], // hash on the fly
             'permissions' => $payload['permissions'],
             'active' => $payload['active'],
             'activation_key' => (Uuid::uuid4())->toString(),
