@@ -63,6 +63,23 @@ class Result
     }
 
     /**
+     * @param bool $success
+     * @param string $message
+     * @param null $data
+     * @param int $statusCode
+     * @return $this
+     */
+    public function set($success = false, $message = '', $data = null, $statusCode = 200)
+    {
+        $this->success = $success;
+        $this->message = $message;
+        $this->statusCode = $statusCode;
+        $this->data = $data;
+
+        return $this;
+    }
+
+    /**
      * determine if command transaction was successful
      *
      * @return bool
