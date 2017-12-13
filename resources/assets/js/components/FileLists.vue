@@ -21,8 +21,9 @@
         <!-- groups table -->
         <v-data-table
                 v-bind:headers="headers"
+                v-bind:pagination.sync="pagination"
                 :items="items"
-                hide-actions
+                :total-items="totalItems"
                 class="elevation-1">
             <template slot="headerCell" scope="props">
                 <span v-if="props.header.value=='thumb'">
@@ -59,9 +60,6 @@
                 <td>{{ $appFormatters.formatDate(props.item.created_at) }}</td>
             </template>
         </v-data-table>
-        <div class="text-xs-center">
-            <v-pagination :length="totalPages" :total-visible="8" v-model="page" circle></v-pagination>
-        </div>
         <!-- /groups table -->
 
         <!-- view file dialog -->
@@ -110,7 +108,9 @@
                 ],
                 items: [],
                 totalPages: 0,
-                page: 1,
+                pagination: {
+                    rowsPerPage: 10
+                },
 
                 filters: {
                     name: '',
@@ -160,8 +160,11 @@
             'filters.name':_.debounce(function(v) {
                 this.loadFiles(()=>{});
             },500),
-            'page'(v) {
-                this.loadFiles(()=>{});
+            pagination: {
+                handler() {
+                    this.loadFiles(()=>{});
+                },
+                deep: true
             },
         },
         methods: {
@@ -243,13 +246,15 @@
                 let params = {
                     name: self.filters.name,
                     file_group_id: self.filters.selectedGroupIds,
-                    page: self.page
+                    page: self.pagination.page,
+                    per_page: self.pagination.rowsPerPage
                 };
 
                 axios.get('/ajax/files',{params: params}).then(function(response) {
                     self.items = response.data.data.data;
-                    self.totalPages = response.data.data.last_page;
-                    cb();
+                    self.totalItems = response.data.data.total;
+                    self.pagination.totalItems = response.data.data.total;
+                    (cb || Function)();
                 });
             }
         }
