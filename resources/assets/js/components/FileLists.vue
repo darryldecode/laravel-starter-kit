@@ -107,7 +107,7 @@
                     { text: 'Date Created', value: 'created_at', align: 'left', sortable: false },
                 ],
                 items: [],
-                totalPages: 0,
+                totalItems: 0,
                 pagination: {
                     rowsPerPage: 10
                 },

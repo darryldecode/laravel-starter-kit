@@ -22,8 +22,9 @@
         <!-- groups table -->
         <v-data-table
                 v-bind:headers="headers"
+                v-bind:pagination.sync="pagination"
                 :items="items"
-                hide-actions
+                :total-items="totalItems"
                 class="elevation-1">
             <template slot="headerCell" scope="props">
                 <span v-if="props.header.value=='file_count'">
@@ -49,9 +50,6 @@
                 <td>{{ $appFormatters.formatDate(props.item.created_at) }}</td>
             </template>
         </v-data-table>
-        <div class="text-xs-center">
-            <v-pagination :length="totalPages" :total-visible="8" v-model="page" circle></v-pagination>
-        </div>
 
         <!-- add file group -->
         <v-dialog v-model="dialogs.add.show" fullscreen transition="dialog-bottom-transition" :overlay=false>
@@ -112,8 +110,10 @@
                     { text: 'Date Created', value: 'created_at', align: 'left', sortable: false },
                 ],
                 items: [],
-                totalPages: 0,
-                page: 1,
+                totalItems: 0,
+                pagination: {
+                    rowsPerPage: 10
+                },
 
                 filters: {
                     name: '',
@@ -144,7 +144,13 @@
         watch: {
             'filters.name':_.debounce(function(v) {
                 this.loadFileGroups(()=>{});
-            },500)
+            },500),
+            pagination: {
+                handler() {
+                    this.loadFileGroups(()=>{});
+                },
+                deep: true
+            },
         },
         methods: {
             trash(group) {
@@ -209,13 +215,15 @@
 
                 let params = {
                     name: self.filters.name,
-                    page: self.page
+                    page: self.pagination.page,
+                    per_page: self.pagination.rowsPerPage
                 };
 
                 axios.get('/ajax/file-groups',{params: params}).then(function(response) {
                     self.items = response.data.data.data;
-                    self.totalPages = response.data.data.last_page;
-                    cb();
+                    self.totalItems = response.data.data.total;
+                    self.pagination.totalItems = response.data.data.total;
+                    (cb || Function)();
                 });
             }
         }
