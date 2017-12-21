@@ -112,4 +112,34 @@ class Helpers
 
         return number_format($seconds,$decimal);
     }
+
+    /**
+     * helper to convert camel case to dash format
+     *
+     * @param $string
+     * @param string $separator
+     * @return string
+     */
+    public static function camel2snake($string,$separator = '_') {
+        return strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', "$1{$separator}", $string));
+    }
+
+    /**
+     * helper to convert dash to camel case
+     *
+     * @param $string
+     * @param bool $capitalizeFirstCharacter
+     * @param string $separator
+     * @return mixed|string
+     */
+    function snake2Camel($string, $capitalizeFirstCharacter = false, $separator = '_')
+    {
+        $str = str_replace($separator, '', ucwords($string, $separator));
+
+        if (!$capitalizeFirstCharacter) {
+            $str = lcfirst($str);
+        }
+
+        return $str;
+    }
 }
