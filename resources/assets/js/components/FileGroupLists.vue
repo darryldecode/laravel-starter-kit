@@ -26,7 +26,7 @@
                 :items="items"
                 :total-items="totalItems"
                 class="elevation-1">
-            <template slot="headerCell" scope="props">
+            <template slot="headerCell" slot-scope="props">
                 <span v-if="props.header.value=='file_count'">
                     <v-icon>dns</v-icon> {{ props.header.text }}
                 </span>
@@ -35,7 +35,7 @@
                 </span>
                 <span v-else>{{ props.header.text }}</span>
             </template>
-            <template slot="items" scope="props">
+            <template slot="items" slot-scope="props">
                 <td>
                     <v-btn @click="showDialog('file_group_edit',props.item)" icon small>
                         <v-icon dark class="blue--text">edit</v-icon>

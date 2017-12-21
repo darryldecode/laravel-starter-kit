@@ -5,9 +5,8 @@
         <v-app id="inspire" dark>
             <v-navigation-drawer
                     clipped
-                    persistent
+                    fixed
                     v-model="drawer"
-                    enable-resize-watcher
                     app>
                 <v-list dense>
 
@@ -41,11 +40,9 @@
                 <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
                 <v-toolbar-title>{{config('app.name')}}</v-toolbar-title>
             </v-toolbar>
-            <main>
-                <v-content>
-                    <router-view></router-view>
-                </v-content>
-            </main>
+            <v-content>
+                <router-view></router-view>
+            </v-content>
             <v-footer app fixed>
                 <span>&copy; 2017</span>
             </v-footer>

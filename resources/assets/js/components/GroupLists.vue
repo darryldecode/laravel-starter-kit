@@ -26,7 +26,7 @@
                 :items="items"
                 :total-items="totalItems"
                 class="elevation-1">
-            <template slot="headerCell" scope="props">
+            <template slot="headerCell" slot-scope="props">
                 <span v-if="props.header.value=='name'">
                     <v-icon>person</v-icon> {{ props.header.text }}
                 </span>
@@ -41,7 +41,7 @@
                 </span>
                 <span v-else>{{ props.header.text }}</span>
             </template>
-            <template slot="items" scope="props">
+            <template slot="items" slot-scope="props">
                 <td>
                     <v-menu>
                         <v-btn icon slot="activator" dark>
@@ -67,7 +67,7 @@
         </v-data-table>
 
         <!-- dialog for show permissions -->
-        <v-dialog v-model="dialogs.showPermissions.show" lazy absolute>
+        <v-dialog v-model="dialogs.showPermissions.show" lazy absolute max-width="300px">
             <v-card>
                 <v-card-title>
                     <div class="headline"><v-icon>vpn_key</v-icon> Group Permissions</div>

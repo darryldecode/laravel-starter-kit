@@ -25,7 +25,7 @@
                 :items="items"
                 :total-items="totalItems"
                 class="elevation-1">
-            <template slot="headerCell" scope="props">
+            <template slot="headerCell" slot-scope="props">
                 <span v-if="props.header.value=='thumb'">
                     <v-icon>panorama</v-icon> {{ props.header.text }}
                 </span>
@@ -37,10 +37,10 @@
                 </span>
                 <span v-else>{{ props.header.text }}</span>
             </template>
-            <template slot="items" scope="props">
+            <template slot="items" slot-scope="props">
                 <td class="wask_td_action">
                     <v-btn @click="showDialog('file_show',props.item)" icon small>
-                        <v-icon dark class="red--text">search</v-icon>
+                        <v-icon dark class="blue--text">search</v-icon>
                     </v-btn>
                     <v-btn @click="trash(props.item)" icon small>
                         <v-icon dark class="red--text">delete</v-icon>
@@ -49,7 +49,7 @@
                 <td>
                     <v-avatar
                             tile
-                            :size="50"
+                            :size="'50px'"
                             class="grey lighten-4">
                         <img :src="`/files/`+props.item.id+`/preview?w=50&action=fit`"/>
                     </v-avatar>
