@@ -63,7 +63,7 @@
         </v-snackbar>
 
         <!-- dialog confirm -->
-        <v-dialog v-show="showDialog" v-model="showDialog" lazy absolute>
+        <v-dialog v-show="showDialog" v-model="showDialog" lazy absolute max-width="450px">
             <v-btn color="primary" dark slot="activator">Open Dialog</v-btn>
             <v-card>
                 <v-card-title>
