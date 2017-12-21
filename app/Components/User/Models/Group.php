@@ -95,4 +95,126 @@ class Group extends Model
     {
         return $this->belongsToMany(User::class,'user_group_pivot_table','group_id');
     }
+
+    /**
+     * adds a new permission or if permission already exist, just update the value
+     *
+     * @param int|Permission $permission
+     * @param int $value the permission value (allow=1, inherit=0, deny=-1)
+     * @return bool
+     */
+    public function addPermission($permission, $value)
+    {
+        $userCurrentPermissions = $this->permissions;
+        $updateOnly = false;
+
+        // maybe a permission ID
+        if(is_int($permission))
+        {
+            $Permission = Permission::find($permission);
+
+            if(!$Permission) return false;
+
+            // loop through current permissions if already exist,
+            // if so, we will just update the value
+            foreach ($userCurrentPermissions as $index => $p)
+            {
+                if($p['permission'] == $Permission->permission)
+                {
+                    $updateOnly = true;
+                    $userCurrentPermissions[$index]['value'] = $value;
+                }
+            }
+
+            // if not found yet, lets add it
+            if(!$updateOnly)
+            {
+                $userCurrentPermissions[] = [
+                    'permission' => $Permission->permission,
+                    'title' => $Permission->title,
+                    'description' => $Permission->description,
+                    'value' => $value,
+                ];
+            }
+        }
+
+        // maybe a permission object
+        elseif ($permission instanceof Permission)
+        {
+            // loop through current permissions if already exist,
+            // if so, we will just update the value
+            foreach ($userCurrentPermissions as $index => $p)
+            {
+                if($p['permission'] == $permission->permission)
+                {
+                    $updateOnly = true;
+                    $userCurrentPermissions[$index]['value'] = $value;
+                }
+            }
+
+            // if not found yet, lets add it
+            if(!$updateOnly)
+            {
+                $userCurrentPermissions[] = [
+                    'permission' => $permission->permission,
+                    'title' => $permission->title,
+                    'description' => $permission->description,
+                    'value' => $value,
+                ];
+            }
+        }
+
+        // invalid
+        else
+        {
+            return false;
+        }
+
+        // assign the new permissions value
+        $this->permissions = $userCurrentPermissions;
+
+        return $this->save();
+    }
+
+    /**
+     * @param int|Permission $permission
+     * @return bool
+     */
+    public function removePermission($permission)
+    {
+        $userCurrentPermissions = $this->permissions;
+
+        if(is_int($permission))
+        {
+            $Permission = Permission::find($permission);
+
+            if(!$Permission) return false;
+
+            foreach ($userCurrentPermissions as $index => $p)
+            {
+                if($p['permission'] == $Permission->permission) unset($userCurrentPermissions[$index]);
+            }
+        }
+
+        elseif ($permission instanceof Permission)
+        {
+            foreach ($userCurrentPermissions as $index => $p)
+            {
+                if($p['permission'] == $permission->permission) unset($userCurrentPermissions[$index]);
+            }
+        }
+
+        else
+        {
+            return false;
+        }
+
+        // re-index
+        array_values($userCurrentPermissions);
+
+        // assign new values
+        $this->permissions = $userCurrentPermissions;
+
+        return $this->save();
+    }
 }

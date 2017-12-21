@@ -66,7 +66,29 @@ the following credentials:
     - `$User->isSuperUser()`
 - Get User's combined permissions. This will include permission acquired from its group and its specific given permissions:
     - `$User->getCombinedPermissions()`
-    
+- Primarily, you can assign, re-assign or revoke permissions on a user using the backend UI. But you can also do that programmatically.
+
+```
+$User = App\Components\User\Models\User::find($id);
+
+// using permission ID
+$permissionID = 1 // the permission ID that you add/define on permissions
+$permissionValue = 1 // values can be (1,0,-1) allow=1, inherit=0, deny=-1
+
+$User->addPermission($permissionID,$permissionValue); // true or false
+
+// using permission object
+$permission = App\Components\User\Models\Permission::find($id); // the permission object
+$permissionValue = 1 // values can be (1,0,-1) allow=1, inherit=0, deny=-1
+
+$User->addPermission($permission,$permissionValue); // true or false
+
+NOTE: if the permission is already exist on the user, it will just update the value.
+
+// remove a permission
+$User->removePermission($permissionID|$permissionObject);
+```
+
 <h3 id="dashboard-menu">Adding Dashboard Menu</h3>
 
 - Please open `config/menu.php` and see 'menu' array
