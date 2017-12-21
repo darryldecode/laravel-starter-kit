@@ -9,7 +9,7 @@
 namespace App\Components\User\Contracts;
 
 
-use App\Repositories\Result;
+use App\Components\Core\Result;
 
 interface PermissionRepository
 {
