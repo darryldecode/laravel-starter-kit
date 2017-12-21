@@ -1,4 +1,5 @@
-<img src="https://assets.darrylfernandez.com/wp-content/uploads/2017/10/Screenshot.png"></p>
+<img src="https://assets.darrylfernandez.com/wp-content/uploads/2017/12/Screenshot_1.png"></p>
+<img src="https://assets.darrylfernandez.com/wp-content/uploads/2017/12/Screenshot_7.png"></p>
 
 ## About Laravel Starter Kit
 
