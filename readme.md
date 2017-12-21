@@ -110,7 +110,7 @@ $permissionValue = 1 // values can be (1,0,-1) allow=1, inherit=0, deny=-1
 
 $Group->addPermission($permission,$permissionValue); // true or false
 
-NOTE: if the permission is already exist on the user, it will just update the value.
+NOTE: if the permission is already exist on the group, it will just update the value.
 
 // remove a permission
 $Group->removePermission($permissionID|$permissionObject);
