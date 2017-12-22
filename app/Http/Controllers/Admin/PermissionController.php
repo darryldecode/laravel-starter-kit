@@ -1,32 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: darryl
- * Date: 10/6/2017
- * Time: 6:15 AM
- */
 
-namespace App\Http\Controllers\Ajax;
+namespace App\Http\Controllers\Admin;
 
 use App\Components\Core\Result;
-use App\Components\User\Contracts\UserRepository;
-use Auth;
+use App\Components\User\Contracts\PermissionRepository;
+use App\Components\User\Models\Permission;
 use Illuminate\Http\Request;
 
-class UserController extends AjaxController
+class PermissionController extends AdminController
 {
     /**
-     * @var UserRepository
+     * @var PermissionRepository
      */
-    private $userRepository;
+    private $permissionRepository;
 
     /**
-     * UserController constructor.
-     * @param UserRepository $userRepository
+     * PermissionController constructor.
+     * @param PermissionRepository $permissionRepository
      */
-    public function __construct(UserRepository $userRepository)
+    public function __construct(PermissionRepository $permissionRepository)
     {
-        $this->userRepository = $userRepository;
+        $this->permissionRepository = $permissionRepository;
     }
 
     /**
@@ -36,7 +30,7 @@ class UserController extends AjaxController
      */
     public function index()
     {
-        $results = $this->userRepository->listUsers(request()->all());
+        $results = $this->permissionRepository->index(request()->all());
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -53,11 +47,9 @@ class UserController extends AjaxController
     public function store(Request $request)
     {
         $validate = validator($request->all(),[
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:8',
-            'permissions' => 'array',
-            'groups' => 'array',
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'permission' => 'required|string|unique:permissions',
         ]);
 
         if($validate->fails())
@@ -69,7 +61,7 @@ class UserController extends AjaxController
             );
         }
 
-        $results = $this->userRepository->create($request->all());
+        $results = $this->permissionRepository->create($request->all());
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -85,7 +77,7 @@ class UserController extends AjaxController
      */
     public function show($id)
     {
-        $results = $this->userRepository->get($id);
+        $results = $this->permissionRepository->get($id);
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -103,10 +95,9 @@ class UserController extends AjaxController
     public function update(Request $request, $id)
     {
         $validate = validator($request->all(),[
-            'name' => 'required',
-            'email' => 'required|email',
-            'permissions' => 'array',
-            'groups' => 'array',
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'permission' => 'required|string',
         ]);
 
         if($validate->fails())
@@ -118,7 +109,7 @@ class UserController extends AjaxController
             );
         }
 
-        $results = $this->userRepository->update($id,$request->all());
+        $results = $this->permissionRepository->update($id,$request->all());
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -134,8 +125,8 @@ class UserController extends AjaxController
      */
     public function destroy($id)
     {
-        // do not delete self
-        if($id==Auth::user()->id)
+        // prevent delete of super user permission
+        if($id == Permission::SUPER_USER_PERMISSION_ID)
         {
             return $this->sendResponse(
                 Result::MESSAGE_FORBIDDEN,
@@ -144,12 +135,11 @@ class UserController extends AjaxController
             );
         }
 
-        $results = $this->userRepository->delete($id);
+        $results = $this->permissionRepository->delete($id);
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
+            $results->getData()
         );
     }
 }

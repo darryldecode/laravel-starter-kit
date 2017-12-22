@@ -178,7 +178,7 @@
 
                 self.$store.commit('showLoader');
 
-                axios.put('/ajax/users/'+self.propUserId,payload).then(function(response) {
+                axios.put('/admin/users/'+self.propUserId,payload).then(function(response) {
 
                     self.$store.commit('showSnackbar',{
                        message: response.data.message,
@@ -234,7 +234,7 @@
                 // reset first
                 self.groups = [];
 
-                axios.get('/ajax/users/' + self.propUserId).then(function(response) {
+                axios.get('/admin/users/' + self.propUserId).then(function(response) {
                     let User = response.data.data;
 
                     self.name = User.name;
@@ -259,7 +259,7 @@
                     paginate: 'no'
                 };
 
-                axios.get('/ajax/permissions',{params: params}).then(function(response) {
+                axios.get('/admin/permissions',{params: params}).then(function(response) {
                     self.options.permissions = response.data.data;
                     console.log(self.options.permissions);
                     cb();
@@ -273,7 +273,7 @@
                     paginate: 'no'
                 };
 
-                axios.get('/ajax/groups',{params: params}).then(function(response) {
+                axios.get('/admin/groups',{params: params}).then(function(response) {
                     self.options.groups = response.data.data;
 
                     _.each(self.options.groups,g=>{

@@ -76,7 +76,7 @@
                 Dropzone.autoDiscover = false;
 
                 self.dropzone = new Dropzone("#fileupload", {
-                    url:'/ajax/files',
+                    url:'/admin/files',
                     paramName: "file", // The name that will be used to transfer the file
                     maxFilesize: 50, // 50MB
                     uploadMultiple: true,
@@ -126,7 +126,7 @@
                     paginate: 'no'
                 };
 
-                axios.get('/ajax/file-groups',{params: params}).then(function(response) {
+                axios.get('/admin/file-groups',{params: params}).then(function(response) {
                     self.fileGroups = response.data.data;
                     cb();
                 });

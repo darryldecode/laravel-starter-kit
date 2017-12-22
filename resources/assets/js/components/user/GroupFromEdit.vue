@@ -121,7 +121,7 @@
 
                 self.$store.commit('showLoader');
 
-                axios.put('/ajax/groups/' + self.propGroupId,payload).then(function(response) {
+                axios.put('/admin/groups/' + self.propGroupId,payload).then(function(response) {
 
                     self.$store.commit('showSnackbar',{
                         message: response.data.message,
@@ -171,7 +171,7 @@
                     page: self.page
                 };
 
-                axios.get('/ajax/permissions',{params: params}).then(function(response) {
+                axios.get('/admin/permissions',{params: params}).then(function(response) {
                     self.options.permissions = response.data.data;
                     cb();
                 });
@@ -180,7 +180,7 @@
 
                 const self = this;
 
-                axios.get('/ajax/groups/' + self.propGroupId).then(function(response) {
+                axios.get('/admin/groups/' + self.propGroupId).then(function(response) {
                     let Group = response.data.data;
                     self.name = Group.name;
                     self.permissions = Group.permissions;

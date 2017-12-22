@@ -41,9 +41,9 @@
 </template>
 
 <script>
-    import FileGroupLists from '../components/FileGroupLists.vue';
-    import FileUpload from '../components/FileUpload.vue';
-    import FileLists from '../components/FileLists.vue';
+    import FileGroupLists from '../components/file/FileGroupLists.vue';
+    import FileUpload from '../components/file/FileUpload.vue';
+    import FileLists from '../components/file/FileLists.vue';
     export default {
         components: {
             FileUpload,

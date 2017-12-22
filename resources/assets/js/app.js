@@ -25,7 +25,6 @@ import formatters from './common/Formatters';
 
 Vue.use(formatters);
 Vue.use(eventBus);
-Vue.component('example', require('./components/Example.vue'));
 
 const admin = new Vue({
     el: '#admin',

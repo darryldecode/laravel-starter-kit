@@ -6,8 +6,8 @@
             <v-container grid-list-md>
                 <v-layout row wrap>
                     <v-flex xs12 sm12>
-                        <v-btn @click="showDialog('group_add')" class="blue lighten-1" dark>
-                            New Group
+                        <v-btn @click="showDialog('file_group_add')" class="blue lighten-1" dark>
+                            New File Group
                             <v-icon right dark>add</v-icon>
                         </v-btn>
                     </v-flex>
@@ -27,14 +27,8 @@
                 :total-items="totalItems"
                 class="elevation-1">
             <template slot="headerCell" slot-scope="props">
-                <span v-if="props.header.value=='name'">
-                    <v-icon>person</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='permissions'">
-                    <v-icon>vpn_key</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='members_count'">
-                    <v-icon>people</v-icon> {{ props.header.text }}
+                <span v-if="props.header.value=='file_count'">
+                    <v-icon>dns</v-icon> {{ props.header.text }}
                 </span>
                 <span v-else-if="props.header.value=='created_at'">
                     <v-icon>date_range</v-icon> {{ props.header.text }}
@@ -43,87 +37,54 @@
             </template>
             <template slot="items" slot-scope="props">
                 <td>
-                    <v-menu>
-                        <v-btn icon slot="activator" dark>
-                            <v-icon>more_vert</v-icon>
-                        </v-btn>
-                        <v-list>
-                            <v-list-tile @click="showDialog('group_edit',props.item)">
-                                <v-list-tile-title>Edit</v-list-tile-title>
-                            </v-list-tile>
-                            <v-list-tile @click="trash(props.item)">
-                                <v-list-tile-title>Delete</v-list-tile-title>
-                            </v-list-tile>
-                        </v-list>
-                    </v-menu>
+                    <v-btn @click="showDialog('file_group_edit',props.item)" icon small>
+                        <v-icon dark class="blue--text">edit</v-icon>
+                    </v-btn>
+                    <v-btn @click="trash(props.item)" icon small>
+                        <v-icon dark class="red--text">delete</v-icon>
+                    </v-btn>
                 </td>
                 <td>{{ props.item.name }}</td>
-                <td>
-                    <v-btn small @click="showDialog('group_permissions',props.item.permissions)" outline round color="grey" dark>Show</v-btn>
-                </td>
-                <td>{{ props.item.members_count }}</td>
+                <td>{{ props.item.description }}</td>
+                <td>{{ props.item.file_count }}</td>
                 <td>{{ $appFormatters.formatDate(props.item.created_at) }}</td>
             </template>
         </v-data-table>
 
-        <!-- dialog for show permissions -->
-        <v-dialog v-model="dialogs.showPermissions.show" lazy absolute max-width="300px">
-            <v-card>
-                <v-card-title>
-                    <div class="headline"><v-icon>vpn_key</v-icon> Group Permissions</div>
-                </v-card-title>
-                <v-card-text>
-                    <v-chip v-for="(permission,key) in dialogs.showPermissions.items" :key="key" class="white--text" :class="{'green':(permission.value==1),'red':(permission.value==-1),'blue':(permission.value==0)}">
-                        <v-avatar v-if="permission.value==-1" class="red darken-4" title="Deny">
-                            <v-icon>block</v-icon>
-                        </v-avatar>
-                        <v-avatar v-if="permission.value==1" class="green darken-4" title="Allow">
-                            <v-icon>check_circle</v-icon>
-                        </v-avatar>
-                        <v-avatar v-if="permission.value==0" class="blue darken-4" title="Inherit">
-                            <v-icon>swap_horiz</v-icon>
-                        </v-avatar>
-                        {{permission.title}}
-                    </v-chip>
-                    <p v-if="dialogs.showPermissions.items.length==0">No permissions</p>
-                </v-card-text>
-            </v-card>
-        </v-dialog>
-
-        <!-- add user -->
+        <!-- add file group -->
         <v-dialog v-model="dialogs.add.show" fullscreen transition="dialog-bottom-transition" :overlay=false>
             <v-card>
                 <v-toolbar dark class="primary">
                     <v-btn icon @click.native="dialogs.add.show = false" dark>
                         <v-icon>close</v-icon>
                     </v-btn>
-                    <v-toolbar-title>Create New Group</v-toolbar-title>
+                    <v-toolbar-title>Create New File Group</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-toolbar-items>
                         <v-btn dark flat @click.native="dialogs.add.show = false">Done</v-btn>
                     </v-toolbar-items>
                 </v-toolbar>
                 <v-card-text>
-                    <group-form-add></group-form-add>
+                    <file-group-add></file-group-add>
                 </v-card-text>
             </v-card>
         </v-dialog>
 
-        <!-- edit user -->
+        <!-- edit file group -->
         <v-dialog v-model="dialogs.edit.show" fullscreen :laze="false" transition="dialog-bottom-transition" :overlay=false>
             <v-card>
                 <v-toolbar dark class="primary">
                     <v-btn icon @click.native="dialogs.edit.show = false" dark>
                         <v-icon>close</v-icon>
                     </v-btn>
-                    <v-toolbar-title>Edit Group</v-toolbar-title>
+                    <v-toolbar-title>Edit File Group</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-toolbar-items>
                         <v-btn dark flat @click.native="dialogs.edit.show = false">Done</v-btn>
                     </v-toolbar-items>
                 </v-toolbar>
                 <v-card-text>
-                    <group-form-edit :propGroupId="dialogs.edit.group.id"></group-form-edit>
+                    <file-group-edit :propFileGroupId="dialogs.edit.fileGroup.id"></file-group-edit>
                 </v-card-text>
             </v-card>
         </v-dialog>
@@ -132,20 +93,20 @@
 </template>
 
 <script>
-    import GroupFormAdd from './GroupFromAdd.vue';
-    import GroupFormEdit from './GroupFromEdit.vue';
+    import FileGroupAdd from './FileGroupAdd.vue';
+    import FileGroupEdit from './FileGroupEdit.vue';
     export default {
         components: {
-            GroupFormAdd,
-            GroupFormEdit
+            FileGroupAdd,
+            FileGroupEdit
         },
-        data () {
+        data() {
             return {
                 headers: [
                     { text: 'Action', value: false, align: 'left', sortable: false },
-                    { text: 'Name', value: 'name', align: 'left', sortable: false },
-                    { text: 'Permissions', value: 'permissions', align: 'left', sortable: false },
-                    { text: 'Total Members', value: 'members_count', align: 'left', sortable: false },
+                    { text: 'Group Name', value: 'name', align: 'left', sortable: false },
+                    { text: 'Description', value: 'description', align: 'left', sortable: false },
+                    { text: 'Total Files', value: 'file_count', align: 'left', sortable: false },
                     { text: 'Date Created', value: 'created_at', align: 'left', sortable: false },
                 ],
                 items: [],
@@ -159,12 +120,8 @@
                 },
 
                 dialogs: {
-                    showPermissions: {
-                        items: [],
-                        show: false
-                    },
                     edit: {
-                        group: {},
+                        fileGroup: {},
                         show: false
                     },
                     add: {
@@ -174,25 +131,26 @@
             }
         },
         mounted() {
+            console.log('pages.FileGroupAdd.vue');
+
             const self = this;
 
-            self.loadGroups(()=>{});
+            self.loadFileGroups(()=>{});
 
-            self.$eventBus.$on(['GROUP_ADDED','GROUP_UPDATED','GROUP_DELETED'],()=>{
-                self.loadGroups(()=>{});
+            self.$eventBus.$on(['FILE_GROUP_ADDED','FILE_GROUP_UPDATED','FILE_GROUP_DELETED'],()=>{
+                self.loadFileGroups(()=>{});
             });
         },
         watch: {
+            'filters.name':_.debounce(function(v) {
+                this.loadFileGroups(()=>{});
+            },500),
             pagination: {
                 handler() {
-                    this.loadGroups(()=>{});
+                    this.loadFileGroups(()=>{});
                 },
                 deep: true
             },
-            'filters.name':_.debounce(function(){
-                const self = this;
-                self.loadGroups(()=>{});
-            },700),
         },
         methods: {
             trash(group) {
@@ -201,10 +159,10 @@
                 self.$store.commit('showDialog',{
                     type: "confirm",
                     title: "Confirm Deletion",
-                    message: "Are you sure you want to delete this group?",
+                    message: "Are you sure you want to delete this file group?",
                     okCb: ()=>{
 
-                        axios.delete('/ajax/groups/' + group.id).then(function(response) {
+                        axios.delete('/admin/file-groups/' + group.id).then(function(response) {
 
                             self.$store.commit('showSnackbar',{
                                 message: response.data.message,
@@ -212,7 +170,7 @@
                                 duration: 3000
                             });
 
-                            self.$eventBus.$emit('GROUP_DELETED');
+                            self.$eventBus.$emit('FILE_GROUP_DELETED');
 
                         }).catch(function (error) {
                             if (error.response) {
@@ -238,26 +196,20 @@
                 const self = this;
 
                 switch (dialog){
-                    case 'group_permissions':
-                        self.dialogs.showPermissions.items = data;
-                        setTimeout(()=>{
-                            self.dialogs.showPermissions.show = true;
-                        },500);
-                        break;
-                    case 'group_edit':
-                        self.dialogs.edit.group = data;
+                    case 'file_group_edit':
+                        self.dialogs.edit.fileGroup = data;
                         setTimeout(()=>{
                             self.dialogs.edit.show = true;
                         },500);
                         break;
-                    case 'group_add':
+                    case 'file_group_add':
                         setTimeout(()=>{
                             self.dialogs.add.show = true;
                         },500);
                         break;
                 }
             },
-            loadGroups(cb) {
+            loadFileGroups(cb) {
 
                 const self = this;
 
@@ -267,7 +219,7 @@
                     per_page: self.pagination.rowsPerPage
                 };
 
-                axios.get('/ajax/groups',{params: params}).then(function(response) {
+                axios.get('/admin/file-groups',{params: params}).then(function(response) {
                     self.items = response.data.data.data;
                     self.totalItems = response.data.data.total;
                     self.pagination.totalItems = response.data.data.total;

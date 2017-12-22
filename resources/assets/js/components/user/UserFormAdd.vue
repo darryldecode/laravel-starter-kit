@@ -1,16 +1,34 @@
 <template>
-    <div class="component-wrap">
-
-        <!-- form -->
+    <div>
         <v-card dark>
-            <v-form v-model="valid" ref="groupFormAdd" lazy-validation>
+            <v-form v-model="valid" ref="userFormAdd" lazy-validation>
                 <v-container grid-list-md>
                 <v-layout row wrap>
-                    <v-flex xs12>
-                        <div class="body-2 white--text">Group Details</div>
+                    <v-flex xs12 sm6>
+                        <v-text-field box dark label="First Name" v-model="name" :rules="nameRules"></v-text-field>
                     </v-flex>
+                    <v-flex xs12 sm6>
+                        <v-text-field box dark label="Email" v-model="email" :rules="emailRules"></v-text-field>
+                    </v-flex>
+                    <v-flex xs12 sm6>
+                        <v-text-field box dark label="Password" type="password" v-model="password" :rules="passwordRules"></v-text-field>
+                    </v-flex>
+                    <v-flex xs12 sm6>
+                        <v-text-field box dark label="Confirm Password" type="password" v-model="passwordConfirm" :rules="passwordConfirmRules"></v-text-field>
+                    </v-flex>
+                    <v-flex xs12 sm6>
+                        <v-switch label="Pre-Activate Account" v-model="active" dark></v-switch>
+                    </v-flex>
+                    <v-flex xs12><v-spacer></v-spacer></v-flex>
                     <v-flex xs12>
-                        <v-text-field box dark label="Group Name" v-model="name" :rules="nameRules"></v-text-field>
+                        <h1 class="title"><v-icon>vpn_key</v-icon> Special Permissions</h1>
+                        <v-alert color="info" icon="info" value="true">
+                            Special Permissions are permission exclusive to this user. Permissions defined here
+                            are more superior than any permission that is in his group. So if the User belongs to a group that has permission to "create something"
+                            but then is denied to "create something" here, the user will be denied on that permission. In short, special permissions
+                            has high priority that group permissions.
+                        </v-alert>
+                        <v-divider></v-divider>
                     </v-flex>
                     <v-flex xs12 sm4>
                         <v-select
@@ -55,6 +73,14 @@
                             <div v-if="permissions.length===0">No special permissions assigned.</div>
                         </div>
                     </v-flex>
+                    <v-flex xs12><v-spacer></v-spacer></v-flex>
+                    <v-flex xs12>
+                        <h1 class="title"><v-icon>people</v-icon> Groups</h1>
+                        <v-divider></v-divider>
+                    </v-flex>
+                    <v-flex xs12>
+                        <v-switch v-for="(g,k) in options.groups" :key="k" v-bind:label="g.name" v-model="groups[g.id]" dark></v-switch>
+                    </v-flex>
                     <v-flex xs12>
                         <v-btn @click="save()" :disabled="!valid" color="primary" dark>Save</v-btn>
                     </v-flex>
@@ -62,39 +88,69 @@
             </v-container>
             </v-form>
         </v-card>
-        <!-- /form -->
-
     </div>
 </template>
 
 <script>
     export default {
         data() {
+
+            const self = this;
+
             return {
                 valid: false,
                 name: '',
                 nameRules: [
                     (v) => !!v || 'Name is required',
                 ],
+                email: '',
+                emailRules: [
+                    (v) => !!v || 'E-mail is required',
+                    (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+                ],
+                password: '',
+                passwordRules: [
+                    (v) => !!v || 'Password is required',
+                    (v) => v && v.length >= 8 || 'Password must be atleast 8 characters.',
+                ],
+                passwordConfirm: '',
+                passwordConfirmRules: [
+                    (v) => !(v!==self.password) || 'Password do not match.',
+                ],
                 permissions: [],
-                selectedPermission: {},
-                selectedPermissionValue: 0,
-
+                groups: [],
+                active:'',
                 options: {
                     permissions: [],
                     permissionValues:[
                         {label:'Allow', value:1},
                         {label:'Deny', value:-1},
+                        {label:'Inherit', value:0},
                     ],
+                    groups: []
+                },
+                selectedPermission: {},
+                selectedPermissionValue: 0,
+
+                alert: {
+                    show: false,
+                    icon: '',
+                    color: '',
+                    message: ''
                 }
             }
         },
         mounted() {
-            console.log('pages.Home.vue');
+            console.log('components.UserFormAdd.vue');
 
             const self = this;
 
-            self.loadPermissions(()=>{});
+            self.loadPermissions(cb=>{});
+            self.loadGroups(cb=>{});
+
+            self.$eventBus.$on(['GROUP_ADDED'],()=>{
+                self.loadGroups(()=>{});
+            });
         },
         methods: {
             save() {
@@ -103,27 +159,31 @@
 
                 let payload = {
                     name: self.name,
-                    permissions: self.permissions
+                    email: self.email,
+                    password: self.password,
+                    active: self.active ? moment().format('YYYY-MM-DD') : null,
+                    permissions: self.permissions,
+                    groups: self.groups,
                 };
 
                 self.$store.commit('showLoader');
 
-                axios.post('/ajax/groups',payload).then(function(response) {
+                axios.post('/admin/users',payload).then(function(response) {
 
                     self.$store.commit('showSnackbar',{
-                        message: response.data.message,
-                        color: 'success',
-                        duration: 3000
+                       message: response.data.message,
+                       color: 'success',
+                       duration: 3000
                     });
+
+                    self.$eventBus.$emit('USER_ADDED');
                     self.$store.commit('hideLoader');
-                    self.$eventBus.$emit('GROUP_ADDED');
 
                     // reset
-                    self.$refs.groupFormAdd.reset();
+                    self.$refs.userFormAdd.reset();
                     self.permissions = [];
 
                 }).catch(function (error) {
-                    self.$store.commit('hideLoader');
                     if (error.response) {
                         self.$store.commit('showSnackbar',{
                             message: error.response.data.message,
@@ -153,20 +213,6 @@
 
                 console.log(self.permissions);
             },
-            loadPermissions(cb) {
-
-                const self = this;
-
-                let params = {
-                    paginate: 'no',
-                    page: self.page
-                };
-
-                axios.get('/ajax/permissions',{params: params}).then(function(response) {
-                    self.options.permissions = response.data.data;
-                    cb();
-                });
-            },
             existsInPermissions(permissionKey) {
                 const self = this;
                 let found = false;
@@ -175,6 +221,39 @@
                 });
                 return found;
             },
+            loadPermissions(cb) {
+
+                const self = this;
+
+                let params = {
+                    paginate: 'no'
+                };
+
+                axios.get('/admin/permissions',{params: params}).then(function(response) {
+                    self.options.permissions = response.data.data;
+                    console.log(self.options.permissions);
+                    cb();
+                });
+            },
+            loadGroups(cb) {
+
+                const self = this;
+
+                let params = {
+                    paginate: 'no'
+                };
+
+                axios.get('/admin/groups',{params: params}).then(function(response) {
+                    self.options.groups = response.data.data;
+
+                    _.each(self.options.groups,g=>{
+                        g.selected = false;
+                    });
+
+                    console.log(self.options.groups);
+                    cb();
+                });
+            }
         }
     }
 </script>

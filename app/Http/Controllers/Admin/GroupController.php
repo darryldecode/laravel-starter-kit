@@ -1,35 +1,36 @@
 <?php
 
-namespace App\Http\Controllers\Ajax;
+namespace App\Http\Controllers\Admin;
 
-use App\Components\File\Contracts\FileGroupRepository;
+use App\Components\Core\Result;
+use App\Components\User\Contracts\GroupRepository;
+use App\Components\User\Models\Group;
 use Illuminate\Http\Request;
 
-class FileGroupController extends AjaxController
+class GroupController extends AdminController
 {
     /**
-     * @var FileGroupRepository
+     * @var GroupRepository
      */
-    private $fileGroupRepository;
+    private $groupRepository;
 
     /**
-     * FileGroupController constructor.
-     * @param FileGroupRepository $fileGroupRepository
+     * GroupController constructor.
+     * @param GroupRepository $groupRepository
      */
-    public function __construct(FileGroupRepository $fileGroupRepository)
+    public function __construct(GroupRepository $groupRepository)
     {
-        $this->fileGroupRepository = $fileGroupRepository;
+        $this->groupRepository = $groupRepository;
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $results = $this->fileGroupRepository->index($request->all());
+        $results = $this->groupRepository->index(request()->all());
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -47,8 +48,8 @@ class FileGroupController extends AjaxController
     public function store(Request $request)
     {
         $validate = validator($request->all(),[
-            'name' => 'required|string',
-            'description' => 'required|string',
+            'name' => 'required',
+            'permissions' => 'array',
         ]);
 
         if($validate->fails())
@@ -60,7 +61,7 @@ class FileGroupController extends AjaxController
             );
         }
 
-        $results = $this->fileGroupRepository->create($request->all());
+        $results = $this->groupRepository->create($request->all());
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -77,7 +78,7 @@ class FileGroupController extends AjaxController
      */
     public function show($id)
     {
-        $results = $this->fileGroupRepository->get($id);
+        $results = $this->groupRepository->get($id);
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -96,8 +97,8 @@ class FileGroupController extends AjaxController
     public function update(Request $request, $id)
     {
         $validate = validator($request->all(),[
-            'name' => 'required|string',
-            'description' => 'required|string',
+            'name' => 'required',
+            'permissions' => 'array',
         ]);
 
         if($validate->fails())
@@ -109,7 +110,7 @@ class FileGroupController extends AjaxController
             );
         }
 
-        $results = $this->fileGroupRepository->update($id,$request->all());
+        $results = $this->groupRepository->update($id,$request->all());
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -126,7 +127,17 @@ class FileGroupController extends AjaxController
      */
     public function destroy($id)
     {
-        $results = $this->fileGroupRepository->delete($id);
+        // prevent delete of super user
+        if($id == Group::SUPER_USER_GROUP_ID)
+        {
+            return $this->sendResponse(
+                Result::MESSAGE_FORBIDDEN,
+                null,
+                403
+            );
+        }
+
+        $results = $this->groupRepository->delete($id);
 
         return $this->sendResponse(
             $results->getMessage(),

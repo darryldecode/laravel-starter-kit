@@ -3,7 +3,7 @@
 
         <!-- form -->
         <v-card dark>
-            <v-form v-model="valid" ref="permissionFormAdd" lazy-validation>
+            <v-form v-model="valid" ref="permissionFormEdit" lazy-validation>
                 <v-container grid-list-md>
                     <v-layout row wrap>
                         <v-flex xs12>
@@ -32,6 +32,11 @@
 
 <script>
     export default {
+        props: {
+            propPermissionId: {
+                required: true
+            }
+        },
         data() {
             return {
                 valid: false,
@@ -52,7 +57,7 @@
             }
         },
         mounted() {
-            console.log('components.PermissionFormAdd.vue');
+            console.log('components.PermissionFormEdit.vue');
         },
         watch: {
             permissionKey(v) {
@@ -60,6 +65,9 @@
             },
             title(v) {
                 this.permissionKey = v.replace(' ','.').toLowerCase();
+            },
+            propPermissionId(v) {
+                if(v) this.loadPermission(()=>{});
             }
         },
         methods: {
@@ -75,17 +83,16 @@
 
                 self.isLoading = true;
 
-                axios.post('/ajax/permissions',payload).then(function(response) {
+                axios.put('/admin/permissions/' + self.propPermissionId,payload).then(function(response) {
 
                     self.$store.commit('showSnackbar',{
                         message: response.data.message,
                         color: 'success',
                         duration: 3000
                     });
-                    self.$eventBus.$emit('PERMISSION_ADDED');
+                    self.$eventBus.$emit('PERMISSION_UPDATED');
 
                     // reset
-                    self.$refs.permissionFormAdd.reset();
                     self.permissions = [];
                     self.isLoading = false;
 
@@ -104,6 +111,21 @@
                     } else {
                         console.log('Error', error.message);
                     }
+                });
+            },
+            loadPermission(cb) {
+
+                const self = this;
+
+                axios.get('/admin/permissions/' + self.propPermissionId).then(function(response) {
+
+                    let Permission = response.data.data;
+
+                    self.title = Permission.title;
+                    self.description = Permission.description;
+                    self.permissionKey = Permission.permissionKey;
+
+                    cb();
                 });
             }
         }

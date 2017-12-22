@@ -41,9 +41,9 @@
 </template>
 
 <script>
-    import UserLists from '../components/UserLists.vue';
-    import GroupLists from '../components/GroupLists.vue';
-    import PermissionLists from '../components/PermissionLists.vue';
+    import UserLists from '../components/user/UserLists.vue';
+    import GroupLists from '../components/user/GroupLists.vue';
+    import PermissionLists from '../components/user/PermissionLists.vue';
     export default {
         components: {
             UserLists,

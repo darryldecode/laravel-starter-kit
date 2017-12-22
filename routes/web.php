@@ -20,12 +20,9 @@ Auth::routes();
 // admin
 Route::prefix('admin')->namespace('Admin')->middleware('auth')->group(function()
 {
+    // single page
     Route::get('/', 'HomeController@showHome')->name('admin.home');
-});
 
-// ajax
-Route::prefix('ajax')->namespace('Ajax')->middleware('auth')->group(function()
-{
     // resource routes
     Route::resource('users','UserController');
     Route::resource('groups','GroupController');

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Ajax;
+namespace App\Http\Controllers\Admin;
 
 use App\Components\File\Contracts\FileRepository;
 use Illuminate\Http\Request;
 use Auth;
 
-class FileController extends AjaxController
+class FileController extends AdminController
 {
     /**
      * @var FileRepository

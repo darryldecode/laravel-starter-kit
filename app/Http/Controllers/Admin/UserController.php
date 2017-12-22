@@ -1,26 +1,32 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: darryl
+ * Date: 10/6/2017
+ * Time: 6:15 AM
+ */
 
-namespace App\Http\Controllers\Ajax;
+namespace App\Http\Controllers\Admin;
 
 use App\Components\Core\Result;
-use App\Components\User\Contracts\PermissionRepository;
-use App\Components\User\Models\Permission;
+use App\Components\User\Contracts\UserRepository;
+use Auth;
 use Illuminate\Http\Request;
 
-class PermissionController extends AjaxController
+class UserController extends AdminController
 {
     /**
-     * @var PermissionRepository
+     * @var UserRepository
      */
-    private $permissionRepository;
+    private $userRepository;
 
     /**
-     * PermissionController constructor.
-     * @param PermissionRepository $permissionRepository
+     * UserController constructor.
+     * @param UserRepository $userRepository
      */
-    public function __construct(PermissionRepository $permissionRepository)
+    public function __construct(UserRepository $userRepository)
     {
-        $this->permissionRepository = $permissionRepository;
+        $this->userRepository = $userRepository;
     }
 
     /**
@@ -30,7 +36,7 @@ class PermissionController extends AjaxController
      */
     public function index()
     {
-        $results = $this->permissionRepository->index(request()->all());
+        $results = $this->userRepository->listUsers(request()->all());
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -47,9 +53,11 @@ class PermissionController extends AjaxController
     public function store(Request $request)
     {
         $validate = validator($request->all(),[
-            'title' => 'required|string',
-            'description' => 'required|string',
-            'permission' => 'required|string|unique:permissions',
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+            'permissions' => 'array',
+            'groups' => 'array',
         ]);
 
         if($validate->fails())
@@ -61,7 +69,7 @@ class PermissionController extends AjaxController
             );
         }
 
-        $results = $this->permissionRepository->create($request->all());
+        $results = $this->userRepository->create($request->all());
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -77,7 +85,7 @@ class PermissionController extends AjaxController
      */
     public function show($id)
     {
-        $results = $this->permissionRepository->get($id);
+        $results = $this->userRepository->get($id);
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -95,9 +103,10 @@ class PermissionController extends AjaxController
     public function update(Request $request, $id)
     {
         $validate = validator($request->all(),[
-            'title' => 'required|string',
-            'description' => 'required|string',
-            'permission' => 'required|string',
+            'name' => 'required',
+            'email' => 'required|email',
+            'permissions' => 'array',
+            'groups' => 'array',
         ]);
 
         if($validate->fails())
@@ -109,7 +118,7 @@ class PermissionController extends AjaxController
             );
         }
 
-        $results = $this->permissionRepository->update($id,$request->all());
+        $results = $this->userRepository->update($id,$request->all());
 
         return $this->sendResponse(
             $results->getMessage(),
@@ -125,8 +134,8 @@ class PermissionController extends AjaxController
      */
     public function destroy($id)
     {
-        // prevent delete of super user permission
-        if($id == Permission::SUPER_USER_PERMISSION_ID)
+        // do not delete self
+        if($id==Auth::user()->id)
         {
             return $this->sendResponse(
                 Result::MESSAGE_FORBIDDEN,
@@ -135,11 +144,12 @@ class PermissionController extends AjaxController
             );
         }
 
-        $results = $this->permissionRepository->delete($id);
+        $results = $this->userRepository->delete($id);
 
         return $this->sendResponse(
             $results->getMessage(),
-            $results->getData()
+            $results->getData(),
+            $results->getStatusCode()
         );
     }
 }
