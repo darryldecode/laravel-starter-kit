@@ -26,6 +26,7 @@ to the codes and start working with the starter kit
 
 - <a href="#requirements">Requirements</a>
 - <a href="#installation">Installation</a>
+- <a href="#compiling-assets">Compiling Assets</a>
 - <a href="#user-group-permissions">User, Groups & Permissions Guide</a>
 - <a href="#dashboard-menu">Adding Dashboard Menu</a>
 
@@ -44,7 +45,13 @@ to the codes and start working with the starter kit
 - `php artisan storage:link`
 - `npm install`
 
-Then for developent you can run `npm run dev or watch or prod`
+<h3 id="compiling-assets">Compiling Assets</h3>
+
+Then for **development** you can run `npm run dev`.
+
+Or for **monitor and automatically recompile** `npm run watch`.
+
+Or for **recompile and minify** `npm run prod`.
 
 You are done! You can now login in your application using
 the following credentials:
