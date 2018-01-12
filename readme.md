@@ -5,6 +5,12 @@
 
 Laravel Starter Kit is based on Laravel 5.5 and VueJS + Material design.
 
+## Why?
+
+So many starter kits out there but so bloated with features and sometimes an overkill. This tries to provide you the very basic 
+that most of the application needs. In most cases, you only need this to go further with still full control on your foundation, no 
+magic and extra complexities, just the right sugar.
+
 ## Features
 
 &#10004; User, Group & Permissions Management
