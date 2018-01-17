@@ -119,7 +119,7 @@ $Group->addPermission($permissionID,$permissionValue); // true or false
 
 // using permission object
 $permission = App\Components\User\Models\Permission::find($id); // the permission object
-$permissionValue = 1 // values can be (1,0,-1) allow=1, inherit=0, deny=-1
+$permissionValue = 1 // values can be (1,-1) allow=1, deny=-1
 
 $Group->addPermission($permission,$permissionValue); // true or false
 
