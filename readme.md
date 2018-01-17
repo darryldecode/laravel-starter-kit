@@ -113,7 +113,7 @@ $Group = App\Components\User\Models\Group::find($id);
 
 // using permission ID
 $permissionID = 1 // the permission ID that you add/define on permissions
-$permissionValue = 1 // values can be (1,0,-1) allow=1, deny=-1
+$permissionValue = 1 // values can be (1,-1) allow=1, deny=-1
 
 $Group->addPermission($permissionID,$permissionValue); // true or false
 
