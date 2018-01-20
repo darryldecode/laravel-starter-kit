@@ -47,7 +47,7 @@
                 permissionKey: '',
                 permissionKeyRules: [
                     (v) => !!v || 'Permission Key is required',
-                    (v) => !v.match(/[^\w\.]+/g) || 'Description cannot contain special characters',
+                    (v) => (v && !v.match(/[^\w\.]+/g)) || 'Description cannot contain special characters',
                 ],
             }
         },
@@ -56,10 +56,10 @@
         },
         watch: {
             permissionKey(v) {
-                this.permissionKey = v.replace(' ','.').toLowerCase();
+                if(v) this.permissionKey = v.replace(' ','.').toLowerCase();
             },
             title(v) {
-                this.permissionKey = v.replace(' ','.').toLowerCase();
+                if(v) this.permissionKey = v.replace(' ','.').toLowerCase();
             }
         },
         methods: {

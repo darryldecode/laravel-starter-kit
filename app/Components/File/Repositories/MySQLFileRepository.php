@@ -233,7 +233,7 @@ class MySQLFileRepository implements FileRepository
         // if its not an image, we will get the proper icon
         else
         {
-            $fullPath = Storage::disk('public')->path(FileHelper::getIconPath($File->file_type));
+            $fullPath = asset(FileHelper::getIconPath($File->file_type));
             $img = Image::make($fullPath)->resize(50, null, function($constraint) use ($aspectRatio,$upSize)
             {
                 if($aspectRatio) $constraint->aspectRatio();

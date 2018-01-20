@@ -261,7 +261,6 @@
 
                 axios.get('/admin/permissions',{params: params}).then(function(response) {
                     self.options.permissions = response.data.data;
-                    console.log(self.options.permissions);
                     cb();
                 });
             },
@@ -280,7 +279,6 @@
                         g.selected = false;
                     });
 
-                    console.log(self.options.groups);
                     cb();
                 });
             }

@@ -146,6 +146,9 @@ class FileHelper
             case 'application/vnd.ms-excel':
                 $icon_file = 'ms-xlsx.png';
                 break;
+            case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+                $icon_file = 'ms-xlsx.png';
+                break;
             case 'application/zip':
                 $icon_file = 'zip.png';
                 break;
