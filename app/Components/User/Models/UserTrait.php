@@ -87,9 +87,9 @@ trait UserTrait
         // we will check if the declared meta data key
         // already exist in the $metaClass as property, if not
         // we will declare it and put value null as default
-        foreach (UserMeta::$META_DATA as $k => $v)
+        foreach (UserMeta::getKeys() as $k => $v)
         {
-            if(!property_exists($metaClass,$v)) $metaClass->{$v} = null;
+            if(!property_exists($metaClass,$v['key'])) $metaClass->{$v['key']} = null;
         }
 
         return $metaClass;
