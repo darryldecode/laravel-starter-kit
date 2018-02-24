@@ -81,8 +81,8 @@ the following credentials:
     - `$User->getCombinedPermissions()`
 - Primarily, you can assign, re-assign or revoke permissions on a user & group using the backend UI. But you can also do that programmatically.
 
-```
-Assign, Re-assign, revoke permission in a USER:
+```php
+// Assign, Re-assign, revoke permission in a USER:
 
 $User = App\Components\User\Models\User::find($id);
 
@@ -106,8 +106,8 @@ $User->removePermission($permissionID|$permissionObject);
 
 - We can also do the same in a Group
 
-```
-Assign, Re-assign, revoke permission in a GROUP:
+```php
+// Assign, Re-assign, revoke permission in a GROUP:
 
 $Group = App\Components\User\Models\Group::find($id);
 
