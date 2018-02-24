@@ -30,4 +30,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * the validation rules
+     *
+     * @var array
+     */
+    public static $rules = [];
 }
