@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Components\File\Contracts\FileGroupRepository;
+use App\Components\File\Contracts\IFileGroupRepository;
 use Illuminate\Http\Request;
 
 class FileGroupController extends AdminController
 {
     /**
-     * @var FileGroupRepository
+     * @var IFileGroupRepository
      */
     private $fileGroupRepository;
 
     /**
      * FileGroupController constructor.
-     * @param FileGroupRepository $fileGroupRepository
+     * @param IFileGroupRepository $fileGroupRepository
      */
-    public function __construct(FileGroupRepository $fileGroupRepository)
+    public function __construct(IFileGroupRepository $fileGroupRepository)
     {
         $this->fileGroupRepository = $fileGroupRepository;
     }

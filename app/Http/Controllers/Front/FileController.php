@@ -9,21 +9,21 @@
 namespace App\Http\Controllers\Front;
 
 
-use App\Components\File\Contracts\FileRepository;
+use App\Components\File\Contracts\IFileRepository;
 use Illuminate\Http\Request;
 
 class FileController extends FrontController
 {
     /**
-     * @var FileRepository
+     * @var IFileRepository
      */
     private $fileRepository;
 
     /**
      * FileController constructor.
-     * @param FileRepository $fileRepository
+     * @param IFileRepository $fileRepository
      */
-    public function __construct(FileRepository $fileRepository)
+    public function __construct(IFileRepository $fileRepository)
     {
         $this->fileRepository = $fileRepository;
     }

@@ -9,22 +9,22 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Components\Core\Result;
-use App\Components\User\Contracts\UserRepository;
+use App\Components\User\Contracts\IUserRepository;
 use Auth;
 use Illuminate\Http\Request;
 
 class UserController extends AdminController
 {
     /**
-     * @var UserRepository
+     * @var IUserRepository
      */
     private $userRepository;
 
     /**
      * UserController constructor.
-     * @param UserRepository $userRepository
+     * @param IUserRepository $userRepository
      */
-    public function __construct(UserRepository $userRepository)
+    public function __construct(IUserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
     }

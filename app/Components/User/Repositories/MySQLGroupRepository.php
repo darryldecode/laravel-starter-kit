@@ -10,11 +10,11 @@ namespace App\Components\User\Repositories;
 
 
 use App\Components\Core\Result;
-use App\Components\User\Contracts\GroupRepository;
+use App\Components\User\Contracts\IGroupRepository;
 use App\Components\User\Models\Group;
 use App\Components\Core\Utilities\Helpers;
 
-class MySQLGroupRepository implements GroupRepository
+class MySQLGroupRepository implements IGroupRepository
 {
     /**
      * index items

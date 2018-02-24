@@ -2,13 +2,13 @@
 
 namespace App\Providers;
 
-use App\Components\File\Contracts\FileGroupRepository;
-use App\Components\File\Contracts\FileRepository;
+use App\Components\File\Contracts\IFileGroupRepository;
+use App\Components\File\Contracts\IFileRepository;
 use App\Components\File\Repositories\MySQLFileGroupRepository;
 use App\Components\File\Repositories\MySQLFileRepository;
-use App\Components\User\Contracts\GroupRepository;
-use App\Components\User\Contracts\PermissionRepository;
-use App\Components\User\Contracts\UserRepository;
+use App\Components\User\Contracts\IGroupRepository;
+use App\Components\User\Contracts\IPermissionRepository;
+use App\Components\User\Contracts\IUserRepository;
 use App\Components\User\Repositories\MySQLGroupRepository;
 use App\Components\User\Repositories\MySQLPermissionRepository;
 use App\Components\User\Repositories\MySQLUserRepository;
@@ -39,10 +39,10 @@ class AppServiceProvider extends ServiceProvider
         }
 
         // bindings
-        $this->app->bind(UserRepository::class, MySQLUserRepository::class);
-        $this->app->bind(GroupRepository::class, MySQLGroupRepository::class);
-        $this->app->bind(PermissionRepository::class, MySQLPermissionRepository::class);
-        $this->app->bind(FileRepository::class, MySQLFileRepository::class);
-        $this->app->bind(FileGroupRepository::class, MySQLFileGroupRepository::class);
+        $this->app->bind(IUserRepository::class, MySQLUserRepository::class);
+        $this->app->bind(IGroupRepository::class, MySQLGroupRepository::class);
+        $this->app->bind(IPermissionRepository::class, MySQLPermissionRepository::class);
+        $this->app->bind(IFileRepository::class, MySQLFileRepository::class);
+        $this->app->bind(IFileGroupRepository::class, MySQLFileGroupRepository::class);
     }
 }

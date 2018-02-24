@@ -10,12 +10,12 @@ namespace App\Components\User\Repositories;
 
 
 use App\Components\Core\Result;
-use App\Components\User\Contracts\UserRepository;
+use App\Components\User\Contracts\IUserRepository;
 use App\Components\User\Models\User;
 use App\Components\Core\Utilities\Helpers;
 use Ramsey\Uuid\Uuid;
 
-class MySQLUserRepository implements UserRepository
+class MySQLUserRepository implements IUserRepository
 {
     /**
      * list all users

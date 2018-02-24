@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: darryl
  * Date: 10/6/2017
- * Time: 4:52 PM
+ * Time: 6:38 AM
  */
 
 namespace App\Components\User\Contracts;
@@ -11,15 +11,15 @@ namespace App\Components\User\Contracts;
 
 use App\Components\Core\Result;
 
-interface GroupRepository
+interface IUserRepository
 {
     /**
-     * index items
+     * list all users
      *
      * @param array $params
      * @return Result
      */
-    public function index($params);
+    public function listUsers($params);
 
     /**
      * get resource by id
@@ -30,7 +30,7 @@ interface GroupRepository
     public function get($id);
 
     /**
-     * create new item
+     * create new user
      *
      * @param array $payload
      * @return Result
@@ -38,7 +38,7 @@ interface GroupRepository
     public function create($payload);
 
     /**
-     * update item
+     * update user
      *
      * @param int $id
      * @param array $payload
@@ -47,7 +47,7 @@ interface GroupRepository
     public function update($id, $payload);
 
     /**
-     * delete by id
+     * delete a user by id
      *
      * @param int|string $id
      * @return Result

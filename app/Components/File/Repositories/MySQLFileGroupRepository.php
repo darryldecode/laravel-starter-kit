@@ -11,10 +11,10 @@ namespace App\Components\File\Repositories;
 
 use App\Components\Core\Result;
 use App\Components\Core\Utilities\Helpers;
-use App\Components\File\Contracts\FileGroupRepository;
+use App\Components\File\Contracts\IFileGroupRepository;
 use App\Components\File\Models\FileGroup;
 
-class MySQLFileGroupRepository implements FileGroupRepository
+class MySQLFileGroupRepository implements IFileGroupRepository
 {
 
     /**

@@ -2,24 +2,33 @@
 /**
  * Created by PhpStorm.
  * User: darryl
- * Date: 10/6/2017
- * Time: 4:53 PM
+ * Date: 10/9/2017
+ * Time: 10:09 PM
  */
 
-namespace App\Components\User\Contracts;
+namespace App\Components\File\Contracts;
+
 
 
 use App\Components\Core\Result;
 
-interface PermissionRepository
+interface IFileGroupRepository
 {
     /**
-     * index items
+     * list resource
      *
      * @param array $params
      * @return Result
      */
     public function index($params);
+
+    /**
+     * create resource
+     *
+     * @param array $data
+     * @return Result
+     */
+    public function create($data);
 
     /**
      * get resource by id
@@ -30,24 +39,16 @@ interface PermissionRepository
     public function get($id);
 
     /**
-     * create new item
-     *
-     * @param array $payload
-     * @return Result
-     */
-    public function create($payload);
-
-    /**
-     * update item
+     * update resource
      *
      * @param int $id
-     * @param array $payload
+     * @param array $data
      * @return Result
      */
-    public function update($id, $payload);
+    public function update($id, $data);
 
     /**
-     * delete by id
+     * delete resource by id
      *
      * @param int $id
      * @return Result

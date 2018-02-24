@@ -3,22 +3,22 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Components\Core\Result;
-use App\Components\User\Contracts\GroupRepository;
+use App\Components\User\Contracts\IGroupRepository;
 use App\Components\User\Models\Group;
 use Illuminate\Http\Request;
 
 class GroupController extends AdminController
 {
     /**
-     * @var GroupRepository
+     * @var IGroupRepository
      */
     private $groupRepository;
 
     /**
      * GroupController constructor.
-     * @param GroupRepository $groupRepository
+     * @param IGroupRepository $groupRepository
      */
-    public function __construct(GroupRepository $groupRepository)
+    public function __construct(IGroupRepository $groupRepository)
     {
         $this->groupRepository = $groupRepository;
     }

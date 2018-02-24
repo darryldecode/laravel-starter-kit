@@ -2,33 +2,24 @@
 /**
  * Created by PhpStorm.
  * User: darryl
- * Date: 10/9/2017
- * Time: 10:09 PM
+ * Date: 10/6/2017
+ * Time: 4:52 PM
  */
 
-namespace App\Components\File\Contracts;
-
+namespace App\Components\User\Contracts;
 
 
 use App\Components\Core\Result;
 
-interface FileGroupRepository
+interface IGroupRepository
 {
     /**
-     * list resource
+     * index items
      *
      * @param array $params
      * @return Result
      */
     public function index($params);
-
-    /**
-     * create resource
-     *
-     * @param array $data
-     * @return Result
-     */
-    public function create($data);
 
     /**
      * get resource by id
@@ -39,18 +30,26 @@ interface FileGroupRepository
     public function get($id);
 
     /**
-     * update resource
+     * create new item
      *
-     * @param int $id
-     * @param array $data
+     * @param array $payload
      * @return Result
      */
-    public function update($id, $data);
+    public function create($payload);
 
     /**
-     * delete resource by id
+     * update item
      *
      * @param int $id
+     * @param array $payload
+     * @return Result
+     */
+    public function update($id, $payload);
+
+    /**
+     * delete by id
+     *
+     * @param int|string $id
      * @return Result
      */
     public function delete($id);

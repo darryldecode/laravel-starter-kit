@@ -11,13 +11,13 @@ namespace App\Components\File\Repositories;
 
 use App\Components\Core\Result;
 use App\Components\Core\Utilities\Helpers;
-use App\Components\File\Contracts\FileRepository;
+use App\Components\File\Contracts\IFileRepository;
 use App\Components\File\Models\File;
 use App\Components\File\Utilities\FileHelper;
 use Storage;
 use Image;
 
-class MySQLFileRepository implements FileRepository
+class MySQLFileRepository implements IFileRepository
 {
 
     /**

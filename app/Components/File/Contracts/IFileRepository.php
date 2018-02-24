@@ -12,7 +12,7 @@ namespace App\Components\File\Contracts;
 
 use App\Components\Core\Result;
 
-interface FileRepository
+interface IFileRepository
 {
     /**
      * list resource

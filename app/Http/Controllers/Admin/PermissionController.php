@@ -3,22 +3,22 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Components\Core\Result;
-use App\Components\User\Contracts\PermissionRepository;
+use App\Components\User\Contracts\IPermissionRepository;
 use App\Components\User\Models\Permission;
 use Illuminate\Http\Request;
 
 class PermissionController extends AdminController
 {
     /**
-     * @var PermissionRepository
+     * @var IPermissionRepository
      */
     private $permissionRepository;
 
     /**
      * PermissionController constructor.
-     * @param PermissionRepository $permissionRepository
+     * @param IPermissionRepository $permissionRepository
      */
-    public function __construct(PermissionRepository $permissionRepository)
+    public function __construct(IPermissionRepository $permissionRepository)
     {
         $this->permissionRepository = $permissionRepository;
     }

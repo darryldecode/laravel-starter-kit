@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Components\File\Contracts\FileRepository;
+use App\Components\File\Contracts\IFileRepository;
 use Illuminate\Http\Request;
 use Auth;
 
 class FileController extends AdminController
 {
     /**
-     * @var FileRepository
+     * @var IFileRepository
      */
     private $fileRepository;
 
     /**
      * FileController constructor.
-     * @param FileRepository $fileRepository
+     * @param IFileRepository $fileRepository
      */
-    public function __construct(FileRepository $fileRepository)
+    public function __construct(IFileRepository $fileRepository)
     {
         $this->fileRepository = $fileRepository;
     }

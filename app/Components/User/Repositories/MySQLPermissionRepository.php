@@ -10,10 +10,10 @@ namespace App\Components\User\Repositories;
 
 use App\Components\Core\Result;
 use App\Components\Core\Utilities\Helpers;
-use App\Components\User\Contracts\PermissionRepository;
+use App\Components\User\Contracts\IPermissionRepository;
 use App\Components\User\Models\Permission;
 
-class MySQLPermissionRepository implements PermissionRepository
+class MySQLPermissionRepository implements IPermissionRepository
 {
     /**
      * index items

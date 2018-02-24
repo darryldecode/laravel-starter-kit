@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: darryl
  * Date: 10/6/2017
- * Time: 6:38 AM
+ * Time: 4:53 PM
  */
 
 namespace App\Components\User\Contracts;
@@ -11,15 +11,15 @@ namespace App\Components\User\Contracts;
 
 use App\Components\Core\Result;
 
-interface UserRepository
+interface IPermissionRepository
 {
     /**
-     * list all users
+     * index items
      *
      * @param array $params
      * @return Result
      */
-    public function listUsers($params);
+    public function index($params);
 
     /**
      * get resource by id
@@ -30,7 +30,7 @@ interface UserRepository
     public function get($id);
 
     /**
-     * create new user
+     * create new item
      *
      * @param array $payload
      * @return Result
@@ -38,7 +38,7 @@ interface UserRepository
     public function create($payload);
 
     /**
-     * update user
+     * update item
      *
      * @param int $id
      * @param array $payload
@@ -47,9 +47,9 @@ interface UserRepository
     public function update($id, $payload);
 
     /**
-     * delete a user by id
+     * delete by id
      *
-     * @param int|string $id
+     * @param int $id
      * @return Result
      */
     public function delete($id);
