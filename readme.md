@@ -28,6 +28,11 @@ to the codes and start working with the starter kit
 
 &#10004; Single Page Admin Dashboard
 
+## Stack Info
+- Laravel v5.6
+- VueJS v3+
+- Vuetify(Material Design) v0.17 (to be upgraded shortly to v1.0)
+
 ## DOCUMENTATION
 
 - <a href="#requirements">Requirements</a>
