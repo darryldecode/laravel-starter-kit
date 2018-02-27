@@ -13,22 +13,22 @@ const router = new Router({
         {
             name: 'dashboard',
             path: '/dashboard',
-            component: require('../pages/Home.vue'),
+            component: require('../pages/dashboard/Home.vue'),
         },
         {
             name: 'users',
             path: '/users',
-            component: require('../pages/Users.vue'),
+            component: require('../pages/users/Users.vue'),
         },
         {
             name: 'files',
             path: '/files',
-            component: require('../pages/Files.vue'),
+            component: require('../pages/files/Files.vue'),
         },
         {
             name: 'settings',
             path: '/settings',
-            component: require('../pages/Settings.vue'),
+            component: require('../pages/settings/Settings.vue'),
         }
     ],
 });
