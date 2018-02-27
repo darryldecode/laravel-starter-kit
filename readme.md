@@ -31,7 +31,7 @@ to the codes and start working with the starter kit
 ## Stack Info
 - Laravel v5.6
 - VueJS v3+
-- Vuetify(Material Design) v0.17 (to be upgraded shortly to v1.0)
+- Vuetify(Material Design) v1.0.*
 
 ## DOCUMENTATION
 
