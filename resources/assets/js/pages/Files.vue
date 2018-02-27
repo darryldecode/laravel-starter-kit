@@ -1,41 +1,38 @@
 <template>
     <div class="page_wrap_vue">
-        <v-tabs dark v-model="active">
-            <v-tabs-bar class="cyan">
-                <v-tabs-item href="#files" ripple>
-                    Files
-                </v-tabs-item>
-                <v-tabs-item href="#manage-groups" ripple>
-                    Manage File Groups
-                </v-tabs-item>
-                <v-tabs-item href="#upload" ripple>
-                    Upload
-                </v-tabs-item>
-                <v-tabs-slider class="yellow"></v-tabs-slider>
-            </v-tabs-bar>
-            <v-tabs-items>
-                <v-tabs-content id="files">
-                    <v-card flat>
-                        <v-card-text>
-                            <file-lists></file-lists>
-                        </v-card-text>
-                    </v-card>
-                </v-tabs-content>
-                <v-tabs-content id="manage-groups">
-                    <v-card flat>
-                        <v-card-text>
-                            <file-group-lists></file-group-lists>
-                        </v-card-text>
-                    </v-card>
-                </v-tabs-content>
-                <v-tabs-content id="upload">
-                    <v-card flat>
-                        <v-card-text>
-                            <file-upload></file-upload>
-                        </v-card-text>
-                    </v-card>
-                </v-tabs-content>
-            </v-tabs-items>
+        <v-tabs color="primary" dark v-model="active">
+
+            <v-tab href="#files" ripple>
+                Files
+            </v-tab>
+            <v-tab href="#manage-groups" ripple>
+                Manage File Groups
+            </v-tab>
+            <v-tab href="#upload" ripple>
+                Upload
+            </v-tab>
+
+            <v-tab-item id="files">
+                <v-card flat>
+                    <v-card-text>
+                        <file-lists></file-lists>
+                    </v-card-text>
+                </v-card>
+            </v-tab-item>
+            <v-tab-item id="manage-groups">
+                <v-card flat>
+                    <v-card-text>
+                        <file-group-lists></file-group-lists>
+                    </v-card-text>
+                </v-card>
+            </v-tab-item>
+            <v-tab-item id="upload">
+                <v-card flat>
+                    <v-card-text>
+                        <file-upload></file-upload>
+                    </v-card-text>
+                </v-card>
+            </v-tab-item>
         </v-tabs>
     </div>
 </template>
