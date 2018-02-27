@@ -33148,7 +33148,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v("I am located at "),
-        _c("b", [_vm._v("resources/assets/js/pages/Home.vue")])
+        _c("b", [_vm._v("resources/assets/js/pages/dashboard/Home.vue")])
       ]),
       _vm._v(" "),
       _c("p", [
@@ -41691,7 +41691,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v("I am located at "),
-        _c("b", [_vm._v("resources/assets/js/pages/Settings.vue")])
+        _c("b", [_vm._v("resources/assets/js/pages/settings/Settings.vue")])
       ]),
       _vm._v(" "),
       _c("p", [
