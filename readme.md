@@ -48,7 +48,7 @@ to the codes and start working with the starter kit
 <h3 id="installation">Installation</h3>
 
 - Clone repository `git clone https://github.com/darryldecode/laravel-starter-kit.git`
-- `cp .env.example .env` Then open .env file and put necessary credentials
+- `cp .env.example .env` Then open .env file and put necessary credentials. Make sure to put proper APP_URL because it will be use in file manager module.
 - `composer install`
 - `php artisan key:generate`
 - `php artisan migrate`
