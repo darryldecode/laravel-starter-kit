@@ -40,7 +40,7 @@
             }
         },
         mounted() {
-            console.log('pages.FileGroupAdd.vue');
+            console.log('pages.files.components.FileGroupAdd.vue');
 
             const self = this;
         },

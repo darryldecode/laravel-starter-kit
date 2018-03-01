@@ -39398,7 +39398,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        console.log('pages.FileGroupAdd.vue');
+        console.log('pages.files.components.FileGroupLists.vue');
 
         var self = this;
 
@@ -39592,7 +39592,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        console.log('pages.FileGroupAdd.vue');
+        console.log('pages.files.components.FileGroupAdd.vue');
 
         var self = this;
     },
@@ -39879,7 +39879,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        console.log('pages.FileGroupEdit.vue');
+        console.log('pages.files.components.FileGroupEdit.vue');
 
         var self = this;
     },
@@ -40582,7 +40582,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        console.log('pages.Home.vue');
+        console.log('pages.files.components.FileUpload.vue');
 
         var self = this;
 
@@ -40976,6 +40976,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {},
@@ -41004,7 +41007,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        console.log('pages.FileGroupLists.vue');
+        console.log('pages.files.components.FileLists.vue');
 
         var self = this;
 
@@ -41047,8 +41050,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     methods: {
+        getFullUrl: function getFullUrl(file, width, action) {
+
+            var w = width || 4000;
+            var act = action || 'resize';
+
+            return LSK_APP.APP_URL + '/files/' + file.id + '/preview?w=' + w + '&action=' + act;
+        },
         downloadFile: function downloadFile(file) {
-            window.open('/files/' + file.id + '/download?file_token=' + file.file_token);
+            window.open(LSK_APP.APP_URL + '/files/' + file.id + '/download?file_token=' + file.file_token);
         },
         showDialog: function showDialog(dialog, data) {
 
@@ -41334,12 +41344,7 @@ var render = function() {
                       },
                       [
                         _c("img", {
-                          attrs: {
-                            src:
-                              "/files/" +
-                              props.item.id +
-                              "/preview?w=50&action=fit"
-                          }
+                          attrs: { src: _vm.getFullUrl(props.item, 50, "fit") }
                         })
                       ]
                     )
@@ -41476,13 +41481,23 @@ var render = function() {
               _vm._v(" "),
               _c("v-card-text", [
                 _c("div", { staticClass: "file_view_popup" }, [
+                  _c(
+                    "div",
+                    { staticClass: "file_view_popup_link" },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          flat: "",
+                          disabled: "",
+                          value: _vm.getFullUrl(_vm.dialogs.view.file)
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
                   _c("img", {
-                    attrs: {
-                      src:
-                        "/files/" +
-                        _vm.dialogs.view.file.id +
-                        "/preview?w=4000&action=resize"
-                    }
+                    attrs: { src: _vm.getFullUrl(_vm.dialogs.view.file) }
                   })
                 ])
               ])

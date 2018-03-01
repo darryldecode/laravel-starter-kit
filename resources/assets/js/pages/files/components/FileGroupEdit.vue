@@ -45,7 +45,7 @@
             }
         },
         mounted() {
-            console.log('pages.FileGroupEdit.vue');
+            console.log('pages.files.components.FileGroupEdit.vue');
 
             const self = this;
         },

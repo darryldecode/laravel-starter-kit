@@ -32,7 +32,7 @@ class File extends Model
      */
     public function getFileTokenAttribute()
     {
-        $key = env('WASK_FILE_DOWNLOAD_SECRET');
+        $key = env('FILE_DOWNLOAD_SECRET');
         $token = array(
             "iss" => env('APP_URL'),
             "aud" => env('APP_URL'),
@@ -52,7 +52,7 @@ class File extends Model
     public function verifyFileToken($token)
     {
         try {
-            $key = env('WASK_FILE_DOWNLOAD_SECRET');
+            $key = env('FILE_DOWNLOAD_SECRET');
             $decoded = JWT::decode($token, $key, array('HS256'));
         } catch (\Exception $e)
         {

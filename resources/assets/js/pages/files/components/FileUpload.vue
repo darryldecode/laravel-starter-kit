@@ -42,7 +42,7 @@
             }
         },
         mounted() {
-            console.log('pages.Home.vue');
+            console.log('pages.files.components.FileUpload.vue');
 
             const self = this;
 

@@ -13,6 +13,12 @@
     <!-- Styles -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- app js values -->
+    <script type="application/javascript">
+        var LSK_APP = {};
+        LSK_APP.APP_URL = '{{env('APP_URL')}}';
+    </script>
 </head>
 <body>
 <div id="admin">

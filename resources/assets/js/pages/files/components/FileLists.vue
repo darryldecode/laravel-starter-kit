@@ -51,7 +51,7 @@
                             tile
                             :size="'50px'"
                             class="grey lighten-4">
-                        <img :src="`/files/`+props.item.id+`/preview?w=50&action=fit`"/>
+                        <img :src="getFullUrl(props.item,50,'fit')"/>
                     </v-avatar>
                 </td>
                 <td>{{ props.item.name }}</td>
@@ -84,7 +84,10 @@
                 </v-toolbar>
                 <v-card-text>
                     <div class="file_view_popup">
-                        <img :src="`/files/`+dialogs.view.file.id+`/preview?w=4000&action=resize`"/>
+                        <div class="file_view_popup_link">
+                            <v-text-field flat disabled :value="getFullUrl(dialogs.view.file)"></v-text-field>
+                        </div>
+                        <img :src="getFullUrl(dialogs.view.file)"/>
                     </div>
                 </v-card-text>
             </v-card>
@@ -128,7 +131,7 @@
             }
         },
         mounted() {
-            console.log('pages.FileGroupLists.vue');
+            console.log('pages.files.components.FileLists.vue');
 
             const self = this;
 
@@ -168,8 +171,15 @@
             },
         },
         methods: {
+            getFullUrl(file, width, action) {
+
+                let w = width || 4000;
+                let act = action || 'resize';
+
+                return LSK_APP.APP_URL +`/files/`+file.id+`/preview?w=`+w+`&action=`+act;
+            },
             downloadFile(file) {
-                window.open('/files/'+file.id+'/download?file_token='+file.file_token);
+                window.open(LSK_APP.APP_URL + '/files/'+file.id+'/download?file_token='+file.file_token);
             },
             showDialog(dialog, data) {
 

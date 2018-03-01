@@ -131,7 +131,7 @@
             }
         },
         mounted() {
-            console.log('pages.FileGroupAdd.vue');
+            console.log('pages.files.components.FileGroupLists.vue');
 
             const self = this;
 
