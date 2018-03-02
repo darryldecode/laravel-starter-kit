@@ -67,7 +67,7 @@ class UserPermissionTest extends TestCase
             'activation_key' => (Uuid::uuid4())->toString(),
             'groups' => []
         ])->getData();
-        
+
         // remove
         $user->addPermission($this->permission,User::PERMISSION_ALLOW);
 
