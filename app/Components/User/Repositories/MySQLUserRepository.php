@@ -66,9 +66,12 @@ class MySQLUserRepository implements IUserRepository
         if(!$User) return new Result(false,'User not found.',null, 404);
 
         // add the group
-        foreach ($payload['groups'] as $groupId => $shouldAttach)
+        if(Helpers::hasValue($payload['groups']) && count($payload['groups']) > 0)
         {
-            if($shouldAttach) $User->groups()->attach($groupId);
+            foreach ($payload['groups'] as $groupId => $shouldAttach)
+            {
+                if($shouldAttach) $User->groups()->attach($groupId);
+            }
         }
 
         return new Result(true,'User created.',$User,201);
@@ -87,20 +90,17 @@ class MySQLUserRepository implements IUserRepository
 
         if(!$User) return new Result(false,Result::MESSAGE_NOT_FOUND,null,404);
 
-        $User->name = $payload['name'];
-        $User->email = $payload['email'];
-        $User->permissions = $payload['permissions'];
-        $User->active = $payload['active'];
-
-        if(!$User->save()) return new Result(false,'Failed to update.',null,400);
+        if(!$User->update($payload)) return new Result(false,'Failed to update.',null,400);
 
         // detach all group first
         $User->groups()->detach();
 
         // re attach needed
-        foreach ($payload['groups'] as $groupId => $shouldAttach)
+        if(Helpers::hasValue($payload['groups']) && count($payload['groups']) > 0)
         {
-            if($shouldAttach) $User->groups()->attach($groupId);
+            foreach ($payload['groups'] as $groupId => $shouldAttach) {
+                if ($shouldAttach) $User->groups()->attach($groupId);
+            }
         }
 
         return new Result(true,'update success',$User,200);

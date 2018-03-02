@@ -217,4 +217,22 @@ class Group extends Model
 
         return $this->save();
     }
+
+    /**
+     * check if a group has permission
+     *
+     * @param $permissionKey
+     * @return bool
+     */
+    public function hasPermission($permissionKey)
+    {
+        $has = false;
+
+        foreach ($this->permissions as $index => $p)
+        {
+            if($p['permission'] == $permissionKey && $p['value'] == Group::PERMISSION_ALLOW) $has = true;
+        }
+
+        return $has;
+    }
 }
