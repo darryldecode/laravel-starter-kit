@@ -11,6 +11,10 @@ So many starter kits out there but so bloated with features and sometimes an ove
 that most of the application needs. In most cases, you only need this to go further with still full control on your foundation, no 
 magic and extra complexities, just the right sugar.
 
+NOTE: This starter app assumes you have a good fundamental knowledge with Laravel framework and vueJS. If you are new to this
+technologies then this app might not be for you. If you have good knowledge already with Laravel & VueJS then things here should be
+straight forward to you and you can easily expand the app to your needs.
+
 ## Features
 
 &#10004; User, Group & Permissions Management
@@ -95,13 +99,13 @@ $User = App\Components\User\Models\User::find($id);
 $permissionID = 1 // the permission ID that you add/define on permissions
 $permissionValue = 1 // values can be (1,0,-1) allow=1, inherit=0, deny=-1
 
-$User->addPermission($permissionID,$permissionValue); // true or false
+$User->addPermission($permissionID,$permissionValue);
 
 // using permission object
 $permission = App\Components\User\Models\Permission::find($id); // the permission object
 $permissionValue = 1 // values can be (1,0,-1) allow=1, inherit=0, deny=-1
 
-$User->addPermission($permission,$permissionValue); // true or false
+$User->addPermission($permission,$permissionValue);
 
 NOTE: if the permission is already exist on the user, it will just update the value.
 
@@ -120,13 +124,13 @@ $Group = App\Components\User\Models\Group::find($id);
 $permissionID = 1 // the permission ID that you add/define on permissions
 $permissionValue = 1 // values can be (1,-1) allow=1, deny=-1
 
-$Group->addPermission($permissionID,$permissionValue); // true or false
+$Group->addPermission($permissionID,$permissionValue);
 
 // using permission object
 $permission = App\Components\User\Models\Permission::find($id); // the permission object
 $permissionValue = 1 // values can be (1,-1) allow=1, deny=-1
 
-$Group->addPermission($permission,$permissionValue); // true or false
+$Group->addPermission($permission,$permissionValue);
 
 NOTE: if the permission is already exist on the group, it will just update the value.
 
@@ -137,6 +141,8 @@ $Group->removePermission($permissionID|$permissionObject);
 <h3 id="dashboard-menu">Adding Dashboard Menu</h3>
 
 - Please open `config/menu.php` and see 'menu' array.
+- To give a modern backend with a smooth navigation from page to page, I designed at as a hybrid single page app. The routing in the admin panel is powered by vueJS's vue-router, so you will need first define those routes on the vue-router and make it work
+then add that new route to `config/menu.php` to make it appear on menu.
 
 <h3 id="contributing">Contributing</h3>
 

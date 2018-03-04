@@ -11,10 +11,11 @@
  *
  * <route_type> only accepts one value for now 'vue'
  *
- * <route_name> is the vue routers route name
+ * <route_name> is the vue routers route name. You will be defining vue route names on this file resources/assets/js/router/index.js
+ * then use those route names here.
  *
  * <permission_requirements> is array of permissions it requires. Example: user.create, user.update or whatever it is defined on your permissions.
- * if the user does not have the requirements defined on that menu, it will not show to them.
+ * if the current logged in user does not have the requirements defined on that menu item, it will not show to them.
  */
 return [
     [
