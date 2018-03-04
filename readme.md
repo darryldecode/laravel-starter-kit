@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/darryldecode/laravel-starter-kit.svg?branch=master)](https://travis-ci.org/darryldecode/laravel-starter-kit)
+
 <img src="https://assets.darrylfernandez.com/wp-content/uploads/2017/12/Screenshot_1.png"></p>
 <img src="https://assets.darrylfernandez.com/wp-content/uploads/2017/12/Screenshot_7.png"></p>
 
