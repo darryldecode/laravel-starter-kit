@@ -235,19 +235,15 @@ trait UserTrait
      */
     public function hasPermission($permission)
     {
-        $superUser = array_get($this->getCombinedPermissions(), 'superuser');
+        $userCombinedPermissions = $this->getCombinedPermissions();
+
+        $superUser = array_get($userCombinedPermissions, 'superuser');
 
         if( $superUser === User::PERMISSION_ALLOW ) return true;
 
-        foreach($this->getCombinedPermissions() as $p => $v)
-        {
-            if( $p == $permission )
-            {
-                return $v == User::PERMISSION_ALLOW;
-            }
-        }
+        $permissionValue = array_get($userCombinedPermissions, $permission);
 
-        return false;
+        return $permissionValue === User::PERMISSION_ALLOW;
     }
 
     /**

@@ -221,7 +221,7 @@ class Group extends Model
     /**
      * check if a group has permission
      *
-     * @param $permissionKey
+     * @param string $permissionKey
      * @return bool
      */
     public function hasPermission($permissionKey)

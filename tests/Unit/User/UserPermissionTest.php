@@ -30,7 +30,6 @@ class UserPermissionTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-
         $this->userRepo = new MySQLUserRepository();
         $this->group = factory(Group::class)->create();
         $this->permission = factory(Permission::class)->create();
@@ -86,9 +85,7 @@ class UserPermissionTest extends TestCase
             ],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
-            'groups' => [
-                $this->group->id => true
-            ]
+            'groups' => []
         ])->getData();
 
         $this->assertTrue($user->hasPermission($this->permission->permission));
@@ -123,37 +120,78 @@ class UserPermissionTest extends TestCase
 
     public function test_user_special_permission_has_higher_priority_than_group_inherited_permission()
     {
-        $this->group->addPermission($this->permission->id,Group::PERMISSION_ALLOW);
+        $group = factory(Group::class)->create();
+        $group->addPermission($this->permission->id,Group::PERMISSION_ALLOW);
+
+        $permission = factory(Permission::class)->create();
 
         $user = $this->userRepo->create([
             'name' => 'john',
             'email' => 'john@gmail.com',
             'password' => '12345678', // hash on the fly
             'permissions' => [
-                ['permission'=>$this->permission->permission, 'value'=>-1]
+                ['permission'=>$permission->permission, 'value'=>-1]
             ],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
             'groups' => [
-                $this->group->id => true
+                $group->id => true
             ]
         ])->getData();
 
-        $this->assertFalse($user->hasPermission($this->permission->permission));
-        $this->assertFalse($user->hasAnyPermission([$this->permission->permission]));
+        $this->assertFalse($user->hasPermission($permission->permission));
+        $this->assertFalse($user->hasAnyPermission([$permission->permission]));
     }
 
     public function test_can_add_permission_to_group()
     {
-        $this->group->addPermission($this->permission->id,Group::PERMISSION_ALLOW);
+        $permission = factory(Permission::class)->create();
 
-        $this->assertTrue($this->group->hasPermission($this->permission->permission));
+        $group = factory(Group::class)->create();
+        $group->addPermission($permission->id,Group::PERMISSION_ALLOW);
+
+        $this->assertTrue($group->hasPermission($permission->permission));
     }
 
     public function test_can_remove_permission_to_group()
     {
-        $this->group->removePermission($this->permission->id);
+        $permission = factory(Permission::class)->create();
 
-        $this->assertFalse($this->group->hasPermission($this->permission->permission));
+        $group = factory(Group::class)->create();
+        $group->addPermission($permission->id,Group::PERMISSION_ALLOW);
+
+        // verify first permission was added
+        $this->assertTrue($group->hasPermission($permission->permission));
+
+        // now lets remove the permission
+        $group->removePermission($permission->id);
+
+        $this->assertFalse($group->hasPermission($this->permission->permission));
+    }
+
+    public function test_user_have_permissions_from_group_and_special_permission()
+    {
+        $permission = factory(Permission::class)->create();
+        $permission2 = factory(Permission::class)->create();
+
+        $group = factory(Group::class)->create();
+        $group->addPermission($permission->id,Group::PERMISSION_ALLOW);
+
+        $user = $this->userRepo->create([
+            'name' => 'john',
+            'email' => 'john@gmail.com',
+            'password' => '12345678', // hash on the fly
+            'permissions' => [
+                ['permission'=> $permission2->permission, 'value'=> User::PERMISSION_ALLOW]
+            ],
+            'active' => null,
+            'activation_key' => (Uuid::uuid4())->toString(),
+            'groups' => [
+                $group->id => true
+            ]
+        ])->getData();
+
+        $this->assertTrue($user->hasPermission($permission->permission));
+        $this->assertTrue($user->hasPermission($permission2->permission));
     }
 }

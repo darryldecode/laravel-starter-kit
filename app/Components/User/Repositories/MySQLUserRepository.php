@@ -49,6 +49,24 @@ class MySQLUserRepository implements IUserRepository
      * create new user
      *
      * @param array $payload
+     *
+     * Sample $payload format
+     *
+     * $payload = [
+     *      'name' => '',
+     *      'email' => '',
+     *      'password' => '',
+     *      'permissions' => [
+     *          ['permission' => 'user.create', 'value' => 1], // 1 for allow, 0 inherit to group, -1 deny
+     *          ['permission' => 'user.delete', 'value' => -1], // 1 for allow, 0 inherit to group, -1 deny
+     *      ],
+     *      'active' => null | '2018-03-04 06:17:40',
+     *      'activation_key' => {string},
+     *      'groups' => [
+     *          {(int)groupID} => true|false // true if assign to a group, false if not
+     *      ],
+     * ];
+     *
      * @return Result
      */
     public function create($payload)
