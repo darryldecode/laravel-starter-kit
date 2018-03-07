@@ -3,19 +3,17 @@
 
         <!-- search -->
         <v-card dark>
-            <v-container grid-list-md>
-                <v-layout row wrap>
-                    <v-flex xs12 sm12>
-                        <v-btn @click="showDialog('file_group_add')" class="blue lighten-1" dark>
-                            New File Group
-                            <v-icon right dark>add</v-icon>
-                        </v-btn>
-                    </v-flex>
-                    <v-flex xs12>
-                        <v-text-field prepend-icon="search" box dark label="Filter By Name" v-model="filters.name"></v-text-field>
-                    </v-flex>
-                </v-layout>
-            </v-container>
+            <v-layout row wrap>
+                <v-flex xs12 class="px-2">
+                    <v-btn @click="showDialog('file_group_add')" class="blue lighten-1" dark>
+                        New File Group
+                        <v-icon right dark>add</v-icon>
+                    </v-btn>
+                </v-flex>
+                <v-flex xs12 class="px-2">
+                    <v-text-field prepend-icon="search" box dark label="Filter By Name" v-model="filters.name"></v-text-field>
+                </v-flex>
+            </v-layout>
         </v-card>
         <!-- /search -->
 

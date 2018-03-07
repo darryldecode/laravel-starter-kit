@@ -78,7 +78,7 @@
                 let payload = {
                     title: self.title,
                     description: self.description,
-                    permission: self.permissionKey
+                    key: self.permissionKey
                 };
 
                 self.isLoading = true;
@@ -123,7 +123,7 @@
 
                     self.title = Permission.title;
                     self.description = Permission.description;
-                    self.permissionKey = Permission.permissionKey;
+                    self.permissionKey = Permission.key;
 
                     cb();
                 });

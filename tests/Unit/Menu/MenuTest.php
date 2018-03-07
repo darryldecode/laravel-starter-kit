@@ -38,7 +38,7 @@ class MenuTest extends TestCase
             'email' => 'john@gmail.com',
             'password' => '12345678', // hash on the fly
             'permissions' => [
-                ['permission'=> 'superuser', 'value'=> User::PERMISSION_DENY]
+                ['key'=> 'superuser', 'value'=> User::PERMISSION_DENY]
             ],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
@@ -67,7 +67,7 @@ class MenuTest extends TestCase
             'email' => 'john@gmail.com',
             'password' => '12345678', // hash on the fly
             'permissions' => [
-                ['permission'=> 'superuser', 'value'=> User::PERMISSION_ALLOW]
+                ['key'=> 'superuser', 'value'=> User::PERMISSION_ALLOW]
             ],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
@@ -147,7 +147,7 @@ class MenuTest extends TestCase
         $group1 = factory(Group::class)->create();
         $user = factory(User::class)->create([
             'permissions' => [
-                ['permission'=>$permission->permission, 'value'=>User::PERMISSION_DENY]
+                ['key'=>$permission->permission, 'value'=>User::PERMISSION_DENY]
             ]
         ]);
         $user->groups()->attach($group1);
@@ -173,7 +173,7 @@ class MenuTest extends TestCase
         $group1 = factory(Group::class)->create();
         $user = factory(User::class)->create([
             'permissions' => [
-                ['permission'=>$permission->permission, 'value'=>User::PERMISSION_ALLOW]
+                ['key'=>$permission->permission, 'value'=>User::PERMISSION_ALLOW]
             ]
         ]);
 

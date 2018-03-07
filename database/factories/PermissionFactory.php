@@ -6,6 +6,6 @@ $factory->define(\App\Components\User\Models\Permission::class, function (Faker 
     return [
         'title' => ucwords($faker->words(3,true)),
         'description' => $faker->text(300),
-        'permission' => str_replace(' ','',$faker->words(3,true)),
+        'key' => str_replace(' ','',$faker->words(3,true)),
     ];
 });

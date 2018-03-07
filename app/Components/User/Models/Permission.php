@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Permission extends Model
 {
-    const SUPER_USER_PERMISSION_ID = 1;
-    const SUPER_USER_PERMISSION = 'superuser';
+    const SUPER_USER_PERMISSION_KEY_ID = 1;
+    const SUPER_USER_PERMISSION_KEY = 'superuser';
 
     /**
      * The database table used by the model.
@@ -21,7 +21,7 @@ class Permission extends Model
      *
      * @var array
      */
-    protected $fillable = ['title','description','permission'];
+    protected $fillable = ['title','description','key'];
 
     /**
      * the rules of the Group for validation before persisting
@@ -31,6 +31,6 @@ class Permission extends Model
     public static $rules = array(
         'title' => 'required|unique:permissions,title',
         'description' => 'required',
-        'permission' => 'required|unique:permissions,permission'
+        'key' => 'required|unique:permissions,key'
     );
 }

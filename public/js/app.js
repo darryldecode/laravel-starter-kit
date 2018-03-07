@@ -33490,8 +33490,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -33895,7 +33893,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             _.each(self.options.permissions, function (p) {
 
-                if (self.selectedPermission === p.permission) {
+                if (self.selectedPermission === p.key) {
 
                     if (!self.existsInPermissions(self.selectedPermission)) {
                         p.value = self.selectedPermissionValue;
@@ -33908,7 +33906,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var self = this;
             var found = false;
             _.each(self.permissions, function (p) {
-                if (p.permission === permissionKey) found = true;
+                if (p.key === permissionKey) found = true;
             });
             return found;
         },
@@ -34147,7 +34145,7 @@ var render = function() {
                               items: _vm.options.permissions,
                               dark: "",
                               "item-text": "title",
-                              "item-value": "permission"
+                              "item-value": "key"
                             },
                             model: {
                               value: _vm.selectedPermission,
@@ -34688,7 +34686,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             _.each(self.options.permissions, function (p) {
 
-                if (self.selectedPermission === p.permission) {
+                if (self.selectedPermission === p.key) {
 
                     if (!self.existsInPermissions(self.selectedPermission)) {
                         p.value = self.selectedPermissionValue;
@@ -34703,7 +34701,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var self = this;
             var found = false;
             _.each(self.permissions, function (p) {
-                if (p.permission === permissionKey) found = true;
+                if (p.key === permissionKey) found = true;
             });
             return found;
         },
@@ -34918,7 +34916,7 @@ var render = function() {
                               items: _vm.options.permissions,
                               dark: "",
                               "item-text": "title",
-                              "item-value": "permission"
+                              "item-value": "key"
                             },
                             model: {
                               value: _vm.selectedPermission,
@@ -35176,87 +35174,80 @@ var render = function() {
         { attrs: { dark: "" } },
         [
           _c(
-            "v-container",
-            { attrs: { "grid-list-md": "" } },
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
             [
               _c(
-                "v-layout",
-                { attrs: { row: "", wrap: "" } },
+                "v-flex",
+                { staticClass: "px-2", attrs: { xs12: "", sm12: "" } },
                 [
                   _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm12: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "blue lighten-1",
-                          attrs: { dark: "" },
-                          on: {
-                            click: function($event) {
-                              _vm.showDialog("user_add")
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        New User\n                        "
-                          ),
-                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
-                            _vm._v("add")
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm6: "" } },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          "prepend-icon": "search",
-                          box: "",
-                          dark: "",
-                          label: "Filter By Name"
-                        },
-                        model: {
-                          value: _vm.filters.name,
-                          callback: function($$v) {
-                            _vm.$set(_vm.filters, "name", $$v)
-                          },
-                          expression: "filters.name"
+                    "v-btn",
+                    {
+                      staticClass: "blue lighten-1",
+                      attrs: { dark: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.showDialog("user_add")
                         }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm6: "" } },
+                      }
+                    },
                     [
-                      _c("v-text-field", {
-                        attrs: {
-                          "prepend-icon": "search",
-                          box: "",
-                          dark: "",
-                          label: "Filter By Email"
-                        },
-                        model: {
-                          value: _vm.filters.email,
-                          callback: function($$v) {
-                            _vm.$set(_vm.filters, "email", $$v)
-                          },
-                          expression: "filters.email"
-                        }
-                      })
+                      _vm._v(
+                        "\n                    New User\n                    "
+                      ),
+                      _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                        _vm._v("add")
+                      ])
                     ],
                     1
                   )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { staticClass: "px-2", attrs: { xs12: "", sm6: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      "prepend-icon": "search",
+                      box: "",
+                      dark: "",
+                      label: "Filter By Name"
+                    },
+                    model: {
+                      value: _vm.filters.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "name", $$v)
+                      },
+                      expression: "filters.name"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { staticClass: "px-2", attrs: { xs12: "", sm6: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      "prepend-icon": "search",
+                      box: "",
+                      dark: "",
+                      label: "Filter By Email"
+                    },
+                    model: {
+                      value: _vm.filters.email,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "email", $$v)
+                      },
+                      expression: "filters.email"
+                    }
+                  })
                 ],
                 1
               )
@@ -35916,8 +35907,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -36253,7 +36242,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             _.each(self.options.permissions, function (p) {
 
-                if (self.selectedPermission === p.permission) {
+                if (self.selectedPermission === p.key) {
 
                     if (!self.existsInPermissions(self.selectedPermission)) {
                         p.value = self.selectedPermissionValue;
@@ -36366,7 +36355,7 @@ var render = function() {
                               items: _vm.options.permissions,
                               dark: "",
                               "item-text": "title",
-                              "item-value": "permission"
+                              "item-value": "key"
                             },
                             model: {
                               value: _vm.selectedPermission,
@@ -36760,7 +36749,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             _.each(self.options.permissions, function (p) {
 
-                if (self.selectedPermission === p.permission) {
+                if (self.selectedPermission === p.key) {
 
                     if (!self.existsInPermissions(self.selectedPermission)) {
                         p.value = self.selectedPermissionValue;
@@ -36884,7 +36873,7 @@ var render = function() {
                               items: _vm.options.permissions,
                               dark: "",
                               "item-text": "title",
-                              "item-value": "permission"
+                              "item-value": "key"
                             },
                             model: {
                               value: _vm.selectedPermission,
@@ -37098,64 +37087,57 @@ var render = function() {
         { attrs: { dark: "" } },
         [
           _c(
-            "v-container",
-            { attrs: { "grid-list-md": "" } },
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
             [
               _c(
-                "v-layout",
-                { attrs: { row: "", wrap: "" } },
+                "v-flex",
+                { staticClass: "px-2", attrs: { xs12: "" } },
                 [
                   _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm12: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "blue lighten-1",
-                          attrs: { dark: "" },
-                          on: {
-                            click: function($event) {
-                              _vm.showDialog("group_add")
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        New Group\n                        "
-                          ),
-                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
-                            _vm._v("add")
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "" } },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          "prepend-icon": "search",
-                          box: "",
-                          dark: "",
-                          label: "Filter By Name"
-                        },
-                        model: {
-                          value: _vm.filters.name,
-                          callback: function($$v) {
-                            _vm.$set(_vm.filters, "name", $$v)
-                          },
-                          expression: "filters.name"
+                    "v-btn",
+                    {
+                      staticClass: "blue lighten-1",
+                      attrs: { dark: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.showDialog("group_add")
                         }
-                      })
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    New Group\n                    "
+                      ),
+                      _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                        _vm._v("add")
+                      ])
                     ],
                     1
                   )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { staticClass: "px-2", attrs: { xs12: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      "prepend-icon": "search",
+                      box: "",
+                      dark: "",
+                      label: "Filter By Name"
+                    },
+                    model: {
+                      value: _vm.filters.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "name", $$v)
+                      },
+                      expression: "filters.name"
+                    }
+                  })
                 ],
                 1
               )
@@ -37762,8 +37744,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -37774,7 +37754,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Title', value: 'name', align: 'left', sortable: false }, { text: 'Permission', value: 'permission', align: 'left', sortable: false }, { text: 'Description', value: 'description', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
+            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Title', value: 'name', align: 'left', sortable: false }, { text: 'Key', value: 'key', align: 'left', sortable: false }, { text: 'Description', value: 'description', align: 'left', sortable: false }, { text: 'Date Created', value: 'created_at', align: 'left', sortable: false }],
             items: [],
             totalItems: 0,
             pagination: {
@@ -38022,7 +38002,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var payload = {
                 title: self.title,
                 description: self.description,
-                permission: self.permissionKey
+                key: self.permissionKey
             };
 
             self.isLoading = true;
@@ -38359,7 +38339,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var payload = {
                 title: self.title,
                 description: self.description,
-                permission: self.permissionKey
+                key: self.permissionKey
             };
 
             self.isLoading = true;
@@ -38403,7 +38383,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                 self.title = Permission.title;
                 self.description = Permission.description;
-                self.permissionKey = Permission.permissionKey;
+                self.permissionKey = Permission.key;
 
                 cb();
             });
@@ -38592,64 +38572,57 @@ var render = function() {
         { attrs: { dark: "" } },
         [
           _c(
-            "v-container",
-            { attrs: { "grid-list-md": "" } },
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
             [
               _c(
-                "v-layout",
-                { attrs: { row: "", wrap: "" } },
+                "v-flex",
+                { staticClass: "px-2", attrs: { xs12: "" } },
                 [
                   _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm12: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "blue lighten-1",
-                          attrs: { dark: "" },
-                          on: {
-                            click: function($event) {
-                              _vm.showDialog("permission_add")
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        New Permission\n                        "
-                          ),
-                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
-                            _vm._v("add")
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "" } },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          "prepend-icon": "search",
-                          box: "",
-                          dark: "",
-                          label: "Filter By Permission Title"
-                        },
-                        model: {
-                          value: _vm.filters.title,
-                          callback: function($$v) {
-                            _vm.$set(_vm.filters, "title", $$v)
-                          },
-                          expression: "filters.title"
+                    "v-btn",
+                    {
+                      staticClass: "blue lighten-1",
+                      attrs: { dark: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.showDialog("permission_add")
                         }
-                      })
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    New Permission\n                    "
+                      ),
+                      _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                        _vm._v("add")
+                      ])
                     ],
                     1
                   )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { staticClass: "px-2", attrs: { xs12: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      "prepend-icon": "search",
+                      box: "",
+                      dark: "",
+                      label: "Filter By Permission Title"
+                    },
+                    model: {
+                      value: _vm.filters.title,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "title", $$v)
+                      },
+                      expression: "filters.title"
+                    }
+                  })
                 ],
                 1
               )
@@ -38678,7 +38651,7 @@ var render = function() {
             key: "headerCell",
             fn: function(props) {
               return [
-                props.header.value == "permission"
+                props.header.value == "key"
                   ? _c(
                       "span",
                       [
@@ -38767,7 +38740,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(props.item.title))]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(props.item.permission))]),
+                _c("td", [_vm._v(_vm._s(props.item.key))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(props.item.description))]),
                 _vm._v(" "),
@@ -39271,8 +39244,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FileGroupAdd_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__FileGroupAdd_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FileGroupEdit_vue__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FileGroupEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__FileGroupEdit_vue__);
-//
-//
 //
 //
 //
@@ -40096,64 +40067,57 @@ var render = function() {
         { attrs: { dark: "" } },
         [
           _c(
-            "v-container",
-            { attrs: { "grid-list-md": "" } },
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
             [
               _c(
-                "v-layout",
-                { attrs: { row: "", wrap: "" } },
+                "v-flex",
+                { staticClass: "px-2", attrs: { xs12: "" } },
                 [
                   _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm12: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "blue lighten-1",
-                          attrs: { dark: "" },
-                          on: {
-                            click: function($event) {
-                              _vm.showDialog("file_group_add")
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        New File Group\n                        "
-                          ),
-                          _c("v-icon", { attrs: { right: "", dark: "" } }, [
-                            _vm._v("add")
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "" } },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          "prepend-icon": "search",
-                          box: "",
-                          dark: "",
-                          label: "Filter By Name"
-                        },
-                        model: {
-                          value: _vm.filters.name,
-                          callback: function($$v) {
-                            _vm.$set(_vm.filters, "name", $$v)
-                          },
-                          expression: "filters.name"
+                    "v-btn",
+                    {
+                      staticClass: "blue lighten-1",
+                      attrs: { dark: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.showDialog("file_group_add")
                         }
-                      })
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    New File Group\n                    "
+                      ),
+                      _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                        _vm._v("add")
+                      ])
                     ],
                     1
                   )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { staticClass: "px-2", attrs: { xs12: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      "prepend-icon": "search",
+                      box: "",
+                      dark: "",
+                      label: "Filter By Name"
+                    },
+                    model: {
+                      value: _vm.filters.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "name", $$v)
+                      },
+                      expression: "filters.name"
+                    }
+                  })
                 ],
                 1
               )

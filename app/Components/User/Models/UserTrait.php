@@ -128,7 +128,7 @@ trait UserTrait
             // if so, we will just update the value
             foreach ($userCurrentPermissions as $index => $p)
             {
-                if($p['permission'] == $Permission->permission)
+                if($p['key'] == $Permission->key)
                 {
                     $updateOnly = true;
                     $userCurrentPermissions[$index]['value'] = $value;
@@ -139,7 +139,7 @@ trait UserTrait
             if(!$updateOnly)
             {
                 $userCurrentPermissions[] = [
-                    'permission' => $Permission->permission,
+                    'key' => $Permission->key,
                     'title' => $Permission->title,
                     'description' => $Permission->description,
                     'value' => $value,
@@ -154,7 +154,7 @@ trait UserTrait
             // if so, we will just update the value
             foreach ($userCurrentPermissions as $index => $p)
             {
-                if($p['permission'] == $permission->permission)
+                if($p['key'] == $permission->key)
                 {
                     $updateOnly = true;
                     $userCurrentPermissions[$index]['value'] = $value;
@@ -165,7 +165,7 @@ trait UserTrait
             if(!$updateOnly)
             {
                 $userCurrentPermissions[] = [
-                    'permission' => $permission->permission,
+                    'key' => $permission->key,
                     'title' => $permission->title,
                     'description' => $permission->description,
                     'value' => $value,
@@ -201,7 +201,7 @@ trait UserTrait
 
             foreach ($userCurrentPermissions as $index => $p)
             {
-                if($p['permission'] == $Permission->permission) unset($userCurrentPermissions[$index]);
+                if($p['key'] == $Permission->key) unset($userCurrentPermissions[$index]);
             }
         }
 
@@ -209,7 +209,7 @@ trait UserTrait
         {
             foreach ($userCurrentPermissions as $index => $p)
             {
-                if($p['permission'] == $permission->permission) unset($userCurrentPermissions[$index]);
+                if($p['key'] == $permission->key) unset($userCurrentPermissions[$index]);
             }
         }
 
@@ -350,7 +350,7 @@ trait UserTrait
 
             $availablePermissions->each(function($p) use (&$allPermissions)
             {
-                $allPermissions[$p->permission] = 1;
+                $allPermissions[$p->key] = 1;
             });
 
             return array_merge($allPermissions, $groupPermissions);
@@ -404,7 +404,7 @@ trait UserTrait
 
         foreach ($this->permissions as $sp)
         {
-            $permissions[$sp['permission']] = $sp['value'];
+            $permissions[$sp['key']] = $sp['value'];
         }
 
         return $permissions;
@@ -431,16 +431,16 @@ trait UserTrait
                 // if so, we will overwrite the value of the duplicated one
                 // because if two groups has the same permission but different values,
                 // the deny value will be prioritize
-                if( array_key_exists($gp['permission'], $permissions) )
+                if( array_key_exists($gp['key'], $permissions) )
                 {
                     if( $gp['value'] == User::PERMISSION_DENY )
                     {
-                        $permissions[$gp['permission']] = $gp['value'];
+                        $permissions[$gp['key']] = $gp['value'];
                     }
                 }
                 else
                 {
-                    $permissions[$gp['permission']] = $gp['value'];
+                    $permissions[$gp['key']] = $gp['value'];
                 }
             }
         });

@@ -3,19 +3,17 @@
 
         <!-- search -->
         <v-card dark>
-            <v-container grid-list-md>
-                <v-layout row wrap>
-                    <v-flex xs12 sm12>
-                        <v-btn @click="showDialog('permission_add')" class="blue lighten-1" dark>
-                            New Permission
-                            <v-icon right dark>add</v-icon>
-                        </v-btn>
-                    </v-flex>
-                    <v-flex xs12>
-                        <v-text-field prepend-icon="search" box dark label="Filter By Permission Title" v-model="filters.title"></v-text-field>
-                    </v-flex>
-                </v-layout>
-            </v-container>
+            <v-layout row wrap>
+                <v-flex xs12 class="px-2">
+                    <v-btn @click="showDialog('permission_add')" class="blue lighten-1" dark>
+                        New Permission
+                        <v-icon right dark>add</v-icon>
+                    </v-btn>
+                </v-flex>
+                <v-flex xs12 class="px-2">
+                    <v-text-field prepend-icon="search" box dark label="Filter By Permission Title" v-model="filters.title"></v-text-field>
+                </v-flex>
+            </v-layout>
         </v-card>
         <!-- /search -->
 
@@ -27,7 +25,7 @@
                 :total-items="totalItems"
                 class="elevation-1">
             <template slot="headerCell" slot-scope="props">
-                <span v-if="props.header.value=='permission'">
+                <span v-if="props.header.value=='key'">
                     <v-icon>vpn_key</v-icon> {{ props.header.text }}
                 </span>
                 <span v-else-if="props.header.value=='created_at'">
@@ -52,7 +50,7 @@
                     </v-menu>
                 </td>
                 <td>{{ props.item.title }}</td>
-                <td>{{ props.item.permission }}</td>
+                <td>{{ props.item.key }}</td>
                 <td>{{ props.item.description }}</td>
                 <td>{{ $appFormatters.formatDate(props.item.created_at) }}</td>
             </template>
@@ -112,7 +110,7 @@
                 headers: [
                     { text: 'Action', value: false, align: 'left', sortable: false },
                     { text: 'Title', value: 'name', align: 'left', sortable: false },
-                    { text: 'Permission', value: 'permission', align: 'left', sortable: false },
+                    { text: 'Key', value: 'key', align: 'left', sortable: false },
                     { text: 'Description', value: 'description', align: 'left', sortable: false },
                     { text: 'Date Created', value: 'created_at', align: 'left', sortable: false },
                 ],

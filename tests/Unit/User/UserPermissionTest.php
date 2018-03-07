@@ -42,7 +42,7 @@ class UserPermissionTest extends TestCase
             'email' => 'john@gmail.com',
             'password' => '12345678', // hash on the fly
             'permissions' => [
-                ['permission'=>$this->permission->permission, 'value'=>1]
+                ['key'=>$this->permission->key, 'value'=>User::PERMISSION_ALLOW]
             ],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
@@ -51,8 +51,8 @@ class UserPermissionTest extends TestCase
             ]
         ])->getData();
 
-        $this->assertTrue($user->hasPermission($this->permission->permission));
-        $this->assertTrue($user->hasAnyPermission([$this->permission->permission]));
+        $this->assertTrue($user->hasPermission($this->permission->key));
+        $this->assertTrue($user->hasAnyPermission([$this->permission->key]));
     }
 
     public function test_it_can_add_user_special_permission()
@@ -70,8 +70,8 @@ class UserPermissionTest extends TestCase
         // remove
         $user->addPermission($this->permission,User::PERMISSION_ALLOW);
 
-        $this->assertTrue($user->hasPermission($this->permission->permission));
-        $this->assertTrue($user->hasAnyPermission([$this->permission->permission]));
+        $this->assertTrue($user->hasPermission($this->permission->key));
+        $this->assertTrue($user->hasAnyPermission([$this->permission->key]));
     }
 
     public function test_it_can_remove_user_special_permission()
@@ -81,21 +81,21 @@ class UserPermissionTest extends TestCase
             'email' => 'john@gmail.com',
             'password' => '12345678', // hash on the fly
             'permissions' => [
-                ['permission'=>$this->permission->permission, 'value'=>1]
+                ['key'=>$this->permission->key, 'value'=>1]
             ],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
             'groups' => []
         ])->getData();
 
-        $this->assertTrue($user->hasPermission($this->permission->permission));
-        $this->assertTrue($user->hasAnyPermission([$this->permission->permission]));
+        $this->assertTrue($user->hasPermission($this->permission->key));
+        $this->assertTrue($user->hasAnyPermission([$this->permission->key]));
 
         // remove
         $user->removePermission($this->permission);
 
-        $this->assertFalse($user->hasPermission($this->permission->permission));
-        $this->assertFalse($user->hasAnyPermission([$this->permission->permission]));
+        $this->assertFalse($user->hasPermission($this->permission->key));
+        $this->assertFalse($user->hasAnyPermission([$this->permission->key]));
     }
 
     public function test_user_can_inherit_to_group_permission()
@@ -114,8 +114,8 @@ class UserPermissionTest extends TestCase
             ]
         ])->getData();
 
-        $this->assertTrue($user->hasPermission($this->permission->permission));
-        $this->assertTrue($user->hasAnyPermission([$this->permission->permission]));
+        $this->assertTrue($user->hasPermission($this->permission->key));
+        $this->assertTrue($user->hasAnyPermission([$this->permission->key]));
     }
 
     public function test_user_special_permission_has_higher_priority_than_group_inherited_permission()
@@ -130,7 +130,7 @@ class UserPermissionTest extends TestCase
             'email' => 'john@gmail.com',
             'password' => '12345678', // hash on the fly
             'permissions' => [
-                ['permission'=>$permission->permission, 'value'=>-1]
+                ['key'=>$permission->key, 'value'=>-1]
             ],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
@@ -139,8 +139,8 @@ class UserPermissionTest extends TestCase
             ]
         ])->getData();
 
-        $this->assertFalse($user->hasPermission($permission->permission));
-        $this->assertFalse($user->hasAnyPermission([$permission->permission]));
+        $this->assertFalse($user->hasPermission($permission->key));
+        $this->assertFalse($user->hasAnyPermission([$permission->key]));
     }
 
     public function test_can_add_permission_to_group()
@@ -150,7 +150,7 @@ class UserPermissionTest extends TestCase
         $group = factory(Group::class)->create();
         $group->addPermission($permission->id,Group::PERMISSION_ALLOW);
 
-        $this->assertTrue($group->hasPermission($permission->permission));
+        $this->assertTrue($group->hasPermission($permission->key));
     }
 
     public function test_can_remove_permission_to_group()
@@ -161,12 +161,12 @@ class UserPermissionTest extends TestCase
         $group->addPermission($permission->id,Group::PERMISSION_ALLOW);
 
         // verify first permission was added
-        $this->assertTrue($group->hasPermission($permission->permission));
+        $this->assertTrue($group->hasPermission($permission->key));
 
         // now lets remove the permission
         $group->removePermission($permission->id);
 
-        $this->assertFalse($group->hasPermission($this->permission->permission));
+        $this->assertFalse($group->hasPermission($this->permission->key));
     }
 
     public function test_user_have_permissions_from_group_and_special_permission()
@@ -182,7 +182,7 @@ class UserPermissionTest extends TestCase
             'email' => 'john@gmail.com',
             'password' => '12345678', // hash on the fly
             'permissions' => [
-                ['permission'=> $permission2->permission, 'value'=> User::PERMISSION_ALLOW]
+                ['key'=> $permission2->key, 'value'=> User::PERMISSION_ALLOW]
             ],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
@@ -191,7 +191,7 @@ class UserPermissionTest extends TestCase
             ]
         ])->getData();
 
-        $this->assertTrue($user->hasPermission($permission->permission));
-        $this->assertTrue($user->hasPermission($permission2->permission));
+        $this->assertTrue($user->hasPermission($permission->key));
+        $this->assertTrue($user->hasPermission($permission2->key));
     }
 }

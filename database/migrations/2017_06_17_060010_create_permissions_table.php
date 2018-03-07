@@ -20,7 +20,7 @@ class CreatePermissionsTable extends Migration
             $table->increments('id');
             $table->string('title')->index()->unique();
             $table->text('description');
-            $table->string('permission');
+            $table->string('key');
             $table->timestamps();
         });
     }

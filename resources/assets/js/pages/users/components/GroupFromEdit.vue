@@ -19,7 +19,7 @@
                                 v-model="selectedPermission"
                                 dark
                                 item-text="title"
-                                item-value="permission"
+                                item-value="key"
                         ></v-select>
                     </v-flex>
                     <v-flex xs12 sm4>
@@ -151,7 +151,7 @@
 
                 _.each(self.options.permissions,(p)=>{
 
-                    if(self.selectedPermission===p.permission) {
+                    if(self.selectedPermission===p.key) {
 
                         if(!self.existsInPermissions(self.selectedPermission)) {
                             p.value = self.selectedPermissionValue;

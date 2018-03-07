@@ -52,7 +52,7 @@ class MySQLPermissionRepository implements IPermissionRepository
         $Permission = Permission::create([
            'title' => $payload['title'],
            'description' => $payload['description'],
-           'permission' => $payload['permission'],
+           'key' => $payload['key'],
         ]);
 
         if(!$Permission) return new Result(false,Result::MESSAGE_NOT_FOUND,null,404);
@@ -75,7 +75,7 @@ class MySQLPermissionRepository implements IPermissionRepository
 
         $Permission->title = $payload['title'];
         $Permission->description = $payload['description'];
-        $Permission->permission = $payload['permission'];
+        $Permission->key = $payload['key'];
 
         if(!$Permission->save()) return new Result(false,Result::MESSAGE_FAILED_UPDATE,null,400);
 

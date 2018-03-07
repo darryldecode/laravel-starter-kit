@@ -18,24 +18,24 @@ class UserSeeder extends Seeder
         $permissionSuperUser = Permission::create([
             'title' => 'Super User',
             'description' => 'Superuser permission',
-            'permission' => Permission::SUPER_USER_PERMISSION,
+            'key' => Permission::SUPER_USER_PERMISSION_KEY,
         ]);
 
         // create all other permissions
         $permissionSample1 = Permission::create([
             'title' => 'User Create',
             'description' => 'Permission to create user. This is an example permission only',
-            'permission' => 'user.create',
+            'key' => 'user.create',
         ]);
         $permissionSample2 = Permission::create([
             'title' => 'User Edit',
             'description' => 'Permission to edit user. This is an example permission only',
-            'permission' => 'user.edit',
+            'key' => 'user.edit',
         ]);
         $permissionSample3 = Permission::create([
             'title' => 'User Delete',
             'description' => 'Permission to delete user. This is an example permission only',
-            'permission' => 'user.delete',
+            'key' => 'user.delete',
         ]);
 
         // create super user group
@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
                 [
                     'title' => 'Super User',
                     'description' => 'Superuser permission',
-                    'permission' => Permission::SUPER_USER_PERMISSION,
+                    'key' => Permission::SUPER_USER_PERMISSION_KEY,
                     'value' => 1
                 ]
             ]

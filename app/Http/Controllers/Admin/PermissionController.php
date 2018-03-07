@@ -49,7 +49,7 @@ class PermissionController extends AdminController
         $validate = validator($request->all(),[
             'title' => 'required|string',
             'description' => 'required|string',
-            'permission' => 'required|string|unique:permissions',
+            'key' => 'required|string|unique:permissions',
         ]);
 
         if($validate->fails())
@@ -97,7 +97,7 @@ class PermissionController extends AdminController
         $validate = validator($request->all(),[
             'title' => 'required|string',
             'description' => 'required|string',
-            'permission' => 'required|string',
+            'key' => 'required|string',
         ]);
 
         if($validate->fails())

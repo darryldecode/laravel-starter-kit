@@ -119,7 +119,7 @@ class Group extends Model
             // if so, we will just update the value
             foreach ($userCurrentPermissions as $index => $p)
             {
-                if($p['permission'] == $Permission->permission)
+                if($p['key'] == $Permission->key)
                 {
                     $updateOnly = true;
                     $userCurrentPermissions[$index]['value'] = $value;
@@ -130,7 +130,7 @@ class Group extends Model
             if(!$updateOnly)
             {
                 $userCurrentPermissions[] = [
-                    'permission' => $Permission->permission,
+                    'key' => $Permission->key,
                     'title' => $Permission->title,
                     'description' => $Permission->description,
                     'value' => $value,
@@ -145,7 +145,7 @@ class Group extends Model
             // if so, we will just update the value
             foreach ($userCurrentPermissions as $index => $p)
             {
-                if($p['permission'] == $permission->permission)
+                if($p['key'] == $permission->key)
                 {
                     $updateOnly = true;
                     $userCurrentPermissions[$index]['value'] = $value;
@@ -156,7 +156,7 @@ class Group extends Model
             if(!$updateOnly)
             {
                 $userCurrentPermissions[] = [
-                    'permission' => $permission->permission,
+                    'key' => $permission->key,
                     'title' => $permission->title,
                     'description' => $permission->description,
                     'value' => $value,
@@ -192,7 +192,7 @@ class Group extends Model
 
             foreach ($userCurrentPermissions as $index => $p)
             {
-                if($p['permission'] == $Permission->permission) unset($userCurrentPermissions[$index]);
+                if($p['key'] == $Permission->key) unset($userCurrentPermissions[$index]);
             }
         }
 
@@ -200,7 +200,7 @@ class Group extends Model
         {
             foreach ($userCurrentPermissions as $index => $p)
             {
-                if($p['permission'] == $permission->permission) unset($userCurrentPermissions[$index]);
+                if($p['key'] == $permission->key) unset($userCurrentPermissions[$index]);
             }
         }
 
@@ -230,7 +230,7 @@ class Group extends Model
 
         foreach ($this->permissions as $index => $p)
         {
-            if($p['permission'] == $permissionKey && $p['value'] == Group::PERMISSION_ALLOW) $has = true;
+            if($p['key'] == $permissionKey && $p['value'] == Group::PERMISSION_ALLOW) $has = true;
         }
 
         return $has;

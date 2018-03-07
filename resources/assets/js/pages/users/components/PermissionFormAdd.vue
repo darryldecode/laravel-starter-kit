@@ -70,7 +70,7 @@
                 let payload = {
                     title: self.title,
                     description: self.description,
-                    permission: self.permissionKey
+                    key: self.permissionKey
                 };
 
                 self.isLoading = true;
