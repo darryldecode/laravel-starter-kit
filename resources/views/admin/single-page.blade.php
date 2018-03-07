@@ -11,13 +11,13 @@
                 <v-list dense>
 
                     @foreach($nav as $n)
-                        @if($n['nav_type']=='nav')
-                            <v-list-tile @click="menuClick('{{$n['route_name']}}','{{$n['route_type']}}')">
+                        @if($n->navType==\App\Components\Core\Menu\MenuItem::$NAV_TYPE_NAV)
+                            <v-list-tile @click="menuClick('{{$n->routeName}}','{{$n->routeType}}')">
                                 <v-list-tile-action>
-                                    <v-icon>{{$n['icon']}}</v-icon>
+                                    <v-icon>{{$n->icon}}</v-icon>
                                 </v-list-tile-action>
                                 <v-list-tile-content>
-                                    <v-list-tile-title>{{$n['label']}}</v-list-tile-title>
+                                    <v-list-tile-title>{{$n->label}}</v-list-tile-title>
                                 </v-list-tile-content>
                             </v-list-tile>
                         @else

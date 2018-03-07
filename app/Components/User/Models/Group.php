@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
 {
-    const SUPER_USER_GROUP_ID = 1;
-    const DEFAULT_USER_GROUP_ID = 2;
+    const SUPER_USER_GROUP_NAME = 'Super User';
+    const DEFAULT_USER_GROUP_NAME = 'User';
 
     const PERMISSION_ALLOW 	= 1;
     const PERMISSION_DENY 	= -1;

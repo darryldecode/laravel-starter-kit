@@ -342,7 +342,7 @@ trait UserTrait
         $groupPermissions = $this->getGroupPermissions();
 
         // if the user is a super user, give the user all the permissions
-        if($this->inGroup(Group::SUPER_USER_GROUP_ID))
+        if($this->inGroup(Group::SUPER_USER_GROUP_NAME))
         {
             $availablePermissions = Permission::all();
 

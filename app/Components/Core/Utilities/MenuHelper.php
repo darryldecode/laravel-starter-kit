@@ -9,8 +9,8 @@
 namespace App\Components\Core\Utilities;
 
 
+use App\Components\Core\Menu\MenuManager;
 use App\Components\User\Models\User;
-use Illuminate\Support\Collection;
 
 class MenuHelper
 {
@@ -20,16 +20,12 @@ class MenuHelper
          * @var User $currentUser
          */
         $currentUser = \Auth::user();
-        $menus = new Collection(config('menu',[]));
+        $menus = config('menu',[]);
+        $menuManager = new MenuManager();
+        $menuManager->setUser($currentUser);
+        $menuManager->addMenus($menus);
 
-        $menus = $menus->filter(function($menu) use (&$currentUser)
-        {
-            if($menu['nav_type']=='divider') return true;
-
-            if(empty($menu['permission_requirements'])) return true;
-
-            return $currentUser->hasAnyPermission($menu['permission_requirements']);
-        });
+        $menus = $menuManager->getFiltered();
 
         view()->share('nav',$menus);
     }
