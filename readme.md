@@ -7,6 +7,8 @@
 
 Laravel Starter Kit is based on Laravel 5.6 and VueJS + Material design(Vuetify).
 
+### [DEMO LINK](https://laravel-starter-kit.darrylfernandez.com)
+
 ## Why?
 
 So many starter kits out there but so bloated with features and sometimes an overkill. This tries to provide you the very basic 
