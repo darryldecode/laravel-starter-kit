@@ -33490,6 +33490,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -33500,7 +33524,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Name', value: 'name', align: 'left', sortable: false }, { text: 'Email', value: 'email', align: 'left', sortable: false }, { text: 'Permissions', value: 'permissions', align: 'left', sortable: false }, { text: 'Last Login', value: 'last_login', align: 'left', sortable: false }, { text: 'Active', value: 'active', align: 'left', sortable: false }],
+            headers: [{ text: 'Action', value: false, align: 'left', sortable: false }, { text: 'Name', value: 'name', align: 'left', sortable: false }, { text: 'Email', value: 'email', align: 'left', sortable: false }, { text: 'Permissions', value: 'permissions', align: 'left', sortable: false }, { text: 'Groups', value: 'groups', align: 'left', sortable: false }, { text: 'Last Login', value: 'last_login', align: 'left', sortable: false }, { text: 'Active', value: 'active', align: 'left', sortable: false }],
             items: [],
             totalItems: 0,
             pagination: {
@@ -33509,7 +33533,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             filters: {
                 name: '',
-                email: ''
+                email: '',
+                groupId: [],
+                groupOptions: []
             },
 
             dialogs: {
@@ -33530,6 +33556,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var self = this;
 
+        self.loadGroups(function () {});
         self.loadUsers(function () {});
 
         self.$eventBus.$on(['USER_ADDED', 'USER_UPDATED', 'USER_DELETED', 'GROUP_ADDED'], function () {
@@ -33550,6 +33577,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             self.loadUsers(function () {});
         }, 700),
         'filters.email': _.debounce(function () {
+            var self = this;
+            self.loadUsers(function () {});
+        }, 700),
+        'filters.groupId': _.debounce(function () {
             var self = this;
             self.loadUsers(function () {});
         }, 700)
@@ -33626,6 +33657,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var params = {
                 name: self.filters.name,
                 email: self.filters.email,
+                group_id: self.filters.groupId.join(","),
                 page: self.pagination.page,
                 per_page: self.pagination.rowsPerPage
             };
@@ -33635,6 +33667,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 self.totalItems = response.data.data.total;
                 self.pagination.totalItems = response.data.data.total;
                 (cb || Function)();
+            });
+        },
+        loadGroups: function loadGroups(cb) {
+
+            var self = this;
+
+            var params = {
+                paginate: 'no'
+            };
+
+            axios.get('/admin/groups', { params: params }).then(function (response) {
+                self.filters.groupOptions = response.data.data;
+                cb();
             });
         }
     }
@@ -35217,12 +35262,11 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-flex",
-                { staticClass: "px-2", attrs: { xs12: "", sm6: "" } },
+                { staticClass: "px-2", attrs: { xs12: "", sm4: "" } },
                 [
                   _c("v-text-field", {
                     attrs: {
                       "prepend-icon": "search",
-                      box: "",
                       dark: "",
                       label: "Filter By Name"
                     },
@@ -35240,12 +35284,11 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-flex",
-                { staticClass: "px-2", attrs: { xs12: "", sm6: "" } },
+                { staticClass: "px-2", attrs: { xs12: "", sm4: "" } },
                 [
                   _c("v-text-field", {
                     attrs: {
                       "prepend-icon": "search",
-                      box: "",
                       dark: "",
                       label: "Filter By Email"
                     },
@@ -35255,6 +35298,37 @@ var render = function() {
                         _vm.$set(_vm.filters, "email", $$v)
                       },
                       expression: "filters.email"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { staticClass: "px-2", attrs: { xs12: "", sm4: "" } },
+                [
+                  _c("v-select", {
+                    attrs: {
+                      box: "",
+                      multiple: "",
+                      chips: "",
+                      "deletable-chips": "",
+                      clearable: "",
+                      "prepend-icon": "filter_list",
+                      autocomplete: "",
+                      label: "Filter By Groups",
+                      placeholder: "Select groups..",
+                      items: _vm.filters.groupOptions,
+                      "item-text": "name",
+                      "item-value": "id"
+                    },
+                    model: {
+                      value: _vm.filters.groupId,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "groupId", $$v)
+                      },
+                      expression: "filters.groupId"
                     }
                   })
                 ],
@@ -35318,11 +35392,11 @@ var render = function() {
                           ],
                           1
                         )
-                      : props.header.value == "last_login"
+                      : props.header.value == "groups"
                         ? _c(
                             "span",
                             [
-                              _c("v-icon", [_vm._v("av_timer")]),
+                              _c("v-icon", [_vm._v("group")]),
                               _vm._v(
                                 " " +
                                   _vm._s(props.header.text) +
@@ -35331,7 +35405,20 @@ var render = function() {
                             ],
                             1
                           )
-                        : _c("span", [_vm._v(_vm._s(props.header.text))])
+                        : props.header.value == "last_login"
+                          ? _c(
+                              "span",
+                              [
+                                _c("v-icon", [_vm._v("av_timer")]),
+                                _vm._v(
+                                  " " +
+                                    _vm._s(props.header.text) +
+                                    "\n            "
+                                )
+                              ],
+                              1
+                            )
+                          : _c("span", [_vm._v(_vm._s(props.header.text))])
               ]
             }
           },
@@ -35423,6 +35510,30 @@ var render = function() {
                     )
                   ],
                   1
+                ),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  _vm._l(props.item.groups, function(group) {
+                    return _c(
+                      "v-chip",
+                      {
+                        key: group.id,
+                        attrs: {
+                          outline: "",
+                          color: "grey",
+                          "text-color": "grey"
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(group.name) +
+                            "\n                "
+                        )
+                      ]
+                    )
+                  })
                 ),
                 _vm._v(" "),
                 _c("td", [

@@ -10,11 +10,27 @@
                         <v-icon right dark>add</v-icon>
                     </v-btn>
                 </v-flex>
-                <v-flex xs12 sm6 class="px-2">
-                    <v-text-field prepend-icon="search" box dark label="Filter By Name" v-model="filters.name"></v-text-field>
+                <v-flex xs12 sm4 class="px-2">
+                    <v-text-field prepend-icon="search" dark label="Filter By Name" v-model="filters.name"></v-text-field>
                 </v-flex>
-                <v-flex xs12 sm6 class="px-2">
-                    <v-text-field prepend-icon="search" box dark label="Filter By Email" v-model="filters.email"></v-text-field>
+                <v-flex xs12 sm4 class="px-2">
+                    <v-text-field prepend-icon="search" dark label="Filter By Email" v-model="filters.email"></v-text-field>
+                </v-flex>
+                <v-flex xs12 sm4 class="px-2">
+                    <v-select box
+                              multiple
+                              chips
+                              deletable-chips
+                              clearable
+                              prepend-icon="filter_list"
+                              autocomplete
+                              label="Filter By Groups"
+                              placeholder="Select groups.."
+                              :items="filters.groupOptions"
+                              item-text="name"
+                              item-value="id"
+                              v-model="filters.groupId"
+                    ></v-select>
                 </v-flex>
             </v-layout>
         </v-card>
@@ -36,6 +52,9 @@
                 </span>
                 <span v-else-if="props.header.value=='permissions'">
                     <v-icon>vpn_key</v-icon> {{ props.header.text }}
+                </span>
+                <span v-else-if="props.header.value=='groups'">
+                    <v-icon>group</v-icon> {{ props.header.text }}
                 </span>
                 <span v-else-if="props.header.value=='last_login'">
                     <v-icon>av_timer</v-icon> {{ props.header.text }}
@@ -62,6 +81,11 @@
                 <td>{{ props.item.email }}</td>
                 <td>
                     <v-btn small @click="showDialog('user_permissions',props.item.permissions)" outline round color="grey" dark>Show</v-btn>
+                </td>
+                <td>
+                    <v-chip v-for="group in props.item.groups" :key="group.id" outline color="grey" text-color="grey">
+                        {{group.name}}
+                    </v-chip>
                 </td>
                 <td>{{ $appFormatters.formatDate(props.item.last_login) }}</td>
                 <td>
@@ -153,6 +177,7 @@
                     { text: 'Name', value: 'name', align: 'left', sortable: false },
                     { text: 'Email', value: 'email', align: 'left', sortable: false },
                     { text: 'Permissions', value: 'permissions', align: 'left', sortable: false },
+                    { text: 'Groups', value: 'groups', align: 'left', sortable: false },
                     { text: 'Last Login', value: 'last_login', align: 'left', sortable: false },
                     { text: 'Active', value: 'active', align: 'left', sortable: false },
                 ],
@@ -165,6 +190,8 @@
                 filters: {
                     name: '',
                     email: '',
+                    groupId: [],
+                    groupOptions: []
                 },
 
                 dialogs: {
@@ -185,6 +212,7 @@
         mounted() {
             const self = this;
 
+            self.loadGroups(()=>{});
             self.loadUsers(()=>{});
 
             self.$eventBus.$on(['USER_ADDED','USER_UPDATED','USER_DELETED','GROUP_ADDED'],()=>{
@@ -203,6 +231,10 @@
                 self.loadUsers(()=>{});
             },700),
             'filters.email':_.debounce(function(){
+                const self = this;
+                self.loadUsers(()=>{});
+            },700),
+            'filters.groupId':_.debounce(function(){
                 const self = this;
                 self.loadUsers(()=>{});
             },700)
@@ -280,6 +312,7 @@
                 let params = {
                     name: self.filters.name,
                     email: self.filters.email,
+                    group_id: self.filters.groupId.join(","),
                     page: self.pagination.page,
                     per_page: self.pagination.rowsPerPage
                 };
@@ -289,6 +322,19 @@
                     self.totalItems = response.data.data.total;
                     self.pagination.totalItems = response.data.data.total;
                     (cb || Function)();
+                });
+            },
+            loadGroups(cb) {
+
+                const self = this;
+
+                let params = {
+                    paginate: 'no'
+                };
+
+                axios.get('/admin/groups',{params: params}).then(function(response) {
+                    self.filters.groupOptions = response.data.data;
+                    cb();
                 });
             }
         }

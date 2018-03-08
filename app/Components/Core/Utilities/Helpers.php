@@ -142,4 +142,33 @@ class Helpers
 
         return $str;
     }
+
+    /**
+     * check if a string contains a specific char or word
+     *
+     * @param string $subject
+     * @param string $charOrWord
+     * @return bool
+     */
+    public static function stringContains($subject,$charOrWord)
+    {
+        if (strpos($subject,$charOrWord) !== false) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * helper to convert comma separated string into an array.
+     * if the supplied parameter empty string, it will return an empty array
+     *
+     * @param $string
+     * @return array
+     */
+    public static function commasToArray(string $string) : array
+    {
+        if($string==="") return [];
+
+        return explode(",",trim($string,","));
+    }
 }

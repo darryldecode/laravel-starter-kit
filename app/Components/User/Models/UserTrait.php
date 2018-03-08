@@ -479,4 +479,13 @@ trait UserTrait
 
         return $query->where('email','=',$email);
     }
+    public function scopeOfGroups($q,$v)
+    {
+        if($v === false || $v === '' || count($v)==0 || $v[0]=='') return $q;
+
+        return $q->whereHas('groups',function($q) use ($v)
+        {
+            return $q->whereIn('groups.id',$v);
+        });
+    }
 }

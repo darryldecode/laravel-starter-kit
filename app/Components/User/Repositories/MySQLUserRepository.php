@@ -31,8 +31,9 @@ class MySQLUserRepository implements IUserRepository
         $orderSort = Helpers::hasValue($params['order_sort'],'desc');
         $paginate = Helpers::hasValue($params['paginate'],'yes');
         $perPage = Helpers::hasValue($params['per_page'],10);
+        $groupId = Helpers::hasValue($params['group_id'],"");
 
-        $q = User::with([])->orderBy($orderBy,$orderSort);
+        $q = User::with(['groups'])->orderBy($orderBy,$orderSort)->ofGroups(Helpers::commasToArray($groupId));
 
         (!$email) ?: $q = $q->where('email','like',"%{$email}%");
         (!$name) ?: $q = $q->where('name','like',"%{$name}%");
@@ -57,8 +58,8 @@ class MySQLUserRepository implements IUserRepository
      *      'email' => '',
      *      'password' => '',
      *      'permissions' => [
-     *          ['permission' => 'user.create', 'value' => 1], // 1 for allow, 0 inherit to group, -1 deny
-     *          ['permission' => 'user.delete', 'value' => -1], // 1 for allow, 0 inherit to group, -1 deny
+     *          ['key' => 'user.create', 'value' => 1], // 1 for allow, 0 inherit to group, -1 deny
+     *          ['key' => 'user.delete', 'value' => -1], // 1 for allow, 0 inherit to group, -1 deny
      *      ],
      *      'active' => null | '2018-03-04 06:17:40',
      *      'activation_key' => {string},
