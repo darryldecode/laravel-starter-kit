@@ -76,6 +76,10 @@ the following credentials:
 - username: admin@gmail.com
 - password: 12345678
 
+IMPORTANT!!
+
+Remove the "demo" middleware on the web routes. It can be found here: `routes/web.php`. this middleware if only for demo purpose to prevent viewers to modify data on a live demo site
+
 <h3 id="user-group-permissions">User, Groups & Permissions</h3>
 
 - Get current logged in user or Get User

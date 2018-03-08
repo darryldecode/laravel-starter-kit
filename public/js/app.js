@@ -33574,6 +33574,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                         self.$eventBus.$emit('USER_DELETED');
                     }).catch(function (error) {
+
+                        self.$store.commit('hideLoader');
+
                         if (error.response) {
                             self.$store.commit('showSnackbar', {
                                 message: error.response.data.message,
@@ -33875,6 +33878,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 self.$refs.userFormAdd.reset();
                 self.permissions = [];
             }).catch(function (error) {
+
+                self.$store.commit('hideLoader');
+
                 if (error.response) {
                     self.$store.commit('showSnackbar', {
                         message: error.response.data.message,
@@ -34668,6 +34674,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 self.$eventBus.$emit('USER_UPDATED');
                 self.$store.commit('hideLoader');
             }).catch(function (error) {
+
+                self.$store.commit('hideLoader');
+
                 if (error.response) {
                     self.$store.commit('showSnackbar', {
                         message: error.response.data.message,
@@ -35986,6 +35995,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                         self.$eventBus.$emit('GROUP_DELETED');
                     }).catch(function (error) {
+
+                        self.$store.commit('hideLoader');
+
                         if (error.response) {
                             self.$store.commit('showSnackbar', {
                                 message: error.response.data.message,
@@ -36223,7 +36235,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 self.$refs.groupFormAdd.reset();
                 self.permissions = [];
             }).catch(function (error) {
+
                 self.$store.commit('hideLoader');
+
                 if (error.response) {
                     self.$store.commit('showSnackbar', {
                         message: error.response.data.message,
@@ -36730,7 +36744,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 self.$store.commit('hideLoader');
                 self.$eventBus.$emit('GROUP_UPDATED');
             }).catch(function (error) {
+
                 self.$store.commit('hideLoader');
+
                 if (error.response) {
                     self.$store.commit('showSnackbar', {
                         message: error.response.data.message,
@@ -37819,6 +37835,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                         self.$eventBus.$emit('PERMISSION_DELETED');
                     }).catch(function (error) {
+
+                        self.$store.commit('hideLoader');
+
                         if (error.response) {
                             self.$store.commit('showSnackbar', {
                                 message: error.response.data.message,
@@ -38023,6 +38042,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (error) {
 
                 self.isLoading = false;
+                self.$store.commit('hideLoader');
 
                 if (error.response) {
                     self.$store.commit('showSnackbar', {
@@ -38359,6 +38379,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (error) {
 
                 self.isLoading = false;
+                self.$store.commit('hideLoader');
 
                 if (error.response) {
                     self.$store.commit('showSnackbar', {

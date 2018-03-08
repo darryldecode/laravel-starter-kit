@@ -17,8 +17,12 @@ Route::get('files/{id}/download','Front\\FileController@fileDownload')->name('fr
 
 Auth::routes();
 
+// NOTE:
+// remove the demo middleware before you start on a project, this middleware if only
+// for demo purpose to prevent viewers to modify data on a live demo site
+
 // admin
-Route::prefix('admin')->namespace('Admin')->middleware('auth')->group(function()
+Route::prefix('admin')->namespace('Admin')->middleware(['auth','demo'])->group(function()
 {
     // single page
     Route::get('/', 'HomeController@showHome')->name('admin.home');

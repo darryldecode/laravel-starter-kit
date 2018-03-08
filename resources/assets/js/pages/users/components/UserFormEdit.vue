@@ -190,6 +190,9 @@
                     self.$store.commit('hideLoader');
 
                 }).catch(function (error) {
+
+                    self.$store.commit('hideLoader');
+
                     if (error.response) {
                         self.$store.commit('showSnackbar',{
                             message: error.response.data.message,

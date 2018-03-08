@@ -213,6 +213,9 @@
                             self.$eventBus.$emit('GROUP_DELETED');
 
                         }).catch(function (error) {
+
+                            self.$store.commit('hideLoader');
+
                             if (error.response) {
                                 self.$store.commit('showSnackbar',{
                                     message: error.response.data.message,

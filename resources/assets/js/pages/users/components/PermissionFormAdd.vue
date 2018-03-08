@@ -92,6 +92,7 @@
                 }).catch(function (error) {
 
                     self.isLoading = false;
+                    self.$store.commit('hideLoader');
 
                     if (error.response) {
                         self.$store.commit('showSnackbar',{
