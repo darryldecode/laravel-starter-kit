@@ -7,7 +7,10 @@
 
 Laravel Starter Kit is based on Laravel 5.6 and VueJS + Material design(Vuetify).
 
-### [DEMO LINK](https://laravel-starter-kit.darrylfernandez.com)
+### [DEMO LINK](https://laravel-starter-kit.darrylfernandez.com) 
+
+- user: admin@gmail.com 
+- password: 12345678
 
 ## Why?
 
