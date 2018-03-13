@@ -83,7 +83,7 @@ class Group extends Model
      */
     public function getMembersCountAttribute()
     {
-        return $this->users->count();
+        return $this->users()->count();
     }
 
     /**

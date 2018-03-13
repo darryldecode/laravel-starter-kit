@@ -79,7 +79,7 @@ trait UserTrait
 
         // we will iterate through all of its meta relations
         // and put it as a property so it will be easy in front end
-        $this->meta->each(function($meta) use (&$metaClass)
+        $this->meta()->each(function($meta) use (&$metaClass)
         {
             $metaClass->{$meta['key']} = $meta['value'];
         });
@@ -281,7 +281,7 @@ trait UserTrait
 
         if( is_string($group) )
         {
-            $this->groups->each(function($g) use ($group, &$found)
+            $this->groups()->each(function($g) use ($group, &$found)
             {
                 if( $g->name == $group )
                 {
@@ -293,7 +293,7 @@ trait UserTrait
         }
         else if ( is_int($group) )
         {
-            $this->groups->each(function($g) use ($group, &$found)
+            $this->groups()->each(function($g) use ($group, &$found)
             {
                 if( $g->id == $group )
                 {
@@ -305,7 +305,7 @@ trait UserTrait
         }
         else if ( is_object($group) )
         {
-            $this->groups->each(function($g) use ($group, &$found)
+            $this->groups()->each(function($g) use ($group, &$found)
             {
                 if( $g->name == $group->name )
                 {
@@ -420,7 +420,7 @@ trait UserTrait
     {
         $permissions = array();
 
-        $groups = $this->groups;
+        $groups = $this->groups();
 
         $groups->each(function($group) use (&$permissions)
         {
