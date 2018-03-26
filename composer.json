@@ -1,6 +1,6 @@
 {
     "name": "darryldecode/laravel-starter-kit",
-    "description": "Laravel 5.5~ Starter Kit Powered by VueJS + Material Design",
+    "description": "Laravel 5.6~ Starter Kit Powered by VueJS + Material Design",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",

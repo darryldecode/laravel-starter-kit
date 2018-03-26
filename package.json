@@ -14,16 +14,16 @@
     "bootstrap-sass": "^3.3.7",
     "cross-env": "^5.0.1",
     "jquery": "^3.1.1",
-    "laravel-mix": "^1.7.0",
+    "laravel-mix": "^2.1",
     "lodash": "^4.17.4",
     "vue": "^2.5.13"
   },
   "dependencies": {
     "dropzone": "^5.2.0",
-    "moment": "^2.20.1",
+    "moment": "^2.21.0",
     "vue-router": "^3.0.1",
     "vue-spinner": "^1.0.2",
-    "vuetify": "^1.0.4",
+    "vuetify": "^1.0.10",
     "vuex": "^3.0.1"
   }
 }
