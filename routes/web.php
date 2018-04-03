@@ -25,7 +25,7 @@ Auth::routes();
 Route::prefix('admin')->namespace('Admin')->middleware(['auth','demo'])->group(function()
 {
     // single page
-    Route::get('/', 'SinglePageCOntroller@displaySPA')->name('admin.spa');
+    Route::get('/', 'SinglePageController@displaySPA')->name('admin.spa');
 
     // resource routes
     Route::resource('users','UserController');
