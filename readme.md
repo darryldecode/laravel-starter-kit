@@ -158,9 +158,9 @@ then add that new route to `App\Http\Controllers\Admin\SinglePageController` to 
 
 <h3 id="ui">Using Dialog and Breadcrumbs</h3>
 
-```
+```js
 // showing a dialog
-self.$store.commit('showDialog',{
+this.$store.commit('showDialog',{
     type: "confirm", // confirm or alert, when alert, ok and cancel buttons are not shown on dialog
     title: "Confirm Deletion",
     message: "Are you sure you want to delete this group?",
@@ -175,7 +175,7 @@ self.$store.commit('showDialog',{
 // updating breadcrumbs
 // label parameter is the label to show on breadcrumbs
 // name param is the vue name route
-self.$store.commit('setBreadcrumbs',[
+this.$store.commit('setBreadcrumbs',[
     {label:'Users',name:'users.list'},
     {label:'Groups',name:''},
 ]);
