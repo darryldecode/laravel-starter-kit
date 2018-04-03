@@ -151,9 +151,9 @@ $Group->removePermission($permissionID|$permissionObject);
 
 <h3 id="dashboard-menu">Adding Dashboard Menu</h3>
 
-- Please open `config/menu.php` and see 'menu' array.
+- Please open the controller of the admin single page located at `App\Http\Controllers\Admin\SinglePageController` and on `displaySPA()` method you can add menus there.
 - To give a modern backend with a smooth navigation from page to page, I designed at as a hybrid single page app. The routing in the admin panel is powered by vueJS's vue-router, so you will need first define those routes on the vue-router and make it work
-then add that new route to `config/menu.php` to make it appear on menu.
+then add that new route to `App\Http\Controllers\Admin\SinglePageController` to make it appear on menu.
 
 <h3 id="contributing">Contributing</h3>
 

@@ -1,0 +1,62 @@
+@import "variables";
+@import "dropzone";
+
+/* general */
+.bg_half_transparent {
+  background: rgba($loader-bg-color, $loader-bg-transparency);
+}
+.wask_loader {
+  padding: 150px 0;
+  position: fixed;
+  z-index: 501;
+  border: 0;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.wask_loader > div.v-spinner > div {
+  margin: 0 auto;
+}
+.permissions_container {
+  padding: 10px;
+  background: hsla(0,0%,100%,.1);
+}
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .25s;
+}
+.fade-enter-active {
+  transition-delay: .25s;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+a.router-link {
+  text-decoration: none;
+  color: $menu-text-color;
+}
+a.router-link svg.icon,
+a.router-link i.icon {
+  color: $menu-text-color;
+}
+a.router-link:hover > div {
+  background: #534f4f;
+}
+a.router-link.router-link-active > div {
+  background: $menu-bg-active;
+}
+.breadcrumbs li a {
+  text-decoration: none;
+  color: $menu-text-color;
+}
+
+/* pre-defined */
+.wask_td_action {
+  min-width: 150px;
+}
+
+/* override */
+#admin .snack {
+  z-index: 500 !important;
+}

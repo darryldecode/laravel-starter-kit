@@ -171,4 +171,17 @@ class Helpers
 
         return explode(",",trim($string,","));
     }
+
+    /**
+     * helper to check if the given string has web protocol
+     *
+     * @param string $string
+     * @return bool
+     */
+    public static function hasWebProtocol(string $string) : bool
+    {
+        $d = parse_url($string);
+
+        return !empty($d['scheme']);
+    }
 }
