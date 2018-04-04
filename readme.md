@@ -51,6 +51,7 @@ to the codes and start working with the starter kit
 - <a href="#compiling-assets">Compiling Assets</a>
 - <a href="#user-group-permissions">User, Groups & Permissions Guide</a>
 - <a href="#dashboard-menu">Adding Dashboard Menu</a>
+- <a href="#ui">Avaialble UI you can use</a>
 
 <h3 id="requirements">Requirements</h3>
 
@@ -154,6 +155,31 @@ $Group->removePermission($permissionID|$permissionObject);
 - Please open the controller of the admin single page located at `App\Http\Controllers\Admin\SinglePageController` and on `displaySPA()` method you can add menus there.
 - To give a modern backend with a smooth navigation from page to page, I designed at as a hybrid single page app. The routing in the admin panel is powered by vueJS's vue-router, so you will need first define those routes on the vue-router and make it work
 then add that new route to `App\Http\Controllers\Admin\SinglePageController` to make it appear on menu.
+
+<h3 id="ui">Using Dialog and Breadcrumbs</h3>
+
+```js
+// showing a dialog
+this.$store.commit('showDialog',{
+    type: "confirm", // confirm or alert, when alert, ok and cancel buttons are not shown on dialog
+    title: "Confirm Deletion",
+    message: "Are you sure you want to delete this group?",
+    okCb: ()=>{
+        // do things when ok is click
+    },
+    cancelCb: ()=>{
+        // do hings when cancel is click
+    }
+});
+
+// updating breadcrumbs
+// label parameter is the label to show on breadcrumbs
+// name param is the vue name route
+this.$store.commit('setBreadcrumbs',[
+    {label:'Users',name:'users.list'},
+    {label:'Groups',name:''},
+]);
+```
 
 <h3 id="contributing">Contributing</h3>
 
