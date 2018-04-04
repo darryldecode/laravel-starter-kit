@@ -1,6 +1,10 @@
 <template>
     <div>
         <v-card dark>
+            <v-card-title>
+                <v-icon>person</v-icon> Edit User
+            </v-card-title>
+            <v-divider class="mb-2"></v-divider>
             <v-form v-model="valid" ref="userFormEdit" lazy-validation>
                 <v-container grid-list-md>
                 <v-layout row wrap>
@@ -64,7 +68,7 @@
                                 </v-avatar>
                                 {{p.title}}
                             </v-chip>
-                            <div v-if="permissions.length===0">No special permissions assigned.</div>
+                            <div v-if="permissions && permissions.length===0">No special permissions assigned.</div>
                         </div>
                     </v-flex>
                     <v-flex xs12><v-spacer></v-spacer></v-flex>
@@ -151,11 +155,8 @@
             self.$eventBus.$on(['GROUP_ADDED'],()=>{
                 self.loadGroups(()=>{});
             });
-        },
-        watch: {
-            propUserId(val) {
-                if(val) this.loadUser(()=>{});
-            }
+
+            this.loadUser(()=>{});
         },
         methods: {
             removePermission(i) {
@@ -250,7 +251,12 @@
                         self.groups[g.id] = true;
                     });
 
-                    console.log(User);
+                    self.$store.commit('setBreadcrumbs',[
+                        {label:'Users',name:'users.list'},
+                        {label:'Edit',name:''},
+                        {label:User.name,name:''},
+                    ]);
+
                     cb();
                 });
             },

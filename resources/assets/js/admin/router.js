@@ -34,7 +34,7 @@ const router = new Router({
                     path:'edit/:id',
                     name:'users.edit',
                     component: require('./users/components/UserFormEdit'),
-                    props: (route) => ({propId: route.params.id}),
+                    props: (route) => ({propUserId: route.params.id}),
                 },
                 {
                     path:'groups',
