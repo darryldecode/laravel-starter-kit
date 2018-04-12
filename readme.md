@@ -51,7 +51,7 @@ to the codes and start working with the starter kit
 - <a href="#compiling-assets">Compiling Assets</a>
 - <a href="#user-group-permissions">User, Groups & Permissions Guide</a>
 - <a href="#dashboard-menu">Adding Dashboard Menu</a>
-- <a href="#ui">Avaialble UI you can use</a>
+- <a href="#ui">Available UI you can use</a>
 
 <h3 id="requirements">Requirements</h3>
 
@@ -174,11 +174,22 @@ this.$store.commit('showDialog',{
 
 // updating breadcrumbs
 // label parameter is the label to show on breadcrumbs
-// name param is the vue name route
+// name parameter is the vue name route
 this.$store.commit('setBreadcrumbs',[
     {label:'Users',name:'users.list'},
     {label:'Groups',name:''},
 ]);
+
+// showing a snackbar
+self.$store.commit('showSnackbar',{
+    duration: 3000, // duration in milliseconds, defaults to 3000
+    message: 'You message here.',
+    color: 'success', // values can be success,error,info,warning
+});
+
+// showing & hiding the global loader
+store.commit('showLoader');
+store.commit('hideLoader');
 ```
 
 <h3 id="contributing">Contributing</h3>
