@@ -181,15 +181,15 @@ this.$store.commit('setBreadcrumbs',[
 ]);
 
 // showing a snackbar
-self.$store.commit('showSnackbar',{
+this.$store.commit('showSnackbar',{
     duration: 3000, // duration in milliseconds, defaults to 3000
     message: 'You message here.',
     color: 'success', // values can be success,error,info,warning
 });
 
 // showing & hiding the global loader
-store.commit('showLoader');
-store.commit('hideLoader');
+this.$store.commit('showLoader');
+this.$store.commit('hideLoader');
 ```
 
 <h3 id="contributing">Contributing</h3>
