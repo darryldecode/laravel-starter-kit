@@ -14,6 +14,9 @@
                     <v-flex xs12 sm6>
                         <v-text-field box dark label="Email" v-model="email" :rules="emailRules"></v-text-field>
                     </v-flex>
+                    <v-flex xs12>
+                        <v-text-field box dark label="Password (Leave blank if unchange)" type="password" v-model="password" :rules="passwordRules"></v-text-field>
+                    </v-flex>
                     <v-flex xs12 sm6>
                         <v-switch label="Pre-Activate Account" v-model="active" dark></v-switch>
                     </v-flex>
@@ -112,10 +115,12 @@
                     (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
                 ],
                 password: '',
-                passwordRules: [
-                    (v) => !!v || 'Password is required',
-                    (v) => v && v.length >= 8 || 'Password must be atleast 8 characters.',
-                ],
+                passwordRules: [(v)=>{
+                    if(v && v.length > 0 && v.length < 8) {
+                        return 'Password needs minimum of 8 characters.'
+                    }
+                    return true;
+                }],
                 passwordConfirm: '',
                 passwordConfirmRules: [
                     (v) => !(v!==self.password) || 'Password do not match.',
@@ -172,6 +177,7 @@
                 let payload = {
                     name: self.name,
                     email: self.email,
+                    password: self.password ? self.password : null,
                     active: self.active ? moment().format('YYYY-MM-DD') : null,
                     permissions: self.permissions,
                     groups: self.groups,
