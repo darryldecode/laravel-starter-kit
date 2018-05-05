@@ -3,6 +3,9 @@
 <img src="https://assets.darrylfernandez.com/wp-content/uploads/2018/04/Screenshot_2.png"></p>
 
 # [See Documentation](https://laravel-starter-kit-docs.darrylfernandez.com/)
+# [See Demo App](https://laravel-starter-kit.darrylfernandez.com/)
+
+Demo User: admin@gmail.com Pass: 12345678
 
 <h3 id="contributing">Contributing</h3>
 
