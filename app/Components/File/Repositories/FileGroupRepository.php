@@ -10,7 +10,6 @@ namespace App\Components\File\Repositories;
 
 
 use App\Components\Core\BaseRepository;
-use App\Components\Core\Utilities\Helpers;
 use App\Components\File\Models\FileGroup;
 
 class FileGroupRepository extends BaseRepository
@@ -28,21 +27,13 @@ class FileGroupRepository extends BaseRepository
      */
     public function index($params)
     {
-        $orderBy = Helpers::hasValue($params['order_by'],'id');
-        $orderSort = Helpers::hasValue($params['order_sort'],'desc');
-        $name = Helpers::hasValue($params['name'],null);
-        $paginate = Helpers::hasValue($params['paginate'],'yes');
-        $perPage = Helpers::hasValue($params['per_page'],10);
-
-        $q = $this->model->with(['files'])->orderBy($orderBy,$orderSort);
-
-        if($name) $q = $q->where('name','like',"%{$name}%");
-
-        if($paginate==='yes')
+        return $this->get($params,[],function($q) use ($params)
         {
-            return $q->paginate($perPage);
-        }
+            $name = array_get($params,'name',null);
 
-        return $q->get();
+            if($name) $q = $q->where('name','like',"%{$name}%");
+
+            return $q;
+        });
     }
 }

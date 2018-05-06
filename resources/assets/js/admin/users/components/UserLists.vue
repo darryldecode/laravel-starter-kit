@@ -171,7 +171,6 @@
             const self = this;
 
             self.loadGroups(()=>{});
-            self.loadUsers(()=>{});
 
             self.$eventBus.$on(['USER_ADDED','USER_UPDATED','USER_DELETED','GROUP_ADDED'],()=>{
                 self.loadUsers(()=>{});
@@ -182,11 +181,11 @@
             ]);
         },
         watch: {
-            pagination: {
-                handler() {
-                    this.loadUsers(()=>{});
-                },
-                deep: true
+            'pagination.page':function(){
+                this.loadUsers(()=>{});
+            },
+            'pagination.rowsPerPage':function(){
+                this.loadUsers(()=>{});
             },
             'filters.name':_.debounce(function(){
                 const self = this;

@@ -124,19 +124,17 @@
         mounted() {
             const self = this;
 
-            self.loadGroups(()=>{});
-
             self.$store.commit('setBreadcrumbs',[
                 {label:'Users',name:'users.list'},
                 {label:'Groups',name:''},
             ]);
         },
         watch: {
-            pagination: {
-                handler() {
-                    this.loadGroups();
-                },
-                deep: true
+            'pagination.page':function(){
+                this.loadGroups();
+            },
+            'pagination.rowsPerPage':function(){
+                this.loadGroups();
             },
             'filters.name':_.debounce(function(){
                 const self = this;

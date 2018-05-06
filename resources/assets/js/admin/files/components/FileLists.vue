@@ -134,17 +134,6 @@
             console.log('pages.files.components.FileLists.vue');
 
             const self = this;
-
-            self.loadFileGroups(()=>{
-                self.loadFiles(()=>{});
-            });
-
-            self.$eventBus.$on(['FILE_UPLOADED','FILE_DELETED'],()=>{
-                self.loadFiles(()=>{});
-            });
-            self.$eventBus.$on(['FILE_GROUP_ADDED'],()=>{
-                self.loadFileGroups(()=>{});
-            });
         },
         watch: {
             'filters.fileGroupId':_.debounce(function(v) {
@@ -163,11 +152,11 @@
             'filters.name':_.debounce(function(v) {
                 this.loadFiles(()=>{});
             },500),
-            pagination: {
-                handler() {
-                    this.loadFiles(()=>{});
-                },
-                deep: true
+            'pagination.page':function(){
+                this.loadFiles(()=>{});
+            },
+            'pagination.rowsPerPage':function(){
+                this.loadFiles(()=>{});
             },
         },
         methods: {

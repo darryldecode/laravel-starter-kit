@@ -133,8 +133,6 @@
 
             const self = this;
 
-            self.loadFileGroups(()=>{});
-
             self.$eventBus.$on(['FILE_GROUP_ADDED','FILE_GROUP_UPDATED','FILE_GROUP_DELETED'],()=>{
                 self.loadFileGroups(()=>{});
             });
@@ -143,11 +141,11 @@
             'filters.name':_.debounce(function(v) {
                 this.loadFileGroups(()=>{});
             },500),
-            pagination: {
-                handler() {
-                    this.loadFileGroups(()=>{});
-                },
-                deep: true
+            'pagination.page':function(){
+                this.loadFileGroups(()=>{});
+            },
+            'pagination.rowsPerPage':function(){
+                this.loadFileGroups(()=>{});
             },
         },
         methods: {

@@ -23,25 +23,17 @@ class PermissionRepository extends BaseRepository
      * index items
      *
      * @param array $params
-     * @return Permission[]|\Illuminate\Contracts\Pagination\LengthAwarePaginator|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Model[]|\Illuminate\Support\Collection
      */
     public function index($params)
     {
-        $title = Helpers::hasValue($params['title']);
-        $orderBy = Helpers::hasValue($params['order_by'],'id');
-        $orderSort = Helpers::hasValue($params['order_sort'],'desc');
-        $paginate = Helpers::hasValue($params['paginate'],'yes');
-        $perPage = Helpers::hasValue($params['per_page'],10);
-
-        $q = $this->model->with([])->orderBy($orderBy,$orderSort);
-
-        (!$title) ?: $q = $q->where('title','like',"%{$title}%");
-
-        if($paginate==='yes')
+        return $this->get($params,[],function($q) use ($params)
         {
-            return $q->paginate($perPage);
-        }
+            $title = array_get($params,'title','');
 
-        return $q->get();
+            $q->where('title','like',"%{$title}%");
+
+            return $q;
+        });
     }
 }

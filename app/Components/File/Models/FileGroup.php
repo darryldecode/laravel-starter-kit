@@ -30,7 +30,7 @@ class FileGroup extends Model
      */
     public function getFileCountAttribute()
     {
-        return $this->files->count();
+        return $this->files()->count();
     }
 
     /**

@@ -28,27 +28,14 @@ class UserRepository extends BaseRepository
      */
     public function listUsers($params)
     {
-        $email = Helpers::hasValue($params['email']);
-        $name = Helpers::hasValue($params['name']);
-        $orderBy = Helpers::hasValue($params['order_by'],'id');
-        $orderSort = Helpers::hasValue($params['order_sort'],'desc');
-        $paginate = Helpers::hasValue($params['paginate'],'yes');
-        $perPage = Helpers::hasValue($params['per_page'],10);
-        $groupId = Helpers::hasValue($params['group_id'],"");
-
-        $q = $this->model->with(['groups'])
-            ->orderBy($orderBy,$orderSort);
-
-        $q->ofGroups(Helpers::commasToArray($groupId));
-        $q->ofName($name);
-        $q->ofEmail($email);
-
-        if($paginate==='yes')
+        return $this->get($params,['groups'],function($q) use ($params)
         {
-            return $q->paginate($perPage);
-        }
+            $q->ofGroups(Helpers::commasToArray($params['group_id'] ?? ''));
+            $q->ofName($params['name'] ?? '');
+            $q->ofEmail($params['email'] ?? '');
 
-        return $q->get();
+            return $q;
+        });
     }
 
     /**

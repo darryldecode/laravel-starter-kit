@@ -28,23 +28,14 @@ class GroupRepository extends BaseRepository
      */
     public function index($params)
     {
-        $with = Helpers::hasValue($params['with'],[]);
-        $name = Helpers::hasValue($params['name'],null);
-        $orderBy = Helpers::hasValue($params['order_by'],'id');
-        $orderSort = Helpers::hasValue($params['order_sort'],'desc');
-        $paginate = Helpers::hasValue($params['paginate'],'yes');
-        $perPage = Helpers::hasValue($params['per_page'],10);
-
-        $q = $this->model->with(array_merge(['users'],$with))->orderBy($orderBy,$orderSort);
-
-        (!$name) ?: $q = $q->where('name','like',"%{$name}%");
-
-        if($paginate==='yes')
+        return $this->get($params,[],function($q) use ($params)
         {
-            return $q->paginate($perPage);
-        }
+            $name = array_get($params,'name','');
 
-        return $q->get();
+            $q->where('name','like',"%{$name}%");
+
+            return $q;
+        });
     }
 
     /**

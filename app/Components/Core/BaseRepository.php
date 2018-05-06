@@ -10,6 +10,7 @@ namespace App\Components\Core;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 abstract class BaseRepository
 {
@@ -25,6 +26,25 @@ abstract class BaseRepository
     public function __construct($model)
     {
         $this->model = $model;
+    }
+
+    /**
+     * @param array $params
+     * @param array $with
+     * @param callable $callable
+     * @return Collection|Model[]
+     */
+    public function get($params = [], $with = [], $callable)
+    {
+        $q = $this->model->with($with);
+
+        $q->orderBy($params['order_by'] ?? 'id', $params['order_sort'] ?? 'desc');
+
+        $q = call_user_func_array($callable,[&$q]);
+
+        if(($params['paginate'] ?? $params['paginate'] = 1) && $params['paginate'] == 1) return $q->paginate($params['per_page'] ?? 10);
+
+        return $q->get();
     }
 
     /**

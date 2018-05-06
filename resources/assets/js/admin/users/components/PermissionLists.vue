@@ -94,19 +94,17 @@
         mounted() {
             const self = this;
 
-            self.loadPermissions();
-
             self.$store.commit('setBreadcrumbs',[
                 {label:'Users',name:'users.list'},
                 {label:'Permissions',name:''},
             ]);
         },
         watch: {
-            pagination: {
-                handler() {
-                    this.loadPermissions(()=>{});
-                },
-                deep: true
+            'pagination.page':function(){
+                this.loadPermissions(()=>{});
+            },
+            'pagination.rowsPerPage':function(){
+                this.loadPermissions(()=>{});
             },
             'filters.title':_.debounce(function(){
                 const self = this;
@@ -160,7 +158,7 @@
                 const self = this;
 
                 let params = {
-                    name: self.filters.name,
+                    title: self.filters.title,
                     page: self.pagination.page,
                     per_page: self.pagination.rowsPerPage
                 };
