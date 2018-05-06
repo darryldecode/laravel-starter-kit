@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Components\File\Contracts\IFileGroupRepository;
+use App\Components\File\Repositories\FileGroupRepository;
 use Illuminate\Http\Request;
 
 class FileGroupController extends AdminController
 {
     /**
-     * @var IFileGroupRepository
+     * @var FileGroupRepository
      */
     private $fileGroupRepository;
 
     /**
      * FileGroupController constructor.
-     * @param IFileGroupRepository $fileGroupRepository
+     * @param FileGroupRepository $fileGroupRepository
      */
-    public function __construct(IFileGroupRepository $fileGroupRepository)
+    public function __construct(FileGroupRepository $fileGroupRepository)
     {
         $this->fileGroupRepository = $fileGroupRepository;
     }
@@ -29,13 +29,9 @@ class FileGroupController extends AdminController
      */
     public function index(Request $request)
     {
-        $results = $this->fileGroupRepository->index($request->all());
+        $data = $this->fileGroupRepository->index($request->all());
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
-        );
+        return $this->sendResponseOk($data);
     }
 
     /**
@@ -53,20 +49,14 @@ class FileGroupController extends AdminController
 
         if($validate->fails())
         {
-            return $this->sendResponse(
-                $validate->errors()->first(),
-                null,
-                400
-            );
+            return $this->sendResponseBadRequest($validate->errors()->first());
         }
 
-        $results = $this->fileGroupRepository->create($request->all());
+        $file = $this->fileGroupRepository->create($request->all());
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
-        );
+        if(!$file)  return $this->sendResponseBadRequest("Failed to create.");
+
+        return $this->sendResponseCreated($file);
     }
 
     /**
@@ -77,13 +67,11 @@ class FileGroupController extends AdminController
      */
     public function show($id)
     {
-        $results = $this->fileGroupRepository->get($id);
+        $file = $this->fileGroupRepository->find($id);
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
-        );
+        if(!$file) return $this->sendResponseNotFound();
+
+        return $this->sendResponseOk($file);
     }
 
     /**
@@ -100,22 +88,13 @@ class FileGroupController extends AdminController
             'description' => 'required|string',
         ]);
 
-        if($validate->fails())
-        {
-            return $this->sendResponse(
-                $validate->errors()->first(),
-                null,
-                400
-            );
-        }
+        if($validate->fails()) return $this->sendResponseBadRequest($validate->errors()->first());
 
-        $results = $this->fileGroupRepository->update($id,$request->all());
+        $updated = $this->fileGroupRepository->update($id,$request->all());
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
-        );
+        if(!$updated) return $this->sendResponseBadRequest("Failed to update");
+
+        return $this->sendResponseOk([],"Updated.");
     }
 
     /**
@@ -126,12 +105,8 @@ class FileGroupController extends AdminController
      */
     public function destroy($id)
     {
-        $results = $this->fileGroupRepository->delete($id);
+        $this->fileGroupRepository->delete($id);
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
-        );
+        return $this->sendResponseOk([],"Deleted.");
     }
 }

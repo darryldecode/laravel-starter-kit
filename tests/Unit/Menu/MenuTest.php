@@ -14,36 +14,48 @@ use App\Components\Core\Menu\MenuManager;
 use App\Components\User\Models\Group;
 use App\Components\User\Models\Permission;
 use App\Components\User\Models\User;
-use App\Components\User\Repositories\MySQLUserRepository;
+use App\Components\User\Repositories\GroupRepository;
+use App\Components\User\Repositories\PermissionRepository;
+use App\Components\User\Repositories\UserRepository;
 use Ramsey\Uuid\Uuid;
 use Tests\TestCase;
 
 class MenuTest extends TestCase
 {
     /**
-     * @var MySQLUserRepository
+     * @var UserRepository
      */
     protected $userRepo;
+
+    /**
+     * @var GroupRepository
+     */
+    protected $groupRepo;
+
+    /**
+     * @var PermissionRepository
+     */
+    protected $permissionRepo;
 
     public function setUp()
     {
         parent::setUp();
-        $this->userRepo = new MySQLUserRepository();
+        $this->userRepo = new UserRepository(new User());
+        $this->groupRepo = new GroupRepository(new Group());
+        $this->permissionRepo = new PermissionRepository(new Permission());
     }
 
     public function test_menu_item_should_not_show_if_user_dont_have_permission()
     {
+        /** @var User $user */
         $user = $this->userRepo->create([
             'name' => 'john',
             'email' => 'john@gmail.com',
             'password' => '12345678', // hash on the fly
-            'permissions' => [
-                ['key'=> 'superuser', 'value'=> User::PERMISSION_DENY]
-            ],
+            'permissions' => [],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
-            'groups' => []
-        ])->getData();
+        ]);
 
         $menuManager = new MenuManager();
         $menuManager->setUser($user);
@@ -62,23 +74,30 @@ class MenuTest extends TestCase
 
     public function test_menu_item_should_show_if_user_have_permission()
     {
+        /** @var Permission $permission */
+        $permission = $this->permissionRepo->create([
+            'title' => 'Permission 1',
+            'description' => 'some description',
+            'key' => 'permission.1',
+        ]);
+
+        /** @var User $user */
         $user = $this->userRepo->create([
             'name' => 'john',
             'email' => 'john@gmail.com',
             'password' => '12345678', // hash on the fly
-            'permissions' => [
-                ['key'=> 'superuser', 'value'=> User::PERMISSION_ALLOW]
-            ],
+            'permissions' => [],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
-            'groups' => []
-        ])->getData();
+        ]);
+
+        $user->addPermission($permission,Permission::PERMISSION_ALLOW);
 
         $menuManager = new MenuManager();
         $menuManager->setUser($user);
         $menuManager->addMenu(new MenuItem([
             'group_requirements' => [],
-            'permission_requirements' => ['superuser'],
+            'permission_requirements' => ['permission.1'],
             'label'=>'Super User Dashboard',
             'nav_type' => MenuItem::$NAV_TYPE_NAV,
             'icon'=>'dashboard',
@@ -91,8 +110,13 @@ class MenuTest extends TestCase
 
     public function test_menu_item_should_not_show_if_user_is_not_in_group()
     {
-        $group1 = factory(Group::class)->create();
+        /** @var Group $group */
+        $group = $this->groupRepo->create([
+            'name' => 'Group 1',
+            'permissions' => [],
+        ]);
 
+        /** @var User $user */
         $user = $this->userRepo->create([
             'name' => 'john',
             'email' => 'john@gmail.com',
@@ -100,15 +124,12 @@ class MenuTest extends TestCase
             'permissions' => [],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
-            'groups' => [
-                $group1->id => false
-            ]
-        ])->getData();
+        ]);
 
         $menuManager = new MenuManager();
         $menuManager->setUser($user);
         $menuManager->addMenu(new MenuItem([
-            'group_requirements' => [$group1->name],
+            'group_requirements' => [$group->name],
             'permission_requirements' => [],
             'label'=>'Group 1 Nav',
             'nav_type' => MenuItem::$NAV_TYPE_NAV,
@@ -122,14 +143,28 @@ class MenuTest extends TestCase
 
     public function test_menu_item_should_show_if_user_is_in_group()
     {
-        $group1 = factory(Group::class)->create();
-        $user = factory(User::class)->create();
-        $user->groups()->attach($group1);
+        /** @var Group $group */
+        $group = $this->groupRepo->create([
+            'name' => 'Group 1',
+            'permissions' => [],
+        ]);
+
+        /** @var User $user */
+        $user = $this->userRepo->create([
+            'name' => 'john',
+            'email' => 'john@gmail.com',
+            'password' => '12345678', // hash on the fly
+            'permissions' => [],
+            'active' => null,
+            'activation_key' => (Uuid::uuid4())->toString(),
+        ]);
+
+        $user->groups()->attach($group);
 
         $menuManager = new MenuManager();
         $menuManager->setUser($user);
         $menuManager->addMenu(new MenuItem([
-            'group_requirements' => [$group1->name],
+            'group_requirements' => [$group->name],
             'permission_requirements' => [],
             'label'=>'Group 1 Nav',
             'nav_type' => MenuItem::$NAV_TYPE_NAV,
@@ -143,20 +178,41 @@ class MenuTest extends TestCase
 
     public function test_menu_item_should_not_show_if_user_is_in_group_but_dont_have_permission()
     {
-        $permission = factory(Permission::class)->create();
-        $group1 = factory(Group::class)->create();
-        $user = factory(User::class)->create([
-            'permissions' => [
-                ['key'=>$permission->permission, 'value'=>User::PERMISSION_DENY]
-            ]
+        /** @var Permission $permission */
+        $permission = $this->permissionRepo->create([
+            'title' => 'Permission 1',
+            'description' => 'some description',
+            'key' => 'permission.1',
         ]);
-        $user->groups()->attach($group1);
+
+        /** @var Group $group */
+        $group = $this->groupRepo->create([
+            'name' => 'Group 1',
+            'permissions' => [],
+        ]);
+
+        // add permission to group
+        $group->addPermission($permission,Permission::PERMISSION_ALLOW);
+
+        /** @var User $user */
+        $user = $this->userRepo->create([
+            'name' => 'john',
+            'email' => 'john@gmail.com',
+            'password' => '12345678', // hash on the fly
+            'permissions' => [],
+            'active' => null,
+            'activation_key' => (Uuid::uuid4())->toString(),
+        ]);
+
+        $user->groups()->attach($group);
+
+        $user->addPermission($permission,Permission::PERMISSION_DENY);
 
         $menuManager = new MenuManager();
         $menuManager->setUser($user);
         $menuManager->addMenu(new MenuItem([
-            'group_requirements' => [$group1->name],
-            'permission_requirements' => [$permission->permission],
+            'group_requirements' => [$group->name],
+            'permission_requirements' => [$permission->key],
             'label'=>'Group 1 Nav',
             'nav_type' => MenuItem::$NAV_TYPE_NAV,
             'icon'=>'dashboard',
@@ -169,19 +225,36 @@ class MenuTest extends TestCase
 
     public function test_menu_item_should_not_show_if_user_is_not_in_group_and_have_permission()
     {
-        $permission = factory(Permission::class)->create();
-        $group1 = factory(Group::class)->create();
-        $user = factory(User::class)->create([
-            'permissions' => [
-                ['key'=>$permission->permission, 'value'=>User::PERMISSION_ALLOW]
-            ]
+        /** @var Permission $permission */
+        $permission = $this->permissionRepo->create([
+            'title' => 'Permission 1',
+            'description' => 'some description',
+            'key' => 'permission.1',
         ]);
+
+        /** @var Group $group */
+        $group = $this->groupRepo->create([
+            'name' => 'Group 1',
+            'permissions' => [],
+        ]);
+
+        /** @var User $user */
+        $user = $this->userRepo->create([
+            'name' => 'john',
+            'email' => 'john@gmail.com',
+            'password' => '12345678', // hash on the fly
+            'permissions' => [],
+            'active' => null,
+            'activation_key' => (Uuid::uuid4())->toString(),
+        ]);
+
+        $user->addPermission($permission,Permission::PERMISSION_ALLOW);
 
         $menuManager = new MenuManager();
         $menuManager->setUser($user);
         $menuManager->addMenu(new MenuItem([
-            'group_requirements' => [$group1->name],
-            'permission_requirements' => [$permission->permission],
+            'group_requirements' => [$group->name],
+            'permission_requirements' => [$permission->key],
             'label'=>'Group 1 Nav',
             'nav_type' => MenuItem::$NAV_TYPE_NAV,
             'icon'=>'dashboard',

@@ -10,22 +10,30 @@ namespace App\Http\Controllers\Front;
 
 
 use App\Components\File\Contracts\IFileRepository;
+use App\Components\File\Repositories\FileRepository;
+use App\Components\File\Services\FileService;
 use Illuminate\Http\Request;
 
 class FileController extends FrontController
 {
     /**
-     * @var IFileRepository
+     * @var FileRepository
      */
     private $fileRepository;
+    /**
+     * @var FileService
+     */
+    private $fileService;
 
     /**
      * FileController constructor.
-     * @param IFileRepository $fileRepository
+     * @param FileRepository $fileRepository
+     * @param FileService $fileService
      */
-    public function __construct(IFileRepository $fileRepository)
+    public function __construct(FileRepository $fileRepository, FileService $fileService)
     {
         $this->fileRepository = $fileRepository;
+        $this->fileService = $fileService;
     }
 
     /**
@@ -37,7 +45,7 @@ class FileController extends FrontController
      */
     public function filePreview(Request $request,$id)
     {
-        $res = $this->fileRepository->previewFile([
+        $file = $this->fileService->previewFile([
             'id' => $id,
             'w' => $request->get('w',null),
             'h' => $request->get('h',null),
@@ -46,7 +54,7 @@ class FileController extends FrontController
             'action' => $request->get('action','resize'), // resize|fit
         ]);
 
-        return $res->getData();
+        return $file;
     }
 
     /**
@@ -54,15 +62,15 @@ class FileController extends FrontController
      *
      * @param Request $request
      * @param int $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|null
+     * @return bool|\Illuminate\Contracts\View\Factory|\Illuminate\View\View|null|\Symfony\Component\HttpFoundation\BinaryFileResponse
      */
     public function fileDownload(Request $request, $id)
     {
         $token = $request->get('file_token');
 
-        $res = $this->fileRepository->downloadFile($id,$token);
+        $res = $this->fileService->downloadFile($id,$token);
 
-        if($res->isSuccessful()) return $res->getData();
+        if($res) return $res;
 
         return view('errors.403');
     }

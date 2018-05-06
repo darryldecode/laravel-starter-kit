@@ -2,24 +2,33 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Components\File\Contracts\IFileRepository;
+use App\Components\File\Models\File;
+use App\Components\File\Repositories\FileRepository;
+use App\Components\File\Services\FileService;
 use Illuminate\Http\Request;
 use Auth;
+use League\Flysystem\FileNotFoundException;
 
 class FileController extends AdminController
 {
     /**
-     * @var IFileRepository
+     * @var FileRepository
      */
     private $fileRepository;
+    /**
+     * @var FileService
+     */
+    private $fileService;
 
     /**
      * FileController constructor.
-     * @param IFileRepository $fileRepository
+     * @param FileRepository $fileRepository
+     * @param FileService $fileService
      */
-    public function __construct(IFileRepository $fileRepository)
+    public function __construct(FileRepository $fileRepository, FileService $fileService)
     {
         $this->fileRepository = $fileRepository;
+        $this->fileService = $fileService;
     }
 
     /**
@@ -32,10 +41,7 @@ class FileController extends AdminController
     {
         $results = $this->fileRepository->index($request->all());
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData()
-        );
+        return $this->sendResponseOk($results);
     }
 
     /**
@@ -50,19 +56,26 @@ class FileController extends AdminController
         $files = $request->file('file');
         $error = false;
         $errorMessage = '';
+        $fileRecord = null;
 
         foreach ($files as $file)
         {
-            $res = $this->fileRepository->upload($file);
-
-            if(!$res->isSuccessful())
-            {
+            try {
+                $fileData = $this->fileService->upload($file);
+            } catch (FileNotFoundException $e) {
                 $error = true;
-                $errorMessage = $res->getMessage();
+                $errorMessage = $e->getMessage();
                 break;
             }
 
-            $fileData = $res->getData();
+            if(!$fileData)
+            {
+                $error = true;
+                $errorMessage = $this->fileService->getErrors()->first();
+                break;
+            }
+
+            /** @var File $fileRecord */
             $fileRecord = $this->fileRepository->create([
                 'name' => $fileData['original_name'],
                 'uploaded_by' => Auth::user()->id,
@@ -73,28 +86,21 @@ class FileController extends AdminController
                 'path' => $fileData['path'],
             ]);
 
-            if(!$fileRecord->isSuccessful())
+            if(!$fileRecord)
             {
-                $this->fileRepository->deleteFile($res['path']);
+                $this->fileService->deleteFile($fileData['path']);
                 $error = true;
-                $errorMessage = $fileRecord->getMessage();
+                $errorMessage = "Failed to create record.";
                 break;
             }
         }
 
         if($error)
         {
-            return $this->sendResponse(
-                $errorMessage,
-                null,
-                400
-            );
+            return $this->sendResponseBadRequest($errorMessage);
         }
 
-        return $this->sendResponse(
-            $res->getMessage(),
-            $res->getData()
-        );
+        return $this->sendResponseCreated($fileRecord);
     }
 
     /**
@@ -128,11 +134,8 @@ class FileController extends AdminController
      */
     public function destroy($id)
     {
-        $results = $this->fileRepository->delete($id);
+        $this->fileRepository->delete($id);
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData()
-        );
+        return $this->sendResponseDeleted();
     }
 }

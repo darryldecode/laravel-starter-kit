@@ -239,11 +239,11 @@ trait UserTrait
 
         $superUser = array_get($userCombinedPermissions, 'superuser');
 
-        if( $superUser === User::PERMISSION_ALLOW ) return true;
+        if( $superUser === Permission::PERMISSION_ALLOW ) return true;
 
         $permissionValue = array_get($userCombinedPermissions, $permission);
 
-        return $permissionValue === User::PERMISSION_ALLOW;
+        return $permissionValue === Permission::PERMISSION_ALLOW;
     }
 
     /**
@@ -295,7 +295,7 @@ trait UserTrait
         {
             $this->groups()->each(function($g) use ($group, &$found)
             {
-                if( $g->id == $group )
+                if( (int)$g->id == $group )
                 {
                     $found = true;
                 }
@@ -362,7 +362,7 @@ trait UserTrait
         foreach($userSpecificPermissions as $uPermission => $uValue)
         {
             // if the permission is inherit
-            if( $uValue == User::PERMISSION_INHERIT )
+            if( $uValue == Permission::PERMISSION_INHERIT )
             {
                 // we will check if this permission exists in his group permissions,
                 // if so, we will get the value from that group permissions and we will use it as its value
@@ -374,7 +374,7 @@ trait UserTrait
                 }
                 else
                 {
-                    $userSpecificPermissions[$uPermission] = User::PERMISSION_DENY;
+                    $userSpecificPermissions[$uPermission] = Permission::PERMISSION_DENY;
                 }
             }
 
@@ -433,7 +433,7 @@ trait UserTrait
                 // the deny value will be prioritize
                 if( array_key_exists($gp['key'], $permissions) )
                 {
-                    if( $gp['value'] == User::PERMISSION_DENY )
+                    if( $gp['value'] == Permission::PERMISSION_DENY )
                     {
                         $permissions[$gp['key']] = $gp['value'];
                     }

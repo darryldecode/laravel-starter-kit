@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Components\Core\Result;
-use App\Components\User\Contracts\IGroupRepository;
 use App\Components\User\Models\Group;
+use App\Components\User\Repositories\GroupRepository;
 use Illuminate\Http\Request;
 
 class GroupController extends AdminController
 {
     /**
-     * @var IGroupRepository
+     * @var GroupRepository
      */
     private $groupRepository;
 
     /**
      * GroupController constructor.
-     * @param IGroupRepository $groupRepository
+     * @param GroupRepository $groupRepository
      */
-    public function __construct(IGroupRepository $groupRepository)
+    public function __construct(GroupRepository $groupRepository)
     {
         $this->groupRepository = $groupRepository;
     }
@@ -30,13 +29,9 @@ class GroupController extends AdminController
      */
     public function index()
     {
-        $results = $this->groupRepository->index(request()->all());
+        $data = $this->groupRepository->index(request()->all());
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
-        );
+        return $this->sendResponseOk($data,"Get groups ok.");
     }
 
     /**
@@ -52,22 +47,11 @@ class GroupController extends AdminController
             'permissions' => 'array',
         ]);
 
-        if($validate->fails())
-        {
-            return $this->sendResponse(
-                $validate->errors()->first(),
-                null,
-                400
-            );
-        }
+        if($validate->fails()) return $this->sendResponseBadRequest($validate->errors()->first());
 
-        $results = $this->groupRepository->create($request->all());
+        $group = $this->groupRepository->create($request->all());
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
-        );
+        return $this->sendResponseOk($group,"Created.");
     }
 
     /**
@@ -78,13 +62,11 @@ class GroupController extends AdminController
      */
     public function show($id)
     {
-        $results = $this->groupRepository->get($id);
+        $group = $this->groupRepository->find($id);
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
-        );
+        if(!$group) return $this->sendResponseNotFound();
+
+        return $this->sendResponseOk($group);
     }
 
     /**
@@ -101,22 +83,13 @@ class GroupController extends AdminController
             'permissions' => 'array',
         ]);
 
-        if($validate->fails())
-        {
-            return $this->sendResponse(
-                $validate->errors()->first(),
-                null,
-                400
-            );
-        }
+        if($validate->fails()) return $this->sendResponseBadRequest($validate->errors()->first());
 
-        $results = $this->groupRepository->update($id,$request->all());
+        $updated = $this->groupRepository->update($id,$request->all());
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
-        );
+        if(!$updated) return $this->sendResponseBadRequest("Failed update.");
+
+        return $this->sendResponseUpdated();
     }
 
     /**
@@ -127,22 +100,23 @@ class GroupController extends AdminController
      */
     public function destroy($id)
     {
+        /** @var Group $group */
+        $group = $this->groupRepository->find($id);
+
+        if(!$group) return $this->sendResponseNotFound();
+
         // prevent delete of super user
-        if($id == Group::SUPER_USER_GROUP_ID)
-        {
-            return $this->sendResponse(
-                Result::MESSAGE_FORBIDDEN,
-                null,
-                403
-            );
+        if($group->name == Group::SUPER_USER_GROUP_NAME) return $this->sendResponseBadRequest("Cannot delete group.");
+
+        // detach all users first
+        $group->users()->detach();
+
+        try {
+            $this->groupRepository->delete($id);
+        } catch (\Exception $e) {
+            return $this->sendResponseBadRequest("Failed to delete");
         }
 
-        $results = $this->groupRepository->delete($id);
-
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
-        );
+        return $this->sendResponseDeleted();
     }
 }

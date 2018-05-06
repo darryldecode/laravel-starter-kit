@@ -8,23 +8,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Components\Core\Result;
-use App\Components\User\Contracts\IUserRepository;
-use Auth;
+use App\Components\User\Models\User;
+use App\Components\User\Repositories\UserRepository;
 use Illuminate\Http\Request;
 
 class UserController extends AdminController
 {
     /**
-     * @var IUserRepository
+     * @var UserRepository
      */
     private $userRepository;
 
     /**
      * UserController constructor.
-     * @param IUserRepository $userRepository
+     * @param UserRepository $userRepository
      */
-    public function __construct(IUserRepository $userRepository)
+    public function __construct(UserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
     }
@@ -36,12 +35,9 @@ class UserController extends AdminController
      */
     public function index()
     {
-        $results = $this->userRepository->listUsers(request()->all());
+        $data = $this->userRepository->listUsers(request()->all());
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData()
-        );
+        return $this->sendResponseOk($data,"list users ok.");
     }
 
     /**
@@ -60,21 +56,23 @@ class UserController extends AdminController
             'groups' => 'array',
         ]);
 
-        if($validate->fails())
+        if($validate->fails()) return $this->sendResponseBadRequest($validate->errors()->first());
+
+        /** @var User $user */
+        $user = $this->userRepository->create($request->all());
+
+        if(!$user) return $this->sendResponseBadRequest("Failed create.");
+
+        // attach to group
+        if($groups = $request->get('groups',[]))
         {
-            return $this->sendResponse(
-                $validate->errors()->first(),
-                null,
-                400
-            );
+            foreach ($groups as $groupId => $shouldAttach)
+            {
+                if($shouldAttach) $user->groups()->attach($groupId);
+            }
         }
 
-        $results = $this->userRepository->create($request->all());
-
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData()
-        );
+        return $this->sendResponseCreated($user);
     }
 
     /**
@@ -85,12 +83,11 @@ class UserController extends AdminController
      */
     public function show($id)
     {
-        $results = $this->userRepository->get($id);
+        $user = $this->userRepository->find($id);
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData()
-        );
+        if(!$user) return $this->sendResponseNotFound();
+
+        return $this->sendResponseOk($user);
     }
 
     /**
@@ -109,21 +106,30 @@ class UserController extends AdminController
             'groups' => 'array',
         ]);
 
-        if($validate->fails())
+        if($validate->fails()) return $this->sendResponseBadRequest($validate->errors()->first());
+
+        $updated = $this->userRepository->update($id,$request->all());
+
+        if(!$updated) return $this->sendResponseBadRequest("Failed update");
+
+        // re-sync groups
+
+        /** @var User $user */
+        $user = $this->userRepository->find($id);
+
+        $groupIds = [];
+
+        if($groups = $request->get('groups',[]))
         {
-            return $this->sendResponse(
-                $validate->errors()->first(),
-                null,
-                400
-            );
+            foreach ($groups as $groupId => $shouldAttach)
+            {
+                if($shouldAttach) $groupIds[] = $groupId;
+            }
         }
 
-        $results = $this->userRepository->update($id,$request->all());
+        $user->groups()->sync($groupIds);
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData()
-        );
+        return $this->sendResponseUpdated();
     }
 
     /**
@@ -135,21 +141,14 @@ class UserController extends AdminController
     public function destroy($id)
     {
         // do not delete self
-        if($id==Auth::user()->id)
-        {
-            return $this->sendResponse(
-                Result::MESSAGE_FORBIDDEN,
-                null,
-                403
-            );
+        if($id == auth()->user()->id) return $this->sendResponseForbidden();
+
+        try {
+            $this->userRepository->delete($id);
+        } catch (\Exception $e) {
+            return $this->sendResponseBadRequest("Failed to delete");
         }
 
-        $results = $this->userRepository->delete($id);
-
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData(),
-            $results->getStatusCode()
-        );
+        return $this->sendResponseDeleted();
     }
 }

@@ -11,32 +11,41 @@ namespace Tests\Unit\User;
 
 use App\Components\User\Models\Group;
 use App\Components\User\Models\Permission;
-use App\Components\User\Repositories\MySQLUserRepository;
+use App\Components\User\Models\User;
+use App\Components\User\Repositories\GroupRepository;
+use App\Components\User\Repositories\UserRepository;
 use Ramsey\Uuid\Uuid;
 use Tests\TestCase;
 
 class UserGroupTest extends TestCase
 {
     /**
-     * @var MySQLUserRepository
+     * @var UserRepository
      */
     protected $userRepo;
 
-    protected $group;
-
-    protected $permission;
+    /**
+     * @var GroupRepository
+     */
+    protected $groupRepo;
 
     public function setUp()
     {
         parent::setUp();
 
-        $this->userRepo = new MySQLUserRepository();
-        $this->group = factory(Group::class)->create();
-        $this->permission = factory(Permission::class)->create();
+        $this->userRepo = new UserRepository(new User());
+        $this->groupRepo = new GroupRepository(new Group());
     }
 
     public function test_it_can_assign_user_to_a_group()
     {
+        /** @var Group $group */
+        $group = $this->groupRepo->create([
+            'name' => 'group 1',
+            'permissions' => []
+        ]);
+
+        /** @var User $user */
         $user = $this->userRepo->create([
             'name' => 'john',
             'email' => 'john@gmail.com',
@@ -44,32 +53,45 @@ class UserGroupTest extends TestCase
             'permissions' => [],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
-            'groups' => [
-                $this->group->id => true
-            ]
-        ])->getData();
+        ]);
 
-        $this->assertTrue($user->inGroup($this->group));
-        $this->assertTrue($user->inGroup($this->group->name));
-        $this->assertTrue($user->inGroup($this->group->id));
+        $user->groups()->attach($group);
+
+        $this->assertTrue($user->inGroup($group));
+        $this->assertTrue($user->inGroup($group->name));
+        $this->assertTrue($user->inGroup($group->id));
     }
 
     public function test_user_should_not_be_in_group()
     {
+        /** @var Group $group */
+        $group = $this->groupRepo->create([
+            'name' => 'group 1',
+            'permissions' => []
+        ]);
+
+        /** @var User $user */
         $user = $this->userRepo->create([
             'name' => 'john',
             'email' => 'john@gmail.com',
             'password' => '12345678', // hash on the fly
             'permissions' => [],
             'active' => null,
-            'activation_key' => (Uuid::uuid4())->toString(),
-            'groups' => [
-                $this->group->id => false
-            ]
-        ])->getData();
+            'activation_key' => (Uuid::uuid4())->toString()
+        ]);
 
-        $this->assertFalse($user->inGroup($this->group));
-        $this->assertFalse($user->inGroup($this->group->name));
-        $this->assertFalse($user->inGroup($this->group->id));
+        // attach
+        $user->groups()->attach($group);
+
+        $this->assertTrue($user->inGroup($group));
+        $this->assertTrue($user->inGroup($group->name));
+        $this->assertTrue($user->inGroup($group->id));
+
+        // detach
+        $user->groups()->detach($group);
+
+        $this->assertFalse($user->inGroup($group));
+        $this->assertFalse($user->inGroup($group->name));
+        $this->assertFalse($user->inGroup($group->id));
     }
 }

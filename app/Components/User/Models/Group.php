@@ -4,13 +4,19 @@ namespace App\Components\User\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Group
+ * @package App\Components\User\Models
+ *
+ * @property int $id
+ * @property string $name
+ * @property array $permissions
+ * @property int $members_count
+ */
 class Group extends Model
 {
     const SUPER_USER_GROUP_NAME = 'Super User';
     const DEFAULT_USER_GROUP_NAME = 'User';
-
-    const PERMISSION_ALLOW 	= 1;
-    const PERMISSION_DENY 	= -1;
 
     /**
      * The valid permission values
@@ -230,7 +236,7 @@ class Group extends Model
 
         foreach ($this->permissions as $index => $p)
         {
-            if($p['key'] == $permissionKey && $p['value'] == Group::PERMISSION_ALLOW) $has = true;
+            if($p['key'] == $permissionKey && $p['value'] == Permission::PERMISSION_ALLOW) $has = true;
         }
 
         return $has;

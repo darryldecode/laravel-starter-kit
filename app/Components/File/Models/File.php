@@ -7,6 +7,20 @@ use Carbon\Carbon;
 use Firebase\JWT\JWT;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class File
+ * @package App\Components\File\Models
+ *
+ * @property int $id
+ * @property string $name
+ * @property int $uploaded_by
+ * @property int $file_group_id
+ * @property string $file_type
+ * @property string $extension
+ * @property int $size
+ * @property string $path
+ * @property string $file_token
+ */
 class File extends Model
 {
     const TAG = 'WASK_FILE_MANAGER';

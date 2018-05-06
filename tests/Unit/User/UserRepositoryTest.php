@@ -11,14 +11,15 @@ namespace Tests\Unit\User;
 
 use App\Components\User\Models\Group;
 use App\Components\User\Models\Permission;
-use App\Components\User\Repositories\MySQLUserRepository;
+use App\Components\User\Models\User;
+use App\Components\User\Repositories\UserRepository;
 use Ramsey\Uuid\Uuid;
 use Tests\TestCase;
 
 class UserRepositoryTest extends TestCase
 {
     /**
-     * @var MySQLUserRepository
+     * @var UserRepository
      */
     protected $userRepo;
 
@@ -30,7 +31,7 @@ class UserRepositoryTest extends TestCase
     {
         parent::setUp();
 
-        $this->userRepo = new MySQLUserRepository();
+        $this->userRepo = new UserRepository(new User());
         $this->group = factory(Group::class)->create();
         $this->permission = factory(Permission::class)->create();
     }
@@ -53,6 +54,7 @@ class UserRepositoryTest extends TestCase
 
     public function test_it_can_update_user()
     {
+        /** @var User $user */
         $user = $this->userRepo->create([
             'name' => 'john',
             'email' => 'john@gmail.com',
@@ -60,10 +62,7 @@ class UserRepositoryTest extends TestCase
             'permissions' => [],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
-            'groups' => [
-                $this->group->id => true
-            ]
-        ])->getData();
+        ]);
 
         $this->userRepo->update($user->id,[
             'name' => 'new name',
@@ -85,10 +84,7 @@ class UserRepositoryTest extends TestCase
             'permissions' => [],
             'active' => null,
             'activation_key' => (Uuid::uuid4())->toString(),
-            'groups' => [
-                $this->group->id => true
-            ]
-        ])->getData();
+        ]);
 
         $this->assertDatabaseHas('users',[
             'name' => $user->name,

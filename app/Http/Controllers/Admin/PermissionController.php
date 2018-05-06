@@ -3,22 +3,22 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Components\Core\Result;
-use App\Components\User\Contracts\IPermissionRepository;
 use App\Components\User\Models\Permission;
+use App\Components\User\Repositories\PermissionRepository;
 use Illuminate\Http\Request;
 
 class PermissionController extends AdminController
 {
     /**
-     * @var IPermissionRepository
+     * @var PermissionRepository
      */
     private $permissionRepository;
 
     /**
      * PermissionController constructor.
-     * @param IPermissionRepository $permissionRepository
+     * @param PermissionRepository $permissionRepository
      */
-    public function __construct(IPermissionRepository $permissionRepository)
+    public function __construct(PermissionRepository $permissionRepository)
     {
         $this->permissionRepository = $permissionRepository;
     }
@@ -30,12 +30,9 @@ class PermissionController extends AdminController
      */
     public function index()
     {
-        $results = $this->permissionRepository->index(request()->all());
+        $data = $this->permissionRepository->index(request()->all());
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData()
-        );
+        return $this->sendResponseOk($data,"get permissions ok.");
     }
 
     /**
@@ -52,21 +49,13 @@ class PermissionController extends AdminController
             'key' => 'required|string|unique:permissions',
         ]);
 
-        if($validate->fails())
-        {
-            return $this->sendResponse(
-                $validate->errors()->first(),
-                null,
-                400
-            );
-        }
+        if($validate->fails()) return $this->sendResponseBadRequest($validate->errors()->first());
 
-        $results = $this->permissionRepository->create($request->all());
+        $permission = $this->permissionRepository->create($request->all());
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData()
-        );
+        if(!$permission) return $this->sendResponseBadRequest("Failed to create");
+
+        return $this->sendResponseCreated($permission);
     }
 
     /**
@@ -77,12 +66,11 @@ class PermissionController extends AdminController
      */
     public function show($id)
     {
-        $results = $this->permissionRepository->get($id);
+        $permission = $this->permissionRepository->find($id);
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData()
-        );
+        if(!$permission) return $this->sendResponseNotFound();
+
+        return $this->sendResponseOk($permission);
     }
 
     /**
@@ -100,21 +88,13 @@ class PermissionController extends AdminController
             'key' => 'required|string',
         ]);
 
-        if($validate->fails())
-        {
-            return $this->sendResponse(
-                $validate->errors()->first(),
-                null,
-                400
-            );
-        }
+        if($validate->fails()) return $this->sendResponseBadRequest($validate->errors()->first());
 
-        $results = $this->permissionRepository->update($id,$request->all());
+        $updated = $this->permissionRepository->update($id,$request->all());
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData()
-        );
+        if(!$updated) return $this->sendResponseBadRequest("Failed update.");
+
+        return $this->sendResponseUpdated();
     }
 
     /**
@@ -125,21 +105,19 @@ class PermissionController extends AdminController
      */
     public function destroy($id)
     {
+        /** @var Permission $permission */
+        $permission = $this->permissionRepository->find($id);
+
+        if(!$permission) return $this->sendResponseNotFound();
+
         // prevent delete of super user permission
-        if($id == Permission::SUPER_USER_PERMISSION_ID)
+        if($permission->key == Permission::SUPER_USER_PERMISSION_KEY)
         {
-            return $this->sendResponse(
-                Result::MESSAGE_FORBIDDEN,
-                null,
-                403
-            );
+            return $this->sendResponseBadRequest("Cannot delete permission.");
         }
 
-        $results = $this->permissionRepository->delete($id);
+        $this->permissionRepository->delete($id);
 
-        return $this->sendResponse(
-            $results->getMessage(),
-            $results->getData()
-        );
+        return $this->sendResponseDeleted();
     }
 }

@@ -5,13 +5,19 @@ namespace App\Components\User\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * Class User
+ * @package App\Components\User\Models
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property array $permissions
+ * @property string|null $active
+ */
 class User extends Authenticatable
 {
     use Notifiable, UserTrait;
-
-    const PERMISSION_ALLOW 	    = 1;
-    const PERMISSION_INHERIT    = 0;
-    const PERMISSION_DENY 	    = -1;
 
     /**
      * The attributes that are mass assignable.
