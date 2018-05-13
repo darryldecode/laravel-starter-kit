@@ -9,7 +9,7 @@
 namespace App\Components\Core;
 
 
-class BaseService
+abstract class BaseService
 {
     /**
      * @var \Illuminate\Support\Collection
