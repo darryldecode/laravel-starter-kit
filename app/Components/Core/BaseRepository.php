@@ -9,8 +9,9 @@
 namespace App\Components\Core;
 
 
+use App\Components\Core\Utilities\Helpers;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 abstract class BaseRepository
 {
@@ -32,7 +33,7 @@ abstract class BaseRepository
      * @param array $params
      * @param array $with
      * @param callable $callable
-     * @return Collection|Model[]
+     * @return LengthAwarePaginator|\Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
     public function get($params = [], $with = [], $callable)
     {
@@ -42,9 +43,11 @@ abstract class BaseRepository
 
         $q = call_user_func_array($callable,[&$q]);
 
-        if(($params['paginate'] ?? $params['paginate'] = 1) && $params['paginate'] == 1) return $q->paginate($params['per_page'] ?? 10);
+        // if per page is -1, we don't need to paginate at all, but we still return the paginated
+        // data structure to our response. Let's just put the biggest number we can imagine.
+        if(Helpers::hasValue($params['per_page']) && ($params['per_page']==-1)) $params['per_page'] = 999999999999;
 
-        return $q->get();
+        return $q->paginate($params['per_page'] ?? 10);
     }
 
     /**
