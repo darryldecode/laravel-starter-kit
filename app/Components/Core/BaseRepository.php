@@ -47,6 +47,9 @@ abstract class BaseRepository
         // data structure to our response. Let's just put the biggest number we can imagine.
         if(Helpers::hasValue($params['per_page']) && ($params['per_page']==-1)) $params['per_page'] = 999999999999;
 
+        // if don't want any pagination
+        if(Helpers::hasValue($params['paginate']) && ($params['paginate']=='no')) return $q->get();
+
         return $q->paginate($params['per_page'] ?? 10);
     }
 
@@ -76,6 +79,7 @@ abstract class BaseRepository
     /**
      * @param int $id
      * @return bool|null
+     * @throws \Exception
      */
     public function delete(int $id)
     {
