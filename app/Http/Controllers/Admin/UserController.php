@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Components\Core\Utilities\Helpers;
 use App\Components\User\Models\User;
 use App\Components\User\Repositories\UserRepository;
 use Illuminate\Http\Request;
@@ -108,7 +109,13 @@ class UserController extends AdminController
 
         if($validate->fails()) return $this->sendResponseBadRequest($validate->errors()->first());
 
-        $updated = $this->userRepository->update($id,$request->all());
+        $payload = $request->all();
+
+        // if password field is present but has empty value or null value
+        // we will remove it to avoid updating password with unexpected value
+        if(!Helpers::hasValue($payload['password'])) unset($payload['password']);
+
+        $updated = $this->userRepository->update($id,$payload);
 
         if(!$updated) return $this->sendResponseBadRequest("Failed update");
 
