@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/darryldecode/laravel-starter-kit.svg?branch=master)](https://travis-ci.org/darryldecode/laravel-starter-kit)
 
+<h2>Laravel 5.6~ + VueJS + Vuetify</h2>
+<p>NOTE: This uses hybrid routing. Inner pages is SPA using vue-router for smoother user experience.</p>
+
 <img src="https://assets.darrylfernandez.com/wp-content/uploads/2018/04/Screenshot_2.png"></p>
 
 # [See Documentation](https://laravel-starter-kit-docs.darrylfernandez.com/)
