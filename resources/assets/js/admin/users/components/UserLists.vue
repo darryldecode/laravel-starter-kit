@@ -19,27 +19,25 @@
                     </v-btn>
                 </v-flex>
                 <v-flex xs12 class="my-2"><v-divider></v-divider></v-flex>
-                <v-flex xs12 sm4 class="px-2">
-                    <v-text-field prepend-icon="search" dark label="Filter By Name" v-model="filters.name"></v-text-field>
+                <v-flex xs12 sm6 class="px-2">
+                    <v-text-field box prepend-icon="search" dark label="Filter By Name" v-model="filters.name"></v-text-field>
                 </v-flex>
-                <v-flex xs12 sm4 class="px-2">
-                    <v-text-field prepend-icon="search" dark label="Filter By Email" v-model="filters.email"></v-text-field>
+                <v-flex xs12 sm6 class="px-2">
+                    <v-text-field box prepend-icon="search" dark label="Filter By Email" v-model="filters.email"></v-text-field>
                 </v-flex>
-                <v-flex xs12 sm4 class="px-2">
-                    <v-select box
+                <v-flex xs12 class="px-2">
+                    <v-autocomplete box
                               multiple
                               chips
                               deletable-chips
                               clearable
                               prepend-icon="filter_list"
-                              autocomplete
                               label="Filter By Groups"
-                              placeholder="Select groups.."
                               :items="filters.groupOptions"
                               item-text="name"
                               item-value="id"
                               v-model="filters.groupId"
-                    ></v-select>
+                    ></v-autocomplete>
                 </v-flex>
             </v-layout>
         </v-card>

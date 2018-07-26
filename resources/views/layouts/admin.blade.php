@@ -74,9 +74,11 @@
                         <v-icon slot="divider">chevron_right</v-icon>
                         <v-breadcrumbs-item
                                 v-for="item in getBreadcrumbs"
+                                :exact="true"
+                                :to="{name:item.name}"
                                 :key="item.label"
                                 :disabled="item.disabled">
-                            <router-link :to="{name: item.name}">@{{ item.label }}</router-link>
+                            @{{ item.label }}
                         </v-breadcrumbs-item>
                     </v-breadcrumbs>
                 </div>

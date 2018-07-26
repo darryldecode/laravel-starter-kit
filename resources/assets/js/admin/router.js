@@ -16,7 +16,6 @@ const router = new Router({
             component: require('./dashboard/Home'),
         },
         {
-            name: 'users',
             path: '/users',
             component: require('./users/Users'),
             children: [
