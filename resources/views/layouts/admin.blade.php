@@ -34,33 +34,29 @@
 
                     @foreach($nav as $n)
                         @if($n->navType==\App\Components\Core\Menu\MenuItem::$NAV_TYPE_NAV)
-                            <router-link :to="{name:'{{$n->routeName}}'}" class="router-link">
-                                <v-list-tile>
-                                    <v-list-tile-action>
-                                        <v-icon>{{$n->icon}}</v-icon>
-                                    </v-list-tile-action>
-                                    <v-list-tile-content>
-                                        <v-list-tile-title>
-                                            {{$n->label}}
-                                        </v-list-tile-title>
-                                    </v-list-tile-content>
-                                </v-list-tile>
-                            </router-link>
+                            <v-list-tile :to="{name:'{{$n->routeName}}'}" :exact="false">
+                                <v-list-tile-action>
+                                    <v-icon>{{$n->icon}}</v-icon>
+                                </v-list-tile-action>
+                                <v-list-tile-content>
+                                    <v-list-tile-title>
+                                        {{$n->label}}
+                                    </v-list-tile-title>
+                                </v-list-tile-content>
+                            </v-list-tile>
                         @else
                             <v-divider></v-divider>
                         @endif
                     @endforeach
 
-                    <a class="router-link">
-                        <v-list-tile @click="clickLogout('{{route('logout')}}','{{url('/')}}')">
-                            <v-list-tile-action>
-                                <v-icon>directions_walk</v-icon>
-                            </v-list-tile-action>
-                            <v-list-tile-content>
-                                <v-list-tile-title>Logout</v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                    </a>
+                    <v-list-tile @click="clickLogout('{{route('logout')}}','{{url('/')}}')">
+                        <v-list-tile-action>
+                            <v-icon>directions_walk</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Logout</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
 
                 </v-list>
             </v-navigation-drawer>
@@ -108,7 +104,7 @@
 
         <!-- dialog confirm -->
         <v-dialog v-show="showDialog" v-model="showDialog" lazy absolute max-width="450px">
-            <v-btn color="primary" dark slot="activator">Open Dialog</v-btn>
+            <v-btn color="primary" slot="activator">Open Dialog</v-btn>
             <v-card>
                 <v-card-title>
                     <div class="headline">@{{ dialogTitle }}</div>

@@ -2,19 +2,20 @@
     <div class="component-wrap">
 
         <!-- search -->
-        <v-card dark>
-            <v-layout row wrap>
-                <v-flex xs12 class="px-2 pt-2">
-                    <v-btn @click="$router.push({name:'users.groups.create'})" class="blue lighten-1" dark>
-                        New Group
-                        <v-icon right dark>add</v-icon>
-                    </v-btn>
-                </v-flex>
-                <v-flex xs12 class="my-2"><v-divider></v-divider></v-flex>
-                <v-flex xs12 class="px-2">
-                    <v-text-field prepend-icon="search" box dark label="Filter By Name" v-model="filters.name"></v-text-field>
-                </v-flex>
-            </v-layout>
+        <v-card>
+            <v-card-text>
+                <v-layout row wrap>
+                    <v-flex xs12 sm6>
+                        <v-text-field prepend-icon="search" box label="Filter By Name" v-model="filters.name"></v-text-field>
+                    </v-flex>
+                    <v-flex xs12 sm6 class="text-xs-right">
+                        <v-btn @click="$router.push({name:'users.groups.create'})" class="blue lighten-1" dark>
+                            New Group
+                            <v-icon right>add</v-icon>
+                        </v-btn>
+                    </v-flex>
+                </v-layout>
+            </v-card-text>
         </v-card>
         <!-- /search -->
 
@@ -43,7 +44,7 @@
             <template slot="items" slot-scope="props">
                 <td>
                     <v-menu>
-                        <v-btn icon slot="activator" dark>
+                        <v-btn icon slot="activator">
                             <v-icon>more_vert</v-icon>
                         </v-btn>
                         <v-list>

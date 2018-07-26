@@ -2,17 +2,17 @@
     <div class="component-wrap">
 
         <!-- filers -->
-        <v-card color="secondary" flat>
+        <v-card>
             <v-card-text>
                 <v-layout row wrap>
                     <v-flex xs12>
-                        <v-text-field prepend-icon="search" box dark label="Filter By Name or Extension" v-model="filters.name"></v-text-field>
+                        <v-text-field prepend-icon="search" box label="Filter By Name or Extension" v-model="filters.name"></v-text-field>
                     </v-flex>
                     <v-flex xs12>
                         Show Only:
                     </v-flex>
                     <v-flex xs4 md2 v-for="(group,i) in filters.fileGroupsHolder" :key="i">
-                        <v-checkbox v-bind:label="group.name" v-model="filters.fileGroupId[group.id]" dark></v-checkbox>
+                        <v-checkbox v-bind:label="group.name" v-model="filters.fileGroupId[group.id]"></v-checkbox>
                     </v-flex>
                 </v-layout>
             </v-card-text>
@@ -43,7 +43,7 @@
                         <v-icon dark class="blue--text">search</v-icon>
                     </v-btn>
                     <v-btn @click="trash(props.item)" icon small>
-                        <v-icon dark class="red--text">delete</v-icon>
+                        <v-icon class="red--text">delete</v-icon>
                     </v-btn>
                 </td>
                 <td>
@@ -65,11 +65,11 @@
         <!-- view file dialog -->
         <v-dialog v-model="dialogs.view.show" fullscreen :laze="false" transition="dialog-bottom-transition" :overlay=false>
             <v-card>
-                <v-toolbar dark class="primary">
+                <v-toolbar class="primary">
                     <v-btn icon @click.native="dialogs.view.show = false" dark>
                         <v-icon>close</v-icon>
                     </v-btn>
-                    <v-toolbar-title>{{dialogs.view.file.name}}</v-toolbar-title>
+                    <v-toolbar-title class="white--text">{{dialogs.view.file.name}}</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-toolbar-items>
                         <v-btn dark flat @click.native="downloadFile(dialogs.view.file)">

@@ -2,18 +2,20 @@
     <div class="component-wrap">
 
         <!-- search -->
-        <v-card dark>
-            <v-layout row wrap>
-                <v-flex xs12 class="px-2">
-                    <v-btn @click="showDialog('file_group_add')" class="blue lighten-1" dark>
-                        New File Group
-                        <v-icon right dark>add</v-icon>
-                    </v-btn>
-                </v-flex>
-                <v-flex xs12 class="px-2">
-                    <v-text-field prepend-icon="search" box dark label="Filter By Name" v-model="filters.name"></v-text-field>
-                </v-flex>
-            </v-layout>
+        <v-card>
+            <v-card-text>
+                <v-layout row wrap>
+                    <v-flex xs12 sm6>
+                        <v-text-field prepend-icon="search" box label="Filter By Name" v-model="filters.name"></v-text-field>
+                    </v-flex>
+                    <v-flex xs12 sm6 class="text-xs-right">
+                        <v-btn @click="showDialog('file_group_add')" dark class="blue lighten-1">
+                            New File Group
+                            <v-icon right>add</v-icon>
+                        </v-btn>
+                    </v-flex>
+                </v-layout>
+            </v-card-text>
         </v-card>
         <!-- /search -->
 
@@ -36,10 +38,10 @@
             <template slot="items" slot-scope="props">
                 <td>
                     <v-btn @click="showDialog('file_group_edit',props.item)" icon small>
-                        <v-icon dark class="blue--text">edit</v-icon>
+                        <v-icon class="blue--text">edit</v-icon>
                     </v-btn>
                     <v-btn @click="trash(props.item)" icon small>
-                        <v-icon dark class="red--text">delete</v-icon>
+                        <v-icon class="red--text">delete</v-icon>
                     </v-btn>
                 </td>
                 <td>{{ props.item.name }}</td>
@@ -52,14 +54,14 @@
         <!-- add file group -->
         <v-dialog v-model="dialogs.add.show" fullscreen transition="dialog-bottom-transition" :overlay=false>
             <v-card>
-                <v-toolbar dark class="primary">
-                    <v-btn icon @click.native="dialogs.add.show = false" dark>
+                <v-toolbar class="primary">
+                    <v-btn icon @click.native="dialogs.add.show = false">
                         <v-icon>close</v-icon>
                     </v-btn>
                     <v-toolbar-title>Create New File Group</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-toolbar-items>
-                        <v-btn dark flat @click.native="dialogs.add.show = false">Done</v-btn>
+                        <v-btn flat @click.native="dialogs.add.show = false">Done</v-btn>
                     </v-toolbar-items>
                 </v-toolbar>
                 <v-card-text>
@@ -71,14 +73,14 @@
         <!-- edit file group -->
         <v-dialog v-model="dialogs.edit.show" fullscreen :laze="false" transition="dialog-bottom-transition" :overlay=false>
             <v-card>
-                <v-toolbar dark class="primary">
-                    <v-btn icon @click.native="dialogs.edit.show = false" dark>
+                <v-toolbar class="primary">
+                    <v-btn icon @click.native="dialogs.edit.show = false">
                         <v-icon>close</v-icon>
                     </v-btn>
                     <v-toolbar-title>Edit File Group</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-toolbar-items>
-                        <v-btn dark flat @click.native="dialogs.edit.show = false">Done</v-btn>
+                        <v-btn flat @click.native="dialogs.edit.show = false">Done</v-btn>
                     </v-toolbar-items>
                 </v-toolbar>
                 <v-card-text>

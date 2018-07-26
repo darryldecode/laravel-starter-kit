@@ -1,7 +1,7 @@
 <template>
     <div class="component-wrap">
         <!-- form -->
-        <v-card dark>
+        <v-card>
             <v-form ref="fileFormUpload" lazy-validation>
                 <v-container grid-list-md>
                     <v-layout row wrap>
@@ -10,7 +10,6 @@
                                     label="Upload To File Group"
                                     v-bind:items="fileGroups"
                                     v-model="uploadTo"
-                                    dark
                                     item-text="name"
                                     item-value="id"
                             ></v-select>

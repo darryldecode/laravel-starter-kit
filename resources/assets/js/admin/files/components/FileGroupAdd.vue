@@ -1,6 +1,6 @@
 <template>
     <div class="component-wrap">
-        <v-card dark>
+        <v-card>
             <v-form v-model="valid" ref="fileGroupFormAdd" lazy-validation>
                 <v-container grid-list-md>
                     <v-layout row wrap>
@@ -8,13 +8,13 @@
                             <div class="body-2 white--text">File Group Details</div>
                         </v-flex>
                         <v-flex xs12>
-                            <v-text-field box dark label="Group Name" v-model="name" :rules="nameRules"></v-text-field>
+                            <v-text-field box label="Group Name" v-model="name" :rules="nameRules"></v-text-field>
                         </v-flex>
                         <v-flex xs12>
-                            <v-textarea box dark label="Group Description" v-model="description" :rules="descriptionRules"></v-textarea>
+                            <v-textarea box label="Group Description" v-model="description" :rules="descriptionRules"></v-textarea>
                         </v-flex>
                         <v-flex xs12>
-                            <v-btn @click="save()" :disabled="!valid" color="primary" dark>Save</v-btn>
+                            <v-btn @click="save()" :disabled="!valid" color="primary">Save</v-btn>
                         </v-flex>
                     </v-layout>
                 </v-container>

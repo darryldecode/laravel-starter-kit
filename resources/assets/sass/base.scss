@@ -2,6 +2,9 @@
 @import "dropzone";
 
 /* general */
+a {
+  text-decoration: none;
+}
 .bg_half_transparent {
   background: rgba($loader-bg-color, $loader-bg-transparency);
 }
@@ -20,7 +23,7 @@
 }
 .permissions_container {
   padding: 10px;
-  background: hsla(0,0%,100%,.1);
+  background: hsla(0, 0%, 83%, 0.75);
 }
 .fade-enter-active, .fade-leave-active {
   transition-property: opacity;
@@ -31,20 +34,6 @@
 }
 .fade-enter, .fade-leave-active {
   opacity: 0
-}
-a.router-link {
-  text-decoration: none;
-  color: $menu-text-color;
-}
-a.router-link svg.icon,
-a.router-link i.icon {
-  color: $menu-text-color;
-}
-a.router-link:hover > div {
-  background: #534f4f;
-}
-a.router-link.router-link-active > div {
-  background: $menu-bg-active;
 }
 .breadcrumbs li a {
   text-decoration: none;

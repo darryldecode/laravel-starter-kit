@@ -2,7 +2,7 @@
     <div class="component-wrap">
 
         <!-- search -->
-        <v-card dark class="pt-3">
+        <v-card class="pt-3">
             <v-layout row wrap>
                 <v-flex xs12 sm4 class="px-2">
                     <v-btn @click="$router.push({name:'users.create'})" class="blue lighten-1" dark>
@@ -20,10 +20,10 @@
                 </v-flex>
                 <v-flex xs12 class="my-2"><v-divider></v-divider></v-flex>
                 <v-flex xs12 sm6 class="px-2">
-                    <v-text-field box prepend-icon="search" dark label="Filter By Name" v-model="filters.name"></v-text-field>
+                    <v-text-field box prepend-icon="search" label="Filter By Name" v-model="filters.name"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 class="px-2">
-                    <v-text-field box prepend-icon="search" dark label="Filter By Email" v-model="filters.email"></v-text-field>
+                    <v-text-field box prepend-icon="search" label="Filter By Email" v-model="filters.email"></v-text-field>
                 </v-flex>
                 <v-flex xs12 class="px-2">
                     <v-autocomplete box
@@ -71,7 +71,7 @@
             <template slot="items" slot-scope="props">
                 <td>
                     <v-menu>
-                        <v-btn icon slot="activator" dark>
+                        <v-btn icon slot="activator">
                             <v-icon>more_vert</v-icon>
                         </v-btn>
                         <v-list>

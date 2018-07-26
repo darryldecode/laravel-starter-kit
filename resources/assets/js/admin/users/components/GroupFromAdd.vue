@@ -2,7 +2,7 @@
     <div class="component-wrap">
 
         <!-- form -->
-        <v-card dark>
+        <v-card>
             <v-card-title>
                 <v-icon>groups</v-icon> Create Group
             </v-card-title>
@@ -14,14 +14,13 @@
                         <div class="body-2 white--text">Group Details</div>
                     </v-flex>
                     <v-flex xs12>
-                        <v-text-field box dark label="Group Name" v-model="name" :rules="nameRules"></v-text-field>
+                        <v-text-field box label="Group Name" v-model="name" :rules="nameRules"></v-text-field>
                     </v-flex>
                     <v-flex xs12 sm4>
                         <v-select
                                 label="Select Permission"
                                 v-bind:items="options.permissions"
                                 v-model="selectedPermission"
-                                dark
                                 item-text="title"
                                 item-value="key"
                         ></v-select>
@@ -31,7 +30,6 @@
                                 label="Permission Value"
                                 v-bind:items="options.permissionValues"
                                 v-model="selectedPermissionValue"
-                                dark
                                 item-text="label"
                                 item-value="value"
                         ></v-select>
@@ -39,7 +37,7 @@
                     <v-flex xs12 sm4>
                         <v-btn @click="addSpecialPermission()" class="blue lighten-1" dark>
                             Add Permission
-                            <v-icon right dark>add</v-icon>
+                            <v-icon right>add</v-icon>
                         </v-btn>
                     </v-flex>
                     <v-flex xs12>

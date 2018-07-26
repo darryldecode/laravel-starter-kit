@@ -445,6 +445,10 @@
 
 /* general */
 
+a {
+  text-decoration: none;
+}
+
 .bg_half_transparent {
   background: rgba(0, 0, 0, 0.7);
 }
@@ -466,7 +470,7 @@
 
 .permissions_container {
   padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(212, 212, 212, 0.75);
 }
 
 .fade-enter-active,
@@ -485,24 +489,6 @@
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
-}
-
-a.router-link {
-  text-decoration: none;
-  color: #fff;
-}
-
-a.router-link svg.icon,
-a.router-link i.icon {
-  color: #fff;
-}
-
-a.router-link:hover > div {
-  background: #534f4f;
-}
-
-a.router-link.router-link-active > div {
-  background: #565555;
 }
 
 .breadcrumbs li a {

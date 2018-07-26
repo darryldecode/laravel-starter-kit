@@ -1,14 +1,14 @@
 <template>
     <div class="page_wrap_vue">
-        <v-tabs color="primary" dark v-model="active">
+        <v-tabs color="primary" v-model="active">
 
-            <v-tab href="#files" ripple>
+            <v-tab class="white--text" href="#files" ripple>
                 Files
             </v-tab>
-            <v-tab href="#manage-groups" ripple>
+            <v-tab class="white--text" href="#manage-groups" ripple>
                 Manage File Groups
             </v-tab>
-            <v-tab href="#upload" ripple>
+            <v-tab class="white--text" href="#upload" ripple>
                 Upload
             </v-tab>
 
