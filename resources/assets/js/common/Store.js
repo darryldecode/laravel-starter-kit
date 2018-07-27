@@ -23,6 +23,7 @@ export default new Vuex.Store({
         dialogType: '',
         dialogTitle: '',
         dialogMessage: '',
+        dialogIcon: null,
         dialogOkCb: ()=>{},
         dialogCancelCb: ()=>{},
     },
@@ -58,6 +59,7 @@ export default new Vuex.Store({
             state.dialogType = data.type || 'confirm';
             state.dialogTitle = data.title;
             state.dialogMessage = data.message;
+            state.dialogIcon = data.icon || null;
             state.dialogOkCb = data.okCb || function(){};
             state.dialogCancelCb = data.cancelCb || function(){};
             state.dialogShow = true;
@@ -112,6 +114,9 @@ export default new Vuex.Store({
         },
         dialogMessage: state => {
             return state.dialogMessage
-        }
+        },
+        dialogIcon: state => {
+            return state.dialogIcon
+        },
     }
 });

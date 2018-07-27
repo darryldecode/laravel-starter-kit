@@ -107,7 +107,7 @@
             <v-btn color="primary" slot="activator">Open Dialog</v-btn>
             <v-card>
                 <v-card-title>
-                    <div class="headline">@{{ dialogTitle }}</div>
+                    <div class="headline"><v-icon v-if="dialogIcon">@{{dialogIcon}}</v-icon> @{{ dialogTitle }}</div>
                 </v-card-title>
                 <v-card-text>@{{ dialogMessage }}</v-card-text>
                 <v-card-actions v-if="dialogType=='confirm'">

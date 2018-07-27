@@ -76,7 +76,10 @@ const admin = new Vue({
         },
         dialogMessage() {
             return store.getters.dialogMessage
-        }
+        },
+        dialogIcon() {
+            return store.getters.dialogIcon
+        },
     },
     methods: {
         menuClick(routeName, routeType) {

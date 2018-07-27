@@ -204,6 +204,7 @@
 
                 self.$store.commit('showDialog',{
                     type: "confirm",
+                    icon: 'warning',
                     title: "Confirm Deletion",
                     message: "Are you sure you want to delete this user?",
                     okCb: ()=>{
