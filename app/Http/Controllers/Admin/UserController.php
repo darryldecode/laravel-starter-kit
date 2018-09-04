@@ -84,7 +84,7 @@ class UserController extends AdminController
      */
     public function show($id)
     {
-        $user = $this->userRepository->find($id);
+        $user = $this->userRepository->find($id,['groups']);
 
         if(!$user) return $this->sendResponseNotFound();
 
