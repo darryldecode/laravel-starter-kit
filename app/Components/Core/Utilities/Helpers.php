@@ -184,4 +184,86 @@ class Helpers
 
         return !empty($d['scheme']);
     }
+
+    /**
+     * helper to make a strung slug
+     *
+     * @param string $string
+     * @param string $sep
+     * @return string
+     */
+    public static function stringToSlug(string $string, $sep = '-'): string
+    {
+        return strtolower(str_replace(['-'],$sep,static::cleanString($string)));
+    }
+
+    /**
+     * clean string, remove special characters
+     *
+     * @param string $string
+     * @return string
+     */
+    public static function cleanString(string $string): string
+    {
+        $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+        $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+        return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
+    }
+
+    /**
+     * normalize an input to array type. If its a string, then it might be comma
+     * separated value so we will make it to array.
+     *
+     * @author darryldecode <darrylfernandez.com>
+     * @since  v1.0
+     *
+     * @param $input
+     *
+     * @return array
+     */
+    public static function normalizeToArray($input): array
+    {
+        if(is_array($input)) return $input;
+        if(is_string($input)) return explode(',',$input);
+        if(is_object($input)) return (array)$input;
+        return [];
+    }
+
+    /**
+     * helper to get the real client IP address
+     *
+     * @author darryldecode <darrylfernandez.com>
+     * @since  v1.0
+     * @return array|false|string
+     */
+    public static function getClientIpAddress()
+    {
+        return getenv('HTTP_CLIENT_IP')?:
+            getenv('HTTP_X_FORWARDED_FOR')?:
+                getenv('HTTP_X_FORWARDED')?:
+                    getenv('HTTP_FORWARDED_FOR')?:
+                        getenv('HTTP_FORWARDED')?:
+                            getenv('REMOTE_ADDR');
+    }
+
+    /**
+     * @author darryldecode <darrylfernandez.com>
+     * @since  v1.0
+     *
+     * @param $key
+     * @param $value
+     *
+     * @return bool
+     */
+    public static function updateEnv(string $key,string $value)
+    {
+        $envFile = app()->environmentFilePath();
+        $str = file_get_contents($envFile);
+        $oldValue = env($key);
+        $str = str_replace("{$key}={$oldValue}", "{$key}={$value}", $str);
+        $fp = fopen($envFile, 'w');
+        fwrite($fp, $str);
+        fclose($fp);
+        return true;
+    }
 }
