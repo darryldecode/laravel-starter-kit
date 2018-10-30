@@ -134,7 +134,11 @@ class FileController extends AdminController
      */
     public function destroy($id)
     {
-        $this->fileRepository->delete($id);
+        try {
+            $this->fileRepository->deleteRecordAndFile($id);
+        } catch (\Exception $e) {
+            return $this->sendResponseBadRequest("Failed to delete file.");
+        }
 
         return $this->sendResponseDeleted();
     }

@@ -12,12 +12,36 @@ namespace App\Components\File\Repositories;
 use App\Components\Core\BaseRepository;
 use App\Components\Core\Utilities\Helpers;
 use App\Components\File\Models\File;
+use Illuminate\Support\Facades\Storage;
 
 class FileRepository extends BaseRepository
 {
     public function __construct(File $model)
     {
         parent::__construct($model);
+    }
+
+    /**
+     * @author darryldecode <darrylfernandez.com>
+     * @since  v1.0
+     *
+     * @param $id
+     *
+     * @return bool
+     * @throws \Exception
+     */
+    public function deleteRecordAndFile($id)
+    {
+        /** @var File $fileRecord */
+        $fileRecord = $this->model->find($id);
+
+        // delete the actual file
+        Storage::delete($fileRecord->path);
+
+        // delete record
+        $fileRecord->delete();
+
+        return true;
     }
 
     /**

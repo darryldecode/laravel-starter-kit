@@ -134,6 +134,10 @@
             console.log('pages.files.components.FileLists.vue');
 
             const self = this;
+
+            self.$eventBus.$on(['FILE_DELETED','FILE_UPLOADED'], function () {
+                self.loadFiles(()=>{});
+            });
         },
         watch: {
             'filters.fileGroupId':_.debounce(function(v) {
