@@ -12,21 +12,21 @@
                 Upload
             </v-tab>
 
-            <v-tab-item id="files">
+            <v-tab-item value="files">
                 <v-card flat>
                     <v-card-text>
                         <file-lists></file-lists>
                     </v-card-text>
                 </v-card>
             </v-tab-item>
-            <v-tab-item id="manage-groups">
+            <v-tab-item value="manage-groups">
                 <v-card flat>
                     <v-card-text>
                         <file-group-lists></file-group-lists>
                     </v-card-text>
                 </v-card>
             </v-tab-item>
-            <v-tab-item id="upload">
+            <v-tab-item value="upload">
                 <v-card flat>
                     <v-card-text>
                         <file-upload></file-upload>

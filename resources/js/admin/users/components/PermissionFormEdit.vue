@@ -20,7 +20,7 @@
                             <v-text-field box label="Permission Key" v-model="permissionKey" :rules="permissionKeyRules"></v-text-field>
                         </v-flex>
                         <v-flex xs12>
-                            <v-text-field box label="Description" v-model="description" :rules="descriptionRules" multi-line></v-text-field>
+                            <v-textarea box label="Description" v-model="description" :rules="descriptionRules"></v-textarea>
                         </v-flex>
                         <v-flex xs12>
                             <v-btn @click="save()" :loading="isLoading" :disabled="!valid || isLoading" color="primary" dark>Save</v-btn>
@@ -133,7 +133,7 @@
                         {label:Permission.title,name:''},
                     ]);
 
-                    cb();
+                    (cb || Function)();
                 });
             }
         }
