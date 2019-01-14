@@ -32,16 +32,17 @@ abstract class BaseRepository
     /**
      * @param array $params
      * @param array $with
-     * @param callable $callable
+     * @param callable|null $callable
      * @return LengthAwarePaginator|\Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function get($params = [], $with = [], $callable)
+    public function get($params = [], $with = [], $callable = null)
     {
         $q = $this->model->with($with);
 
         $q->orderBy($params['order_by'] ?? 'id', $params['order_sort'] ?? 'desc');
 
-        $q = call_user_func_array($callable,[&$q]);
+        // call the function if provided
+        if(!is_null($callable)) $q = call_user_func_array($callable,[&$q]);
 
         // if per page is -1, we don't need to paginate at all, but we still return the paginated
         // data structure to our response. Let's just put the biggest number we can imagine.
