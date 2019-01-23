@@ -53,7 +53,7 @@
                         ></v-select>
                     </v-flex>
                     <v-flex xs12 sm4>
-                        <v-btn @click="addSpecialPermission()" class="blue lighten-1" dark>
+                        <v-btn @click="addSpecialPermission()" class="primary lighten-1" dark>
                             Add Permission
                             <v-icon right>add</v-icon>
                         </v-btn>
@@ -72,7 +72,7 @@
                                 </v-avatar>
                                 {{p.title}}
                             </v-chip>
-                            <div v-if="permissions.length===0">No special permissions assigned.</div>
+                            <div v-if="permissions.length===0" class="info pa-2">No special permissions assigned.</div>
                         </div>
                     </v-flex>
                     <v-flex xs12><v-spacer></v-spacer></v-flex>

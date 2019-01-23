@@ -9,7 +9,7 @@
                         <v-text-field prepend-icon="search" box label="Filter By Permission Title" v-model="filters.title"></v-text-field>
                     </v-flex>
                     <v-flex xs12 sm6 class="text-xs-right">
-                        <v-btn @click="$router.push({name:'users.permissions.create'})" class="blue lighten-1" dark>
+                        <v-btn @click="$router.push({name:'users.permissions.create'})" class="primary lighten-1" dark>
                             New Permission
                             <v-icon right>add</v-icon>
                         </v-btn>

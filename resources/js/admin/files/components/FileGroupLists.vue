@@ -9,7 +9,7 @@
                         <v-text-field prepend-icon="search" box label="Filter By Name" v-model="filters.name"></v-text-field>
                     </v-flex>
                     <v-flex xs12 sm6 class="text-xs-right">
-                        <v-btn @click="showDialog('file_group_add')" dark class="blue lighten-1">
+                        <v-btn @click="showDialog('file_group_add')" dark class="primary lighten-1">
                             New File Group
                             <v-icon right>add</v-icon>
                         </v-btn>
