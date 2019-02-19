@@ -31,7 +31,8 @@ class SinglePageController extends AdminController
                 'nav_type' => MenuItem::$NAV_TYPE_NAV,
                 'icon'=>'dashboard',
                 'route_type'=>'vue',
-                'route_name'=>'dashboard'
+                'route_name'=>'dashboard',
+                'visible'=>true,
             ]),
             new MenuItem([
                 'group_requirements' => [],
@@ -40,7 +41,8 @@ class SinglePageController extends AdminController
                 'nav_type' => MenuItem::$NAV_TYPE_NAV,
                 'icon'=>'person',
                 'route_type'=>'vue',
-                'route_name'=>'users.list'
+                'route_name'=>'users.list',
+                'visible'=>true,
             ]),
             new MenuItem([
                 'group_requirements' => [],
@@ -49,7 +51,8 @@ class SinglePageController extends AdminController
                 'nav_type' => MenuItem::$NAV_TYPE_NAV,
                 'icon'=>'cloud_circle',
                 'route_type'=>'vue',
-                'route_name'=>'files'
+                'route_name'=>'files',
+                'visible'=>true,
             ]),
             new MenuItem([
                 'group_requirements' => [],
@@ -58,7 +61,8 @@ class SinglePageController extends AdminController
                 'nav_type' => MenuItem::$NAV_TYPE_NAV,
                 'icon'=>'settings',
                 'route_type'=>'vue',
-                'route_name'=>'settings'
+                'route_name'=>'settings',
+                'visible'=>true,
             ]),
             new MenuItem([
                 'nav_type' => MenuItem::$NAV_TYPE_DIVIDER

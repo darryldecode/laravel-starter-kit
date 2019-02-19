@@ -81,6 +81,13 @@ class MenuItem
     public $routeName = '';
 
     /**
+     * if the menu item is visible
+     *
+     * @var bool
+     */
+    public $visible = true;
+
+    /**
      * MenuItem constructor.
      * @param array $menuData
      */
@@ -97,6 +104,7 @@ class MenuItem
                 $this->icon = $menuData['icon'];
                 $this->routeType = $menuData['route_type'];
                 $this->routeName = $menuData['route_name'];
+                $this->visible = $menuData['visible'] ?? true;
             }
             else
             {
