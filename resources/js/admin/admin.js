@@ -12,7 +12,11 @@ window.Vue = require('vue');
 // 3rd party
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
+import VueProgressBar from 'vue-progressbar'
 
+// this is the vuetify theming options
+// you can change colors here based on your needs
+// and please dont forget to recompile scripts
 Vue.use(Vuetify, {
     theme: {
         primary: '#3f51b5',
@@ -24,6 +28,23 @@ Vue.use(Vuetify, {
     }
 });
 
+// this is the progress bar settings, you
+// can change colors here to fit on your needs or match
+// your theming above
+Vue.use(VueProgressBar,{
+    color: '#3f51b5',
+    failedColor: '#b71c1c',
+    thickness: '5px',
+    transition: {
+        speed: '0.2s',
+        opacity: '0.6s',
+        termination: 300
+    },
+    autoRevert: true,
+    inverse: false
+});
+
+// global component registrations here
 Vue.component('moon-loader', require('vue-spinner/src/MoonLoader.vue'));
 
 // app
@@ -31,6 +52,7 @@ import router from './router';
 import store from '../common/Store';
 import eventBus from '../common/Event';
 import formatters from '../common/Formatters';
+import AxiosAjaxDetct from '../common/AxiosAjaxDetect';
 
 Vue.use(formatters);
 Vue.use(eventBus);
@@ -43,6 +65,17 @@ const admin = new Vue({
     data: () => ({
         drawer: true,
     }),
+    mounted() {
+
+        const self = this;
+
+        // progress bar top
+        AxiosAjaxDetct.init(()=>{
+            self.$Progress.start();
+        },()=>{
+            self.$Progress.finish();
+        });
+    },
     computed: {
         getBreadcrumbs() {
             return store.getters.getBreadcrumbs

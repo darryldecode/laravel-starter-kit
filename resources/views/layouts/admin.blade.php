@@ -118,6 +118,9 @@
             </v-card>
         </v-dialog>
 
+        <!-- the progress bar -->
+        <vue-progress-bar></vue-progress-bar>
+
     </template>
 
 </div>
