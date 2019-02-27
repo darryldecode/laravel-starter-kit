@@ -37,7 +37,7 @@ class MenuTest extends TestCase
      */
     protected $permissionRepo;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->userRepo = new UserRepository(new User());
