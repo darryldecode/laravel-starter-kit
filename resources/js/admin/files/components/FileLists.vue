@@ -23,7 +23,7 @@
                 v-bind:headers="headers"
                 v-bind:pagination.sync="pagination"
                 :items="items"
-                :total-items="totalItems"
+                :server-items-length="totalItems"
                 class="elevation-1">
             <template slot="headerCell" slot-scope="props">
                 <span v-if="props.header.value=='thumb'">

@@ -24,7 +24,7 @@
                 v-bind:headers="headers"
                 v-bind:pagination.sync="pagination"
                 :items="items"
-                :total-items="totalItems"
+                :server-items-length="totalItems"
                 class="elevation-1">
             <template slot="headerCell" slot-scope="props">
                 <span v-if="props.header.value=='key'">
@@ -42,12 +42,12 @@
                             <v-icon>more_vert</v-icon>
                         </v-btn>
                         <v-list>
-                            <v-list-tile @click="$router.push({name:'users.permissions.edit',params:{id:props.item.id}})">
-                                <v-list-tile-title>Edit</v-list-tile-title>
-                            </v-list-tile>
-                            <v-list-tile @click="trash(props.item)">
-                                <v-list-tile-title>Delete</v-list-tile-title>
-                            </v-list-tile>
+                            <v-list-item @click="$router.push({name:'users.permissions.edit',params:{id:props.item.id}})">
+                                <v-list-item-title>Edit</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item @click="trash(props.item)">
+                                <v-list-item-title>Delete</v-list-item-title>
+                            </v-list-item>
                         </v-list>
                     </v-menu>
                 </td>

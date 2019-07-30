@@ -20,13 +20,13 @@
                 </v-flex>
                 <v-flex xs12 class="my-2"><v-divider></v-divider></v-flex>
                 <v-flex xs12 sm6 class="px-2">
-                    <v-text-field box prepend-icon="search" label="Filter By Name" v-model="filters.name"></v-text-field>
+                    <v-text-field filled prepend-icon="search" label="Filter By Name" v-model="filters.name"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 class="px-2">
-                    <v-text-field box prepend-icon="search" label="Filter By Email" v-model="filters.email"></v-text-field>
+                    <v-text-field filled prepend-icon="search" label="Filter By Email" v-model="filters.email"></v-text-field>
                 </v-flex>
                 <v-flex xs12 class="px-2">
-                    <v-autocomplete box
+                    <v-autocomplete filled
                               multiple
                               chips
                               deletable-chips
@@ -46,9 +46,9 @@
         <!-- data table -->
         <v-data-table
                 v-bind:headers="headers"
-                v-bind:pagination.sync="pagination"
+                :options.sync="pagination"
                 :items="items"
-                :total-items="totalItems"
+                :server-items-length="totalItems"
                 class="elevation-1">
             <template slot="headerCell" slot-scope="props">
                 <span v-if="props.header.value=='name'">
@@ -70,19 +70,14 @@
             </template>
             <template slot="items" slot-scope="props">
                 <td>
-                    <v-menu>
-                        <v-btn icon slot="activator">
-                            <v-icon>more_vert</v-icon>
-                        </v-btn>
-                        <v-list>
-                            <v-list-tile @click="$router.push({name:'users.edit',params:{id: props.item.id}})">
-                                <v-list-tile-title>Edit</v-list-tile-title>
-                            </v-list-tile>
-                            <v-list-tile @click="trash(props.item)">
-                                <v-list-tile-title>Delete</v-list-tile-title>
-                            </v-list-tile>
-                        </v-list>
-                    </v-menu>
+                    <v-list>
+                        <v-list-item @click="$router.push({name:'users.edit',params:{id: props.item.id}})">
+                            <v-list-item-title>Edit</v-list-item-title>
+                        </v-list-item>
+                        <v-list-item @click="trash(props.item)">
+                            <v-list-item-title>Delete</v-list-item-title>
+                        </v-list-item>
+                    </v-list>
                 </td>
                 <td>{{ props.item.name }}</td>
                 <td>{{ props.item.email }}</td>
@@ -105,7 +100,7 @@
         </v-data-table>
 
         <!-- dialog for show permissions -->
-        <v-dialog v-model="dialogs.showPermissions.show" lazy absolute max-width="300px">
+        <v-dialog v-model="dialogs.showPermissions.show" absolute max-width="300px">
             <v-card>
                 <v-card-title>
                     <div class="headline"><v-icon>vpn_key</v-icon> User Permissions</div>
