@@ -11,6 +11,7 @@ namespace App\Components\File\Repositories;
 
 use App\Components\Core\BaseRepository;
 use App\Components\File\Models\FileGroup;
+use Illuminate\Support\Arr;
 
 class FileGroupRepository extends BaseRepository
 {
@@ -29,7 +30,7 @@ class FileGroupRepository extends BaseRepository
     {
         return $this->get($params,[],function($q) use ($params)
         {
-            $name = array_get($params,'name',null);
+            $name = Arr::get($params,'name',null);
 
             if($name) $q = $q->where('name','like',"%{$name}%");
 

@@ -12,6 +12,7 @@ namespace App\Components\File\Repositories;
 use App\Components\Core\BaseRepository;
 use App\Components\Core\Utilities\Helpers;
 use App\Components\File\Models\File;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 
 class FileRepository extends BaseRepository
@@ -54,8 +55,8 @@ class FileRepository extends BaseRepository
     {
         return $this->get($params,['user','group'],function($q) use ($params)
         {
-            $groupIds = explode(',',array_get($params,'file_group_id',''));
-            $name = array_get($params,'name',null);
+            $groupIds = explode(',',Arr::get($params,'file_group_id',''));
+            $name = Arr::get($params,'name',null);
 
             if($name) $q->where('name','like',"%{$name}%");
             if(count($groupIds) > 0 && !empty($groupIds[0])) $q->whereIn('file_group_id',$groupIds);

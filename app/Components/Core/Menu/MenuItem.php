@@ -9,6 +9,8 @@
 namespace App\Components\Core\Menu;
 
 
+use Illuminate\Support\Arr;
+
 class MenuItem
 {
     /**
@@ -121,7 +123,7 @@ class MenuItem
      */
     public function groupRequirementsHas(string $groupName):bool
     {
-        return array_get($this->groupRequirements,$groupName);
+        return Arr::get($this->groupRequirements,$groupName);
     }
 
     /**
@@ -132,7 +134,7 @@ class MenuItem
      */
     public function permissionRequirementsHas(string $permissionKey):bool
     {
-        return array_get($this->permissionRequirements,$permissionKey);
+        return Arr::get($this->permissionRequirements,$permissionKey);
     }
 
     /**

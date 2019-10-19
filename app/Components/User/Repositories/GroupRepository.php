@@ -12,6 +12,7 @@ namespace App\Components\User\Repositories;
 use App\Components\Core\BaseRepository;
 use App\Components\User\Models\Group;
 use App\Components\Core\Utilities\Helpers;
+use Illuminate\Support\Arr;
 
 class GroupRepository extends BaseRepository
 {
@@ -30,7 +31,7 @@ class GroupRepository extends BaseRepository
     {
         return $this->get($params,[],function($q) use ($params)
         {
-            $name = array_get($params,'name','');
+            $name = Arr::get($params,'name','');
 
             $q->where('name','like',"%{$name}%");
 

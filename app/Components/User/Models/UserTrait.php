@@ -8,6 +8,7 @@
 
 namespace App\Components\User\Models;
 use Hash;
+use Illuminate\Support\Arr;
 
 /**
  * Class UserTrait
@@ -237,11 +238,11 @@ trait UserTrait
     {
         $userCombinedPermissions = $this->getCombinedPermissions();
 
-        $superUser = array_get($userCombinedPermissions, 'superuser');
+        $superUser = Arr::get($userCombinedPermissions, 'superuser');
 
         if( $superUser === Permission::PERMISSION_ALLOW ) return true;
 
-        $permissionValue = array_get($userCombinedPermissions, $permission);
+        $permissionValue = Arr::get($userCombinedPermissions, $permission);
 
         return $permissionValue === Permission::PERMISSION_ALLOW;
     }

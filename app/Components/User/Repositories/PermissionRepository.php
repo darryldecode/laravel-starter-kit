@@ -11,6 +11,7 @@ namespace App\Components\User\Repositories;
 use App\Components\Core\BaseRepository;
 use App\Components\Core\Utilities\Helpers;
 use App\Components\User\Models\Permission;
+use Illuminate\Support\Arr;
 
 class PermissionRepository extends BaseRepository
 {
@@ -29,7 +30,7 @@ class PermissionRepository extends BaseRepository
     {
         return $this->get($params,[],function($q) use ($params)
         {
-            $title = array_get($params,'title','');
+            $title = Arr::get($params,'title','');
 
             $q->where('title','like',"%{$title}%");
 

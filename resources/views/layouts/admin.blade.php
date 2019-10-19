@@ -116,8 +116,8 @@
                 <v-card-text>@{{ dialogMessage }}</v-card-text>
                 <v-card-actions v-if="dialogType=='confirm'">
                     <v-spacer></v-spacer>
-                    <v-btn color="green darken-1" flat="flat" @click.native="dialogCancel">Cancel</v-btn>
-                    <v-btn color="green darken-1" flat="flat" @click.native="dialogOk">Ok</v-btn>
+                    <v-btn color="orange darken-1" text @click.native="dialogCancel">Cancel</v-btn>
+                    <v-btn color="green darken-1" text @click.native="dialogOk">Ok</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
