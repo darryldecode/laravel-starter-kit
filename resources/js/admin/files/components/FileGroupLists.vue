@@ -3,51 +3,44 @@
 
         <!-- search -->
         <v-card>
-            <v-card-text>
-                <v-layout row wrap>
-                    <v-flex xs12 sm6>
-                        <v-text-field prepend-icon="search" box label="Filter By Name" v-model="filters.name"></v-text-field>
-                    </v-flex>
-                    <v-flex xs12 sm6 class="text-xs-right">
-                        <v-btn @click="showDialog('file_group_add')" dark class="primary lighten-1">
-                            New File Group
-                            <v-icon right>add</v-icon>
-                        </v-btn>
-                    </v-flex>
-                </v-layout>
-            </v-card-text>
+            <div class="d-flex flex-row">
+                <div class="flex-grow-1">
+                    <v-text-field prepend-icon="search" label="Filter By Name" v-model="filters.name"></v-text-field>
+                </div>
+                <div class="flex-grow-1 text-right">
+                    <v-btn @click="showDialog('file_group_add')" dark class="primary lighten-1">
+                        New File Group
+                        <v-icon right>mdi-add</v-icon>
+                    </v-btn>
+                </div>
+            </div>
         </v-card>
         <!-- /search -->
 
         <!-- groups table -->
         <v-data-table
                 v-bind:headers="headers"
-                v-bind:pagination.sync="pagination"
+                :options.sync="pagination"
                 :items="items"
-                :total-items="totalItems"
+                :server-items-length="totalItems"
                 class="elevation-1">
-            <template slot="headerCell" slot-scope="props">
-                <span v-if="props.header.value=='file_count'">
-                    <v-icon>dns</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='created_at'">
-                    <v-icon>date_range</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else>{{ props.header.text }}</span>
-            </template>
-            <template slot="items" slot-scope="props">
-                <td>
-                    <v-btn @click="showDialog('file_group_edit',props.item)" icon small>
-                        <v-icon class="blue--text">edit</v-icon>
-                    </v-btn>
-                    <v-btn @click="trash(props.item)" icon small>
-                        <v-icon class="red--text">delete</v-icon>
-                    </v-btn>
-                </td>
-                <td>{{ props.item.name }}</td>
-                <td>{{ props.item.description }}</td>
-                <td>{{ props.item.file_count }}</td>
-                <td>{{ $appFormatters.formatDate(props.item.created_at) }}</td>
+            <template v-slot:body="{items}">
+                <tbody>
+                <tr v-for="item in items" :key="item.id">
+                    <td>
+                        <v-btn @click="showDialog('file_group_edit',item)" icon small>
+                            <v-icon class="blue--text">edit</v-icon>
+                        </v-btn>
+                        <v-btn @click="trash(props.item)" icon small>
+                            <v-icon class="red--text">delete</v-icon>
+                        </v-btn>
+                    </td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ item.file_count }}</td>
+                    <td>{{ $appFormatters.formatDate(item.created_at) }}</td>
+                </tr>
+                </tbody>
             </template>
         </v-data-table>
 
@@ -61,7 +54,7 @@
                     <v-toolbar-title>Create New File Group</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-toolbar-items>
-                        <v-btn flat @click.native="dialogs.add.show = false">Done</v-btn>
+                        <v-btn text @click.native="dialogs.add.show = false">Done</v-btn>
                     </v-toolbar-items>
                 </v-toolbar>
                 <v-card-text>
@@ -80,7 +73,7 @@
                     <v-toolbar-title>Edit File Group</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-toolbar-items>
-                        <v-btn flat @click.native="dialogs.edit.show = false">Done</v-btn>
+                        <v-btn text @click.native="dialogs.edit.show = false">Done</v-btn>
                     </v-toolbar-items>
                 </v-toolbar>
                 <v-card-text>

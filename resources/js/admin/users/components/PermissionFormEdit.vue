@@ -14,13 +14,13 @@
                             <div class="body-2 white--text">Permission Details</div>
                         </v-flex>
                         <v-flex xs12>
-                            <v-text-field box label="Permission Title" v-model="title" :rules="titleRules"></v-text-field>
+                            <v-text-field label="Permission Title" v-model="title" :rules="titleRules"></v-text-field>
                         </v-flex>
                         <v-flex xs12>
-                            <v-text-field box label="Permission Key" v-model="permissionKey" :rules="permissionKeyRules"></v-text-field>
+                            <v-text-field label="Permission Key" v-model="permissionKey" :rules="permissionKeyRules"></v-text-field>
                         </v-flex>
                         <v-flex xs12>
-                            <v-textarea box label="Description" v-model="description" :rules="descriptionRules"></v-textarea>
+                            <v-textarea label="Description" v-model="description" :rules="descriptionRules"></v-textarea>
                         </v-flex>
                         <v-flex xs12>
                             <v-btn @click="save()" :loading="isLoading" :disabled="!valid || isLoading" color="primary" dark>Save</v-btn>
@@ -127,10 +127,10 @@
                     self.permissionKey = Permission.key;
 
                     self.$store.commit('setBreadcrumbs',[
-                        {label:'Users',name:'users.list'},
-                        {label:'Permissions',name:'users.permissions.list'},
-                        {label:'Edit',name:''},
+                        {label:'Users',to:{name:'users.list'}},
+                        {label:'Permissions',to:{name:'users.permissions.list'}},
                         {label:Permission.title,name:''},
+                        {label:'Edit',name:''},
                     ]);
 
                     (cb || Function)();

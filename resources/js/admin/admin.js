@@ -10,23 +10,16 @@ require('../bootstrap');
 window.Vue = require('vue');
 
 // 3rd party
-import Vuetify from 'vuetify';
+import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/dist/vuetify.min.css';
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 import VueProgressBar from 'vue-progressbar'
 
 // this is the vuetify theming options
 // you can change colors here based on your needs
 // and please dont forget to recompile scripts
-Vue.use(Vuetify, {
-    theme: {
-        primary: '#3f51b5',
-        info: '#4c86b5',
-        success: '#17b535',
-        secondary: '#b0bec5',
-        accent: '#8c9eff',
-        error: '#b71c1c'
-    }
-});
+Vue.use(Vuetify);
 
 // this is the progress bar settings, you
 // can change colors here to fit on your needs or match
@@ -58,6 +51,24 @@ Vue.use(formatters);
 Vue.use(eventBus);
 
 const admin = new Vue({
+    vuetify: new Vuetify({
+        theme: {
+            dark: true,
+            themes: {
+                dark: {
+                    primary: '#3f51b5',
+                    info: '#4c86b5',
+                    success: '#17b535',
+                    secondary: '#b0bec5',
+                    accent: '#8c9eff',
+                    error: '#b71c1c',
+                }
+            },
+        },
+        icons: {
+            iconfont: 'mdi'
+        }
+    }),
     el: '#admin',
     eventBus,
     router,

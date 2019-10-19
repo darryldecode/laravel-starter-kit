@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+
+    <!-- admin.css here -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 
     <!-- app js values -->
@@ -24,58 +26,61 @@
 <div id="admin">
 
     <template>
-        <v-app id="inspire" dark>
-            <v-navigation-drawer
-                    clipped
-                    fixed
-                    v-model="drawer"
-                    app>
-                <v-list dense>
+        <v-app id="inspire">
 
+            <v-navigation-drawer
+                    v-model="drawer"
+                    app
+                    clipped
+                    left>
+                <v-list dense>
                     @foreach($nav as $n)
                         @if($n->navType==\App\Components\Core\Menu\MenuItem::$NAV_TYPE_NAV && $n->visible)
-                            <v-list-tile :to="{name:'{{$n->routeName}}'}" :exact="false">
-                                <v-list-tile-action>
+                            <v-list-item :to="{name: '{{$n->routeName}}'}" :exact="false">
+                                <v-list-item-action>
                                     <v-icon>{{$n->icon}}</v-icon>
-                                </v-list-tile-action>
-                                <v-list-tile-content>
-                                    <v-list-tile-title>
+                                </v-list-item-action>
+                                <v-list-item-content>
+                                    <v-list-item-title>
                                         {{$n->label}}
-                                    </v-list-tile-title>
-                                </v-list-tile-content>
-                            </v-list-tile>
+                                    </v-list-item-title>
+                                </v-list-item-content>
+                            </v-list-item>
                         @else
                             <v-divider></v-divider>
                         @endif
                     @endforeach
 
-                    <v-list-tile @click="clickLogout('{{route('logout')}}','{{url('/')}}')">
-                        <v-list-tile-action>
+                    <v-list-item @click="clickLogout('{{route('logout')}}','{{url('/')}}')">
+                        <v-list-item-action>
                             <v-icon>directions_walk</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content>
-                            <v-list-tile-title>Logout</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>Logout</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
 
                 </v-list>
             </v-navigation-drawer>
-            <v-toolbar app fixed clipped-left>
-                <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+
+            <v-app-bar app clipped-left>
+                <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
                 <v-toolbar-title>{{config('app.name')}}</v-toolbar-title>
-            </v-toolbar>
+            </v-app-bar>
+
             <v-content>
                 <div>
-                    <v-breadcrumbs>
-                        <v-icon slot="divider">chevron_right</v-icon>
-                        <v-breadcrumbs-item
-                                v-for="item in getBreadcrumbs"
-                                :exact="true"
-                                :to="{name:item.name}"
-                                :key="item.label"
-                                :disabled="item.disabled">
-                            @{{ item.label }}
-                        </v-breadcrumbs-item>
+                    <v-breadcrumbs :items="getBreadcrumbs">
+                        <template v-slot:item="props">
+                            <v-breadcrumbs-item :to="props.item.to" exact
+                                                :key="props.item.label"
+                                                :disabled="props.item.disabled">
+                                <template v-slot:divider>
+                                    <v-icon>mdi-forward</v-icon>
+                                </template>
+                                @{{ props.item.label }}
+                            </v-breadcrumbs-item>
+                        </template>
                     </v-breadcrumbs>
                 </div>
                 <v-divider></v-divider>
@@ -83,7 +88,7 @@
                     <router-view></router-view>
                 </transition>
             </v-content>
-            <v-footer app fixed>
+            <v-footer fixed>
                 <span>&copy; 2017</span>
             </v-footer>
         </v-app>
@@ -103,8 +108,7 @@
         </v-snackbar>
 
         <!-- dialog confirm -->
-        <v-dialog v-show="showDialog" v-model="showDialog" lazy absolute max-width="450px">
-            <v-btn color="primary" slot="activator">Open Dialog</v-btn>
+        <v-dialog v-show="showDialog" v-model="showDialog" absolute max-width="450px">
             <v-card>
                 <v-card-title>
                     <div class="headline"><v-icon v-if="dialogIcon">@{{dialogIcon}}</v-icon> @{{ dialogTitle }}</div>

@@ -2,13 +2,13 @@
     <div class="page_wrap_vue">
         <v-tabs color="primary" v-model="active">
 
-            <v-tab class="white--text" href="#files" ripple>
+            <v-tab class="white--text" key="files" href="#files" ripple>
                 Files
             </v-tab>
-            <v-tab class="white--text" href="#manage-groups" ripple>
+            <v-tab class="white--text" key="manage-groups" href="#manage-groups" ripple>
                 Manage File Groups
             </v-tab>
-            <v-tab class="white--text" href="#upload" ripple>
+            <v-tab class="white--text" key="upload" href="#upload" ripple>
                 Upload
             </v-tab>
 
@@ -58,7 +58,7 @@
         },
         data() {
             return {
-                active: ''
+                active: 'files'
             }
         },
         watch: {

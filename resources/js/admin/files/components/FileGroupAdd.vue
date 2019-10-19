@@ -8,10 +8,10 @@
                             <div class="body-2 white--text">File Group Details</div>
                         </v-flex>
                         <v-flex xs12>
-                            <v-text-field box label="Group Name" v-model="name" :rules="nameRules"></v-text-field>
+                            <v-text-field label="Group Name" v-model="name" :rules="nameRules"></v-text-field>
                         </v-flex>
                         <v-flex xs12>
-                            <v-textarea box label="Group Description" v-model="description" :rules="descriptionRules"></v-textarea>
+                            <v-textarea label="Group Description" v-model="description" :rules="descriptionRules"></v-textarea>
                         </v-flex>
                         <v-flex xs12>
                             <v-btn @click="save()" :disabled="!valid" color="primary">Save</v-btn>

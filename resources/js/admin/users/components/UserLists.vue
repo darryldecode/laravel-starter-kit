@@ -3,115 +3,112 @@
 
         <!-- search -->
         <v-card class="pt-3">
-            <v-layout row wrap>
-                <v-flex xs12 sm4 class="px-2">
+            <div class="d-flex flex-row">
+                <div class="flex-grow-1 pa-2">
                     <v-btn @click="$router.push({name:'users.create'})" class="primary lighten-1" dark>
                         New User
                         <v-icon right dark>add</v-icon>
                     </v-btn>
-                </v-flex>
-                <v-flex xs12 sm8 class="px-2 text-xs-center text-sm-right">
-                    <v-btn @click="$router.push({name:'users.groups.list'})" class="primary lighten-1" dark>
+                </div>
+                <div class="flex-grow-1 pa-2">
+                    <v-btn @click="$router.push({name:'users.groups.list'})" class="primary lighten-1 float-right" dark>
                         Manage Groups <v-icon right dark>group</v-icon>
                     </v-btn>
-                    <v-btn @click="$router.push({name:'users.permissions.list'})" class="primary lighten-1" dark>
+                    <v-btn @click="$router.push({name:'users.permissions.list'})" class="primary lighten-1 float-right mr-2" dark>
                         Manage Permissions <v-icon right dark>vpn_key</v-icon>
                     </v-btn>
-                </v-flex>
-                <v-flex xs12 class="my-2"><v-divider></v-divider></v-flex>
-                <v-flex xs12 sm6 class="px-2">
-                    <v-text-field box prepend-icon="search" label="Filter By Name" v-model="filters.name"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 class="px-2">
-                    <v-text-field box prepend-icon="search" label="Filter By Email" v-model="filters.email"></v-text-field>
-                </v-flex>
-                <v-flex xs12 class="px-2">
-                    <v-autocomplete box
-                              multiple
-                              chips
-                              deletable-chips
-                              clearable
-                              prepend-icon="filter_list"
-                              label="Filter By Groups"
-                              :items="filters.groupOptions"
-                              item-text="name"
-                              item-value="id"
-                              v-model="filters.groupId"
+                </div>
+            </div>
+            <div class="d-flex flex-lg-row flex-sm-column">
+                <div class="flex-grow-1 pa-2">
+                    <v-text-field filled prepend-icon="search" label="Filter By Name" v-model="filters.name"></v-text-field>
+                </div>
+                <div class="flex-grow-1 pa-2">
+                    <v-text-field filled prepend-icon="search" label="Filter By Email" v-model="filters.email"></v-text-field>
+                </div>
+                <div class="flex-grow-1 pa-2">
+                    <v-autocomplete filled
+                                    multiple
+                                    chips
+                                    deletable-chips
+                                    clearable
+                                    prepend-icon="filter_list"
+                                    label="Filter By Groups"
+                                    :items="filters.groupOptions"
+                                    item-text="name"
+                                    item-value="id"
+                                    v-model="filters.groupId"
                     ></v-autocomplete>
-                </v-flex>
-            </v-layout>
+                </div>
+            </div>
         </v-card>
         <!-- /search -->
 
         <!-- data table -->
         <v-data-table
+                hide-default-header
                 v-bind:headers="headers"
-                v-bind:pagination.sync="pagination"
+                :options.sync="pagination"
                 :items="items"
-                :total-items="totalItems"
+                :server-items-length="totalItems"
                 class="elevation-1">
-            <template slot="headerCell" slot-scope="props">
-                <span v-if="props.header.value=='name'">
-                    <v-icon>person</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='email'">
-                    <v-icon>email</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='permissions'">
-                    <v-icon>vpn_key</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='groups'">
-                    <v-icon>group</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='last_login'">
-                    <v-icon>av_timer</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else>{{ props.header.text }}</span>
+            <template v-slot:header="{props:{headers}}">
+                <thead>
+                <tr>
+                    <th v-for="header in headers">
+                        <span v-if="header.value=='name'"><v-icon>mdi-person</v-icon> {{header.text}}</span>
+                        <span v-else-if="header.value=='email'"><v-icon>mdi-email</v-icon> {{header.text}}</span>
+                        <span v-else-if="header.value=='permissions'"><v-icon>mdi-vpn_key</v-icon> {{header.text}}</span>
+                        <span v-else-if="header.value=='groups'"><v-icon>mdi-group</v-icon> {{header.text}}</span>
+                        <span v-else-if="header.value=='last_login'"><v-icon>mdi-av_timer</v-icon> {{header.text}}</span>
+                        <span v-else>{{header.text}}</span>
+                    </th>
+                </tr>
+                </thead>
             </template>
-            <template slot="items" slot-scope="props">
-                <td>
-                    <v-menu>
-                        <v-btn icon slot="activator">
-                            <v-icon>more_vert</v-icon>
-                        </v-btn>
-                        <v-list>
-                            <v-list-tile @click="$router.push({name:'users.edit',params:{id: props.item.id}})">
-                                <v-list-tile-title>Edit</v-list-tile-title>
-                            </v-list-tile>
-                            <v-list-tile @click="trash(props.item)">
-                                <v-list-tile-title>Delete</v-list-tile-title>
-                            </v-list-tile>
-                        </v-list>
-                    </v-menu>
-                </td>
-                <td>{{ props.item.name }}</td>
-                <td>{{ props.item.email }}</td>
-                <td>
-                    <v-btn small @click="showDialog('user_permissions',props.item.permissions)" outline round color="grey" dark>Show</v-btn>
-                </td>
-                <td>
-                    <v-chip v-for="group in props.item.groups" :key="group.id" outline color="grey" text-color="grey">
-                        {{group.name}}
-                    </v-chip>
-                </td>
-                <td>{{ $appFormatters.formatDate(props.item.last_login) }}</td>
-                <td>
-                    <v-avatar outline>
-                        <v-icon v-if="props.item.active!=null" class="green--text">check_circle</v-icon>
-                        <v-icon class="grey--text" v-else>error_outline</v-icon>
-                    </v-avatar>
-                </td>
+            <template v-slot:body="{items}">
+                <tbody>
+                    <tr v-for="item in items" :key="item.id">
+                        <td>
+                            <div class="text-center">
+                                <v-btn @click="$router.push({name:'users.edit',params:{id: item.id}})" class="ma-2" outlined fab small color="info">
+                                    <v-icon>mdi-pencil</v-icon>
+                                </v-btn>
+                                <v-btn @click="trash(item)" class="ma-2" outlined fab small color="red">
+                                    <v-icon>mdi-delete</v-icon>
+                                </v-btn>
+                            </div>
+                        </td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>
+                            <v-btn small @click="showDialog('user_permissions',item.permissions)" outlined rounded color="grey" dark>Show</v-btn>
+                        </td>
+                        <td>
+                            <v-chip v-for="group in item.groups" :key="group.id" outlined color="grey" text-color="white">
+                                {{group.name}}
+                            </v-chip>
+                        </td>
+                        <td>{{ $appFormatters.formatDate(item.last_login) }}</td>
+                        <td>
+                            <v-avatar outlined>
+                                <v-icon v-if="item.active!=null" class="green--text">check_circle</v-icon>
+                                <v-icon class="grey--text" v-else>error_outline</v-icon>
+                            </v-avatar>
+                        </td>
+                    </tr>
+                </tbody>
             </template>
         </v-data-table>
 
         <!-- dialog for show permissions -->
-        <v-dialog v-model="dialogs.showPermissions.show" lazy absolute max-width="300px">
+        <v-dialog v-model="dialogs.showPermissions.show" absolute max-width="300px">
             <v-card>
                 <v-card-title>
                     <div class="headline"><v-icon>vpn_key</v-icon> User Permissions</div>
                 </v-card-title>
                 <v-card-text>
-                    <v-chip v-for="(permission,key) in dialogs.showPermissions.items" :key="key" class="white--text" :class="{'green':(permission.value==1),'red':(permission.value==-1),'blue':(permission.value==0)}">
+                    <v-chip v-for="(permission,key) in dialogs.showPermissions.items" :key="key" class="white--text ma-1" :class="{'green':(permission.value==1),'red':(permission.value==-1),'blue':(permission.value==0)}">
                         <v-avatar v-if="permission.value==-1" class="red darken-4" title="Deny">
                             <v-icon>block</v-icon>
                         </v-avatar>
@@ -175,7 +172,7 @@
             });
 
             self.$store.commit('setBreadcrumbs',[
-                {label:'Users',name:''},
+                {label:'Users',to:{name:'users.list'}},
             ]);
         },
         watch: {
