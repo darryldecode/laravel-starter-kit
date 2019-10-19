@@ -3,58 +3,58 @@
 
         <!-- search -->
         <v-card>
-            <v-card-title>
-                <v-layout row wrap>
-                    <v-flex xs12 sm6>
-                        <v-text-field prepend-icon="search" box label="Filter By Permission Title" v-model="filters.title"></v-text-field>
-                    </v-flex>
-                    <v-flex xs12 sm6 class="text-xs-right">
-                        <v-btn @click="$router.push({name:'users.permissions.create'})" class="primary lighten-1" dark>
-                            New Permission
-                            <v-icon right>add</v-icon>
-                        </v-btn>
-                    </v-flex>
-                </v-layout>
-            </v-card-title>
+            <div class="d-flex flex-row">
+                <div class="flex-grow-1 pa-2">
+                    <v-text-field prepend-icon="search" label="Filter By Permission Title" v-model="filters.title"></v-text-field>
+                </div>
+                <div class="flex-grow-1 pa-2 text-right">
+                    <v-btn @click="$router.push({name:'users.permissions.create'})" class="primary lighten-1" dark>
+                        New Permission
+                        <v-icon right>add</v-icon>
+                    </v-btn>
+                </div>
+            </div>
         </v-card>
         <!-- /search -->
 
         <!-- groups table -->
         <v-data-table
+                hide-default-header
                 v-bind:headers="headers"
-                v-bind:pagination.sync="pagination"
+                :options.sync="pagination"
                 :items="items"
                 :server-items-length="totalItems"
                 class="elevation-1">
-            <template slot="headerCell" slot-scope="props">
-                <span v-if="props.header.value=='key'">
-                    <v-icon>vpn_key</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='created_at'">
-                    <v-icon>date_range</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else>{{ props.header.text }}</span>
+            <template v-slot:header="{props:{headers}}">
+                <thead>
+                <tr>
+                    <th v-for="header in headers">
+                        <span v-if="header.value=='key'"><v-icon>mdi-vpn_key</v-icon> {{header.text}}</span>
+                        <span v-else-if="header.value=='created_at'"><v-icon>mdi-date_range</v-icon> {{header.text}}</span>
+                        <span v-else>{{header.text}}</span>
+                    </th>
+                </tr>
+                </thead>
             </template>
-            <template slot="items" slot-scope="props">
-                <td>
-                    <v-menu>
-                        <v-btn icon slot="activator">
-                            <v-icon>more_vert</v-icon>
-                        </v-btn>
-                        <v-list>
-                            <v-list-item @click="$router.push({name:'users.permissions.edit',params:{id:props.item.id}})">
-                                <v-list-item-title>Edit</v-list-item-title>
-                            </v-list-item>
-                            <v-list-item @click="trash(props.item)">
-                                <v-list-item-title>Delete</v-list-item-title>
-                            </v-list-item>
-                        </v-list>
-                    </v-menu>
-                </td>
-                <td>{{ props.item.title }}</td>
-                <td>{{ props.item.key }}</td>
-                <td>{{ props.item.description }}</td>
-                <td>{{ $appFormatters.formatDate(props.item.created_at) }}</td>
+            <template v-slot:body="{items}">
+                <tbody>
+                <tr v-for="item in items" :key="item.id">
+                    <td>
+                        <div class="text-center">
+                            <v-btn @click="$router.push({name:'users.permissions.edit',params:{id:item.id}})" class="ma-2" outlined fab small color="info">
+                                <v-icon>mdi-pencil</v-icon>
+                            </v-btn>
+                            <v-btn @click="trash(item)" class="ma-2" outlined fab small color="red">
+                                <v-icon>mdi-delete</v-icon>
+                            </v-btn>
+                        </div>
+                    </td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.key }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ $appFormatters.formatDate(item.created_at) }}</td>
+                </tr>
+                </tbody>
             </template>
         </v-data-table>
 
@@ -97,7 +97,7 @@
             const self = this;
 
             self.$store.commit('setBreadcrumbs',[
-                {label:'Users',name:'users.list'},
+                {label:'Users',to:{name:'users.list'}},
                 {label:'Permissions',name:''},
             ]);
         },

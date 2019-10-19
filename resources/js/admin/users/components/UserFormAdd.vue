@@ -9,16 +9,16 @@
                 <v-container grid-list-md>
                     <v-layout row wrap>
                     <v-flex xs12 sm6>
-                        <v-text-field box label="First Name" v-model="name" :rules="nameRules"></v-text-field>
+                        <v-text-field label="First Name" v-model="name" :rules="nameRules"></v-text-field>
                     </v-flex>
                     <v-flex xs12 sm6>
-                        <v-text-field box label="Email" v-model="email" :rules="emailRules"></v-text-field>
+                        <v-text-field label="Email" v-model="email" :rules="emailRules"></v-text-field>
                     </v-flex>
                     <v-flex xs12 sm6>
-                        <v-text-field box label="Password" type="password" v-model="password" :rules="passwordRules"></v-text-field>
+                        <v-text-field label="Password" type="password" v-model="password" :rules="passwordRules"></v-text-field>
                     </v-flex>
                     <v-flex xs12 sm6>
-                        <v-text-field box label="Confirm Password" type="password" v-model="passwordConfirm" :rules="passwordConfirmRules"></v-text-field>
+                        <v-text-field label="Confirm Password" type="password" v-model="passwordConfirm" :rules="passwordConfirmRules"></v-text-field>
                     </v-flex>
                     <v-flex xs12 sm6>
                         <v-switch label="Pre-Activate Account" v-model="active"></v-switch>
@@ -26,7 +26,7 @@
                     <v-flex xs12><v-spacer></v-spacer></v-flex>
                     <v-flex xs12>
                         <h1 class="title"><v-icon>vpn_key</v-icon> Special Permissions</h1>
-                        <v-alert color="info" icon="info" value="true">
+                        <v-alert color="info" icon="info" :value="true">
                             Special Permissions are permission exclusive to this user. Permissions defined here
                             are more superior than any permission that is in his group. So if the User belongs to a group that has permission to "create something"
                             but then is denied to "create something" here, the user will be denied on that permission. In short, special permissions
@@ -151,8 +151,8 @@
             self.loadGroups(cb=>{});
 
             self.$store.commit('setBreadcrumbs',[
-                {label:'Users',name:'users.list'},
-                {label:'Create',name:''},
+                {label:'Users',to:{name:'users.list'}},
+                {label:'Create',to:''},
             ]);
         },
         methods: {

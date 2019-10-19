@@ -31,7 +31,7 @@ export default new Vuex.Store({
 
         // breadcrumbs
         setBreadcrumbs(state, items) {
-            items.unshift({label:'Home',name:'dashboard'});
+            items.unshift({label:'Home',to:{name:'dashboard'}});
             state.breadcrumbs = items;
         },
 

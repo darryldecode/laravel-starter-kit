@@ -3,66 +3,46 @@
 
         <!-- search -->
         <v-card>
-            <v-card-text>
-                <v-layout row wrap>
-                    <v-flex xs12 sm6>
-                        <v-text-field prepend-icon="search" box label="Filter By Name" v-model="filters.name"></v-text-field>
-                    </v-flex>
-                    <v-flex xs12 sm6 class="text-xs-right">
-                        <v-btn @click="$router.push({name:'users.groups.create'})" class="primary lighten-1" dark>
-                            New Group
-                            <v-icon right>add</v-icon>
-                        </v-btn>
-                    </v-flex>
-                </v-layout>
-            </v-card-text>
+            <div class="d-flex flex-row">
+                <div class="flex-grow-1 pa-2">
+                    <v-text-field prepend-icon="search" label="Filter By Name" v-model="filters.name"></v-text-field>
+                </div>
+                <div class="flex-grow-1 pa-2 text-right">
+                    <v-btn @click="$router.push({name:'users.groups.create'})" class="primary lighten-1" dark>
+                        New Group
+                        <v-icon right>add</v-icon>
+                    </v-btn>
+                </div>
+            </div>
         </v-card>
         <!-- /search -->
 
         <!-- groups table -->
         <v-data-table
                 v-bind:headers="headers"
-                v-bind:pagination.sync="pagination"
+                :options.sync="pagination"
                 :items="items"
                 :server-items-length="totalItems"
                 class="elevation-1">
-            <template slot="headerCell" slot-scope="props">
-                <span v-if="props.header.value=='name'">
-                    <v-icon>person</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='permissions'">
-                    <v-icon>vpn_key</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='members_count'">
-                    <v-icon>people</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='created_at'">
-                    <v-icon>date_range</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else>{{ props.header.text }}</span>
-            </template>
-            <template slot="items" slot-scope="props">
-                <td>
-                    <v-menu>
-                        <v-btn icon slot="activator">
-                            <v-icon>more_vert</v-icon>
+            <template v-slot:body="{items}">
+                <tbody>
+                <tr v-for="item in items" :key="item.id">
+                    <td>
+                        <v-btn @click="$router.push({name:'users.groups.edit',params:{id:item.id}})" class="ma-2" outlined fab small color="info">
+                            <v-icon>mdi-pencil</v-icon>
                         </v-btn>
-                        <v-list>
-                            <v-list-item @click="$router.push({name:'users.groups.edit',params:{id:props.item.id}})">
-                                <v-list-item-title>Edit</v-list-item-title>
-                            </v-list-item>
-                            <v-list-item @click="trash(props.item)">
-                                <v-list-item-title>Delete</v-list-item-title>
-                            </v-list-item>
-                        </v-list>
-                    </v-menu>
-                </td>
-                <td>{{ props.item.name }}</td>
-                <td>
-                    <v-btn small @click="showDialog('group_permissions',props.item.permissions)" outline round color="grey" dark>Show</v-btn>
-                </td>
-                <td>{{ props.item.members_count }}</td>
-                <td>{{ $appFormatters.formatDate(props.item.created_at) }}</td>
+                        <v-btn @click="trash(item)" class="ma-2" outlined fab small color="red">
+                            <v-icon>mdi-delete</v-icon>
+                        </v-btn>
+                    </td>
+                    <td>{{ item.name }}</td>
+                    <td>
+                        <v-btn small @click="showDialog('group_permissions',item.permissions)" outlined rounded color="grey" dark>Show</v-btn>
+                    </td>
+                    <td>{{ item.members_count }}</td>
+                    <td>{{ $appFormatters.formatDate(item.created_at) }}</td>
+                </tr>
+                </tbody>
             </template>
         </v-data-table>
 
@@ -126,8 +106,8 @@
             const self = this;
 
             self.$store.commit('setBreadcrumbs',[
-                {label:'Users',name:'users.list'},
-                {label:'Groups',name:''},
+                {label:'Users',to:{name:'users.list'}},
+                {label:'Groups',to:''},
             ]);
         },
         watch: {

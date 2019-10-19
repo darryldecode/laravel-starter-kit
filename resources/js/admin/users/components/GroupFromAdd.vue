@@ -14,7 +14,7 @@
                         <div class="body-2 white--text">Group Details</div>
                     </v-flex>
                     <v-flex xs12>
-                        <v-text-field box label="Group Name" v-model="name" :rules="nameRules"></v-text-field>
+                        <v-text-field label="Group Name" v-model="name" :rules="nameRules"></v-text-field>
                     </v-flex>
                     <v-flex xs12 sm4>
                         <v-select
@@ -97,9 +97,9 @@
             self.loadPermissions(()=>{});
 
             self.$store.commit('setBreadcrumbs',[
-                {label:'Users',name:'users.list'},
-                {label:'Groups',name:'users.groups.list'},
-                {label:'Create',name:''},
+                {label:'Users',to:{name:'users.list'}},
+                {label:'Groups',to:{name:'users.groups.list'}},
+                {label:'Create',to:''},
             ]);
         },
         methods: {

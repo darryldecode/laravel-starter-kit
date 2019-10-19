@@ -13,9 +13,6 @@
     <!-- Styles -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
 
-    <!-- needed since vuetify 2.0 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.8.95/css/materialdesignicons.css">
-
     <!-- admin.css here -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 
@@ -73,16 +70,17 @@
 
             <v-content>
                 <div>
-                    <v-breadcrumbs>
-                        <v-icon slot="divider">chevron_right</v-icon>
-                        <v-breadcrumbs-item
-                                v-for="item in getBreadcrumbs"
-                                :exact="true"
-                                :to="item.name"
-                                :key="item.label"
-                                :disabled="item.disabled">
-                            @{{ item.label }}
-                        </v-breadcrumbs-item>
+                    <v-breadcrumbs :items="getBreadcrumbs">
+                        <template v-slot:item="props">
+                            <v-breadcrumbs-item :to="props.item.to" exact
+                                                :key="props.item.label"
+                                                :disabled="props.item.disabled">
+                                <template v-slot:divider>
+                                    <v-icon>mdi-forward</v-icon>
+                                </template>
+                                @{{ props.item.label }}
+                            </v-breadcrumbs-item>
+                        </template>
                     </v-breadcrumbs>
                 </div>
                 <v-divider></v-divider>

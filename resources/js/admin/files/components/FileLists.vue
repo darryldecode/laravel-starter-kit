@@ -3,61 +3,53 @@
 
         <!-- filers -->
         <v-card>
-            <v-card-text>
-                <v-layout row wrap>
-                    <v-flex xs12>
-                        <v-text-field prepend-icon="search" box label="Filter By Name or Extension" v-model="filters.name"></v-text-field>
-                    </v-flex>
-                    <v-flex xs12>
-                        Show Only:
-                    </v-flex>
-                    <v-flex xs4 md2 v-for="(group,i) in filters.fileGroupsHolder" :key="i">
+            <div class="d-flex flex-column">
+                <div class="flex-grow-1 pa-2">
+                    <v-text-field prepend-icon="search" label="Filter By Name or Extension" v-model="filters.name"></v-text-field>
+                </div>
+                <div class="flex-grow-1 pa-2">
+                    Show Only:
+                </div>
+                <div class="flex-grow-1 pa-2">
+                    <span v-for="(group,i) in filters.fileGroupsHolder" :key="i">
                         <v-checkbox v-bind:label="group.name" v-model="filters.fileGroupId[group.id]"></v-checkbox>
-                    </v-flex>
-                </v-layout>
-            </v-card-text>
+                    </span>
+                </div>
+            </div>
         </v-card>
 
         <!-- groups table -->
         <v-data-table
                 v-bind:headers="headers"
-                v-bind:pagination.sync="pagination"
+                :options.sync="pagination"
                 :items="items"
                 :server-items-length="totalItems"
                 class="elevation-1">
-            <template slot="headerCell" slot-scope="props">
-                <span v-if="props.header.value=='thumb'">
-                    <v-icon>panorama</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='group'">
-                    <v-icon>folder</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else-if="props.header.value=='created_at'">
-                    <v-icon>date_range</v-icon> {{ props.header.text }}
-                </span>
-                <span v-else>{{ props.header.text }}</span>
-            </template>
-            <template slot="items" slot-scope="props">
-                <td class="wask_td_action">
-                    <v-btn @click="showDialog('file_show',props.item)" icon small>
-                        <v-icon dark class="blue--text">search</v-icon>
-                    </v-btn>
-                    <v-btn @click="trash(props.item)" icon small>
-                        <v-icon class="red--text">delete</v-icon>
-                    </v-btn>
-                </td>
-                <td>
-                    <v-avatar
-                            tile
-                            :size="'50px'"
-                            class="grey lighten-4">
-                        <img :src="getFullUrl(props.item,50,'fit')"/>
-                    </v-avatar>
-                </td>
-                <td>{{ props.item.name }}</td>
-                <td>{{ $appFormatters.formatByteToMB(props.item.size).toString() + ' MB' }}</td>
-                <td>{{ props.item.group.name }}</td>
-                <td>{{ $appFormatters.formatDate(props.item.created_at) }}</td>
+            <template v-slot:body="{items}">
+                <tbody>
+                <tr v-for="item in items" :key="item.id">
+                    <td>
+                        <v-btn @click="showDialog('file_show',item)" icon small>
+                            <v-icon class="blue--text">mdi-magnify</v-icon>
+                        </v-btn>
+                        <v-btn @click="trash(props.item)" icon small>
+                            <v-icon class="red--text">mdi-delete</v-icon>
+                        </v-btn>
+                    </td>
+                    <td>
+                        <v-avatar
+                                tile
+                                :size="'50px'"
+                                class="grey lighten-4">
+                            <img :src="getFullUrl(item,50,'fit')"/>
+                        </v-avatar>
+                    </td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ $appFormatters.formatByteToMB(item.size).toString() + ' MB' }}</td>
+                    <td>{{ item.group.name }}</td>
+                    <td>{{ $appFormatters.formatDate(item.created_at) }}</td>
+                </tr>
+                </tbody>
             </template>
         </v-data-table>
         <!-- /groups table -->
@@ -72,12 +64,12 @@
                     <v-toolbar-title class="white--text">{{dialogs.view.file.name}}</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-toolbar-items>
-                        <v-btn dark flat @click.native="downloadFile(dialogs.view.file)">
+                        <v-btn dark text @click.native="downloadFile(dialogs.view.file)">
                             Download
                             <v-icon right dark>file_download</v-icon></v-btn>
                     </v-toolbar-items>
                     <v-toolbar-items>
-                        <v-btn dark flat @click.native="trash(dialogs.view.file)">
+                        <v-btn dark text @click.native="trash(dialogs.view.file)">
                             Delete
                             <v-icon right dark>delete</v-icon></v-btn>
                     </v-toolbar-items>
@@ -85,7 +77,7 @@
                 <v-card-text>
                     <div class="file_view_popup">
                         <div class="file_view_popup_link">
-                            <v-text-field flat disabled :value="getFullUrl(dialogs.view.file)"></v-text-field>
+                            <v-text-field text disabled :value="getFullUrl(dialogs.view.file)"></v-text-field>
                         </div>
                         <img :src="getFullUrl(dialogs.view.file)"/>
                     </div>

@@ -10,9 +10,10 @@ require('../bootstrap');
 window.Vue = require('vue');
 
 // 3rd party
+import '@mdi/font/css/materialdesignicons.css'
+import 'vuetify/dist/vuetify.min.css';
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import 'vuetify/dist/vuetify.min.css';
 import VueProgressBar from 'vue-progressbar'
 
 // this is the vuetify theming options
