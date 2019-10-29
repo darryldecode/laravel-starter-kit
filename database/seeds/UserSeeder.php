@@ -4,6 +4,7 @@ use App\Components\User\Models\Group;
 use App\Components\User\Models\Permission;
 use App\Components\User\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -63,7 +64,7 @@ class UserSeeder extends Seeder
             'name' => 'John Doe',
             'email' => 'admin@gmail.com',
             'password' => '12345678',
-            'remember_token' => str_random(10),
+            'remember_token' => Str::random(10),
             'permissions' => [],
             'last_login' => \Carbon\Carbon::now(),
             'active' => \Carbon\Carbon::now(),
