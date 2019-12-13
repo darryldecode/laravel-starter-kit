@@ -43,6 +43,7 @@
             </div>
         </v-card>
         <!-- /search -->
+        <v-divider class="pb-2"/>
 
         <!-- data table -->
         <v-data-table
@@ -100,6 +101,8 @@
                 </tbody>
             </template>
         </v-data-table>
+
+        <v-divider class="py-5"/>
 
         <!-- dialog for show permissions -->
         <v-dialog v-model="dialogs.showPermissions.show" absolute max-width="300px">
