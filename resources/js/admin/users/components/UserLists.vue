@@ -144,7 +144,7 @@
                 items: [],
                 totalItems: 0,
                 pagination: {
-                    rowsPerPage: 10
+                    itemsPerPage: 10
                 },
 
                 filters: {
@@ -176,11 +176,10 @@
             ]);
         },
         watch: {
-            'pagination.page':function(){
-                this.loadUsers(()=>{});
-            },
-            'pagination.rowsPerPage':function(){
-                this.loadUsers(()=>{});
+            pagination: {
+                handler () {
+                    this.loadUsers(()=>{});
+                },
             },
             'filters.name':_.debounce(function(){
                 const self = this;
@@ -260,7 +259,7 @@
                     email: self.filters.email,
                     group_id: self.filters.groupId.join(","),
                     page: self.pagination.page,
-                    per_page: self.pagination.rowsPerPage
+                    per_page: self.pagination.itemsPerPage
                 };
 
                 axios.get('/admin/users',{params: params}).then(function(response) {
