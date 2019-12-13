@@ -89,7 +89,7 @@
                 </transition>
             </v-content>
             <v-footer fixed>
-                <span>&copy; 2017</span>
+                <span>&copy; {{ date('Y') }}</span>
             </v-footer>
         </v-app>
 
