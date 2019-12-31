@@ -43,6 +43,7 @@
             </div>
         </v-card>
         <!-- /search -->
+        <v-divider class="pb-2"/>
 
         <!-- data table -->
         <v-data-table
@@ -56,12 +57,12 @@
                 <thead>
                 <tr>
                     <th v-for="header in headers">
-                        <span v-if="header.value=='name'"><v-icon>mdi-person</v-icon> {{header.text}}</span>
-                        <span v-else-if="header.value=='email'"><v-icon>mdi-email</v-icon> {{header.text}}</span>
-                        <span v-else-if="header.value=='permissions'"><v-icon>mdi-vpn_key</v-icon> {{header.text}}</span>
-                        <span v-else-if="header.value=='groups'"><v-icon>mdi-group</v-icon> {{header.text}}</span>
-                        <span v-else-if="header.value=='last_login'"><v-icon>mdi-av_timer</v-icon> {{header.text}}</span>
-                        <span v-else>{{header.text}}</span>
+                        <div v-if="header.value=='name'" :class="`text-${header.align}`"><v-icon>mdi-person</v-icon> {{header.text}}</div>
+                        <div v-else-if="header.value=='email'" :class="`text-${header.align}`"><v-icon>mdi-email</v-icon> {{header.text}}</div>
+                        <div v-else-if="header.value=='permissions'" :class="`text-${header.align}`"><v-icon>mdi-vpn_key</v-icon> {{header.text}}</div>
+                        <div v-else-if="header.value=='groups'" :class="`text-${header.align}`"><v-icon>mdi-group</v-icon> {{header.text}}</div>
+                        <div v-else-if="header.value=='last_login'" :class="`text-${header.align}`"><v-icon>mdi-av_timer</v-icon> {{header.text}}</div>
+                        <div v-else :class="`text-${header.align}`">{{header.text}}</div>
                     </th>
                 </tr>
                 </thead>
@@ -70,12 +71,12 @@
                 <tbody>
                     <tr v-for="item in items" :key="item.id">
                         <td>
-                            <div class="text-center">
-                                <v-btn @click="$router.push({name:'users.edit',params:{id: item.id}})" class="ma-2" outlined fab small color="info">
-                                    <v-icon>mdi-pencil</v-icon>
+                            <div class="ml-n1 my-1 d-flex justify-space-between align-content-space-around flex-wrap">
+                                <v-btn @click="$router.push({name:'users.edit',params:{id: item.id}})" class="ma-1" small outlined icon color="info">
+                                    <v-icon small>mdi-pencil</v-icon>
                                 </v-btn>
-                                <v-btn @click="trash(item)" class="ma-2" outlined fab small color="red">
-                                    <v-icon>mdi-delete</v-icon>
+                                <v-btn @click="trash(item)" class="ma-1" small outlined icon color="red">
+                                    <v-icon small>mdi-delete</v-icon>
                                 </v-btn>
                             </div>
                         </td>
@@ -90,7 +91,7 @@
                             </v-chip>
                         </td>
                         <td>{{ $appFormatters.formatDate(item.last_login) }}</td>
-                        <td>
+                        <td class="text-center">
                             <v-avatar outlined>
                                 <v-icon v-if="item.active!=null" class="green--text">check_circle</v-icon>
                                 <v-icon class="grey--text" v-else>error_outline</v-icon>
@@ -100,6 +101,8 @@
                 </tbody>
             </template>
         </v-data-table>
+
+        <v-divider class="py-5"/>
 
         <!-- dialog for show permissions -->
         <v-dialog v-model="dialogs.showPermissions.show" absolute max-width="300px">
@@ -139,12 +142,12 @@
                     { text: 'Permissions', value: 'permissions', align: 'left', sortable: false },
                     { text: 'Groups', value: 'groups', align: 'left', sortable: false },
                     { text: 'Last Login', value: 'last_login', align: 'left', sortable: false },
-                    { text: 'Active', value: 'active', align: 'left', sortable: false },
+                    { text: 'Active', value: 'active', align: 'center', sortable: false },
                 ],
                 items: [],
                 totalItems: 0,
                 pagination: {
-                    rowsPerPage: 10
+                    itemsPerPage: 10
                 },
 
                 filters: {
@@ -176,11 +179,10 @@
             ]);
         },
         watch: {
-            'pagination.page':function(){
-                this.loadUsers(()=>{});
-            },
-            'pagination.rowsPerPage':function(){
-                this.loadUsers(()=>{});
+            pagination: {
+                handler () {
+                    this.loadUsers(()=>{});
+                },
             },
             'filters.name':_.debounce(function(){
                 const self = this;
@@ -260,7 +262,7 @@
                     email: self.filters.email,
                     group_id: self.filters.groupId.join(","),
                     page: self.pagination.page,
-                    per_page: self.pagination.rowsPerPage
+                    per_page: self.pagination.itemsPerPage
                 };
 
                 axios.get('/admin/users',{params: params}).then(function(response) {
