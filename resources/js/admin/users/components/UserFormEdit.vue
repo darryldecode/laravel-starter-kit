@@ -57,7 +57,7 @@
                     </v-flex>
                     <v-flex xs12>
                         <div class="permissions_container">
-                            <v-chip v-for="(p,k) in permissions" :key="k" @input="removePermission(k)" close class="white--text" :class="{'green':(p.value==1),'red':(p.value==-1),'blue':(p.value==0)}">
+                            <v-chip v-for="(p,k) in permissions" :key="k" @click:close="removePermission(k)" close class="white--text" :class="{'green':(p.value==1),'red':(p.value==-1),'blue':(p.value==0)}">
                                 <v-avatar v-if="p.value==-1" class="red darken-4" title="Deny">
                                     <v-icon>block</v-icon>
                                 </v-avatar>
