@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.0.0",
+        "php": ">=7.3",
         "fideloper/proxy": "~4.1",
         "firebase/php-jwt": "^5.0",
         "intervention/image": "^2.4",
@@ -58,7 +58,7 @@
         "sort-packages": true,
         "optimize-autoloader": true,
         "platform": {
-            "php": "7.2.5"
+            "php": "7.3"
         }
     }
 }
