@@ -45,7 +45,7 @@ import router from './router';
 import store from '../common/Store';
 import eventBus from '../common/Event';
 import formatters from '../common/Formatters';
-import AxiosAjaxDetct from '../common/AxiosAjaxDetect';
+import AxiosAjaxDetect from '../common/AxiosAjaxDetect';
 
 Vue.use(formatters);
 Vue.use(eventBus);
@@ -81,7 +81,7 @@ const admin = new Vue({
         const self = this;
 
         // progress bar top
-        AxiosAjaxDetct.init(()=>{
+        AxiosAjaxDetect.init(()=>{
             self.$Progress.start();
         },()=>{
             self.$Progress.finish();
