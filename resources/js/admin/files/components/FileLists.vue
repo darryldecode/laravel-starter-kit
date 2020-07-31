@@ -32,7 +32,7 @@
                         <v-btn @click="showDialog('file_show',item)" icon small>
                             <v-icon class="blue--text">mdi-magnify</v-icon>
                         </v-btn>
-                        <v-btn @click="trash(props.item)" icon small>
+                        <v-btn @click="trash(item)" icon small>
                             <v-icon class="red--text">mdi-delete</v-icon>
                         </v-btn>
                     </td>
