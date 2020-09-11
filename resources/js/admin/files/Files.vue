@@ -1,5 +1,5 @@
 <template>
-    <div class="page_wrap_vue">
+    <div class="page_wrap_vue pa-3">
         <v-tabs color="primary" v-model="active">
 
             <v-tab class="white--text" key="files" href="#files" ripple>
