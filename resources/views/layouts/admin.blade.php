@@ -91,7 +91,6 @@
             <v-footer fixed>
                 <span>&copy; {{ date('Y') }}</span>
             </v-footer>
-        </v-app>
 
         <!-- loader -->
         <div v-if="showLoader" class="wask_loader bg_half_transparent">
@@ -124,7 +123,7 @@
 
         <!-- the progress bar -->
         <vue-progress-bar></vue-progress-bar>
-
+       </v-app>
     </template>
 
 </div>
