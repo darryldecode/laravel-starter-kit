@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "dropzone": "^5.2.0",
-    "moment": "^2.21.0",
+    "moment": "^2.29.2",
     "vue-progressbar": "^0.7.5",
     "vue-router": "^3.0.1",
     "vue-spinner": "^1.0.2",
